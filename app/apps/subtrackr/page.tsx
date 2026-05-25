@@ -29,10 +29,12 @@ const proFeatures = [
   'Data export (JSON & CSV)',
 ]
 
+const curbUrl = 'https://getcurbapp.com'
+
 const faqItems = [
-  { q: 'Is SubTrackr free?', a: 'Yes. The free tier lets you track up to 5 subscriptions with full features including notifications, multi-currency, and biometric lock. Go Pro to unlock unlimited subscriptions, cloud sync, widgets, and more.' },
-  { q: 'Do you connect to my bank?', a: 'No. SubTrackr is completely manual and private. You add your subscriptions yourself — we never connect to your bank, read your emails, or access your financial accounts.' },
-  { q: 'What platforms is it available on?', a: 'SubTrackr is available on iOS and Android. Both versions support the same features including cloud sync between devices.' },
+  { q: 'Is Curb free?', a: 'Yes. The free tier lets you track up to 5 subscriptions with full features including notifications, multi-currency, and biometric lock. Go Pro to unlock unlimited subscriptions, cloud sync, widgets, and more.' },
+  { q: 'Do you connect to my bank?', a: 'No. Curb is completely manual and private. You add your subscriptions yourself — we never connect to your bank, read your emails, or access your financial accounts.' },
+  { q: 'What platforms is it available on?', a: 'Curb is available on iOS and Android. Both versions support the same features including cloud sync between devices.' },
   { q: 'How does cloud sync work?', a: 'Sign in with Apple or Google, and your subscriptions sync automatically via a secure cloud database. Your data is encrypted in transit and at rest. You can also use the app without signing in — everything stays on your device.' },
   { q: 'What currencies are supported?', a: 'Over 30 currencies including USD, EUR, GBP, AED, SAR, JPY, and more. Exchange rates update daily so your monthly total is always accurate in your preferred currency.' },
   { q: 'Can I export my data?', a: 'Pro users can export all subscription data as JSON or CSV. You own your data — always.' },
@@ -193,11 +195,11 @@ export default function SubtrackrPage() {
               color: 'rgba(255,255,255,0.45)', lineHeight: 1.7,
               maxWidth: '440px', marginBottom: '2.5rem',
             }}>
-              SubTrackr tracks every subscription in one place — with alerts before renewals, multi-currency totals, and zero surprises on your bank statement.
+              Curb - Subscription Tracker keeps every recurring payment in one place — with alerts before renewals, multi-currency totals, and zero surprises on your bank statement.
             </motion.p>
 
             <motion.div variants={fadeUp} style={{ display: 'flex', gap: '0.8rem', flexWrap: 'wrap' }}>
-              <a href="#" style={{
+              <a href={curbUrl} style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
                 padding: '0.7rem 1.3rem', borderRadius: '14px',
                 background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.1)',
@@ -212,7 +214,7 @@ export default function SubtrackrPage() {
                   <div style={{ fontFamily: 'var(--font-syne)', fontSize: '0.8rem', color: '#fff', fontWeight: 600, lineHeight: 1.2 }}>App Store</div>
                 </div>
               </a>
-              <a href="#" style={{
+              <a href={curbUrl} style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
                 padding: '0.7rem 1.3rem', borderRadius: '14px',
                 background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.1)',
@@ -500,7 +502,7 @@ export default function SubtrackrPage() {
               fontFamily: 'var(--font-syne)', fontSize: '0.95rem',
               color: 'rgba(255,255,255,0.4)', lineHeight: 1.6,
             }}>
-              Everything you need to know about SubTrackr.
+              Everything you need to know about Curb - Subscription Tracker.
             </motion.p>
           </motion.div>
 
@@ -532,7 +534,7 @@ export default function SubtrackrPage() {
             Free to download. No account required.
           </motion.p>
           <motion.div variants={fadeUp} style={{ display: 'flex', justifyContent: 'center', gap: '0.8rem', flexWrap: 'wrap' }}>
-            <a href="#" style={{
+            <a href={curbUrl} style={{
               fontFamily: 'var(--font-syne)', fontSize: '0.8rem', fontWeight: 600,
               color: '#000', background: 'var(--lime)', padding: '0.85rem 2rem',
               borderRadius: '14px', textDecoration: 'none', transition: 'transform 0.2s, box-shadow 0.2s',
@@ -542,7 +544,7 @@ export default function SubtrackrPage() {
             >
               Download for iOS
             </a>
-            <a href="#" style={{
+            <a href={curbUrl} style={{
               fontFamily: 'var(--font-syne)', fontSize: '0.8rem', fontWeight: 600,
               color: '#fff', padding: '0.85rem 2rem', borderRadius: '14px',
               border: '1px solid rgba(255,255,255,0.12)', textDecoration: 'none',

@@ -23,10 +23,10 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: 'beatLabs — Digital Studio. Dubai, UAE.',
-  description: 'beatLabs (BeatLabs FZE LLC) is a UAE-registered digital studio building apps, agencies, and creative brands. Home of Nibango, SubTrackr, WebVanguard, TrueLoveCreative, and Estrela.photo.',
+  description: 'beatLabs (BeatLabs FZE LLC) is a UAE-registered digital studio building apps, agencies, and creative brands. Home of Nibango, Curb - Subscription Tracker, WebVanguard, TrueLoveCreative, and Estrela.photo.',
   keywords: [
     'beatLabs', 'digital studio UAE', 'UAE startup studio', 'tech studio Dubai', 'digital studio Dubai',
-    'Nibango', 'SubTrackr', 'WebVanguard', 'TrueLoveCreative', 'Estrela photo',
+    'Nibango', 'Curb', 'Curb Subscription Tracker', 'WebVanguard', 'TrueLoveCreative', 'Estrela photo',
     'app development UAE', 'startup Ajman', 'digital brands UAE',
     'web design Dubai', 'marketplace app UAE', 'creative studio UAE',
     'BeatLabs FZE', 'Ajman Media City Free Zone',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'beatLabs — Digital Studio. Dubai, UAE.',
-    description: 'UAE-registered digital studio building apps, agencies, and creative brands. Home of Nibango, SubTrackr, WebVanguard, TrueLoveCreative, and Estrela.photo.',
+    description: 'UAE-registered digital studio building apps, agencies, and creative brands. Home of Nibango, Curb - Subscription Tracker, WebVanguard, TrueLoveCreative, and Estrela.photo.',
     url: 'https://beatlabs.ae',
     siteName: 'beatLabs',
     type: 'website',
@@ -99,6 +99,7 @@ export default function RootLayout({
                 "addressCountry": "AE"
               },
               "sameAs": [
+                "https://getcurbapp.com",
                 "https://webvanguard.co",
                 "https://nibango.com",
                 "https://truelovecreative.es",

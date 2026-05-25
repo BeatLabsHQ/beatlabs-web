@@ -10,17 +10,17 @@ const content: Record<Lang, { title: string; updated: string; intro: string; sec
   en: {
     title: 'Terms of Service',
     updated: 'Last updated: March 28, 2026',
-    intro: 'These Terms of Service ("Terms") govern your use of the SubTrackr mobile application (the "App") operated by Beat Labs ("we", "our", or "us"). By downloading, installing, or using the App, you agree to be bound by these Terms.',
+    intro: 'These Terms of Service ("Terms") govern your use of the Curb mobile application (the "App") operated by Beat Labs ("we", "our", or "us"). By downloading, installing, or using the App, you agree to be bound by these Terms.',
     sections: [
       {
         title: '1. Description of Service',
-        content: `SubTrackr is a personal subscription management tool that allows you to:
+        content: `Curb is a personal subscription management tool that allows you to:
 • Track and organize your recurring subscriptions
 • Receive renewal reminders via push notifications
 • View spending summaries and analytics
 • Export your subscription data
 
-The App is available in a free tier and a paid tier (SubTrackr Pro).`,
+The App is available in a free tier and a paid tier (Curb Pro).`,
       },
       {
         title: '2. Accounts',
@@ -42,9 +42,9 @@ You may delete your account at any time through the App's Settings. This will pe
 
 The free tier allows you to track up to 5 subscriptions at no cost.
 
-3.2 SubTrackr Pro
+3.2 Curb Pro
 
-SubTrackr Pro is available as a monthly or yearly subscription.
+Curb Pro is available as a monthly or yearly subscription.
 
 3.3 Billing
 
@@ -104,7 +104,7 @@ Exchange rates are provided for informational purposes only and may not reflect 
 • Financial losses from missed renewals
 • Interruption of service
 
-Our total liability shall not exceed the amount you paid for SubTrackr Pro in the 12 months preceding the claim.`,
+Our total liability shall not exceed the amount you paid for Curb Pro in the 12 months preceding the claim.`,
       },
       {
         title: '9. Changes to These Terms',
@@ -127,17 +127,17 @@ Website: https://beatlabs.ae`,
   es: {
     title: 'Términos de Servicio',
     updated: 'Última actualización: 28 de marzo de 2026',
-    intro: 'Estos Términos de Servicio ("Términos") regulan el uso de la aplicación móvil SubTrackr (la "App") operada por Beat Labs ("nosotros", "nuestro"). Al descargar, instalar o utilizar la App, aceptas quedar vinculado por estos Términos.',
+    intro: 'Estos Términos de Servicio ("Términos") regulan el uso de la aplicación móvil Curb (la "App") operada por Beat Labs ("nosotros", "nuestro"). Al descargar, instalar o utilizar la App, aceptas quedar vinculado por estos Términos.',
     sections: [
       {
         title: '1. Descripción del Servicio',
-        content: `SubTrackr es una herramienta de gestión de suscripciones personales que te permite:
+        content: `Curb es una herramienta de gestión de suscripciones personales que te permite:
 • Registrar y organizar tus suscripciones recurrentes
 • Recibir recordatorios de renovación mediante notificaciones push
 • Consultar resúmenes de gastos y analíticas
 • Exportar tus datos de suscripciones
 
-La App está disponible en un plan gratuito y un plan de pago (SubTrackr Pro).`,
+La App está disponible en un plan gratuito y un plan de pago (Curb Pro).`,
       },
       {
         title: '2. Cuentas',
@@ -159,9 +159,9 @@ Puedes eliminar tu cuenta en cualquier momento desde los Ajustes de la App. Esto
 
 El plan gratuito te permite registrar hasta 5 suscripciones sin coste.
 
-3.2 SubTrackr Pro
+3.2 Curb Pro
 
-SubTrackr Pro está disponible como suscripción mensual o anual.
+Curb Pro está disponible como suscripción mensual o anual.
 
 3.3 Facturación
 
@@ -221,7 +221,7 @@ Los tipos de cambio se proporcionan únicamente con fines informativos y pueden 
 • Pérdidas financieras por renovaciones no detectadas
 • Interrupción del servicio
 
-Nuestra responsabilidad total no excederá el importe que hayas pagado por SubTrackr Pro en los 12 meses anteriores a la reclamación.`,
+Nuestra responsabilidad total no excederá el importe que hayas pagado por Curb Pro en los 12 meses anteriores a la reclamación.`,
       },
       {
         title: '9. Cambios en estos Términos',
@@ -278,7 +278,7 @@ export default function SubtrackrTermsPage() {
             ))}
           </div>
           <Link href="/apps/subtrackr" style={{ fontSize: '0.65rem', color: 'var(--muted)', letterSpacing: '0.2em', textDecoration: 'none', fontFamily: 'var(--font-syne)', fontWeight: 700 }}>
-            ← SUBTRACKR
+            ← CURB
           </Link>
         </div>
       </nav>
@@ -288,7 +288,7 @@ export default function SubtrackrTermsPage() {
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
             <div style={{ width: '2rem', height: '1px', background: 'var(--lime)' }} />
-            <span style={{ fontSize: '0.65rem', color: 'var(--lime)', letterSpacing: '0.25em', fontFamily: 'var(--font-syne)', fontWeight: 700 }}>SUBTRACKR · LEGAL</span>
+            <span style={{ fontSize: '0.65rem', color: 'var(--lime)', letterSpacing: '0.25em', fontFamily: 'var(--font-syne)', fontWeight: 700 }}>CURB · LEGAL</span>
           </div>
           <h1 style={{ fontFamily: 'var(--font-bebas)', fontSize: 'clamp(3rem, 7vw, 7rem)', lineHeight: 0.9, letterSpacing: '-0.01em', color: 'var(--white)', marginBottom: '1.5rem' }}>
             {lang === 'en' ? <>Terms of<br /><span style={{ color: 'var(--lime)' }}>Service.</span></> : <>Términos de<br /><span style={{ color: 'var(--lime)' }}>Servicio.</span></>}

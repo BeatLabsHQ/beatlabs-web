@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 
 const modules = [
   { id: '001', name: 'NIBANGO', type: 'APP', status: 'launching', statusText: 'LAUNCHING', dot: '◉', uptime: '—', url: null },
-  { id: '002', name: 'SUBTRACKR', type: 'APP', status: 'dev', statusText: 'DEV', dot: '○', uptime: '—', url: null },
+  { id: '002', name: 'CURB', type: 'APP', status: 'live', statusText: 'LIVE', dot: '●', uptime: '100%', url: 'https://getcurbapp.com' },
   { id: '003', name: 'TIMEUP', type: 'APP', status: 'dev', statusText: 'DEV', dot: '○', uptime: '—', url: null },
   { id: '004', name: 'CONTRACKR', type: 'APP', status: 'dev', statusText: 'DEV', dot: '○', uptime: '—', url: null },
   { id: '005', name: 'WEBVANGUARD', type: 'STUDIO', status: 'live', statusText: 'LIVE', dot: '●', uptime: '100%', url: 'https://webvanguard.co' },

@@ -19,13 +19,14 @@ const apps = [
   },
   {
     id: '02',
-    name: 'SubTrackr',
+    name: 'Curb - Subscription Tracker',
     type: 'Finance App',
     desc: "Track all your subscriptions in one place. Know exactly what you're paying, when, and cancel what you don't need.",
     status: 'Coming Soon',
     flagship: false,
     slug: 'subtrackr',
     docs: [
+      { label: 'Website', href: 'https://getcurbapp.com' },
       { label: 'Privacy Policy', href: '/apps/subtrackr/privacy' },
       { label: 'Terms of Service', href: '/apps/subtrackr/terms' },
     ],

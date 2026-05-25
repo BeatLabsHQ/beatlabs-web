@@ -9,9 +9,9 @@ type Lang = 'en' | 'es'
 const content: Record<Lang, { title: string; subtitle: string; updated: string; intro: string; sections: { title: string; content: string }[] }> = {
   en: {
     title: 'Privacy Policy',
-    subtitle: 'SUBTRACKR · LEGAL',
+    subtitle: 'CURB · LEGAL',
     updated: 'Last updated: March 28, 2026',
-    intro: 'Beat Labs ("we", "our", or "us") operates the SubTrackr mobile application (the "App"). This Privacy Policy explains how we collect, use, and protect your information when you use the App.',
+    intro: 'Beat Labs ("we", "our", or "us") operates the Curb mobile application (the "App"). This Privacy Policy explains how we collect, use, and protect your information when you use the App.',
     sections: [
       {
         title: '1. Information We Collect',
@@ -35,7 +35,7 @@ This data is stored locally on your device and, if you are signed in, synced to 
 
 1.3 Purchase Information
 
-If you subscribe to SubTrackr Pro, your purchase is processed entirely by Apple (App Store) or Google (Google Play). We do not collect or store your payment method, credit card number, or billing address. We only receive confirmation of whether you have an active subscription.
+If you subscribe to Curb Pro, your purchase is processed entirely by Apple (App Store) or Google (Google Play). We do not collect or store your payment method, credit card number, or billing address. We only receive confirmation of whether you have an active subscription.
 
 1.4 Referral and Promotional Data
 
@@ -53,7 +53,7 @@ We do NOT use analytics SDKs, advertising trackers, or third-party data collecti
         content: `We use the information we collect solely to:
 • Provide and maintain the App's functionality
 • Sync your subscription data across your devices
-• Manage your SubTrackr Pro subscription status
+• Manage your Curb Pro subscription status
 • Process referral rewards and promotional codes
 • Send you local push notifications about upcoming renewals (only if you enable notifications)
 
@@ -111,9 +111,9 @@ Website: https://beatlabs.ae`,
   },
   es: {
     title: 'Política de Privacidad',
-    subtitle: 'SUBTRACKR · LEGAL',
+    subtitle: 'CURB · LEGAL',
     updated: 'Última actualización: 28 de marzo de 2026',
-    intro: 'Beat Labs ("nosotros", "nuestro") opera la aplicación móvil SubTrackr (la "App"). Esta Política de Privacidad explica cómo recopilamos, usamos y protegemos tu información cuando utilizas la App.',
+    intro: 'Beat Labs ("nosotros", "nuestro") opera la aplicación móvil Curb (la "App"). Esta Política de Privacidad explica cómo recopilamos, usamos y protegemos tu información cuando utilizas la App.',
     sections: [
       {
         title: '1. Información que Recopilamos',
@@ -137,7 +137,7 @@ Estos datos se almacenan localmente en tu dispositivo y, si has iniciado sesión
 
 1.3 Información de Compras
 
-Si te suscribes a SubTrackr Pro, tu compra es procesada íntegramente por Apple (App Store) o Google (Google Play). No recopilamos ni almacenamos tu método de pago, número de tarjeta ni dirección de facturación. Solo recibimos confirmación de si tienes una suscripción activa.
+Si te suscribes a Curb Pro, tu compra es procesada íntegramente por Apple (App Store) o Google (Google Play). No recopilamos ni almacenamos tu método de pago, número de tarjeta ni dirección de facturación. Solo recibimos confirmación de si tienes una suscripción activa.
 
 1.4 Datos de Referidos y Promociones
 
@@ -155,7 +155,7 @@ NO utilizamos SDKs de analítica, rastreadores publicitarios ni herramientas de 
         content: `Utilizamos la información recopilada únicamente para:
 • Proporcionar y mantener la funcionalidad de la App
 • Sincronizar tus datos de suscripciones entre dispositivos
-• Gestionar tu estado de suscripción a SubTrackr Pro
+• Gestionar tu estado de suscripción a Curb Pro
 • Procesar recompensas de referidos y códigos promocionales
 • Enviarte notificaciones locales sobre renovaciones próximas (solo si activas las notificaciones)
 
@@ -248,7 +248,7 @@ export default function SubtrackrPrivacyPage() {
             ))}
           </div>
           <Link href="/apps/subtrackr" style={{ fontSize: '0.65rem', color: 'var(--muted)', letterSpacing: '0.2em', textDecoration: 'none', fontFamily: 'var(--font-syne)', fontWeight: 700 }}>
-            ← SUBTRACKR
+            ← CURB
           </Link>
         </div>
       </nav>

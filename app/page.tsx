@@ -4,20 +4,25 @@ import { useEffect, useState, useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
 const modules = [
-  { id: '001', name: 'NIBANGO', type: 'APP', status: 'launching', statusText: 'LAUNCHING', dot: '◉', uptime: '90%', url: null },
-  { id: '002', name: 'CURB', type: 'APP', status: 'launching', statusText: 'LAUNCHING', dot: '◉', uptime: '95%', url: 'https://getcurbapp.com' },
-  { id: '003', name: 'TIMEUP', type: 'APP', status: 'dev', statusText: 'DEV', dot: '○', uptime: '—', url: null },
-  { id: '004', name: 'CONTRACKR', type: 'APP', status: 'dev', statusText: 'DEV', dot: '○', uptime: '—', url: null },
-  { id: '005', name: 'WEBVANGUARD', type: 'STUDIO', status: 'live', statusText: 'LIVE', dot: '●', uptime: '100%', url: 'https://webvanguard.co' },
-  { id: '006', name: 'TRUE_LOVE_CRTV', type: 'STUDIO', status: 'live', statusText: 'LIVE', dot: '●', uptime: '100%', url: 'https://truelovecreative.es' },
-  { id: '007', name: 'ESTRELA_PHOTO', type: 'STUDIO', status: 'live', statusText: 'LIVE', dot: '●', uptime: '100%', url: 'https://estrela.photo' },
+  { id: '001', name: 'CURB', type: 'APP', status: 'live', statusText: 'LIVE', dot: '●', uptime: '100%', url: 'https://getcurbapp.com', division: 'APPS' },
+  { id: '002', name: 'RAVED', type: 'APP', status: 'launching', statusText: 'LAUNCHING', dot: '◉', uptime: '98%', url: 'https://raved.app', division: 'APPS' },
+  { id: '003', name: 'NIBANGO', type: 'APP', status: 'launching', statusText: 'LAUNCHING', dot: '◉', uptime: '95%', url: 'https://nibango.com', division: 'APPS' },
+  { id: '004', name: 'EPILOQ', type: 'APP', status: 'dev', statusText: 'DEV', dot: '○', uptime: '—', url: null, division: 'APPS' },
+  { id: '005', name: 'TIMEUP', type: 'APP', status: 'dev', statusText: 'DEV', dot: '○', uptime: '—', url: null, division: 'APPS' },
+  { id: '006', name: 'TRUE_LOVE_CRTV', type: 'STUDIO', status: 'live', statusText: 'LIVE', dot: '●', uptime: '100%', url: 'https://truelovecreative.es', division: 'WEB_CREATIVE' },
+  { id: '007', name: 'ESTRELA_PHOTO', type: 'STUDIO', status: 'live', statusText: 'LIVE', dot: '●', uptime: '100%', url: 'https://estrela.photo', division: 'WEB_CREATIVE' },
+]
+
+const divisions = [
+  { key: 'APPS', label: 'DIV_01 · APPS' },
+  { key: 'WEB_CREATIVE', label: 'DIV_02 · WEB_&_CREATIVE' },
 ]
 
 const bootLines = [
   '> INITIALIZING BEATLABS_OS...',
   '> LOADING ENTITY: BEATLABS FZE LLC [OK]',
   '> LICENSE: 53228 AJMAN FREE ZONE [VERIFIED]',
-  '> MODULES: 7 [LOADED]',
+  '> DIVISIONS: APPS [5] · WEB_&_CREATIVE [2] [LOADED]',
   '> STATUS: OPERATIONAL',
   '',
   '> MISSION: WE BUILD COMPANIES. NOT PROJECTS.',
@@ -374,6 +379,14 @@ export default function Home() {
                 <div style={{ color: 'rgba(200,255,71,0.3)' }}>└───────────────────────────┘</div>
               </div>
 
+              {/* Divisions box */}
+              <div style={{ marginBottom: '16px' }}>
+                <div style={{ color: 'rgba(200,255,71,0.3)' }}>┌─ DIVISIONS ───────────────┐</div>
+                <div>│ <span style={{ color: brightWhite }}>APPS</span> <span style={{ color: dimColor }}>[5]</span>                  │</div>
+                <div>│ <span style={{ color: brightWhite }}>WEB &amp; CREATIVE</span> <span style={{ color: dimColor }}>[2]</span>        │</div>
+                <div style={{ color: 'rgba(200,255,71,0.3)' }}>└───────────────────────────┘</div>
+              </div>
+
               {/* Status box */}
               <div style={{ marginBottom: '16px' }}>
                 <div style={{ color: 'rgba(200,255,71,0.3)' }}>┌─ STATUS ──────────────────┐</div>
@@ -404,15 +417,27 @@ export default function Home() {
                   ────────────────────────────────────────────────────────────
                 </div>
 
-                {modules.map(mod => (
-                  <ModuleRow key={mod.id} mod={mod} />
+                {divisions.map(div => (
+                  <div key={div.key}>
+                    <div style={{ fontSize: '0.75rem', color: lime, padding: '8px 0 2px', userSelect: 'none' }}>
+                      ── {div.label} {'─'.repeat(Math.max(2, 44 - div.label.length))}
+                    </div>
+                    {modules.filter(m => m.division === div.key).map(mod => (
+                      <ModuleRow key={mod.id} mod={mod} />
+                    ))}
+                  </div>
                 ))}
 
-                <div style={{ color: borderColor, fontSize: '0.75rem', userSelect: 'none' }}>
+                <div style={{ color: borderColor, fontSize: '0.75rem', userSelect: 'none', paddingTop: '8px' }}>
                   ────────────────────────────────────────────────────────────
                 </div>
                 <div style={{ fontSize: '0.75rem', color: textColor, paddingTop: '8px' }}>
-                  TOTAL: 7 | LIVE: 3 | IN_DEV: 4
+                  TOTAL: 7 | LIVE: 3 | LAUNCHING: 2 | IN_DEV: 2
+                </div>
+                <div style={{ fontSize: '0.78rem', paddingTop: '12px' }}>
+                  <a href="/apps" style={{ color: lime, fontWeight: 700 }}>
+                    {'> '}open /apps — view all applications →
+                  </a>
                 </div>
               </div>
 
@@ -433,11 +458,23 @@ export default function Home() {
                   <div><span style={{ color: dimColor }}>UPTIME:</span> <span style={{ color: brightWhite }}>100%</span></div>
                   <div><span style={{ color: dimColor }}>ENV:</span> <span style={{ color: brightWhite }}>PRODUCTION</span></div>
                 </div>
-                {modules.map(mod => (
-                  <MobileModuleCard key={mod.id} mod={mod} />
+                {divisions.map(div => (
+                  <div key={div.key}>
+                    <div style={{ fontFamily: mono, fontSize: '0.7rem', color: lime, padding: '10px 0 2px', userSelect: 'none' }}>
+                      ── {div.label} ──
+                    </div>
+                    {modules.filter(m => m.division === div.key).map(mod => (
+                      <MobileModuleCard key={mod.id} mod={mod} />
+                    ))}
+                  </div>
                 ))}
                 <div style={{ fontSize: '0.7rem', color: textColor, paddingTop: '8px' }}>
-                  TOTAL: 7 | LIVE: 3 | IN_DEV: 4
+                  TOTAL: 7 | LIVE: 3 | LAUNCHING: 2 | IN_DEV: 2
+                </div>
+                <div style={{ fontSize: '0.75rem', paddingTop: '10px' }}>
+                  <a href="/apps" style={{ color: lime, fontWeight: 700 }}>
+                    {'> '}open /apps →
+                  </a>
                 </div>
               </div>
 
@@ -564,6 +601,13 @@ export default function Home() {
         >
           <div style={{ color: 'rgba(200,255,71,0.15)', userSelect: 'none' }}>
             ─────────────────────────────────────────────────────────────
+          </div>
+          <div style={{ paddingBottom: '6px' }}>
+            <a href="/apps" style={{ color: textColor }}>[APPS]</a>
+            {' · '}
+            <a href="/legal" style={{ color: textColor }}>[LEGAL]</a>
+            {' · '}
+            <a href="mailto:info@beatlabs.ae" style={{ color: textColor }}>[CONTACT]</a>
           </div>
           BEATLABS_OS · © 2026 BeatLabs FZE LLC · License 53228 · Ajman Media City Free Zone<br />
           Free Zone Establishment incorporated under Amiri Decree No.8 of 2021

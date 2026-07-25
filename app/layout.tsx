@@ -23,10 +23,10 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: 'beatLabs — Digital Studio. Dubai, UAE.',
-  description: 'beatLabs (BeatLabs FZE LLC) is a UAE-registered digital studio building apps, agencies, and creative brands. Home of Nibango, Curb - Subscription Tracker, WebVanguard, TrueLoveCreative, and Estrela.photo.',
+  description: 'beatLabs (BeatLabs FZE LLC) is a UAE-registered digital studio building apps and creative brands. Home of Curb - Subscription Tracker, Raved, Nibango, TrueLoveCreative, and Estrela.photo.',
   keywords: [
     'beatLabs', 'digital studio UAE', 'UAE startup studio', 'tech studio Dubai', 'digital studio Dubai',
-    'Nibango', 'Curb', 'Curb Subscription Tracker', 'WebVanguard', 'TrueLoveCreative', 'Estrela photo',
+    'Nibango', 'Curb', 'Curb Subscription Tracker', 'Raved', 'Raved app', 'TrueLoveCreative', 'Estrela photo',
     'app development UAE', 'startup Ajman', 'digital brands UAE',
     'web design Dubai', 'marketplace app UAE', 'creative studio UAE',
     'BeatLabs FZE', 'Ajman Media City Free Zone',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'beatLabs — Digital Studio. Dubai, UAE.',
-    description: 'UAE-registered digital studio building apps, agencies, and creative brands. Home of Nibango, Curb - Subscription Tracker, WebVanguard, TrueLoveCreative, and Estrela.photo.',
+    description: 'UAE-registered digital studio building apps and creative brands. Home of Curb - Subscription Tracker, Raved, Nibango, TrueLoveCreative, and Estrela.photo.',
     url: 'https://beatlabs.ae',
     siteName: 'beatLabs',
     type: 'website',
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'beatLabs — Digital Studio. Dubai, UAE.',
-    description: 'UAE-registered digital studio building apps, agencies, and creative brands.',
+    description: 'UAE-registered digital studio building apps and creative brands.',
     images: ['https://beatlabs.ae/og-image.png'],
   },
   alternates: {
@@ -87,7 +87,7 @@ export default function RootLayout({
               "legalName": "BeatLabs FZE LLC",
               "url": "https://beatlabs.ae",
               "logo": "https://beatlabs.ae/logo.png",
-              "description": "UAE-registered digital studio building apps, agencies, and creative brands.",
+              "description": "UAE-registered digital studio building apps and creative brands.",
               "email": "info@beatlabs.ae",
               "telephone": "+971585324519",
               "foundingDate": "2026-03-25",
@@ -100,7 +100,7 @@ export default function RootLayout({
               },
               "sameAs": [
                 "https://getcurbapp.com",
-                "https://webvanguard.co",
+                "https://raved.app",
                 "https://nibango.com",
                 "https://truelovecreative.es",
                 "https://estrela.photo"

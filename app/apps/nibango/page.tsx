@@ -192,8 +192,8 @@ export default function NibangoPage() {
         </motion.div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2px' }}>
           {[
-            { title: 'Privacy Policy', desc: 'How we collect, use, and protect your data.', href: '/apps/nibango/privacy' },
-            { title: 'Terms of Service', desc: 'Rules and conditions for using Nibango.', href: '/apps/nibango/terms' },
+            { title: 'Privacy Policy', desc: 'How we collect, use, and protect your data.', href: 'https://nibango.com/privacy' },
+            { title: 'Terms of Service', desc: 'Rules and conditions for using Nibango.', href: 'https://nibango.com/terms' },
           ].map((doc, i) => (
             <motion.div key={doc.href}
               initial={{ opacity: 0, y: 20 }}
@@ -201,7 +201,7 @@ export default function NibangoPage() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
             >
-              <Link href={doc.href} style={{ textDecoration: 'none', display: 'block', padding: '2.5rem', border: '1px solid rgba(255,255,255,0.06)', transition: 'border-color 0.3s' }}
+              <a href={doc.href} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'block', padding: '2.5rem', border: '1px solid rgba(255,255,255,0.06)', transition: 'border-color 0.3s' }}
                 onMouseEnter={e => (e.currentTarget.style.borderColor = 'rgba(200,255,71,0.3)')}
                 onMouseLeave={e => (e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)')}
               >
@@ -211,7 +211,7 @@ export default function NibangoPage() {
                 <p style={{ fontFamily: 'var(--font-syne)', fontSize: '0.8rem', color: 'rgba(240,237,232,0.35)', lineHeight: 1.5 }}>
                   {doc.desc}
                 </p>
-              </Link>
+              </a>
             </motion.div>
           ))}
         </div>

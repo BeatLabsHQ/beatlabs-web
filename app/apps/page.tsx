@@ -9,12 +9,13 @@ const apps = [
     name: 'Nibango',
     type: 'Marketplace App',
     desc: 'Peer-to-peer second-hand marketplace reimagined for the Gulf. Buy, sell, trust.',
-    status: 'Coming Soon',
+    status: 'Launching',
     flagship: true,
     slug: 'nibango',
     docs: [
-      { label: 'Privacy Policy', href: '/apps/nibango/privacy' },
-      { label: 'Terms of Service', href: '/apps/nibango/terms' },
+      { label: 'Website', href: 'https://nibango.com' },
+      { label: 'Privacy Policy', href: 'https://nibango.com/privacy' },
+      { label: 'Terms of Service', href: 'https://nibango.com/terms' },
     ],
   },
   {
@@ -22,33 +23,47 @@ const apps = [
     name: 'Curb - Subscription Tracker',
     type: 'Finance App',
     desc: "Track all your subscriptions in one place. Know exactly what you're paying, when, and cancel what you don't need.",
-    status: 'Coming Soon',
+    status: 'Live',
     flagship: false,
-    slug: 'subtrackr',
+    slug: 'curb',
     docs: [
       { label: 'Website', href: 'https://getcurbapp.com' },
-      { label: 'Privacy Policy', href: '/apps/subtrackr/privacy' },
-      { label: 'Terms of Service', href: '/apps/subtrackr/terms' },
+      { label: 'Privacy Policy', href: 'https://getcurbapp.com/privacy.html' },
+      { label: 'Terms of Service', href: 'https://getcurbapp.com/terms.html' },
     ],
   },
   {
     id: '03',
-    name: 'TimeUp',
-    type: 'Productivity App',
-    desc: 'Time management reimagined. Focus blocks, deep work sessions, and real accountability for how you spend your hours.',
-    status: 'Coming Soon',
+    name: 'Raved',
+    type: 'Social App',
+    desc: 'An inbox for recommendations. Save every song, movie, place, and tip your friends send you — and actually get to them.',
+    status: 'Launching',
     flagship: false,
-    slug: 'timeup',
-    docs: [],
+    slug: 'raved',
+    docs: [
+      { label: 'Website', href: 'https://raved.app' },
+      { label: 'Privacy Policy', href: 'https://raved.app/privacy' },
+      { label: 'Terms of Service', href: 'https://raved.app/terms' },
+    ],
   },
   {
     id: '04',
-    name: 'Contrackr',
+    name: 'Epiloq',
     type: 'Entertainment App',
-    desc: 'Track shows, movies, comics, and books in one place. Like Trakt — but for everything you consume.',
-    status: 'Coming Soon',
+    desc: 'Track shows, movies, comics, and books in one place. Minimal, calm, tool-first — for everything you watch and read.',
+    status: 'In Development',
     flagship: false,
-    slug: 'contrackr',
+    slug: 'epiloq',
+    docs: [],
+  },
+  {
+    id: '05',
+    name: 'TimeUp',
+    type: 'Productivity App',
+    desc: 'Time management reimagined. Focus blocks, deep work sessions, and real accountability for how you spend your hours.',
+    status: 'In Development',
+    flagship: false,
+    slug: 'timeup',
     docs: [],
   },
 ]
@@ -87,7 +102,7 @@ export default function AppsPage() {
             Our<br /><span style={{ color: 'var(--lime)' }}>Applications.</span>
           </h1>
           <p style={{ fontFamily: 'var(--font-syne)', fontSize: '1rem', color: 'rgba(240,237,232,0.45)', lineHeight: 1.7, maxWidth: '480px' }}>
-            Mobile and web applications built by beatLabs. Each app has its own documentation, legal pages, and support resources.
+            Mobile applications built by beatLabs. Each app is its own brand — with its own domain, identity, documentation, and legal pages.
           </p>
         </motion.div>
       </section>
@@ -117,9 +132,9 @@ export default function AppsPage() {
             <span style={{
               fontSize: '0.55rem', fontFamily: 'var(--font-syne)', fontWeight: 700,
               padding: '0.25rem 0.8rem', letterSpacing: '0.15em',
-              border: '1px solid rgba(255,255,255,0.12)', color: 'var(--muted)',
+              border: '1px solid rgba(200,255,71,0.4)', color: 'var(--lime)',
             }}>
-              COMING SOON
+              {apps[0].status.toUpperCase()}
             </span>
           </div>
 
@@ -147,9 +162,11 @@ export default function AppsPage() {
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
               <span style={{ fontSize: '0.6rem', fontFamily: 'var(--font-syne)', color: 'var(--muted)', letterSpacing: '0.15em', alignSelf: 'center' }}>LEGAL DOCS:</span>
               {apps[0].docs.map(doc => (
-                <Link
+                <a
                   key={doc.href}
                   href={doc.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   style={{
                     fontFamily: 'var(--font-syne)', fontSize: '0.65rem', letterSpacing: '0.15em', fontWeight: 700,
                     color: 'var(--white)',
@@ -158,7 +175,7 @@ export default function AppsPage() {
                   }}
                 >
                   {doc.label} →
-                </Link>
+                </a>
               ))}
             </div>
           )}
@@ -196,9 +213,10 @@ export default function AppsPage() {
                 <span style={{
                   fontSize: '0.5rem', fontFamily: 'var(--font-syne)', fontWeight: 700,
                   padding: '0.2rem 0.6rem', letterSpacing: '0.15em',
-                  border: '1px solid rgba(255,255,255,0.1)', color: 'var(--muted)',
+                  border: app.status === 'Live' ? '1px solid rgba(200,255,71,0.4)' : '1px solid rgba(255,255,255,0.1)',
+                  color: app.status === 'Live' ? 'var(--lime)' : 'var(--muted)',
                 }}>
-                  {app.status.toUpperCase()}
+                  {app.status === 'Live' ? '● LIVE' : app.status.toUpperCase()}
                 </span>
               </div>
 
@@ -214,9 +232,11 @@ export default function AppsPage() {
               {app.docs.length > 0 && (
                 <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
                   {app.docs.map(doc => (
-                    <Link
+                    <a
                       key={doc.href}
                       href={doc.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       style={{
                         fontFamily: 'var(--font-syne)', fontSize: '0.58rem', letterSpacing: '0.12em', fontWeight: 700,
                         color: 'var(--muted)',
@@ -225,7 +245,7 @@ export default function AppsPage() {
                       }}
                     >
                       {doc.label} →
-                    </Link>
+                    </a>
                   ))}
                 </div>
               )}
@@ -257,7 +277,7 @@ export default function AppsPage() {
           padding: '1rem 2.5rem',
         }}>
           <p style={{ fontSize: '0.55rem', color: '#333', letterSpacing: '0.06em', fontFamily: 'var(--font-syne)', lineHeight: 1.8 }}>
-            © 2026 BeatLabs FZE LLC. All rights reserved.  ·  Free Zone Establishment incorporated under Amiri Decree No.8 of 2021  ·  Privacy Policy  ·  Terms of Use
+            © 2026 BeatLabs FZE LLC. All rights reserved.  ·  Free Zone Establishment incorporated under Amiri Decree No.8 of 2021  ·  <Link href="/legal" style={{ color: 'var(--muted)', textDecoration: 'none' }}>Legal →</Link>
           </p>
         </div>
       </footer>

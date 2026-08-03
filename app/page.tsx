@@ -245,7 +245,10 @@ export default function Home() {
           color: lime,
         }}
       >
-        <div style={{ flex: 1 }}>BEATLABS_OS v1.0.0</div>
+        <div style={{ flex: 1, display: 'flex', alignItems: 'center' }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.png" alt="beatLabs" style={{ height: '1.4rem', width: 'auto' }} />
+        </div>
         <div style={{ flex: 1, textAlign: 'center' }}>FZE://ajman-media-city/53228</div>
         <div style={{ flex: 1, textAlign: 'right' }}>[SYS: ONLINE] [TIME: {time} DXB]</div>
       </div>
@@ -270,7 +273,10 @@ export default function Home() {
           color: lime,
         }}
       >
-        <span>BEATLABS_OS v1.0.0</span>
+        <span style={{ display: 'flex', alignItems: 'center' }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.png" alt="beatLabs" style={{ height: '1.2rem', width: 'auto' }} />
+        </span>
         <span>{time} DXB</span>
       </div>
 

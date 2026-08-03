@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next'
+import { publishedProducts } from '@/data/portfolio'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -14,12 +15,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
-    {
-      url: 'https://beatlabs.ae/apps/nibango',
+    ...publishedProducts.map(p => ({
+      url: `https://beatlabs.ae/apps/${p.slug}`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: 'monthly' as const,
       priority: 0.6,
-    },
+    })),
     {
       url: 'https://beatlabs.ae/legal',
       lastModified: new Date(),

@@ -62,6 +62,251 @@ a, button {
 ::-webkit-scrollbar-track { background: var(--black); }
 ::-webkit-scrollbar-thumb { background: var(--lime); }
 
+/* ── Inner pages design system ──
+   Syne 800 sentence-case display + JetBrains Mono utility labels.
+   Each product page/row sets `--acc` to its own brand color;
+   everything below inherits it. Default accent is studio lime. */
+
+.bl-inner {
+  --acc: var(--lime);
+  --hair: rgba(255, 255, 255, 0.08);
+  --body-c: rgba(240, 237, 232, 0.55);
+  --meta-c: rgba(240, 237, 232, 0.35);
+}
+
+.bl-display {
+  font-family: var(--font-syne), 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.4rem, 5.5vw, 4.4rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: var(--white);
+  margin: 0;
+}
+
+.bl-title {
+  font-family: var(--font-syne), 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: rgba(240, 240, 240, 0.92);
+  margin: 0;
+}
+
+.bl-body {
+  font-family: var(--font-syne), 'Syne', sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--body-c, rgba(240, 237, 232, 0.55));
+}
+
+.bl-mono {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--meta-c, rgba(240, 237, 232, 0.35));
+}
+
+.bl-mono-acc {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--acc, var(--lime));
+}
+
+/* Section label: accent tick + mono text */
+.bl-section-label {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.bl-section-label::before {
+  content: '';
+  width: 1.6rem;
+  height: 2px;
+  background: var(--acc, var(--lime));
+}
+
+/* ── Index rows (/apps) ── */
+.bl-index-row {
+  display: block;
+  border-top: 1px solid var(--hair, rgba(255, 255, 255, 0.08));
+  padding: clamp(1.8rem, 3.5vw, 2.8rem) 0;
+  text-decoration: none;
+  position: relative;
+}
+
+.bl-index-name {
+  font-family: var(--font-syne), 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.9rem, 4.5vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--white);
+  transition: color 0.18s ease;
+}
+
+.bl-index-arrow {
+  font-family: var(--font-syne), 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  color: var(--acc);
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+a.bl-index-row:hover .bl-index-name { color: var(--acc); }
+a.bl-index-row:hover .bl-index-arrow { opacity: 1; transform: translateX(0); }
+
+/* ── Buttons (accent-driven) ── */
+.bl-btn-primary {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--acc, var(--lime));
+  padding: 0.9rem 1.8rem;
+  text-decoration: none;
+  border: 1px solid var(--acc, var(--lime));
+  transition: background 0.15s, color 0.15s;
+}
+
+.bl-btn-primary:hover {
+  background: transparent;
+  color: var(--acc, var(--lime));
+}
+
+.bl-btn-secondary {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(240, 240, 240, 0.85);
+  background: transparent;
+  padding: 0.9rem 1.8rem;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.bl-btn-secondary:hover {
+  border-color: var(--acc, var(--lime));
+  color: var(--acc, var(--lime));
+}
+
+.bl-doc-btn {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(240, 240, 240, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 0.55rem 1.1rem;
+  text-decoration: none;
+  transition: border-color 0.12s, color 0.12s;
+}
+
+.bl-doc-btn:hover {
+  border-color: var(--acc, var(--lime));
+  color: var(--acc, var(--lime));
+}
+
+.bl-btn-secondary:hover {
+  border-color: var(--lime);
+  background: rgba(200, 255, 71, 0.06);
+}
+
+.bl-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+.bl-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+
+/* Feature cell: hairline top, accent marker */
+.bl-feature {
+  border-top: 1px solid var(--hair, rgba(255, 255, 255, 0.08));
+  padding-top: 1.6rem;
+}
+
+.bl-feature::before {
+  content: '';
+  display: block;
+  width: 0.55rem;
+  height: 0.55rem;
+  background: var(--acc, var(--lime));
+  margin-bottom: 1.1rem;
+}
+
+.bl-app-row {
+  display: block;
+  border-top: 1px solid var(--hair, rgba(255, 255, 255, 0.08));
+  padding: 1.6rem 0;
+  text-decoration: none;
+}
+
+.bl-faq {
+  border-top: 1px solid var(--hair, rgba(255, 255, 255, 0.08));
+}
+
+.bl-faq:last-of-type { border-bottom: 1px solid var(--hair, rgba(255, 255, 255, 0.08)); }
+
+.bl-faq summary {
+  font-family: var(--font-syne), 'Syne', sans-serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: rgba(240, 240, 240, 0.85);
+  padding: 1.2rem 0;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.bl-faq summary::-webkit-details-marker { display: none; }
+
+.bl-faq summary::after {
+  content: '+';
+  font-family: var(--mono);
+  color: var(--acc, var(--lime));
+  flex-shrink: 0;
+}
+
+.bl-faq[open] summary::after { content: '−'; }
+
+.bl-faq p {
+  font-family: var(--font-syne), 'Syne', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(240, 237, 232, 0.5);
+  padding: 0 0 1.4rem;
+  margin: 0;
+  max-width: 620px;
+}
+
+@media (max-width: 768px) {
+  .bl-grid-2, .bl-grid-3 { grid-template-columns: 1fr; gap: 0; }
+  .bl-grid-2 > *, .bl-grid-3 > * { margin-bottom: 1.6rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bl-index-name, .bl-index-arrow, .bl-btn-primary, .bl-btn-secondary, .bl-doc-btn {
+    transition: none;
+  }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .desktop-sidebar { display: none !important; }

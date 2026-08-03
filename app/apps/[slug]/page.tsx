@@ -117,10 +117,10 @@ export default function AppDetailPage({ params }: { params: { slug: string } }) 
               <div key={s.label}>
                 <div
                   style={{
-                    fontFamily: "var(--font-syne), 'Syne', sans-serif",
-                    fontWeight: 800,
-                    fontSize: 'clamp(2.2rem, 4vw, 3.2rem)',
-                    letterSpacing: '-0.03em',
+                    fontFamily: 'var(--display)',
+                    fontWeight: 400,
+                    fontSize: 'clamp(2.6rem, 4.5vw, 3.8rem)',
+                    letterSpacing: '0.02em',
                     lineHeight: 1,
                     color: 'var(--acc)',
                   }}
@@ -180,13 +180,13 @@ export default function AppDetailPage({ params }: { params: { slug: string } }) 
                   }}
                 >
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: '0.6rem', flexWrap: 'wrap' }}>
-                    <h3 className="bl-title" style={{ fontSize: '1.05rem' }}>{plan.name}</h3>
+                    <h3 className="bl-title" style={{ fontSize: '1.25rem' }}>{plan.name}</h3>
                     <span
                       style={{
-                        fontFamily: "var(--font-syne), 'Syne', sans-serif",
-                        fontWeight: 800,
-                        fontSize: '1.5rem',
-                        letterSpacing: '-0.02em',
+                        fontFamily: 'var(--display)',
+                        fontWeight: 400,
+                        fontSize: '1.7rem',
+                        letterSpacing: '0.02em',
                         color: plan.highlight ? 'var(--acc)' : 'rgba(240,240,240,0.9)',
                       }}
                     >

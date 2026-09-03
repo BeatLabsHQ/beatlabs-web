@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { Page, Nav, SectionLabel } from '@/components/chrome'
+import { Btn, Head, Shell } from '@/components/chrome'
+import { AppCell, STATUS } from '@/components/cells'
 import { getProduct, publishedProducts } from '@/data/portfolio'
 
 export function generateStaticParams() {
@@ -25,13 +25,14 @@ export default function AppDetailPage({ params }: { params: { slug: string } }) 
   const app = getProduct(params.slug)
   if (!app) notFound()
 
-  const siblings = publishedProducts.filter(p => p.slug !== app.slug)
+  const ordered = [...publishedProducts].sort((a, b) => Number(b.flagship) - Number(a.flagship))
+  const siblings = ordered.filter(p => p.slug !== app.slug)
   const isLive = app.status === 'live'
-
+  const domain = app.siteUrl ? app.siteUrl.replace('https://', '').split('/')[0] : null
   const primaryCta = isLive && app.appStoreUrl
-    ? { href: app.appStoreUrl, label: 'DOWNLOAD ON THE APP STORE →' }
+    ? { href: app.appStoreUrl, label: 'App Store' }
     : app.siteUrl
-      ? { href: app.siteUrl, label: `VISIT ${app.siteUrl.replace('https://', '').split('/')[0].toUpperCase()} →` }
+      ? { href: app.siteUrl, label: domain ?? 'Website' }
       : null
 
   const jsonLd = {
@@ -48,243 +49,135 @@ export default function AppDetailPage({ params }: { params: { slug: string } }) 
 
   const ctas = (
     <>
-      {primaryCta && (
-        <a href={primaryCta.href} target="_blank" rel="noopener noreferrer" className="bl-btn-primary">
-          {primaryCta.label}
-        </a>
-      )}
-      {isLive && app.playStoreUrl && (
-        <a href={app.playStoreUrl} target="_blank" rel="noopener noreferrer" className="bl-btn-secondary">
-          GET IT ON GOOGLE PLAY →
-        </a>
-      )}
+      {primaryCta && <Btn href={primaryCta.href} external black>{primaryCta.label}</Btn>}
+      {isLive && app.playStoreUrl && <Btn href={app.playStoreUrl} external>Google Play</Btn>}
+      {!isLive && <Btn href="/apps" arrow={false}>All apps</Btn>}
     </>
   )
+
+  const tagline = app.highlight && app.tagline.includes(app.highlight)
+    ? <>{app.tagline.slice(0, app.tagline.indexOf(app.highlight))}<span className="out">{app.highlight}</span>{app.tagline.slice(app.tagline.indexOf(app.highlight) + app.highlight.length)}</>
+    : app.tagline
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <Nav active="apps" />
-      <Page accent={app.accent}>
-        {/* BREADCRUMB */}
-        <div style={{ paddingBottom: '3rem' }}>
-          <Link href="/apps" className="bl-mono" style={{ textDecoration: 'none' }}>
-            ← ALL APPS
-          </Link>
-        </div>
-
-        {/* HERO — benefit headline; the product name lives in the eyebrow */}
-        <section style={{ paddingBottom: '4.5rem' }}>
-          <div className="bl-section-label" style={{ paddingBottom: '2rem', flexWrap: 'wrap' }}>
-            <span className="bl-mono-acc" style={{ fontSize: '0.78rem' }}>{app.displayName}</span>
-            <span className="bl-mono">{app.type}</span>
-            <span className="bl-mono" style={{ color: 'rgba(240,237,232,0.6)' }}>{app.statusText}</span>
-          </div>
-
-          <h1 className="bl-display" style={{ maxWidth: '820px' }}>
-            {app.tagline}
-          </h1>
-          <p className="bl-body" style={{ paddingTop: '1.4rem', maxWidth: '540px' }}>
-            {app.lede}
-          </p>
-
-          <div style={{ display: 'flex', gap: '0.8rem', flexWrap: 'wrap', alignItems: 'center', paddingTop: '2.4rem' }}>
-            {ctas}
-            {!isLive && app.siteUrl && (
-              <span className="bl-mono">APP STORE & GOOGLE PLAY AT LAUNCH</span>
+      <Shell current="apps">
+        <section className="showcase showcase--static" aria-label={app.displayName}>
+          <article className="slide">
+            {app.icon && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img className="icon" src={app.icon} alt={`${app.displayName} app icon`} width={240} height={240} />
             )}
-          </div>
-
-          <div className="bl-mono" style={{ paddingTop: '2rem' }}>
-            {app.platforms}
-            {app.languages ? ` · ${app.languages}` : ''}
-            {' · NO ADS · PRIVACY-FIRST'}
-          </div>
+            <div>
+              <h1 className="h1">{app.displayName}</h1>
+              <p className="sub">{tagline}</p>
+              <p className="body">{app.lede}</p>
+              <div className="actions">{ctas}</div>
+            </div>
+          </article>
         </section>
 
-        {/* STATS — hairline strip, no boxes */}
-        {app.stats && (
-          <section
-            className="bl-grid-3"
-            style={{
-              borderTop: '1px solid var(--hair)',
-              borderBottom: '1px solid var(--hair)',
-              padding: '2.5rem 0',
-              marginBottom: '4.5rem',
-            }}
-          >
-            {app.stats.map(s => (
-              <div key={s.label}>
-                <div
-                  style={{
-                    fontFamily: 'var(--display)',
-                    fontWeight: 400,
-                    fontSize: 'clamp(2.6rem, 4.5vw, 3.8rem)',
-                    letterSpacing: '0.02em',
-                    lineHeight: 1,
-                    color: 'var(--acc)',
-                  }}
-                >
-                  {s.value}
-                </div>
-                <div className="bl-mono" style={{ paddingTop: '0.8rem' }}>{s.label}</div>
-              </div>
-            ))}
-          </section>
+        {/* RECORD: icon · facts · status */}
+        <section className="cells cells--3" aria-label={`${app.displayName} record`} style={{ marginTop: 16 }}>
+          <div className="cell cell--black">
+            <span className="h4" style={{ color: '#fff' }}>{app.type}</span>
+            <span className="label">{app.platforms}{app.languages ? ` · ${app.languages}` : ''}{domain ? ` · ${domain}` : ''}</span>
+            <p className="meta" style={{ marginTop: 'auto' }}><span className="mark">{STATUS[app.status]}{app.flagship ? ' · Flagship' : ''}</span></p>
+          </div>
+          {app.stats?.slice(0, 2).map(s => (
+            <div key={s.label} className="cell">
+              <span className="num">{s.value}</span>
+              <span className="label">{s.label}</span>
+            </div>
+          ))}
+        </section>
+
+        {/* SCREENS */}
+        {app.screens && app.screens.length > 0 && (
+          <>
+            <Head title="On the phone" label={app.platforms} />
+            <div className="screens">
+              {app.screens.map((src, i) => (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img key={src} src={src} alt={`${app.displayName} screen ${i + 1}`} loading="lazy" width={1320} height={2868} />
+              ))}
+            </div>
+          </>
         )}
 
         {/* FEATURES */}
-        <section style={{ paddingBottom: '4.5rem' }}>
-          <div style={{ paddingBottom: '2rem' }}>
-            <SectionLabel>WHAT IT DOES</SectionLabel>
-          </div>
-          <div className="bl-grid-2" style={{ rowGap: '2.5rem' }}>
-            {app.features.map(f => (
-              <div key={f.id} className="bl-feature">
-                <h3 className="bl-title">{f.title}</h3>
-                <p className="bl-body" style={{ margin: 0, paddingTop: '0.6rem', fontSize: '0.95rem' }}>{f.desc}</p>
-              </div>
-            ))}
-          </div>
+        <Head title="What it does" label={`${app.features.length} capabilities`} />
+        <section className="cells cells--3">
+          {app.features.map(f => (
+            <div key={f.id} className="cell">
+              <span className="h4">{f.title}</span>
+              <p className="line">{f.desc}</p>
+            </div>
+          ))}
         </section>
 
-        {/* HOW IT WORKS — a real sequence, so it gets numbers */}
-        <section style={{ paddingBottom: '4.5rem' }}>
-          <div style={{ paddingBottom: '2rem' }}>
-            <SectionLabel>HOW IT WORKS</SectionLabel>
-          </div>
-          <div className="bl-grid-3">
-            {app.howItWorks.map(h => (
-              <div key={h.step} style={{ borderTop: '1px solid var(--hair)', paddingTop: '1.6rem' }}>
-                <div className="bl-mono-acc" style={{ paddingBottom: '1rem' }}>{h.step}</div>
-                <h3 className="bl-title">{h.title}</h3>
-                <p className="bl-body" style={{ margin: 0, paddingTop: '0.6rem', fontSize: '0.95rem' }}>{h.desc}</p>
-              </div>
-            ))}
-          </div>
+        {/* HOW IT WORKS */}
+        <Head title="How it works" label="In order" />
+        <section className="cells cells--3 steps">
+          {app.howItWorks.map(h => (
+            <div key={h.step} className="cell">
+              <span className="num">{h.step}</span>
+              <span className="h4">{h.title}</span>
+              <p className="line">{h.desc}</p>
+            </div>
+          ))}
         </section>
 
         {/* PRICING */}
         {app.pricing && (
-          <section style={{ paddingBottom: '4.5rem' }}>
-            <div style={{ paddingBottom: '2rem' }}>
-              <SectionLabel>PRICING</SectionLabel>
-            </div>
-            <div className="bl-grid-2" style={{ maxWidth: '760px', gap: '1.5rem' }}>
+          <>
+            <Head title="Pricing" label="Public pricing" />
+            <section className={`cells cells--${app.pricing.length}`}>
               {app.pricing.map(plan => (
-                <div
-                  key={plan.name}
-                  style={{
-                    border: plan.highlight ? '1px solid var(--acc)' : '1px solid var(--hair)',
-                    padding: '2rem',
-                  }}
-                >
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: '0.6rem', flexWrap: 'wrap' }}>
-                    <h3 className="bl-title" style={{ fontSize: '1.25rem' }}>{plan.name}</h3>
-                    <span
-                      style={{
-                        fontFamily: 'var(--display)',
-                        fontWeight: 400,
-                        fontSize: '1.7rem',
-                        letterSpacing: '0.02em',
-                        color: plan.highlight ? 'var(--acc)' : 'rgba(240,240,240,0.9)',
-                      }}
-                    >
-                      {plan.price}
-                    </span>
-                  </div>
-                  <div className="bl-mono" style={{ padding: '0.5rem 0 1.3rem' }}>{plan.note}</div>
-                  {plan.items.map(item => (
-                    <div key={item} className="bl-body" style={{ fontSize: '0.92rem', paddingBottom: '0.35rem' }}>
-                      <span style={{ color: 'var(--acc)' }}>—</span> {item}
-                    </div>
-                  ))}
+                <div key={plan.name} className={`cell${plan.highlight ? ' cell--black' : ''}`}>
+                  <span className="num">{plan.price}</span>
+                  <span className="label">{plan.name}{plan.highlight ? ' · Recommended' : ''} · <span className="mute">{plan.note}</span></span>
+                  <p className="line">{plan.items.join(' · ')}</p>
+                  <div style={{ marginTop: 'auto', paddingTop: 12 }}>{primaryCta && <Btn href={primaryCta.href} external lime={plan.highlight}>Get {app.displayName}</Btn>}</div>
                 </div>
               ))}
-            </div>
-          </section>
+            </section>
+          </>
         )}
 
-        {/* FAQ */}
-        <section style={{ paddingBottom: '4.5rem' }}>
-          <div style={{ paddingBottom: '1.5rem' }}>
-            <SectionLabel>FAQ</SectionLabel>
-          </div>
-          <div style={{ maxWidth: '760px' }}>
-            {app.faq.map(item => (
-              <details key={item.q} className="bl-faq">
-                <summary>{item.q}</summary>
-                <p>{item.a}</p>
-              </details>
-            ))}
-          </div>
+        {/* FAQ + DOCS */}
+        <Head title="Questions" label={domain ? `Docs on ${domain}` : undefined} />
+        <section className="faq">
+          {app.faq.map(item => (
+            <details key={item.q}>
+              <summary>{item.q}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="square" aria-hidden><path d="M12 3v18M3 12h18" /></svg></summary>
+              <p>{item.a}</p>
+            </details>
+          ))}
         </section>
-
-        {/* DOCS */}
         {app.docs.length > 0 && (
-          <section style={{ paddingBottom: '4.5rem' }}>
-            <div style={{ paddingBottom: '1.5rem' }}>
-              <SectionLabel>DOCS & LEGAL</SectionLabel>
-            </div>
-            <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
-              {app.docs.map(doc => (
-                <a key={doc.href} href={doc.href} target="_blank" rel="noopener noreferrer" className="bl-doc-btn">
-                  {doc.label} ↗
-                </a>
-              ))}
-            </div>
+          <section className="block block--tight" style={{ display: 'flex', flexWrap: 'wrap', gap: 12 }}>
+            {app.docs.map(doc => (
+              <Btn key={doc.href} href={doc.href} external>{doc.label}</Btn>
+            ))}
           </section>
         )}
 
-        {/* MORE FROM BEATLABS — sibling rows light up in their own colors */}
-        <section style={{ paddingBottom: '4.5rem' }}>
-          <div style={{ paddingBottom: '1rem' }}>
-            <SectionLabel>MORE FROM BEATLABS</SectionLabel>
-          </div>
+        {/* SIBLINGS */}
+        <Head title="Also in the portfolio" label={`${siblings.length} other published apps`} />
+        <section className={`cells cells--${siblings.length}`}>
           {siblings.map(sib => (
-            <Link
-              key={sib.slug}
-              href={`/apps/${sib.slug}`}
-              className="bl-index-row"
-              style={{ '--acc': sib.accent } as React.CSSProperties}
-            >
-              <div className="bl-mono" style={{ display: 'flex', gap: '1.2rem', flexWrap: 'wrap', paddingBottom: '0.7rem' }}>
-                <span>{sib.type}</span>
-                <span style={{ color: 'rgba(240,237,232,0.6)' }}>{sib.statusText}</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: '1.2rem' }}>
-                <span className="bl-index-name" style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.6rem)' }}>
-                  {sib.displayName}
-                </span>
-                <span className="bl-index-arrow" aria-hidden>→</span>
-              </div>
-              <p className="bl-body" style={{ maxWidth: '620px', paddingTop: '0.7rem', margin: 0, fontSize: '0.95rem' }}>
-                {sib.oneLiner}
-              </p>
-            </Link>
+            <AppCell key={sib.slug} app={sib} />
           ))}
         </section>
 
-        {/* FINAL CTA — repeats the hero's primary action */}
-        <section
-          style={{
-            borderTop: '1px solid var(--hair)',
-            padding: '4rem 0 1rem',
-          }}
-        >
-          <h2 className="bl-display" style={{ fontSize: 'clamp(2rem, 4.5vw, 3.4rem)' }}>
-            Get {app.displayName}<span style={{ color: 'var(--acc)' }}>.</span>
-          </h2>
-          <p className="bl-body" style={{ paddingTop: '1rem', maxWidth: '440px' }}>
-            {isLive
-              ? `${app.displayName} is out now on ${app.platforms}.`
-              : `${app.displayName} is launching now. ${app.siteUrl ? 'Try it on the web today.' : ''}`}
-          </p>
-          <div style={{ display: 'flex', gap: '0.8rem', flexWrap: 'wrap', paddingTop: '2rem' }}>
-            {ctas}
-          </div>
+        {/* GET IT */}
+        <section className="contact">
+          <p className="h2">Get {app.displayName}: {isLive ? `out now on ${app.platforms}.` : `launching now.${app.siteUrl ? ' Try it on the web today.' : ''}`}</p>
+          <div className="actions" style={{ justifyContent: 'flex-start', paddingTop: 22 }}>{ctas}</div>
         </section>
-      </Page>
+      </Shell>
     </>
   )
 }

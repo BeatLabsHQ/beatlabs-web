@@ -1,29 +1,50 @@
 import type { Metadata } from 'next'
-import { Bebas_Neue, Syne, JetBrains_Mono } from 'next/font/google'
+import localFont from 'next/font/local'
+import { company } from '@/data/portfolio'
 import './globals.css'
 
-const bebasNeue = Bebas_Neue({
-  weight: '400',
-  subsets: ['latin'],
-  variable: '--font-bebas',
+// Fixel — MacPaw's own open face (OFL), self-hosted: Display at 500/400 for headings, Text for the rest.
+const display = localFont({
+  src: [
+    { path: './fonts/fixel/FixelDisplay-Regular.woff2', weight: '400', style: 'normal' },
+    { path: './fonts/fixel/FixelDisplay-Medium.woff2', weight: '500', style: 'normal' },
+    { path: './fonts/fixel/FixelDisplay-SemiBold.woff2', weight: '600', style: 'normal' },
+  ],
+  variable: '--font-display',
+  display: 'swap',
+})
+const text = localFont({
+  src: [
+    { path: './fonts/fixel/FixelText-Regular.woff2', weight: '400', style: 'normal' },
+    { path: './fonts/fixel/FixelText-Medium.woff2', weight: '500', style: 'normal' },
+    { path: './fonts/fixel/FixelText-SemiBold.woff2', weight: '600', style: 'normal' },
+    { path: './fonts/fixel/FixelText-Bold.woff2', weight: '700', style: 'normal' },
+  ],
+  variable: '--font-text',
   display: 'swap',
 })
 
-const syne = Syne({
-  subsets: ['latin'],
-  variable: '--font-syne',
-  display: 'swap',
-})
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-mono',
-  display: 'swap',
-})
+/* ── Direction contract (owner-pinned: the canon, MacPaw / CleanMyMac register) ──
+THESIS: a conventional premium-software company site, played straight. Refuses
+the type wall's shouting; earns trust through polish, air and real product visuals.
+OWN-WORLD: white ground, #f5f5f7 surfaces, ink #0b0b0f, one sans (Geist),
+24px cards with a soft offset shadow, pill buttons, a sticky translucent bar,
+a closing dark band; lime stays the status colour; each ficha tinted by the
+product's own accent.
+STORY: the visitor lands on a centred statement over the real apps, scans the
+portfolio cards, reads who is behind them, and writes.
+FIRST VIEWPORT: bar; centred "We build companies. Not projects."; one line;
+two pill buttons; a shelf of three real product screens on a grey surface.
+FORM: the standing exit (canon), pinned by the owner on 2026-09-03 after a live
+comparison against the type wall; no roll. Refined in the browser by the owner
+(heavier h1, bar fade, progress ring, autoplay, dot/dash indicator).
+FINISH: reviewed in the browser at 1440 and 390 on every route; DESIGN.md records
+the built world; every shipping raster carries its provenance. */
+const CONTRACT = '<!-- impeccable contract · owner-pinned canon (MacPaw register), 2026-09-03. Full text in app/layout.tsx -->'
 
 export const metadata: Metadata = {
-  title: 'beatLabs — Digital Studio. Dubai, UAE.',
-  description: 'beatLabs (BeatLabs FZE LLC) is a UAE-registered digital studio building apps and creative brands. Home of Curb - Subscription Tracker, Raved, Nibango, TrueLoveCreative, and Estrela.photo.',
+  title: 'beatLabs — Independent app group. Dubai, UAE.',
+  description: 'beatLabs (BeatLabs FZE LLC) is a UAE-registered group building independent app brands. Home of Nibango, Curb - Subscription Tracker, Raved, TrueLoveCreative and Estrela.photo.',
   keywords: [
     'beatLabs', 'digital studio UAE', 'UAE startup studio', 'tech studio Dubai', 'digital studio Dubai',
     'Nibango', 'Curb', 'Curb Subscription Tracker', 'Raved', 'Raved app', 'TrueLoveCreative', 'Estrela photo',
@@ -33,15 +54,15 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'beatLabs', url: 'https://beatlabs.ae' }],
   creator: 'beatLabs',
-  publisher: 'BeatLabs FZE LLC',
+  publisher: company.legalName,
   robots: {
     index: true,
     follow: true,
     googleBot: { index: true, follow: true },
   },
   openGraph: {
-    title: 'beatLabs — Digital Studio. Dubai, UAE.',
-    description: 'UAE-registered digital studio building apps and creative brands. Home of Curb - Subscription Tracker, Raved, Nibango, TrueLoveCreative, and Estrela.photo.',
+    title: 'beatLabs — Independent app group. Dubai, UAE.',
+    description: 'UAE-registered group building independent app brands. Home of Nibango, Curb - Subscription Tracker, Raved, TrueLoveCreative and Estrela.photo.',
     url: 'https://beatlabs.ae',
     siteName: 'beatLabs',
     type: 'website',
@@ -51,14 +72,14 @@ export const metadata: Metadata = {
         url: 'https://beatlabs.ae/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'beatLabs — Digital Studio Dubai, UAE',
+        alt: 'beatLabs — Independent app group, Dubai, UAE',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'beatLabs — Digital Studio. Dubai, UAE.',
-    description: 'UAE-registered digital studio building apps and creative brands.',
+    title: 'beatLabs — Independent app group. Dubai, UAE.',
+    description: 'UAE-registered group building independent app brands.',
     images: ['https://beatlabs.ae/og-image.png'],
   },
   alternates: {
@@ -81,35 +102,38 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "beatLabs",
-              "legalName": "BeatLabs FZE LLC",
-              "url": "https://beatlabs.ae",
-              "logo": "https://beatlabs.ae/logo.png",
-              "description": "UAE-registered digital studio building apps and creative brands.",
-              "email": "info@beatlabs.ae",
-              "telephone": "+971585324519",
-              "foundingDate": "2026-03-25",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "AMC-BLA-B.C-6010468, AMC Boulevard-A",
-                "addressLocality": "Ajman",
-                "addressRegion": "Ajman Media City Free Zone",
-                "addressCountry": "AE"
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: company.brand,
+              legalName: company.legalName,
+              url: 'https://beatlabs.ae',
+              logo: 'https://beatlabs.ae/logo.png',
+              description: 'UAE-registered group building independent app brands.',
+              email: company.email,
+              telephone: company.phone,
+              foundingDate: company.founded,
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: 'AMC-BLA-B.C-6010468, AMC Boulevard-A',
+                addressLocality: 'Ajman',
+                addressRegion: company.zone,
+                addressCountry: 'AE',
               },
-              "sameAs": [
-                "https://getcurbapp.com",
-                "https://raved.app",
-                "https://nibango.com",
-                "https://truelovecreative.es",
-                "https://estrela.photo"
-              ]
-            })
+              sameAs: [
+                'https://getcurbapp.com',
+                'https://raved.app',
+                'https://nibango.com',
+                'https://truelovecreative.es',
+                'https://estrela.photo',
+              ],
+            }),
           }}
         />
       </head>
-      <body className={`${bebasNeue.variable} ${syne.variable} ${jetbrainsMono.variable}`}>{children}</body>
+      <body className={`${display.variable} ${text.variable}`}>
+        <div hidden dangerouslySetInnerHTML={{ __html: CONTRACT }} />
+        {children}
+      </body>
     </html>
   )
 }

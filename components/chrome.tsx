@@ -1,121 +1,150 @@
 import Link from 'next/link'
+import type { ReactNode } from 'react'
+import { company, devProducts, publishedProducts, studios } from '@/data/portfolio'
+import { IndexToggle } from './index-sheet'
+import { ScrollChrome } from './scroll-chrome'
 
-// Shared chrome for all inner pages (/apps, /apps/[slug], /legal).
-// System: Syne 800 sentence-case display + JetBrains Mono utility labels.
-// Page takes an optional `accent` — the product's own brand color — which
-// cascades to every accent-driven element via the --acc custom property.
-// The home keeps its own BEATLABS_OS terminal look and is not touched by this.
+// The MacPaw clone: a quiet bar, black rectangular buttons with an icon on the right,
+// a link-column footer. The only client code is the mobile index toggle.
 
-export function Nav({ active }: { active: 'apps' | 'legal' }) {
-  const navLink = (href: string, label: string, isActive: boolean) => (
-    <Link
-      href={href}
-      style={{
-        fontFamily: 'var(--mono)',
-        fontSize: '0.62rem',
-        fontWeight: 700,
-        letterSpacing: '0.18em',
-        color: isActive ? 'var(--white)' : 'var(--muted)',
-        textDecoration: 'none',
-        transition: 'color 0.15s',
-      }}
-    >
-      {label}
-    </Link>
+export type Current = 'home' | 'apps' | 'studios' | 'legal'
+/** ↗ — the outbound arrow MacPaw puts after every "Read more" and inside buttons. */
+export function ArrowIcon({ up = true }: { up?: boolean } = {}) {
+  return up ? (
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M4 12L12 4M6 4h6v6" />
+    </svg>
+  ) : (
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M2 8h11M9 4l4 4-4 4" />
+    </svg>
   )
-
+}
+export function PlusIcon() {
   return (
-    <nav
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 40,
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: '1.1rem 1.5rem',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
-        background: 'rgba(8,8,8,0.85)',
-        backdropFilter: 'blur(12px)',
-      }}
-    >
-      <Link href="/">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/logo.png" alt="beatLabs" style={{ height: '1.7rem', width: 'auto', cursor: 'pointer' }} />
-      </Link>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '1.6rem' }}>
-        {navLink('/', 'HOME', false)}
-        {navLink('/apps', 'APPS', active === 'apps')}
-        {navLink('/legal', 'LEGAL', active === 'legal')}
-      </div>
-    </nav>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden>
+      <path d="M12 4v16M4 12h16" />
+    </svg>
+  )
+}
+export function MailIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <rect x="3" y="5" width="18" height="14" rx="3" /><path d="M3 8l9 6 9-6" />
+    </svg>
+  )
+}
+export function ChevronIcon({ left }: { left?: boolean }) {
+  return (
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      {left ? <path d="M10 3L5 8l5 5" /> : <path d="M6 3l5 5-5 5" />}
+    </svg>
   )
 }
 
-export function SectionLabel({ children }: { children: React.ReactNode }) {
+const INDEX = [
+  { href: '/', no: '01', label: 'Home' },
+  { href: '/apps', no: '02', label: 'Apps' },
+  { href: '/studios', no: '03', label: 'Studios' },
+  { href: '/legal', no: '04', label: 'Company' },
+  { href: `mailto:${company.email}`, no: '05', label: 'Contact' },
+]
+
+export function Nav({ current }: { current: Current }) {
   return (
-    <div className="bl-section-label">
-      <span className="bl-mono-acc">{children}</span>
+    <header className="rec" id="top">
+      <Link href="/" className="stamp" aria-label={`${company.brand} — home`}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img className="logo-dark" src="/logo-black.png" alt="beatLabs" width={1197} height={290} />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img className="logo-light" src="/logo.png" alt="" width={1197} height={290} />
+      </Link>
+      <nav className="rec-nav" aria-label="Site">
+        <Link href="/apps" aria-current={current === 'apps' ? 'page' : undefined}>Apps</Link>
+        <Link href="/studios" aria-current={current === 'studios' ? 'page' : undefined}>Studios</Link>
+        <Link href="/legal" aria-current={current === 'legal' ? 'page' : undefined}>Company</Link>
+      </nav>
+      <a className="rec-book" href={`mailto:${company.email}`} aria-label={`Email ${company.email}`}><MailIcon /><span>Contact</span></a>
+      <IndexToggle items={INDEX} />
+    </header>
+  )
+}
+
+export function Head({ title, label }: { title: string; label?: string }) {
+  return (
+    <div className="head">
+      <h2 className="h2">{title}</h2>
+      {label && <span className="label">{label}</span>}
     </div>
   )
 }
 
-export function Footer() {
-  const footLink = (href: string, label: string, external?: boolean) => {
-    const style = {
-      fontFamily: 'var(--mono)',
-      fontSize: '0.62rem',
-      fontWeight: 700,
-      letterSpacing: '0.18em',
-      color: 'rgba(240,237,232,0.6)',
-      textDecoration: 'none',
-    }
-    return external ? (
-      <a href={href} style={style}>{label}</a>
-    ) : (
-      <Link href={href} style={style}>{label}</Link>
-    )
-  }
+export function Btn({ href, children, black, lime, external, arrow = true }: { href: string; children: ReactNode; black?: boolean; lime?: boolean; external?: boolean; arrow?: boolean }) {
+  const cls = `btn${black ? ' btn--black' : ''}${lime ? ' btn--lime' : ''}`
+  const inner = <>{children}{arrow && <ArrowIcon up={external} />}</>
+  return external ? <a href={href} className={cls} target="_blank" rel="noopener noreferrer">{inner}</a> : <Link href={href} className={cls}>{inner}</Link>
+}
 
+export function Footer() {
   return (
-    <footer
-      style={{
-        borderTop: '1px solid rgba(255,255,255,0.06)',
-        marginTop: '6rem',
-        padding: '2.5rem 0',
-      }}
-    >
-      <div style={{ display: 'flex', gap: '1.8rem', flexWrap: 'wrap', paddingBottom: '1.4rem' }}>
-        {footLink('/apps', 'APPS')}
-        {footLink('/legal', 'LEGAL')}
-        {footLink('mailto:info@beatlabs.ae', 'CONTACT', true)}
+    <>
+      <div className="foot-grid">
+        <div>
+          <h4>Apps</h4>
+          <ul>
+            {publishedProducts.map(p => <li key={p.slug}><Link href={`/apps/${p.slug}`}>{p.displayName}</Link></li>)}
+            {devProducts.map(p => <li key={p.slug}><span className="mute">{p.displayName} · soon</span></li>)}
+          </ul>
+        </div>
+        <div>
+          <h4>Studios</h4>
+          <ul>
+            {studios.map(s => <li key={s.id}><a href={s.url} target="_blank" rel="noopener noreferrer">{s.name}</a></li>)}
+            <li><Link href="/studios">Hire a studio</Link></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><Link href="/">About beatLabs</Link></li>
+            <li><Link href="/legal">Company & legal</Link></li>
+            <li><Link href="/apps">All apps</Link></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            {publishedProducts.flatMap(p => p.docs.filter(d => d.label !== 'Website').map(d => (
+              <li key={d.href}><a href={d.href} target="_blank" rel="noopener noreferrer">{p.displayName} · {d.label}</a></li>
+            )))}
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href={`mailto:${company.email}`}>{company.email}</a></li>
+            <li><a href={`https://wa.me/${company.phone.replace(/[^0-9]/g, '')}`} target="_blank" rel="noopener noreferrer">WhatsApp {company.phone}</a></li>
+            <li><span className="mute">{company.zone}, UAE</span></li>
+          </ul>
+        </div>
       </div>
-      <div className="bl-mono" style={{ lineHeight: 2, textTransform: 'none' }}>
-        © 2026 BeatLabs FZE LLC · License 53228 · Ajman Media City Free Zone
-        <br />
-        Free Zone Establishment incorporated under Amiri Decree No.8 of 2021
-      </div>
-    </footer>
+      <footer className="foot">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/logo-black.png" alt="" width={1197} height={290} />
+        <span>Copyright © 2026 {company.legalName}. Licence {company.license}. {company.form}.</span>
+      </footer>
+    </>
   )
 }
 
-export function Page({ children, accent }: { children: React.ReactNode; accent?: string }) {
+export function Shell({ current, children }: { current: Current; children: ReactNode }) {
   return (
-    <main
-      className="bl-inner"
-      style={{
-        background: 'var(--black)',
-        minHeight: '100vh',
-        overflowX: 'hidden',
-        ...(accent ? ({ '--acc': accent } as React.CSSProperties) : {}),
-      }}
-    >
-      <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '8rem 2rem 0' }}>
-        {children}
-        <Footer />
-      </div>
-    </main>
+    <>
+      <a className="sr" href="#main">Skip to content</a>
+      <Nav current={current} />
+      <main id="main">{children}</main>
+      <Footer />
+      <ScrollChrome />
+    </>
   )
 }

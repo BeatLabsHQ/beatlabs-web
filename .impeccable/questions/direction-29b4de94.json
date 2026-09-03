@@ -1,0 +1,161 @@
+{
+  "title": "beatlabs.ae — elige el mundo visual del rediseño completo",
+  "question": "Rediseño de TODO beatlabs.ae (home, /apps, fichas, /legal) como un solo mundo. El dado asignó «El catálogo de sello». Puedes quedarte con él, tomar la alternativa, jugar el estándar del sector, o re-tirar.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "El catálogo de sello",
+      "kicker": "THE ROLL",
+      "lineage": "Catálogos de sellos independientes (Factory Records FAC-numbers, ECM, Warp): el sello detrás de artistas con identidad propia",
+      "thesis": "beatLabs es el sello; cada app es un lanzamiento con su propia funda, su color y su número de catálogo.",
+      "palette": ["#F2F2EE", "#111113", "#C6E79F", "#007AFF", "#EC6F2D", "#FF4A00"],
+      "materials": ["cartón de funda en color plano", "número de catálogo BL-001", "sello de estado: OUT NOW / FORTHCOMING / IN THE STUDIO", "Archivo expandida"],
+      "viewport": "Fondo papel claro (luz de Dubái, no la cueva del terminal). Arriba la cabecera del sello; el titular WE BUILD COMPANIES. NOT PROJECTS. en grotesca expandida; debajo, el cajón: las fundas de Nibango, Curb y Raved en su color real de marca, solapadas como discos en una caja, cada una con su icono real, BL-00X y sello de estado. Las apps en desarrollo son fundas en blanco «in the studio». Hover: la funda se levanta del cajón y el fondo de la página vira a su color.",
+      "case": "Gana en claridad de producto: 'un sello y sus lanzamientos' explica en un segundo por qué cada app tiene dominio e identidad propios. Los estados live/launching/dev se vuelven honestos y elegantes (out now / forthcoming / in the studio). Crece sin límite: cada nueva empresa es otra funda.",
+      "risk": "Si el copy deja de decir «app» una sola vez, alguien pensará que beatLabs es una discográfica. Y es el rediseño más luminoso: adiós al negro.",
+      "raised": [
+        { "from": "challenger-lowicz", "raise": "Sin sombras ni degradados: la profundidad la da solo el solapamiento de fundas planas." },
+        { "from": "challenger-chromatophore", "raise": "La superficie cambia de contexto: al pasar por una funda, la página entera vira a su color de marca, no solo una etiqueta." },
+        { "from": "challenger-sampler", "raise": "Orden cronológico y firma al pie: el catálogo baja por fecha, y el pie lleva fundador, fecha de constitución y licencia 53228 como firma." },
+        { "from": "challenger-collider", "raise": "Aislar uno, atenuar el resto: al elegir una funda, las demás bajan de intensidad." },
+        { "from": "challenger-suminagashi", "raise": "Lo más nuevo, lo más oscuro: la última salida (Nibango) es siempre la funda con más peso." }
+      ],
+      "wireframe": { "cols": 12, "rows": 10, "regions": [
+        { "label": "cabecera del sello · nav", "x": 0, "y": 0, "w": 12, "h": 1 },
+        { "label": "WE BUILD COMPANIES. NOT PROJECTS.", "x": 0, "y": 1, "w": 8, "h": 3 },
+        { "label": "ficha del sello: est. 2026 · Dubái · 8 marcas", "x": 8, "y": 1, "w": 4, "h": 3 },
+        { "label": "el cajón: fundas Nibango / Curb / Raved + in the studio", "x": 0, "y": 4, "w": 12, "h": 4, "accent": true },
+        { "label": "estudios: TrueLoveCreative · Estrela.photo", "x": 0, "y": 8, "w": 12, "h": 1 },
+        { "label": "firma: fundador · 2026-03-25 · lic. 53228", "x": 0, "y": 9, "w": 12, "h": 1 }
+      ] },
+      "comp": ".impeccable/mocks/decision/assigned.webp"
+    },
+    {
+      "id": "model-pick",
+      "label": "El panel de salidas",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "Paneles split-flap de aeropuerto (Solari) — el de DXB, el más mirado del mundo",
+      "thesis": "beatLabs es el hub; cada marca es una salida con destino (su dominio), número de vuelo (BL-00X) y un estado honesto.",
+      "palette": ["#141516", "#ECE7DA", "#FFB000", "#007AFF", "#EC6F2D", "#FF4A00"],
+      "materials": ["flaps negros con letra marfil", "reloj de Dubái en vivo", "columna de estado ámbar", "grotesca condensada"],
+      "viewport": "Todo el primer viewport es el panel: filas NIBANGO → nibango.com · BL-003 · LAUNCHING; CURB → getcurbapp.com · LIVE; RAVED · LAUNCHING; EPILOQ · TIMEUP · BLAB · IN DEVELOPMENT. Al cargar, las letras giran flap a flap hasta fijarse. El hover de una fila vira sus flaps al color real de la marca. Debajo, el reloj DXB y la ficha de la empresa.",
+      "case": "Es la evolución natural del terminal que te gustaba (la lista de módulos con estado) llevada a un objeto premium que todo el Golfo conoce. Gana en identificación de audiencia; empata en claridad. Riesgo real: sigue siendo oscuro y es la dirección que más veces saldría en esta categoría.",
+      "risk": "Es la dirección más familiar del lote y la más cercana al terminal que dejas: si el flap se usa de más, es un truco; y sigue viviendo en negro.",
+      "wireframe": { "cols": 12, "rows": 10, "regions": [
+        { "label": "nav · reloj DXB", "x": 0, "y": 0, "w": 12, "h": 1 },
+        { "label": "cabecera del panel: DESTINATION · FLIGHT · STATUS", "x": 0, "y": 1, "w": 12, "h": 1, "accent": true },
+        { "label": "filas split-flap: 6 apps + 2 estudios", "x": 0, "y": 2, "w": 12, "h": 5 },
+        { "label": "WE BUILD COMPANIES. NOT PROJECTS.", "x": 0, "y": 7, "w": 8, "h": 2 },
+        { "label": "entidad · licencia 53228", "x": 8, "y": 7, "w": 4, "h": 2 },
+        { "label": "pie", "x": 0, "y": 9, "w": 12, "h": 1 }
+      ] },
+      "comp": ".impeccable/mocks/decision/model-pick.webp"
+    },
+    {
+      "id": "challenger-lowicz",
+      "label": "Papercut de Łowicz en capas",
+      "verdict": "declined",
+      "lineage": "Recortes polacos de papel en capas planas",
+      "thesis": "Cada marca es una capa de papel de color pegada sobre la anterior.",
+      "palette": ["#E63946", "#F4A261", "#2A9D8F", "#1D3557", "#FFFFFF"],
+      "materials": ["papel satinado", "simetría de pliegue"],
+      "viewport": "Un rosetón simétrico con cada app como capa recortada.",
+      "case": "Nadie en el Golgo corporativo se identifica con un recorte folclórico; la navegación por capas confunde.",
+      "kept": "Color plano sin sombreado: la profundidad solo por solapamiento.",
+      "risk": "Lee como artesanía, no como empresa.",
+      "hero": "https://impeccable.style/worlds/cards/craft-making-lowicz-layered-papercut-hero.webp"
+    },
+    {
+      "id": "challenger-chromatophore",
+      "label": "Piel de cefalópodo",
+      "verdict": "declined",
+      "lineage": "Cromatóforos: la piel como pantalla viva",
+      "thesis": "La página es una piel que cambia de patrón según el contexto.",
+      "palette": ["#F1E6D2", "#7A3B2E", "#2EC4B6", "#2B2B2B"],
+      "materials": ["shaders GPU", "texturas de desplazamiento"],
+      "viewport": "Un manto pálido cuya piel se colorea al cruzar cada marca.",
+      "case": "Identificación baja y claridad baja para un sitio corporativo; el shader tapa el mensaje.",
+      "kept": "La superficie entera responde al contexto: la página vira al color de la marca activa.",
+      "risk": "Espectáculo sin producto.",
+      "hero": "https://impeccable.style/worlds/cards/reefs-bioluminescent-nocturnal-chromatophore-skin-language-hero.webp"
+    },
+    {
+      "id": "challenger-sampler",
+      "label": "Dechado bordado",
+      "verdict": "declined",
+      "lineage": "Sampler de alfabetos bordado, firmado y fechado al pie",
+      "thesis": "El sitio como pieza de aprendizaje cronológica, firmada al final.",
+      "palette": ["#E8DCC4", "#9B2F2F", "#2E4A7A", "#3F6B3A"],
+      "materials": ["seda sobre lino", "bandas por dificultad"],
+      "viewport": "Bandas apiladas de arriba abajo, firma y fecha al pie.",
+      "case": "Textil y doméstico: no identifica a socios ni inversores; la claridad del portfolio se pierde entre puntadas.",
+      "kept": "Orden cronológico y firma al pie: fundador, fecha, licencia.",
+      "risk": "Lee como manualidad.",
+      "hero": "https://impeccable.style/worlds/cards/graphic-worlds-publishing-sampler-alphabet-proof-hero.webp"
+    },
+    {
+      "id": "challenger-rebel-menu",
+      "label": "Collage de menú rebelde",
+      "verdict": "declined",
+      "lineage": "Menús de juego en rojo/negro/blanco, papel rasgado y semitonos",
+      "thesis": "Cada opción es un recorte rasgado a un ángulo imprudente.",
+      "palette": ["#D7262B", "#111111", "#FFFFFF", "#9A9A9A"],
+      "materials": ["papel rasgado", "itálica cizallada", "semitono"],
+      "viewport": "Pantalla escarlata, silueta y recortes negros.",
+      "case": "Contradice el brief corporativo de frente; la energía punk no vende una holding.",
+      "kept": "Compromiso total con una rejilla oculta bajo la expresión.",
+      "risk": "Lo opuesto a 'quiero contratar a esta empresa'.",
+      "hero": "https://impeccable.style/worlds/cards/pop-culture-shelf-rebel-menu-interface-hero.webp"
+    },
+    {
+      "id": "challenger-collider",
+      "label": "Display de evento de colisionador",
+      "verdict": "declined",
+      "lineage": "Visualización de eventos del CERN: trazas, anillos, calorímetros",
+      "thesis": "Una colisión congelada; cada marca es una traza que sale del centro.",
+      "palette": ["#05070A", "#4A6B8A", "#FFD400", "#00D1FF", "#E0261C"],
+      "materials": ["WebGL 3D", "grotesca técnica"],
+      "viewport": "Sección concéntrica con trazas de colores desde el centro.",
+      "case": "Científico y frío: identificación baja para el Golfo corporativo; el 3D no aclara qué vende beatLabs.",
+      "kept": "Aislar una traza y atenuar el resto: seleccionar una marca baja las demás.",
+      "risk": "Lee como laboratorio de física, no como estudio de producto.",
+      "hero": "https://impeccable.style/worlds/cards/scientific-notation-particle-detector-event-display-hero.webp"
+    },
+    {
+      "id": "challenger-suminagashi",
+      "label": "Cubeta de tinta suminagashi",
+      "verdict": "declined",
+      "lineage": "Marmoleado japonés sobre agua",
+      "thesis": "La página es un fluido que responde al dedo.",
+      "palette": ["#F7F7F4", "#1B2A49", "#2B2B2B", "#8A94A6"],
+      "materials": ["solver de fluidos GPU", "sans humanista al margen"],
+      "viewport": "Una superficie blanca donde la tinta escribe remolinos.",
+      "case": "Bellísima e ilegible como sitio corporativo; el portfolio no cabe en un remolino.",
+      "kept": "La gota más nueva es la más oscura: la última salida pesa más.",
+      "risk": "Demo técnica, no empresa.",
+      "hero": "https://impeccable.style/worlds/cards/medium-native-fluid-ink-basin-hero.webp"
+    }
+  ],
+  "reroll": { "registers": ["safer", "bolder"] },
+  "buildPath": { "value": "code", "toggle": true },
+  "canon": true,
+  "canonCard": {
+    "label": "El estándar del sector",
+    "thesis": "Lo que publica un venture studio: hero con titular grande, rejilla de tarjetas con iconos de apps, franja de logos, CTA. Ejecutado impecable.",
+    "palette": ["#FFFFFF", "#0F172A", "#2563EB", "#F1F5F9"],
+    "materials": ["rejilla limpia", "tarjetas con icono", "sans neutra"],
+    "viewport": "Titular + subtítulo + botón a la izquierda, mockups de apps a la derecha, tres tarjetas debajo.",
+    "risk": "Indistinguible de la competencia por diseño.",
+    "wireframe": { "cols": 12, "rows": 10, "regions": [
+      { "label": "nav", "x": 0, "y": 0, "w": 12, "h": 1 },
+      { "label": "titular + CTA", "x": 0, "y": 1, "w": 6, "h": 4 },
+      { "label": "mockups de apps", "x": 6, "y": 1, "w": 6, "h": 4, "accent": true },
+      { "label": "tarjeta Nibango", "x": 0, "y": 5, "w": 4, "h": 3 },
+      { "label": "tarjeta Curb", "x": 4, "y": 5, "w": 4, "h": 3 },
+      { "label": "tarjeta Raved", "x": 8, "y": 5, "w": 4, "h": 3 },
+      { "label": "estudios + pie", "x": 0, "y": 8, "w": 12, "h": 2 }
+    ] },
+    "comp": ".impeccable/mocks/decision/canon.webp"
+  },
+  "steer": true
+}

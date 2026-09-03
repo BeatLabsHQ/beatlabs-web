@@ -1,0 +1,494 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-03T00:30:00+02:00",
+  "title": "Design System: beatLabs",
+  "extensions": {
+    "colorMeta": {
+      "bg": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#000000",
+          "#6b6b6b",
+          "#ffffff"
+        ],
+        "note": "The build defines exactly three opaque neutrals (paper, ink, mute); nothing synthesized."
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#000000",
+        "tonalRamp": [
+          "#000000",
+          "#6b6b6b",
+          "#ffffff"
+        ]
+      },
+      "mute": {
+        "role": "neutral",
+        "displayName": "Mute",
+        "canonical": "#6b6b6b",
+        "tonalRamp": [
+          "#000000",
+          "#6b6b6b",
+          "#ffffff"
+        ]
+      },
+      "mute-on-ink": {
+        "role": "neutral",
+        "displayName": "Mute on ink",
+        "canonical": "rgba(255, 255, 255, 0.7)",
+        "tonalRamp": [
+          "rgba(255, 255, 255, 0.7)"
+        ],
+        "note": "Secondary text inside inverted and black cells."
+      },
+      "divider": {
+        "role": "neutral",
+        "displayName": "Divider",
+        "canonical": "rgba(0, 0, 0, 0.25)",
+        "tonalRamp": [
+          "rgba(0, 0, 0, 0.2)",
+          "rgba(0, 0, 0, 0.25)"
+        ],
+        "note": "1px separators inside lists: spec rows and FAQ items."
+      },
+      "divider-soft": {
+        "role": "neutral",
+        "displayName": "Divider, soft",
+        "canonical": "rgba(0, 0, 0, 0.2)",
+        "tonalRamp": [
+          "rgba(0, 0, 0, 0.2)",
+          "rgba(0, 0, 0, 0.25)"
+        ],
+        "note": "1px separators between index-sheet links."
+      },
+      "header-wash": {
+        "role": "neutral",
+        "displayName": "Header wash",
+        "canonical": "rgba(255, 255, 255, 0.92)",
+        "tonalRamp": [
+          "rgba(255, 255, 255, 0.92)"
+        ],
+        "note": "The sticky record header's ground over backdrop-filter: blur(6px)."
+      },
+      "shadow-ink": {
+        "role": "neutral",
+        "displayName": "Shadow ink",
+        "canonical": "rgba(0, 0, 0, 0.12)",
+        "tonalRamp": [
+          "rgba(0, 0, 0, 0.12)"
+        ],
+        "note": "The only shadow colour, under the mobile index sheet."
+      },
+      "lime": {
+        "role": "primary",
+        "displayName": "Lime (the single mark)",
+        "canonical": "#c8ff47",
+        "tonalRamp": [
+          "#c8ff47"
+        ],
+        "note": "One value, no ramp: the build never tints or shades lime."
+      }
+    },
+    "typographyMeta": {
+      "wall": {
+        "displayName": "Wall",
+        "purpose": "The page statement in every hero; one .out phrase outlined (paper fill, 0.018em ink stroke). Floor 3.9rem on desktop, 3.6rem below 640px."
+      },
+      "wall-long": {
+        "displayName": "Wall, long",
+        "purpose": "Ficha hero where the product tagline runs three or four lines. Applied inline in app/apps/[slug]/page.tsx."
+      },
+      "wall-mobile": {
+        "displayName": "Wall, ≤640px",
+        "purpose": "The same wall at clamp(3.6rem, 13.6vw, 12.4rem) below 640px: a lower floor and steeper viewport term so the longest word clears the pad on a 390px phone."
+      },
+      "h2": {
+        "displayName": "H2",
+        "purpose": "Section heads (.head), the closing call on the ficha. text-wrap: balance."
+      },
+      "cell-name": {
+        "displayName": "Cell name",
+        "purpose": "A published app's name beside its icon in a big cell (.cell .title .h2); overflow-wrap: anywhere."
+      },
+      "record-name": {
+        "displayName": "Record name",
+        "purpose": "The product name in the ficha record cell; set inline in app/apps/[slug]/page.tsx."
+      },
+      "h2-cell-mobile": {
+        "displayName": "H2 in a cell, ≤640px",
+        "purpose": "Any .h2 inside a cell on phones."
+      },
+      "h3": {
+        "displayName": "H3",
+        "purpose": "Names in standard cells: studios, dev apps (outlined, 1px), features, steps, the entity."
+      },
+      "num": {
+        "displayName": "Num",
+        "purpose": "Stat values, prices, step numerals (steps outlined with a 1.5px stroke)."
+      },
+      "big": {
+        "displayName": "Big",
+        "purpose": "The founder's greeting in the black cell; the only mixed-case display role."
+      },
+      "mail": {
+        "displayName": "Mail",
+        "purpose": "The giant e-mail link in the contact block."
+      },
+      "stamp": {
+        "displayName": "Stamp",
+        "purpose": "The two-line wordmark beat / Labs in the record header."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "The hero paragraph beside the actions in a hero-lower (/apps, ficha, /legal), max 52ch."
+      },
+      "hero-body": {
+        "displayName": "Hero body",
+        "purpose": "The hero paragraph when it stands alone under the wall (home), max 60ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Prose blocks and FAQ answers, max 60ch (64ch in FAQ)."
+      },
+      "line": {
+        "displayName": "Line",
+        "purpose": "The one-line description inside a cell."
+      },
+      "faq-question": {
+        "displayName": "FAQ question",
+        "purpose": "The summary of each FAQ item; Inter 700, sentence case."
+      },
+      "index-link": {
+        "displayName": "Index link",
+        "purpose": "Page names in the mobile index sheet."
+      },
+      "label": {
+        "displayName": "Label (mono)",
+        "purpose": "Head right label (nowrap), spec-row keys, stat captions, plan name + mute note under a price."
+      },
+      "meta": {
+        "displayName": "Meta (mono)",
+        "purpose": "Facts line at the foot of a cell and the status chip's row; the one mixed-case mono role."
+      },
+      "nav": {
+        "displayName": "Nav (mono)",
+        "purpose": "Record header nav cells, the lime contact cell, the mobile index toggle."
+      },
+      "rec-cell": {
+        "displayName": "Record cell (mono)",
+        "purpose": "Header meta cells: mute 400 key over 700 value. Hidden ≤1000px."
+      },
+      "marquee": {
+        "displayName": "Marquee (mono)",
+        "purpose": "The ticker; 0.75rem ≤640px."
+      },
+      "button": {
+        "displayName": "Button (mono)",
+        "purpose": "Every .btn variant."
+      },
+      "index-no": {
+        "displayName": "Index numeral (mono)",
+        "purpose": "The 01–05 beside index-sheet links, in mute."
+      },
+      "foot": {
+        "displayName": "Foot (mono)",
+        "purpose": "Footer line in mute; links are ink 700."
+      }
+    },
+    "shadows": [
+      {
+        "name": "sheet",
+        "value": "0 12px 28px rgba(0, 0, 0, 0.12)",
+        "purpose": "The mobile index sheet only; separates a fixed panel from the wall beneath."
+      }
+    ],
+    "surfaces": [
+      {
+        "name": "header-blur",
+        "value": "background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(6px)",
+        "purpose": "The sticky record header; the only blur on the site."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "--ease; used on the FAQ plus rotation (0.2s)."
+      },
+      {
+        "name": "invert",
+        "value": "background 0.15s, color 0.15s",
+        "purpose": "Every hover/focus inversion: header cells, cells, buttons."
+      },
+      {
+        "name": "ticker",
+        "value": "ticker 40s linear infinite (translateX 0 → -50%)",
+        "purpose": "The marquee track; paused on hover; removed under prefers-reduced-motion."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "transition-duration: 0.01ms; animation: none; scroll-behavior: auto",
+        "purpose": "prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "tablet",
+        "value": "1000px",
+        "note": "cells--3 → 2 columns; hero-lower stacks; header meta cells hidden."
+      },
+      {
+        "name": "phone",
+        "value": "640px",
+        "note": "all cells → 1 column; wall mobile clamp; header nav cells hidden, contact cell icon-only, index toggle shown; rows and heads stack; marquee 0.75rem."
+      }
+    ],
+    "strokes": [
+      {
+        "name": "rule",
+        "value": "1px",
+        "purpose": "--rule: rules, cell borders, button borders, header cell dividers, index sheet border."
+      },
+      {
+        "name": "rule-strong",
+        "value": "2px",
+        "purpose": "--rule-strong: the focus outline only (offset 3px)."
+      },
+      {
+        "name": "text-stroke-wall",
+        "value": "0.018em",
+        "purpose": "-webkit-text-stroke on .wall .out."
+      },
+      {
+        "name": "text-stroke-dev",
+        "value": "1px",
+        "purpose": "-webkit-text-stroke on dev-cell names."
+      },
+      {
+        "name": "text-stroke-step",
+        "value": "1.5px",
+        "purpose": "-webkit-text-stroke on step numerals."
+      },
+      {
+        "name": "icon-stroke",
+        "value": "3",
+        "purpose": "SVG stroke-width on ArrowIcon and PlusIcon, square linecaps."
+      },
+      {
+        "name": "icon-stroke-mail",
+        "value": "1.8",
+        "purpose": "SVG stroke-width on MailIcon in the header's contact cell."
+      }
+    ],
+    "imagery": [
+      {
+        "name": "app-icon",
+        "value": "44px (36px ≤640px), border-radius 22.5%",
+        "purpose": "Real product/studio icons in .cell .title. The only curve on the site; it belongs to the icon."
+      },
+      {
+        "name": "photo",
+        "value": "filter: grayscale(1) contrast(1.1)",
+        "purpose": "The founder photograph in a .cell--photo (padding 0)."
+      },
+      {
+        "name": "screens",
+        "value": "full-width in .cell--photo, lazy",
+        "purpose": "Real product screenshots only (Raved has three); never fabricated UI."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Record header",
+      "kind": "nav",
+      "refersTo": "rec-nav-link",
+      "description": "Sticky strip of cells on a blurred paper wash: stamp, meta cells (hidden ≤1000px), nav cells Group · Apps · Studios (/studios) · Company (hidden ≤640px), lime contact cell. Hover and current invert.",
+      "html": "<header class=\"ds-rec\"><a class=\"ds-stamp\" href=\"#\">beat<br>Labs</a><div class=\"ds-rec-meta\" aria-hidden=\"true\"><div class=\"ds-rec-cell\"><span>System</span><strong>Independent app group</strong></div><div class=\"ds-rec-cell\"><span>Location</span><strong>Dubai · UAE</strong></div><div class=\"ds-rec-cell\"><span>Licence</span><strong>53228</strong></div></div><nav class=\"ds-rec-nav\"><a href=\"#\" aria-current=\"page\">Group</a><a href=\"#\">Apps</a><a href=\"#\">Studios</a><a href=\"#\">Company</a></nav><a class=\"ds-rec-book\" href=\"#\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"square\" aria-hidden=\"true\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"14\"/><path d=\"M3 7l9 6 9-6\"/></svg><span>Contact</span></a></header>",
+      "css": ".ds-rec { display: flex; align-items: stretch; border-bottom: 1px solid #000000; background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(6px); color: #000000; font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; } .ds-rec a { color: inherit; text-decoration: none; } .ds-stamp { display: flex; align-items: center; padding: 10px 18px; border-right: 1px solid #000000; font-family: Inter, -apple-system, 'Helvetica Neue', Arial, sans-serif; font-weight: 900; font-size: 1.05rem; letter-spacing: -0.03em; line-height: 1; text-transform: uppercase; } .ds-rec-meta { display: flex; } .ds-rec-cell { display: flex; flex-direction: column; justify-content: center; padding: 8px 16px; border-right: 1px solid #000000; font-size: 0.66rem; line-height: 1.4; letter-spacing: 0.08em; text-transform: uppercase; } .ds-rec-cell span { color: #6b6b6b; } .ds-rec-cell strong { font-weight: 700; } .ds-rec-nav { display: flex; align-items: stretch; margin-left: auto; } .ds-rec-nav a { display: flex; align-items: center; padding: 0 18px; border-left: 1px solid #000000; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; transition: background 0.15s, color 0.15s; } .ds-rec-nav a:hover, .ds-rec-nav a:focus-visible, .ds-rec-nav a[aria-current='page'] { background: #000000; color: #ffffff; } .ds-rec-book { display: flex; align-items: center; gap: 8px; padding: 0 20px; border-left: 1px solid #000000; background: #c8ff47; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; transition: background 0.15s, color 0.15s; } .ds-rec-book svg { width: 16px; height: 16px; } .ds-rec-book:hover, .ds-rec-book:focus-visible { background: #000000; color: #c8ff47; } .ds-rec a:focus-visible { outline: 2px solid #000000; outline-offset: 3px; }"
+    },
+    {
+      "name": "Index sheet",
+      "kind": "nav",
+      "refersTo": "index-sheet-link",
+      "description": "Mobile index (≤640px): the header's Index/Close toggle opens a fixed paper panel of numbered page links (Group, Apps, Studios /studios, Company & legal, Contact). The site's only client component.",
+      "html": "<div class=\"ds-index-wrap\"><button type=\"button\" class=\"ds-rec-index\" aria-expanded=\"true\">Close</button><nav class=\"ds-index-sheet\" aria-label=\"Index\"><ol><li><a href=\"#\"><span>01</span>Group</a></li><li><a href=\"#\"><span>02</span>Apps</a></li><li><a href=\"#\"><span>03</span>Studios</a></li><li><a href=\"#\"><span>04</span>Company &amp; legal</a></li><li><a href=\"#\"><span>05</span>Contact</a></li></ol></nav></div>",
+      "css": ".ds-index-wrap { position: relative; padding-bottom: 260px; font-family: Inter, -apple-system, 'Helvetica Neue', Arial, sans-serif; color: #000000; } .ds-rec-index { display: inline-flex; align-items: center; padding: 12px 16px; border: 1px solid #000000; background: #ffffff; color: #000000; cursor: pointer; font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; } .ds-rec-index[aria-expanded='true'] { background: #000000; color: #ffffff; } .ds-index-sheet { position: absolute; top: 50px; left: 0; right: 0; background: #ffffff; border: 1px solid #000000; box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12); padding: 4px 0 8px; } .ds-index-sheet ol { list-style: none; margin: 0; padding: 0; } .ds-index-sheet li + li { border-top: 1px solid rgba(0, 0, 0, 0.2); } .ds-index-sheet a { display: flex; align-items: center; gap: 16px; padding: 12px 18px; color: inherit; text-decoration: none; font-weight: 900; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.02em; } .ds-index-sheet a span { width: 2.4em; font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-weight: 400; font-size: 0.72rem; color: #6b6b6b; } .ds-index-sheet a:hover, .ds-index-sheet a:focus-visible { background: #c8ff47; }"
+    },
+    {
+      "name": "Marquee",
+      "kind": "custom",
+      "refersTo": "marquee",
+      "description": "The mono ticker of honest statuses between two 1px rules; exactly two per page (under the header, and in the footer). Its top rule is dropped after the header, a cell grid, spec rows or a FAQ. Loops 40s, pauses on hover, stops under reduced motion.",
+      "html": "<div class=\"ds-marquee\" aria-label=\"Nibango · Launching — Curb · Live — Raved · Launching — Epiloq · In development\"><div class=\"ds-marquee-track\" aria-hidden=\"true\"><span>Nibango · Launching — Curb · Live — Raved · Launching — Epiloq · In development — TrueLoveCreative · Studio · open — BeatLabs FZE LLC · Licence 53228 — </span><span>Nibango · Launching — Curb · Live — Raved · Launching — Epiloq · In development — TrueLoveCreative · Studio · open — BeatLabs FZE LLC · Licence 53228 — </span></div></div>",
+      "css": ".ds-marquee { border-top: 1px solid #000000; border-bottom: 1px solid #000000; padding: 9px 0; overflow: hidden; white-space: nowrap; background: #ffffff; color: #000000; font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-weight: 700; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; } .ds-marquee-track { display: inline-flex; animation: ds-ticker 40s linear infinite; will-change: transform; } @keyframes ds-ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } } .ds-marquee:hover .ds-marquee-track { animation-play-state: paused; } @media (prefers-reduced-motion: reduce) { .ds-marquee-track { animation: none; } }"
+    },
+    {
+      "name": "Button",
+      "kind": "button",
+      "refersTo": "button",
+      "description": "Hairline-bordered block of mono button type with an inline arrow; inverts on hover.",
+      "html": "<a class=\"ds-btn\" href=\"#\">All apps <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"square\" aria-hidden=\"true\"><path d=\"M3 12h16M12 4l8 8-8 8\"/></svg></a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 12px; padding: 13px 18px; border: 1px solid #000000; border-radius: 0; background: #ffffff; color: #000000; text-decoration: none; font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-weight: 700; font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1; transition: background 0.15s, color 0.15s; } .ds-btn svg { width: 1rem; height: 1rem; flex: none; } .ds-btn:hover, .ds-btn:focus-visible { background: #000000; color: #ffffff; } .ds-btn:focus-visible { outline: 2px solid #000000; outline-offset: 3px; }"
+    },
+    {
+      "name": "Button, black",
+      "kind": "button",
+      "refersTo": "button-black",
+      "description": "The primary CTA: ink block that hovers to lime.",
+      "html": "<a class=\"ds-btn ds-btn--black\" href=\"#\">App Store <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"square\" aria-hidden=\"true\" style=\"transform: rotate(-45deg)\"><path d=\"M3 12h16M12 4l8 8-8 8\"/></svg></a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 12px; padding: 13px 18px; border: 1px solid #000000; border-radius: 0; background: #ffffff; color: #000000; text-decoration: none; font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-weight: 700; font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1; transition: background 0.15s, color 0.15s; } .ds-btn svg { width: 1rem; height: 1rem; flex: none; } .ds-btn--black { background: #000000; color: #ffffff; } .ds-btn--black:hover, .ds-btn--black:focus-visible { background: #c8ff47; color: #000000; } .ds-btn:focus-visible { outline: 2px solid #000000; outline-offset: 3px; }"
+    },
+    {
+      "name": "Button, lime",
+      "kind": "button",
+      "refersTo": "button-lime",
+      "description": "Lime block used on the highlighted plan inside a black cell; inverts to ink on hover.",
+      "html": "<a class=\"ds-btn ds-btn--lime\" href=\"#\">Get Curb <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"square\" aria-hidden=\"true\" style=\"transform: rotate(-45deg)\"><path d=\"M3 12h16M12 4l8 8-8 8\"/></svg></a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 12px; padding: 13px 18px; border: 1px solid #000000; border-radius: 0; background: #ffffff; color: #000000; text-decoration: none; font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-weight: 700; font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1; transition: background 0.15s, color 0.15s; } .ds-btn svg { width: 1rem; height: 1rem; flex: none; } .ds-btn--lime { background: #c8ff47; color: #000000; } .ds-btn--lime:hover, .ds-btn--lime:focus-visible { background: #000000; color: #ffffff; } .ds-btn:focus-visible { outline: 2px solid #000000; outline-offset: 3px; }"
+    },
+    {
+      "name": "App cell",
+      "kind": "card",
+      "refersTo": "cell",
+      "description": "One app as a cell: icon + name, one line, mono facts, status on lime. The whole cell is the link and inverts on hover. Variants: big (cell-name type), compact (no line).",
+      "html": "<a class=\"ds-cell\" href=\"#\" aria-label=\"Curb — open\"><div class=\"ds-cell-title\"><span class=\"ds-cell-icon\" aria-hidden=\"true\"></span><span class=\"ds-cell-h2\">Curb</span></div><p class=\"ds-cell-line\">Track all your subscriptions in one place. Know exactly what you're paying, when, and cancel what you don't need.</p><p class=\"ds-cell-meta\">Finance App · iOS · Android · 13 languages · getcurbapp.com<br><span class=\"ds-mark\">Live</span></p></a>",
+      "css": ".ds-cell { display: flex; flex-direction: column; gap: 10px; min-width: 0; padding: 24px; border: 1px solid #000000; border-radius: 0; background: #ffffff; color: #000000; text-decoration: none; font-family: Inter, -apple-system, 'Helvetica Neue', Arial, sans-serif; transition: background 0.15s, color 0.15s; } .ds-cell:hover, .ds-cell:focus-visible { background: #000000; color: #ffffff; } .ds-cell:focus-visible { outline: 2px solid #000000; outline-offset: 3px; } .ds-cell-title { display: flex; align-items: center; gap: 14px; min-height: 44px; } .ds-cell-icon { width: 44px; height: 44px; border-radius: 22.5%; background: #ec6f2d; flex: none; } .ds-cell-h2 { font-weight: 900; font-size: clamp(2rem, 4.4vw, 3.6rem); line-height: 0.88; letter-spacing: -0.05em; text-transform: uppercase; overflow-wrap: anywhere; } .ds-cell-line { margin: 0; font-size: 0.95rem; line-height: 1.45; } .ds-cell-meta { margin: auto 0 0; font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-size: 0.72rem; line-height: 1.6; letter-spacing: 0.02em; } .ds-mark { background: #c8ff47; color: #000000; padding: 0 0.12em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }"
+    },
+    {
+      "name": "Dev cell",
+      "kind": "card",
+      "refersTo": "cell-dev",
+      "description": "An app in development: hairline-outlined name, mute status, not a link, inert.",
+      "html": "<div class=\"ds-cell ds-cell--dev\"><div class=\"ds-cell-title\"><span class=\"ds-cell-h3\">Epiloq</span></div><p class=\"ds-cell-line\">Track shows, movies, comics, and books in one place. Minimal, calm, tool-first.</p><p class=\"ds-cell-meta\">Entertainment App · iOS · Android<br><span class=\"ds-mute\">In development</span></p></div>",
+      "css": ".ds-cell { display: flex; flex-direction: column; gap: 10px; min-width: 0; padding: 24px; border: 1px solid #000000; border-radius: 0; background: #ffffff; color: #000000; font-family: Inter, -apple-system, 'Helvetica Neue', Arial, sans-serif; } .ds-cell--dev { pointer-events: none; } .ds-cell-title { display: flex; align-items: center; gap: 14px; min-height: 44px; } .ds-cell-h3 { font-weight: 900; font-size: clamp(1.3rem, 2.4vw, 2rem); line-height: 0.95; letter-spacing: -0.03em; text-transform: uppercase; } .ds-cell--dev .ds-cell-h3 { color: #ffffff; -webkit-text-stroke: 1px #000000; paint-order: stroke fill; } .ds-cell-line { margin: 0; font-size: 0.95rem; line-height: 1.45; } .ds-cell-meta { margin: auto 0 0; font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-size: 0.72rem; line-height: 1.6; letter-spacing: 0.02em; } .ds-mute { color: #6b6b6b; }"
+    },
+    {
+      "name": "Black cell",
+      "kind": "card",
+      "refersTo": "cell-black",
+      "description": "Ink panel with paper text: the founder block, the recommended plan (price first, mono label under it). Marks stay lime; mute becomes translucent white.",
+      "html": "<div class=\"ds-cell ds-cell--black\"><span class=\"ds-num\">€9.99</span><span class=\"ds-label\">Pro · Recommended · <span class=\"ds-mute\">One-time. Not a subscription.</span></span><p class=\"ds-cell-line\">Everything in Free · Unlimited subscriptions · Widgets, profiles &amp; more</p><p class=\"ds-cell-meta ds-mute\">Founder &amp; Manager · Dubai, UAE</p></div>",
+      "css": ".ds-cell { display: flex; flex-direction: column; gap: 10px; min-width: 0; padding: 24px; border: 1px solid #000000; border-radius: 0; font-family: Inter, -apple-system, 'Helvetica Neue', Arial, sans-serif; } .ds-cell--black { background: #000000; color: #ffffff; } .ds-label { font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-weight: 700; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; } .ds-num { font-weight: 900; font-size: clamp(3rem, 7vw, 6.4rem); line-height: 0.85; letter-spacing: -0.06em; } .ds-cell-line { margin: 0; font-size: 0.95rem; line-height: 1.45; } .ds-cell-meta { margin: auto 0 0; font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-size: 0.72rem; line-height: 1.6; letter-spacing: 0.02em; } .ds-cell--black .ds-mute { color: rgba(255, 255, 255, 0.7); }"
+    },
+    {
+      "name": "Head",
+      "kind": "custom",
+      "refersTo": "head",
+      "description": "Section opener: H2 left, mono label right (nowrap), on one 1px rule.",
+      "html": "<div class=\"ds-head\"><h2 class=\"ds-h2\">Next out of the lab</h2><span class=\"ds-label\">3 in development · no dates until real</span></div>",
+      "css": ".ds-head { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; padding: 14px 24px 18px; border-top: 1px solid #000000; background: #ffffff; color: #000000; font-family: Inter, -apple-system, 'Helvetica Neue', Arial, sans-serif; } .ds-h2 { margin: 0; font-weight: 900; font-size: clamp(2.2rem, 6vw, 5.6rem); line-height: 0.88; letter-spacing: -0.05em; text-transform: uppercase; text-wrap: balance; } .ds-label { text-align: right; white-space: nowrap; flex: none; font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-weight: 700; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; }"
+    },
+    {
+      "name": "Spec row",
+      "kind": "custom",
+      "refersTo": "row",
+      "description": "Two-column record (mono label / Inter 700 value) with a translucent divider under each row; the entity registry on /legal.",
+      "html": "<div class=\"ds-rows\"><div class=\"ds-row\"><span class=\"ds-label\">Licence</span><span class=\"ds-val\">No. 53228 · Ajman Media City Free Zone, UAE</span></div><div class=\"ds-row\"><span class=\"ds-label\">Contact</span><span class=\"ds-val\"><a class=\"ds-mark\" href=\"#\">info@beatlabs.ae</a></span></div></div>",
+      "css": ".ds-rows { border-top: 1px solid #000000; background: #ffffff; color: #000000; font-family: Inter, -apple-system, 'Helvetica Neue', Arial, sans-serif; } .ds-row { display: grid; grid-template-columns: minmax(8rem, 16rem) 1fr; gap: 20px; padding: 14px 24px; border-bottom: 1px solid rgba(0, 0, 0, 0.25); align-items: baseline; } .ds-label { padding-top: 3px; font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-weight: 700; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; } .ds-val { font-weight: 700; } .ds-mark { background: #c8ff47; color: #000000; padding: 0 0.12em; text-decoration: none; }"
+    },
+    {
+      "name": "FAQ item",
+      "kind": "custom",
+      "refersTo": "faq-summary",
+      "description": "Details/summary list that owns its top rule; translucent dividers between items, the last one solid ink so the block closes with a line. The open question fills lime and the plus turns into an x.",
+      "html": "<div class=\"ds-faq\"><details open><summary>Is Pro a monthly subscription? <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"square\" aria-hidden=\"true\"><path d=\"M12 3v18M3 12h18\"/></svg></summary><p>No. Pro is a one-time purchase.</p></details><details><summary>Is my data safe? <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"square\" aria-hidden=\"true\"><path d=\"M12 3v18M3 12h18\"/></svg></summary><p>Yes. No bank access, no tracking.</p></details></div>",
+      "css": ".ds-faq { border-top: 1px solid #000000; background: #ffffff; color: #000000; font-family: Inter, -apple-system, 'Helvetica Neue', Arial, sans-serif; } .ds-faq details { border-bottom: 1px solid rgba(0, 0, 0, 0.25); } .ds-faq details:last-child { border-bottom-color: #000000; } .ds-faq summary { list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 16px 24px; cursor: pointer; font-weight: 700; font-size: 1rem; letter-spacing: -0.01em; } .ds-faq summary::-webkit-details-marker { display: none; } .ds-faq summary svg { width: 18px; height: 18px; flex: none; transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1); } .ds-faq details[open] summary { background: #c8ff47; } .ds-faq details[open] summary svg { transform: rotate(45deg); } .ds-faq summary:focus-visible { outline: 2px solid #000000; outline-offset: 3px; } .ds-faq p { margin: 0; padding: 12px 24px 20px; max-width: 64ch; font-size: 1rem; line-height: 1.5; }"
+    },
+    {
+      "name": "Wall",
+      "kind": "custom",
+      "refersTo": "wall",
+      "description": "The page statement: Inter 900 at viewport scale with one hairline-outlined phrase.",
+      "html": "<h1 class=\"ds-wall\">We build<br><span class=\"ds-out\">companies.</span><br>Not projects.</h1>",
+      "css": ".ds-wall { margin: 0; background: #ffffff; color: #000000; font-family: Inter, -apple-system, 'Helvetica Neue', Arial, sans-serif; font-weight: 900; font-size: clamp(3.9rem, 12.6vw, 12.4rem); line-height: 0.84; letter-spacing: -0.06em; text-transform: uppercase; text-wrap: balance; } .ds-wall .ds-out { color: #ffffff; -webkit-text-stroke: 0.018em #000000; paint-order: stroke fill; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Type Wall",
+    "overview": "beatlabs.ae is a wall of type. A white ground, black ink, and Inter at 900 set as large as the viewport allows, with hairline rules (1px) dividing the page into cells the way a printed broadsheet is divided by column rules. Everything that is not the wall is set small in JetBrains Mono, uppercase and tracked, so the page reads like a record: a display voice and a documentary voice, nothing in between. There are no decorative elements that are not type; the only imagery is the products' real icons, the studios' real marks, one grayscale founder photograph and real product screenshots. Lime is the single mark, reserved for status, the contact cell, the open FAQ, the selection highlight and the press state of a black button.\n\nThe site is read, not browsed. A sticky record header (stamp, meta cells, nav cells, a lime contact cell) sits above a marquee that carries the honest status of every module in the portfolio; another marquee closes the page. Between them the layout is a stack of full-bleed rows: a hero wall, a head (heading left, mono label right, on one rule), a grid of cells. Every interactive surface answers in the same way: the block inverts to black. Cells for apps in development are drawn as outlined type and do not react at all; honesty about status is a visual rule, not only copy.\n\nThe world was chosen by the owner from real previews (.impeccable/mocks/decision/brutal.png) and then refined by the owner after seeing the wall: rules went from 3px to 1px, utility text moved to mono, and the nav became a record header after estrela.photo. It replaces the terminal home, the dark rail, the lab notebook and every printed-object hand; none of those should be reintroduced.",
+    "keyCharacteristics": [
+      "Two colours plus one mark: white, black, lime. Grey exists only for secondary text, and translucent ink only for soft dividers.",
+      "Two faces, two jobs: Inter 400/700/900 for the wall, headings, prose and FAQ questions; JetBrains Mono 400/700 for labels, meta, nav, marquee, buttons and the footer.",
+      "Outlined words inside the wall (.out) and outlined step numerals and dev-app names carry emphasis and \"not yet\" without a second colour.",
+      "1px is the rule; 2px is reserved for the focus ring.",
+      "Full-bleed rows; the horizontal padding --pad is the only margin.",
+      "Hover means invert. Nothing lifts, glows or scales; the only floating chrome (the sticky header, the mobile index sheet) is the exception.",
+      "Marquees move; everything else is static. Reduced motion stops them."
+    ],
+    "rules": [
+      {
+        "name": "The Single Mark Rule",
+        "body": "Lime is the only chroma on the wall. It marks status, contact and the active state; it never tints backgrounds, headings or body copy. If a new element wants colour, the answer is ink or outline, not a second accent.",
+        "section": "colors"
+      },
+      {
+        "name": "The Icons Carry the Brand Rule",
+        "body": "Per-product colour appears only through the product's real icon (AppProduct.accent is data for other surfaces; the wall does not read it). The frame stays monochrome so every brand looks like itself.",
+        "section": "colors"
+      },
+      {
+        "name": "The Invert Rule",
+        "body": "A hovered or focused interactive block swaps paper and ink (background: ink; color: paper); lime marks inside it stay lime, and mute text becomes mute-on-ink. A black block hovers to lime.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Dividers Rule",
+        "body": "Structural rules (cells, heads, header, marquee, buttons) are solid ink; the dividers inside a list (rows, FAQ items, index links) are translucent ink. Never mix them within one block.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Rule Between Neighbours Rule",
+        "body": "Every block draws its own top rule (.marquee, .cells, .head, .rows, .faq, .contact, .block--rule), and that rule is dropped when the block above already closes with a line. The adjacent-sibling group under \"Rules & marquee\" in app/globals.css does the dropping (.rec + .marquee, .cells + .marquee, .cells + .head, .cells + .cells, .cells + .rows, .cells + .faq, .cells + .contact, .cells + .block--rule, .rows + .head, .rows + .cells, .rows + .contact, .rows + .marquee, .faq + .head, .faq + .cells, .faq + .contact, .faq + .marquee → border-top: 0). Blocks that close with a solid line: the record header, a cell grid (each cell's bottom border), spec rows (the last row's divider is still translucent, so .rows counts as closed only for the layout, not the ink), and the FAQ, whose details:last-child closes in solid ink. A new block type joins the system by owning its top rule and adding its pairings to that group; never fake a rule with an inline borderTop.",
+        "section": "layout"
+      },
+      {
+        "name": "The Two Voices Rule",
+        "body": "Inter speaks (wall, headings, names, prose, questions); Mono annotates (labels, meta, nav, ticker, buttons, footer, header cells). A new element is one or the other; never set a heading in Mono or a label in Inter.",
+        "section": "typography"
+      },
+      {
+        "name": "The Outline Means Not Yet Rule",
+        "body": "Outlined type (paper fill, hairline ink stroke) is the emphasis device inside the wall (0.018em) and the \"not yet\" device everywhere else: step numerals still to come (1.5px), apps in development (1px). Do not outline a live product's name.",
+        "section": "typography"
+      },
+      {
+        "name": "The Uppercase Rule",
+        "body": "Every Inter 900 role is uppercase except big (the founder's greeting) and num/mail, whose content is numeric or an address; every Mono role is uppercase except meta and the index numerals. Prose and FAQ questions stay sentence case.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Wall Rule",
+        "body": "Rows, cells, buttons and heads never carry a shadow, gradient or blur; if a surface needs to read as raised or active, it inverts. Blur and shadow belong only to chrome that physically floats over the page (the sticky header, the index sheet).",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do build every new section as rule → head → cells or rows, inside --pad, with 1px ink borders. The rhythm is the identity.",
+      "Do set the page statement in .wall with exactly one .out phrase, uppercase, and keep it under four lines (use the long variant clamp(2.8rem, 10.5vw, 9.4rem) when the copy runs long).",
+      "Do open a cell with its name only; no eyebrow label above a display line. Labels caption values (stats, prices, spec keys) and sit on the head's rule.",
+      "Do set every annotation (label, meta, nav, ticker, button, footer, header cell) in JetBrains Mono, uppercase and tracked, at 0.66 to 0.74rem; keep Inter for everything that speaks.",
+      "Do print every status on a lime .mark in its cell and in the marquee, from data/portfolio.ts; dev items are outlined, mute and inert.",
+      "Do make every interactive block invert on hover and focus-visible; keep the 2px ink focus outline.",
+      "Do use the products' real icons (44px, squircle-masked) and real screenshots only; never fabricate product UI.",
+      "Do keep the founder photo and any future photography grayscale and edge to edge in a .cell--photo.",
+      "Do use solid ink rules between structural blocks and translucent dividers inside lists (rows, FAQ, index sheet).",
+      "Do give every new block its own top rule and register its neighbour pairings in the adjacent-sibling group so two blocks never draw two lines between them."
+    ],
+    "donts": [
+      "Don't add a second accent, tint backgrounds, or read AppProduct.accent into the wall; brand colour arrives through icons only.",
+      "Don't add shadows, gradients or blur to content rows, cells or buttons; those belong only to the sticky header and the index sheet.",
+      "Don't add radius beyond the icon mask, or a border heavier than 1px except the 2px focus ring.",
+      "Don't introduce a third typeface, an italic, or a weight the font sets lack (Inter 500/600, Mono 500+); never set a heading in Mono or a label in Inter.",
+      "Don't reintroduce the rejected worlds: the terminal dashboard, the dark rail, the lab notebook, cards with shadows, photo-led heroes, product-card grids.",
+      "Don't animate anything but the marquee and the FAQ plus; hover states change colour, not position or scale.",
+      "Don't make a dev app clickable or give it a mark; \"In development\" is grey text on an outlined, inert cell.",
+      "Don't add client code beyond the index toggle; pages stay static server components.",
+      "Don't add a rule with an inline borderTop or stack two lines between neighbours; the sibling group in globals.css owns which rule survives.",
+      "Don't write hardcoded product facts into pages; cells and tickers render from data/portfolio.ts."
+    ]
+  }
+}

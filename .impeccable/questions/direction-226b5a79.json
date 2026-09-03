@@ -1,0 +1,165 @@
+{
+  "title": "beatlabs.ae — segunda mano: elige el mundo visual",
+  "question": "Mano nueva, sin nada de la anterior. El dado asignó «La exposición». Puedes quedarte con ella, tomar una alternativa, jugar el estándar del sector, o volver a tirar (más segura / más atrevida).",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "La exposición",
+      "kicker": "THE ROLL",
+      "lineage": "Salas de colección permanente de un museo de diseño (Vitra, Design Museum, Louvre Abu Dhabi): objetos en pedestal, texto de pared, cartela con título · año · medio · nº de colección",
+      "thesis": "beatLabs es la institución; cada app es una pieza expuesta en su pedestal, con su cartela y su número de colección.",
+      "palette": ["#F4F4F2", "#1C1C1C", "#E3E3DF", "#007AFF", "#EC6F2D", "#FF4A00"],
+      "materials": ["blanco de galería", "pedestal gris", "cartela con tipografía a un solo cuerpo", "Bricolage Grotesque con eje óptico"],
+      "viewport": "Luz de galería, fondo blanco neutro. A la izquierda el texto de pared: WE BUILD COMPANIES. NOT PROJECTS. a escala monumental y la frase institucional debajo. A la derecha, la primera pieza: el icono real de Nibango, enorme, sobre su pedestal, con sombra real; debajo su cartela: Nibango, 2026 · Marketplace app · iOS · Android · Web · Col. BL-003 · On view: launching. Al hacer scroll recorres la sala: una pieza por pantalla, la pared detrás se tiñe del color de la marca.",
+      "case": "Gana en seriedad: nada dice 'esta empresa cuida lo que hace' como una pieza sola, bien iluminada, con su cartela. La cartela es un sistema de datos perfecto para las fichas (título / fecha / medio / dimensiones / procedencia → nombre / año / plataformas / stats / docs) y para /legal (la institución). Crece: cada empresa nueva es otra sala.",
+      "risk": "Vive del silencio y de la tipografía: si el espaciado no es exquisito, parece una landing vacía. Y los únicos 'objetos' reales son los iconos de las apps y tres capturas de Raved; no inventaré pantallas.",
+      "raised": [
+        { "from": "challenger-emission-rail", "raise": "El estado se dibuja como forma de línea, no como color: línea llena = live, discontinua = launching, media altura = en desarrollo. Igual en todo el sitio." },
+        { "from": "challenger-cutting-bench", "raise": "Un solo cuerpo para toda cartela: la jerarquía la da la extensión, no el tamaño." },
+        { "from": "challenger-cereal-aisle", "raise": "Al elegir una pieza, sale del pedestal hacia ti; la última adquisición (Nibango) lleva la etiqueta 'new acquisition'." },
+        { "from": "challenger-googie", "raise": "Una sola línea de suelo recorre toda la sala y de ella cuelgan las secciones; nada flota." },
+        { "from": "challenger-film-bloom", "raise": "Un único color de énfasis reservado a 'on view now' (la pieza activa); nada más lo usa." }
+      ],
+      "wireframe": { "cols": 12, "rows": 10, "regions": [
+        { "label": "nav de la institución", "x": 0, "y": 0, "w": 12, "h": 1 },
+        { "label": "texto de pared: WE BUILD COMPANIES. NOT PROJECTS.", "x": 0, "y": 1, "w": 6, "h": 5 },
+        { "label": "pieza 1: icono Nibango sobre pedestal", "x": 6, "y": 1, "w": 6, "h": 5, "accent": true },
+        { "label": "cartela: Nibango · 2026 · Marketplace app · BL-003 · launching", "x": 6, "y": 6, "w": 6, "h": 1 },
+        { "label": "línea de suelo → siguiente sala: Curb, Raved, in the workshop", "x": 0, "y": 7, "w": 12, "h": 2 },
+        { "label": "ala Web & Creative · la institución (licencia 53228)", "x": 0, "y": 9, "w": 12, "h": 1 }
+      ] },
+      "comp": ".impeccable/mocks/decision/assigned.webp"
+    },
+    {
+      "id": "model-pick",
+      "label": "La red",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "Mapas de red de transporte (Metro de Dubái / RTA, el diagrama de Beck): cada línea su color, las líneas en construcción discontinuas, estaciones como marcas",
+      "thesis": "beatLabs es el intercambiador central; cada marca es una línea con su color real, sus estaciones (hitos) y su estado: operativa, en apertura, planificada.",
+      "palette": ["#FFFFFF", "#111111", "#007AFF", "#EC6F2D", "#FF4A00", "#9A9A9A"],
+      "materials": ["blanco de mapa", "trazos gruesos a 45°", "línea discontinua = planificada", "Overpass (derivada de la señalética de carretera)"],
+      "viewport": "El primer viewport ES el diagrama: beatLabs como intercambiador en el centro; tres líneas gruesas en azul Nibango, naranja Curb y rojo Raved salen a 45° con estaciones (categorías, plataformas, precio); tres líneas finas discontinuas para Epiloq, TimeUp y Blab (planificadas); dos líneas grises para los estudios. Leyenda a la derecha = el portfolio con estados honestos. Al cargar, las líneas se dibujan; el hover aísla una línea y atenúa el resto; clic = viajas a su ficha, cuya cabecera es esa línea con sus estaciones.",
+      "case": "Gana en identificación: todo el Golfo lee ese mapa cada día y es una de las identidades corporativas más serias de la región. Explica 'marcas independientes, una sola red' sin una frase. Los estados live/launching/dev ya existen en la gramática (operativa / en apertura / planificada). Empata en claridad con la exposición.",
+      "risk": "Con ocho líneas, si la geometría no es estricta (45°, radios iguales) parece un mapa infantil. Y es la más 'gráfica': puede leerse como juego antes que como holding si la leyenda no manda.",
+      "wireframe": { "cols": 12, "rows": 10, "regions": [
+        { "label": "nav", "x": 0, "y": 0, "w": 12, "h": 1 },
+        { "label": "diagrama de red: 8 líneas desde el intercambiador beatLabs", "x": 0, "y": 1, "w": 8, "h": 7, "accent": true },
+        { "label": "leyenda = portfolio con estados: operativa / apertura / planificada", "x": 8, "y": 1, "w": 4, "h": 7 },
+        { "label": "WE BUILD COMPANIES. NOT PROJECTS. · entidad · licencia", "x": 0, "y": 8, "w": 12, "h": 2 }
+      ] },
+      "comp": ".impeccable/mocks/decision/model-pick.webp"
+    },
+    {
+      "id": "challenger-sneaker-boxes",
+      "label": "Archivo de cajas de zapatillas",
+      "verdict": "competitive",
+      "lineage": "Pared de cajas apiladas con etiqueta de testero: silueta, nombre de colorway, tallas en monoespaciada",
+      "thesis": "Cada marca es una caja en la pila; su etiqueta de testero es la ficha técnica; tirar de la caja y abrir la tapa es entrar en la app.",
+      "palette": ["#C8622B", "#111111", "#F6F1E7", "#007AFF", "#EC6F2D"],
+      "materials": ["cartón naranja", "silueta a una línea", "papel de seda", "condensada + monoespaciada"],
+      "viewport": "Una pared de cajas apiladas, cada testero con el nombre de la app, su plataforma y su chip de color; la caja seleccionada sale a medias y la tapa se abre.",
+      "case": "Aguanta el eje de claridad: la rejilla de etiqueta (nombre · colorway · talla) ordena todas las fichas con disciplina. Pierde en identificación corporativa: es cultura sneaker, no holding.",
+      "risk": "Cálida y pop: para 'quiero contratar a esta empresa' puede sonar a tienda.",
+      "wireframe": { "cols": 12, "rows": 10, "regions": [
+        { "label": "nav", "x": 0, "y": 0, "w": 12, "h": 1 },
+        { "label": "pila de cajas: testeros Nibango / Curb / Raved / Epiloq / TimeUp / Blab", "x": 0, "y": 1, "w": 7, "h": 8, "accent": true },
+        { "label": "caja abierta: tapa + papel de seda + ficha", "x": 7, "y": 1, "w": 5, "h": 8 },
+        { "label": "pie", "x": 0, "y": 9, "w": 12, "h": 1 }
+      ] },
+      "hero": "https://impeccable.style/worlds/cards/textiles-weave-drape-fashion-sneaker-box-stacks-hero.webp",
+      "comp": ".impeccable/mocks/decision/challenger-sneaker-boxes.webp"
+    },
+    {
+      "id": "challenger-emission-rail",
+      "label": "Raíl de líneas de emisión",
+      "verdict": "declined",
+      "lineage": "Placa de espectrograma: continuo gris, líneas finas de color por longitud de onda",
+      "thesis": "Cada marca es una línea de emisión; el estado es la forma de la línea.",
+      "palette": ["#2B2B2B", "#D9D4C7", "#7B3FE4", "#2EC4B6", "#FFD400"],
+      "materials": ["continuo de carbón", "líneas capilares"],
+      "viewport": "Un raíl descentrado con ticks; el abierto florece en una placa gigante.",
+      "case": "Astrofísica de madrugada: nadie del Golfo corporativo se identifica; la claridad aguanta solo por el sistema de estados.",
+      "kept": "Estado como forma de línea (llena / discontinua / media altura), nunca como color.",
+      "risk": "Lee como instrumento de laboratorio.",
+      "hero": "https://impeccable.style/worlds/cards/operate-c-emission-line-rail-hero.webp"
+    },
+    {
+      "id": "challenger-cutting-bench",
+      "label": "Mesa de montaje de película",
+      "verdict": "declined",
+      "lineage": "Raíl perforado sobre campo naranja con grano, marcas de grasa, banderas de cinta",
+      "thesis": "Las secciones son fotogramas en un raíl; lo apartado cuelga de pinzas debajo.",
+      "palette": ["#000000", "#F26A21", "#FFFFFF"],
+      "materials": ["grano de película", "condensada en un solo cuerpo"],
+      "viewport": "Un raíl perforado cruza la pantalla a altura fija.",
+      "case": "Oscura y de oficio cinematográfico: identificación baja; la claridad no compensa.",
+      "kept": "Un solo cuerpo tipográfico; el rango lo da la extensión, no el tamaño.",
+      "risk": "Otro mundo negro con acento.",
+      "hero": "https://impeccable.style/worlds/cards/operate-a-cutting-bench-select-rail-hero.webp"
+    },
+    {
+      "id": "challenger-cereal-aisle",
+      "label": "Pasillo de cereales",
+      "verdict": "declined",
+      "lineage": "Planograma de cajas saturadas con mascotas y violators NEW!",
+      "thesis": "Cada app es una caja de cereales en la estantería.",
+      "palette": ["#D62828", "#FFD400", "#FFFFFF", "#1B4FD8"],
+      "materials": ["cartón estucado", "logotipo redondeado arqueado"],
+      "viewport": "Pared de cajas a la altura de los ojos de un niño.",
+      "case": "Infantil por definición: contradice 'corporativo y crecer'.",
+      "kept": "Al elegir, la pieza sale proud del estante; lo nuevo lleva su etiqueta.",
+      "risk": "Lo contrario de una holding.",
+      "hero": "https://impeccable.style/worlds/cards/pop-culture-shelf-cereal-box-aisle-hero.webp"
+    },
+    {
+      "id": "challenger-googie",
+      "label": "Diner Googie",
+      "verdict": "declined",
+      "lineage": "Arquitectura Googie: estrellas de neón, boomerangs, techos en voladizo",
+      "thesis": "El futuro servido toda la noche.",
+      "palette": ["#2EC4B6", "#FF7F6B", "#2B2B2B", "#FFFFFF"],
+      "materials": ["laminado turquesa", "cromo", "neón"],
+      "viewport": "Una línea en voladizo que lleva el ojo del cartel a la barra.",
+      "case": "Nostalgia americana de los 50: no identifica a una holding del Golfo.",
+      "kept": "Una sola línea continua recorre la página y de ella cuelgan las secciones.",
+      "risk": "Kitsch.",
+      "hero": "https://impeccable.style/worlds/cards/design-canon-googie-starburst-diner-hero.webp"
+    },
+    {
+      "id": "challenger-film-bloom",
+      "label": "Película de 16 mm revelada a mano",
+      "verdict": "declined",
+      "lineage": "Emulsión con arañazos, química irregular y fugas de luz",
+      "thesis": "La emulsión misma se une al evento fotografiado.",
+      "palette": ["#0A0A0A", "#B8B8B0", "#F26A21", "#8C6A3A"],
+      "materials": ["grano", "fuga de luz naranja"],
+      "viewport": "Fotogramas en filas estrictas con códigos de borde.",
+      "case": "Textura y desgaste: lo opuesto a la limpieza corporativa que pides.",
+      "kept": "Un único color de énfasis reservado al fotograma activo.",
+      "risk": "Lee como cortometraje experimental.",
+      "hero": "https://impeccable.style/worlds/cards/cinema-cinematography-editing-hand-processed-film-bloom-hero.webp"
+    }
+  ],
+  "reroll": { "registers": ["safer", "bolder"] },
+  "buildPath": { "value": "code", "toggle": true },
+  "canon": true,
+  "canonCard": {
+    "label": "El estándar del sector",
+    "thesis": "Lo que publica un venture studio: hero con titular grande, rejilla de tarjetas con iconos de apps, franja de logos, CTA. Ejecutado impecable.",
+    "palette": ["#FFFFFF", "#0F172A", "#2563EB", "#F1F5F9"],
+    "materials": ["rejilla limpia", "tarjetas con icono", "sans neutra"],
+    "viewport": "Titular + subtítulo + botón a la izquierda, mockups de apps a la derecha, tres tarjetas debajo.",
+    "risk": "Indistinguible de la competencia por diseño.",
+    "wireframe": { "cols": 12, "rows": 10, "regions": [
+      { "label": "nav", "x": 0, "y": 0, "w": 12, "h": 1 },
+      { "label": "titular + CTA", "x": 0, "y": 1, "w": 6, "h": 4 },
+      { "label": "mockups de apps", "x": 6, "y": 1, "w": 6, "h": 4, "accent": true },
+      { "label": "tarjeta Nibango", "x": 0, "y": 5, "w": 4, "h": 3 },
+      { "label": "tarjeta Curb", "x": 4, "y": 5, "w": 4, "h": 3 },
+      { "label": "tarjeta Raved", "x": 8, "y": 5, "w": 4, "h": 3 },
+      { "label": "estudios + pie", "x": 0, "y": 8, "w": 12, "h": 2 }
+    ] },
+    "comp": ".impeccable/mocks/decision/canon.webp"
+  },
+  "steer": true
+}

@@ -34,3 +34,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# design tooling captures and mock previews (large rasters, regenerable)
+.impeccable/mocks/
+.impeccable/review/

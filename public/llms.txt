@@ -1,22 +1,32 @@
 # beatLabs
 
-> Dubai-based digital studio building independent brands — apps, agencies, and creative platforms.
+> Dubai-based independent app group (BeatLabs FZE LLC) building independent app brands — each with its own name, domain, and identity.
 
-beatLabs is the studio behind a portfolio of independent digital brands. Each brand operates autonomously with its own identity, audience, and business model.
+beatLabs is the holding entity behind a portfolio of independent digital brands. Each brand operates autonomously with its own identity, audience, and business model.
 
-## Brands
+## Apps
 
-- [Nibango](https://nibango.com/uiapp/) — Peer-to-peer second-hand marketplace for the Gulf. In development.
-- [WebVanguard](https://webvanguard.co) — Web design agency for businesses in Dubai and the UAE.
+- [Nibango](https://nibango.com) — Peer-to-peer second-hand marketplace for the Gulf. Six categories, four pricing models, zero commissions. Launching.
+- [Curb](https://getcurbapp.com) — Subscription tracker for iOS and Android. No bank access, one-time Pro purchase. Live.
+- [Raved](https://raved.app) — An inbox for recommendations: save every song, movie, place, and tip your friends send you. Launching.
+- Epiloq — Track shows, movies, comics, and books in one place. In development.
+- TimeUp — Focus blocks and deep work sessions for iOS. In development.
+- Blab — Social app of daily micro-challenges: answer in your mode, inside worlds that get your context. iOS, Spanish first. Launching.
+
+## Web & Creative
+
 - [TrueLoveCreative](https://truelovecreative.es) — Brand identity and creative studio.
-- [Estrela.photo](https://estrela.photo) — Artist portrait photography.
+- [Estrela.photo](https://estrela.photo) — Portraits, events and visual stories.
 
 ## Contact
 
 - Email: info@beatlabs.ae
-- Location: Dubai, UAE
+- Location: Ajman Media City Free Zone, UAE (license 53228)
 - Founded: 2026
 
 ## Optional
 
+- [Apps index](https://beatlabs.ae/apps)
+- [Studios](https://beatlabs.ae/studios)
+- [Legal](https://beatlabs.ae/legal)
 - [Sitemap](https://beatlabs.ae/sitemap.xml)

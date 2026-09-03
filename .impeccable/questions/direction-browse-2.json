@@ -1,0 +1,361 @@
+{
+ "title": "beatlabs.ae — catorce mundos, ahora sí con las previews visibles",
+ "question": "Hasta ahora la mesa ocultaba las imágenes (modo 'code'); ya está corregido. Estas son las dos últimas manos juntas: el cuaderno actual, cuatro direcciones de las primeras mesas y nueve nuevas. Elige, escribe un steer con lo que te atrae, o re-tira.",
+ "options": [
+  {
+   "id": "notebook",
+   "label": "El cuaderno (actual)",
+   "kicker": "EN LOCALHOST",
+   "lineage": "La materia de estrela.photo con composición propia",
+   "thesis": "Lo que hay montado ahora: pestañas, tira de negativo, entradas de dossier.",
+   "palette": [
+    "#eceee7",
+    "#101511",
+    "#c8ff47",
+    "#007AFF",
+    "#EC6F2D",
+    "#FF4A00"
+   ],
+   "materials": [
+    "papel cuadriculado",
+    "hojas inclinadas",
+    "Bebas + JetBrains Mono"
+   ],
+   "viewport": "Titular a todo el ancho, tira de negativo, entradas.",
+   "risk": "Se sigue pareciendo a estrela.",
+   "comp": ".impeccable/mocks/decision/notebook.png"
+  },
+  {
+   "id": "departures",
+   "label": "El panel de salidas",
+   "kicker": "THE ROLL",
+   "lineage": "Paneles split-flap de aeropuerto (DXB)",
+   "thesis": "beatLabs es el hub; cada marca una salida con vuelo, puerta, destino (su dominio) y estado honesto.",
+   "palette": [
+    "#F3F2EE",
+    "#141516",
+    "#FFB000",
+    "#7CFF6A",
+    "#007AFF",
+    "#EC6F2D"
+   ],
+   "materials": [
+    "tablero negro con flaps",
+    "reloj DXB en vivo",
+    "ámbar de estado",
+    "Barlow Condensed + Roboto Mono"
+   ],
+   "viewport": "Titular y reloj arriba; el tablero ocupa el viewport: BL003 Nibango LAUNCHING, BL001 Curb LIVE·ON TIME, BL002 Raved, BL004–008 SCHEDULED, ST006 estudios. Al cargar, los flaps giran letra a letra.",
+   "case": "El más Dubái y el más operativo: los estados son reales y el objeto es icónico. Corporativo-hub.",
+   "risk": "Vive del negro del tablero; la página tiene fondo claro pero el protagonista es oscuro.",
+   "comp": ".impeccable/mocks/decision/departures.png"
+  },
+  {
+   "id": "label",
+   "label": "El catálogo de sello",
+   "verdict": "competitive",
+   "lineage": "Catálogos de sellos independientes (números de catálogo, fundas de color)",
+   "thesis": "beatLabs es el sello; cada app un lanzamiento con funda en su color, número BL-00X y estado OUT NOW / OUT SOON / IN THE STUDIO.",
+   "palette": [
+    "#F2F2EE",
+    "#111113",
+    "#C8FF47",
+    "#007AFF",
+    "#EC6F2D",
+    "#FF4A00"
+   ],
+   "materials": [
+    "fundas de cartón apiladas",
+    "números de catálogo",
+    "Archivo expandida + Azeret Mono"
+   ],
+   "viewport": "Titular en grotesca expandida, lista de catálogo, y el cajón de fundas: Nibango, Curb, Raved solapadas con su icono; hueco 'in the studio'.",
+   "case": "Explica 'un sello y sus lanzamientos' en un segundo; crece sin límite.",
+   "risk": "Si el copy no dice 'app', parece discográfica.",
+   "comp": ".impeccable/mocks/decision/label.png"
+  },
+  {
+   "id": "museum",
+   "label": "La exposición",
+   "verdict": "competitive",
+   "lineage": "Sala de colección de un museo de diseño: pedestal, texto de pared, cartela",
+   "thesis": "beatLabs es la institución; cada app una pieza en su pedestal con cartela (título · año · medio · nº de colección).",
+   "palette": [
+    "#F4F4F2",
+    "#1C1C1C",
+    "#E3E3DF",
+    "#007AFF"
+   ],
+   "materials": [
+    "blanco de galería",
+    "pedestal",
+    "cartela",
+    "Bricolage Grotesque"
+   ],
+   "viewport": "Texto de pared a la izquierda; a la derecha el icono de Nibango enorme sobre pedestal con sombra real y su cartela; al hacer scroll, una pieza por pantalla.",
+   "case": "El más silencioso y serio. Vive de la tipografía y el espacio.",
+   "risk": "Con solo iconos como 'objetos' puede quedar vacío.",
+   "comp": ".impeccable/mocks/decision/museum.png"
+  },
+  {
+   "id": "metro",
+   "label": "El mapa de red",
+   "verdict": "competitive",
+   "lineage": "Mapas de metro (RTA Dubái, Beck): cada línea su color, líneas planificadas discontinuas",
+   "thesis": "beatLabs es el intercambiador; cada marca una línea con estaciones (sus hitos) y estado: operativa, en apertura, planificada.",
+   "palette": [
+    "#FFFFFF",
+    "#111111",
+    "#007AFF",
+    "#EC6F2D",
+    "#FF4A00",
+    "#999999"
+   ],
+   "materials": [
+    "trazos a 45°",
+    "estaciones",
+    "leyenda",
+    "Overpass"
+   ],
+   "viewport": "El primer viewport ES el diagrama: tres líneas de color con estaciones (6 categorías, 0% comisión…), tres discontinuas planificadas, la línea negra de estudios; leyenda a la derecha.",
+   "case": "Identificación total en el Golfo; explica 'marcas independientes, una red' sin frases.",
+   "risk": "Puede leerse como juego si la geometría no es estricta.",
+   "comp": ".impeccable/mocks/decision/metro.png"
+  },
+  {
+   "id": "status",
+   "label": "La página de estado",
+   "verdict": "competitive",
+   "lineage": "Status pages de infraestructura (uptime bars, 'all systems operational')",
+   "thesis": "beatLabs publica el estado de sus empresas como una página de sistemas: barras de 90 días, puntos verdes/ámbar, actualización con hora.",
+   "palette": [
+    "#FAFAF9",
+    "#0F1115",
+    "#22C55E",
+    "#F59E0B",
+    "#C8FF47"
+   ],
+   "materials": [
+    "tarjetas blancas finas",
+    "barras de uptime",
+    "Geist + Geist Mono"
+   ],
+   "viewport": "Titular, chip 'All systems operational · 14:02 DXB', panel de componentes con barras de 90 días por app y estado; KPIs abajo.",
+   "case": "Lo más cerca del terminal original que te gustaba, pero claro, corporativo y actual. Estado honesto por diseño.",
+   "risk": "Es una convención de DevOps: puede parecer una página técnica más que una marca.",
+   "comp": ".impeccable/mocks/decision/status.png"
+  },
+  {
+   "id": "magazine",
+   "label": "La revista",
+   "verdict": "competitive",
+   "lineage": "Revista corporativa / annual review: portada con retrato, serif itálica, columnas, folios",
+   "thesis": "beatLabs se presenta como su propia revista: portada con el fundador, cover story del grupo, y cada app un reportaje.",
+   "palette": [
+    "#FFFFFF",
+    "#111111",
+    "#D7263D"
+   ],
+   "materials": [
+    "retrato real a página completa",
+    "Instrument Serif itálica",
+    "columnas y capitulares",
+    "folios"
+   ],
+   "viewport": "Retrato a la izquierda (el tuyo), cabecera 'The Review · 2026', titular serif con 'companies.' en itálica, entradilla, texto a dos columnas con capitular y los iconos como 'p. 4'.",
+   "case": "El más editorial y humano: la persona detrás. Muy distinto de todo lo anterior.",
+   "risk": "Serif + retrato es una fórmula editorial conocida; y exige buen texto.",
+   "comp": ".impeccable/mocks/decision/magazine.png"
+  },
+  {
+   "id": "ledger",
+   "label": "El libro mayor partido",
+   "verdict": "competitive",
+   "lineage": "Composición partida: panel fijo oscuro con la tesis, columna clara que hace scroll con las entradas",
+   "thesis": "Izquierda fija: el manifiesto en grande con 'companies.' en lima. Derecha: el libro mayor de entradas con icono, línea y estado, que hace scroll.",
+   "palette": [
+    "#0F1115",
+    "#F5F5F2",
+    "#C8FF47",
+    "#007AFF",
+    "#EC6F2D",
+    "#FF4A00"
+   ],
+   "materials": [
+    "split 46/54",
+    "píldoras de estado",
+    "Sora + IBM Plex Mono"
+   ],
+   "viewport": "Pantalla partida: negro con el titular y botones; claro con las ocho entradas y su estado.",
+   "case": "Estructuralmente distinto de todo (no hay hero + secciones); muy legible y crece bien.",
+   "risk": "El panel fijo cansa en fichas largas; hay que soltarlo en móvil.",
+   "comp": ".impeccable/mocks/decision/ledger.png"
+  },
+  {
+   "id": "bento",
+   "label": "La rejilla bento",
+   "verdict": "competitive",
+   "lineage": "Rejillas bento de producto: tiles de tamaños distintos, cada una un hecho real",
+   "thesis": "Toda la home es una rejilla de tiles: la tesis en negro, cada app en su color, cifras reales, tu retrato, huecos discontinuos para lo que está en desarrollo.",
+   "palette": [
+    "#F3F3F0",
+    "#121212",
+    "#C8FF47",
+    "#007AFF",
+    "#EC6F2D",
+    "#FF4A00"
+   ],
+   "materials": [
+    "tiles redondeados",
+    "negro + lima",
+    "Onest"
+   ],
+   "viewport": "Rejilla 6 columnas: tile negro grande con el titular, tiles de color por app con icono, 6 apps / 2 estudios, retrato, huecos en desarrollo.",
+   "case": "Moderno, denso y corporativo; muy escaneable. Es una convención muy usada.",
+   "risk": "Se parece a muchas webs de producto.",
+   "comp": ".impeccable/mocks/decision/bento.png"
+  },
+  {
+   "id": "contents",
+   "label": "El índice tipográfico",
+   "verdict": "competitive",
+   "lineage": "Página de contenidos editorial: lista numerada enorme, una fila por entrada",
+   "thesis": "La home es un índice: 01 Nibango, 02 Curb, 03 Raved… en tipografía enorme con estado y flecha; cada fila lleva a su ficha.",
+   "palette": [
+    "#FFFFFF",
+    "#111111",
+    "#C8FF47"
+   ],
+   "materials": [
+    "lista numerada",
+    "reglas finas",
+    "Familjen Grotesk"
+   ],
+   "viewport": "Cabecera itálica con la tesis; después la lista: número, nombre gigante con icono, meta, estado (Live en lima), flecha.",
+   "case": "Radicalmente simple y muy corporativo; todo el contenido en una sola pantalla.",
+   "risk": "Sin imagen grande, depende del ritmo tipográfico.",
+   "comp": ".impeccable/mocks/decision/contents.png"
+  },
+  {
+   "id": "roadmap",
+   "label": "El roadmap público",
+   "verdict": "competitive",
+   "lineage": "Líneas de tiempo de producto: una línea, hitos, estados",
+   "thesis": "Una línea de tiempo cruza la página: fundación en marzo, Curb live, Nibango y Raved lanzando ahora, Blab/Epiloq/TimeUp en desarrollo sin fecha.",
+   "palette": [
+    "#F6F6F3",
+    "#111111",
+    "#C8FF47",
+    "#007AFF",
+    "#EC6F2D",
+    "#FF4A00"
+   ],
+   "materials": [
+    "línea con nodos de color",
+    "píldora 'public roadmap'",
+    "Schibsted Grotesk + Spline Sans Mono"
+   ],
+   "viewport": "Titular arriba; la línea de tiempo con los iconos como nodos y sus estados; estudios en el pie.",
+   "case": "Honesto y de empresa que planifica; crece con el tiempo por definición.",
+   "risk": "Las fechas obligan: si algo se retrasa, se ve.",
+   "comp": ".impeccable/mocks/decision/roadmap.png"
+  },
+  {
+   "id": "stationery",
+   "label": "La papelería",
+   "verdict": "competitive",
+   "lineage": "Papelería corporativa sobre la mesa: membrete, tarjeta de visita, sobre con sellos",
+   "thesis": "beatLabs se presenta con su papelería: la carta con la tesis, tu tarjeta, un sobre con las apps como sellos.",
+   "palette": [
+    "#D9D6CF",
+    "#FBFAF6",
+    "#141414",
+    "#C8FF47"
+   ],
+   "materials": [
+    "papel sobre mesa",
+    "membrete",
+    "tarjeta con franja lima",
+    "sobre",
+    "Hanken Grotesk + Courier Prime"
+   ],
+   "viewport": "Carta membretada inclinada con el titular y una carta breve; tarjeta de visita; sobre con los iconos como sellos.",
+   "case": "Tangible y corporativo a la vez, muy distinto de estrela. Cálido.",
+   "risk": "Objeto estático: hay que animarlo para que no sea un bodegón.",
+   "comp": ".impeccable/mocks/decision/stationery.png"
+  },
+  {
+   "id": "orgchart",
+   "label": "El organigrama",
+   "verdict": "competitive",
+   "lineage": "Organigramas de holding: entidad arriba, divisiones, filiales",
+   "thesis": "La estructura societaria como diagrama: BeatLabs FZE LLC arriba, dos divisiones, seis apps y dos estudios como cajas conectadas.",
+   "palette": [
+    "#F7F7F4",
+    "#101418",
+    "#C8FF47",
+    "#007AFF",
+    "#EC6F2D",
+    "#FF4A00"
+   ],
+   "materials": [
+    "cajas con sombra dura",
+    "líneas conectoras",
+    "Public Sans"
+   ],
+   "viewport": "Titular a la izquierda; a la derecha el organigrama completo con los iconos en las cajas y las de desarrollo en discontinua.",
+   "case": "El más literal de 'we build companies': una holding con filiales. Serio, claro.",
+   "risk": "Puede parecer una diapositiva corporativa.",
+   "comp": ".impeccable/mocks/decision/orgchart.png"
+  },
+  {
+   "id": "frontpage",
+   "label": "La portada de periódico",
+   "verdict": "competitive",
+   "lineage": "Portada de periódico: cabecera, titular a cinco columnas, columna de última hora, foto",
+   "thesis": "The beatLabs Gazette: la tesis como titular, el texto del grupo en columnas, las apps 'on the record' en la columna lateral, tu foto.",
+   "palette": [
+    "#F8F6F1",
+    "#151515"
+   ],
+   "materials": [
+    "cabecera doble filete",
+    "serif de titular",
+    "columnas",
+    "Playfair Display + Source Serif"
+   ],
+   "viewport": "Cabecera 'The beatLabs Gazette', titular grande, dos columnas de texto, lateral con las apps y la foto del fundador.",
+   "case": "Fue tu primer prototipo (newspaper) y nunca se llegó a ver montado con contenido real.",
+   "risk": "Es la fórmula editorial clásica.",
+   "comp": ".impeccable/mocks/decision/frontpage.png"
+  }
+ ],
+ "reroll": {
+  "registers": [
+   "safer",
+   "bolder"
+  ]
+ },
+ "buildPath": {
+  "value": "comp",
+  "toggle": false
+ },
+ "canon": true,
+ "canonCard": {
+  "label": "El estándar del sector",
+  "thesis": "Lo que publica cualquier venture studio: hero azul, mockups de móvil, tres tarjetas.",
+  "palette": [
+   "#FFFFFF",
+   "#0F172A",
+   "#2563EB"
+  ],
+  "materials": [
+   "Inter",
+   "tarjetas"
+  ],
+  "viewport": "Titular + CTA, móviles, tarjetas.",
+  "risk": "Indistinguible.",
+  "comp": ".impeccable/mocks/decision/canon.png"
+ },
+ "steer": true
+}

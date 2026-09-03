@@ -1,627 +1,170 @@
-'use client'
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { ArrowIcon, Btn, ChevronIcon, Head, MailIcon, Shell } from '@/components/chrome'
+import { AppCell, STATUS } from '@/components/cells'
+import { Autoplay } from '@/components/autoplay'
+import { company, devProducts, publishedProducts, studios } from '@/data/portfolio'
 
-import { useEffect, useState, useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+export const metadata: Metadata = {
+  alternates: { canonical: 'https://beatlabs.ae' },
+}
 
-const modules = [
-  { id: '001', name: 'CURB', type: 'APP', status: 'live', statusText: 'LIVE', dot: '●', uptime: '100%', url: 'https://getcurbapp.com', division: 'APPS' },
-  { id: '002', name: 'RAVED', type: 'APP', status: 'launching', statusText: 'LAUNCHING', dot: '◉', uptime: '98%', url: 'https://raved.app', division: 'APPS' },
-  { id: '003', name: 'NIBANGO', type: 'APP', status: 'launching', statusText: 'LAUNCHING', dot: '◉', uptime: '95%', url: 'https://nibango.com', division: 'APPS' },
-  { id: '004', name: 'EPILOQ', type: 'APP', status: 'dev', statusText: 'DEV', dot: '○', uptime: '—', url: null, division: 'APPS' },
-  { id: '005', name: 'TIMEUP', type: 'APP', status: 'dev', statusText: 'DEV', dot: '○', uptime: '—', url: null, division: 'APPS' },
-  { id: '006', name: 'TRUE_LOVE_CRTV', type: 'STUDIO', status: 'live', statusText: 'LIVE', dot: '●', uptime: '100%', url: 'https://truelovecreative.es', division: 'WEB_CREATIVE' },
-  { id: '007', name: 'ESTRELA_PHOTO', type: 'STUDIO', status: 'live', statusText: 'LIVE', dot: '●', uptime: '100%', url: 'https://estrela.photo', division: 'WEB_CREATIVE' },
-]
-
-const divisions = [
-  { key: 'APPS', label: 'DIV_01 · APPS' },
-  { key: 'WEB_CREATIVE', label: 'DIV_02 · WEB_&_CREATIVE' },
-]
-
-const bootLines = [
-  '> INITIALIZING BEATLABS_OS...',
-  '> LOADING ENTITY: BEATLABS FZE LLC [OK]',
-  '> LICENSE: 53228 AJMAN FREE ZONE [VERIFIED]',
-  '> DIVISIONS: APPS [5] · WEB_&_CREATIVE [2] [LOADED]',
-  '> STATUS: OPERATIONAL',
-  '',
-  '> MISSION: WE BUILD COMPANIES. NOT PROJECTS.',
-]
-
-const bootDelays = [0, 400, 800, 1200, 1600, 1900, 2200]
+function CheckIcon() {
+  return (
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <circle cx="10" cy="10" r="8" /><path d="M6.5 10.5l2.5 2.5 4.5-5" />
+    </svg>
+  )
+}
+function BookIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M4 5h6a3 3 0 013 3v11a2 2 0 00-2-2H4zM20 5h-6a3 3 0 00-3 3v11a2 2 0 012-2h7z" />
+    </svg>
+  )
+}
+function PhoneIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" />
+    </svg>
+  )
+}
 
 export default function Home() {
-  const [mousePos, setMousePos] = useState({ x: -200, y: -200 })
-  const [time, setTime] = useState('00:00:00')
-  const [reportDate, setReportDate] = useState('')
-  const [visibleBootLines, setVisibleBootLines] = useState<number[]>([])
-  const [bootDone, setBootDone] = useState(false)
-  const [hoveredRow, setHoveredRow] = useState<string | null>(null)
-  const mainRef = useRef<HTMLDivElement>(null)
-  const { scrollYProgress } = useScroll()
-  const lineWidth = useTransform(scrollYProgress, [0, 1], ['0%', '100%'])
-
-  // Custom cursor
-  useEffect(() => {
-    const move = (e: MouseEvent) => setMousePos({ x: e.clientX, y: e.clientY })
-    window.addEventListener('mousemove', move)
-    return () => window.removeEventListener('mousemove', move)
-  }, [])
-
-  // Live clock
-  useEffect(() => {
-    const tick = () => {
-      const now = new Date()
-      const dxb = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Dubai' }))
-      const h = String(dxb.getHours()).padStart(2, '0')
-      const m = String(dxb.getMinutes()).padStart(2, '0')
-      const s = String(dxb.getSeconds()).padStart(2, '0')
-      setTime(`${h}:${m}:${s}`)
-    }
-    tick()
-    const i = setInterval(tick, 1000)
-    return () => clearInterval(i)
-  }, [])
-
-  // Report date
-  useEffect(() => {
-    const now = new Date()
-    const y = now.getFullYear()
-    const mo = String(now.getMonth() + 1).padStart(2, '0')
-    const da = String(now.getDate()).padStart(2, '0')
-    setReportDate(`${y}-${mo}-${da}`)
-  }, [])
-
-  // Boot sequence
-  useEffect(() => {
-    const timers: NodeJS.Timeout[] = []
-    bootDelays.forEach((delay, i) => {
-      timers.push(setTimeout(() => {
-        setVisibleBootLines(prev => [...prev, i])
-      }, delay))
-    })
-    timers.push(setTimeout(() => setBootDone(true), 3000))
-    return () => timers.forEach(clearTimeout)
-  }, [])
-
-
-  const mono = 'var(--mono)'
-  const lime = 'var(--lime)'
-  const bg = 'var(--black)'
-  const textColor = 'var(--lime-dim)'
-  const dimColor = 'rgba(255,255,255,0.3)'
-  const borderColor = 'var(--lime-border)'
-  const brightWhite = 'rgba(240,240,240,0.85)'
-
-  const renderBootLineContent = (line: string) => {
-    if (line === '') return <>&nbsp;</>
-    if (line.includes('[OK]')) {
-      const parts = line.split('[OK]')
-      return <>{parts[0]}<span style={{ color: lime, fontWeight: 700 }}>[OK]</span>{parts[1]}</>
-    }
-    if (line.includes('[VERIFIED]')) {
-      const parts = line.split('[VERIFIED]')
-      return <>{parts[0]}<span style={{ color: lime, fontWeight: 700 }}>[VERIFIED]</span>{parts[1]}</>
-    }
-    if (line.includes('[LOADED]')) {
-      const parts = line.split('[LOADED]')
-      return <>{parts[0]}<span style={{ color: lime, fontWeight: 700 }}>[LOADED]</span>{parts[1]}</>
-    }
-    return <>{line}</>
-  }
-
-  const ModuleRow = ({ mod }: { mod: typeof modules[0] }) => {
-    const isHovered = hoveredRow === mod.id
-
-    const padName = mod.name.padEnd(18, ' ')
-    const padType = mod.type.padEnd(12, ' ')
-    const padStatus = `${mod.dot} ${mod.statusText}`.padEnd(16, ' ')
-    const content = `${mod.id}   ${padName}${padType}${padStatus}${mod.uptime}`
-
-    const rowStyle: React.CSSProperties = {
-      fontFamily: mono,
-      fontSize: '0.78rem',
-      padding: '5px 4px',
-      cursor: mod.url ? 'pointer' : 'default',
-      transition: 'background 0.1s, color 0.1s',
-      whiteSpace: 'pre',
-      display: 'block',
-      background: isHovered ? lime : 'transparent',
-      color: isHovered ? bg : textColor,
-      textDecoration: 'none',
-    }
-
-    if (mod.url) {
-      return (
-        <a
-          href={mod.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={rowStyle}
-          onMouseEnter={() => setHoveredRow(mod.id)}
-          onMouseLeave={() => setHoveredRow(null)}
-        >
-          {content}
-        </a>
-      )
-    }
-
-    return (
-      <span
-        style={rowStyle}
-        onMouseEnter={() => setHoveredRow(mod.id)}
-        onMouseLeave={() => setHoveredRow(null)}
-      >
-        {content}
-      </span>
-    )
-  }
-
-  const MobileModuleCard = ({ mod }: { mod: typeof modules[0] }) => {
-    const mobileDotColor = mod.status === 'live' || mod.status === 'launching' ? lime : dimColor
-    const card = (
-      <div style={{
-        fontFamily: mono,
-        fontSize: '0.75rem',
-        color: textColor,
-        padding: '10px 0',
-        borderBottom: `1px solid ${borderColor}`,
-      }}>
-        <div style={{ color: lime, fontWeight: 700, marginBottom: '2px' }}>
-          {mod.id}  {mod.name}
-        </div>
-        <div><span style={{ color: dimColor }}>TYPE:</span> {mod.type}</div>
-        <div><span style={{ color: dimColor }}>STATUS:</span> <span style={{ color: mobileDotColor }}>{mod.dot}</span> {mod.statusText}</div>
-        {mod.uptime !== '—' && <div><span style={{ color: dimColor }}>UPTIME:</span> {mod.uptime}</div>}
-      </div>
-    )
-
-    if (mod.url) {
-      return (
-        <a href={mod.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
-          {card}
-        </a>
-      )
-    }
-    return card
-  }
-
+  const ordered = [...publishedProducts].sort((a, b) => Number(b.flagship) - Number(a.flagship))
+  const links: { href: string; label: string; icon?: string; mark?: string }[] = [
+    ...ordered.filter(p => p.siteUrl).map(p => ({ href: p.siteUrl!, label: p.siteUrl!.replace('https://', '').split('/')[0], icon: p.icon })),
+    ...studios.map(s => ({ href: s.url, label: s.url.replace('https://', ''), icon: s.icon, mark: s.mark })),
+  ]
   return (
-    <>
-      <div className="cursor" style={{ left: mousePos.x, top: mousePos.y }} />
-
-      <motion.div
-        className="fixed top-0 left-0 h-[1px] z-[200]"
-        style={{ width: lineWidth, background: lime }}
-      />
-
-      <style jsx global>{`
-        @keyframes terminal-blink {
-          0%, 50% { opacity: 1; }
-          51%, 100% { opacity: 0; }
-        }
-        .terminal-cursor {
-          animation: terminal-blink 1s step-end infinite;
-          color: var(--lime);
-        }
-        a { text-decoration: none; color: inherit; }
-        a:visited { color: inherit; }
-
-        @media (max-width: 768px) {
-          .desktop-sidebar { display: none !important; }
-          .mobile-info-bar { display: flex !important; }
-          .desktop-topbar { display: none !important; }
-          .dashboard-grid { grid-template-columns: 1fr !important; }
-          .panel-left-desktop { display: block !important; border-right: none !important; padding-right: 0 !important; margin-bottom: 16px; overflow-x: hidden; font-size: 0.7rem !important; }
-          .panel-right-desktop { padding-left: 0 !important; }
-          .module-table-desktop { display: none !important; }
-          .module-cards-mobile { display: block !important; }
-          body { font-size: 0.75rem !important; }
-        }
-
-        @media (min-width: 769px) {
-          .mobile-info-bar { display: none !important; }
-          .module-cards-mobile { display: none !important; }
-        }
-      `}</style>
-
-      {/* ── DESKTOP TOP BAR ── */}
-      <div
-        className="desktop-topbar"
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          zIndex: 100,
-          background: bg,
-          borderBottom: `1px solid ${borderColor}`,
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          padding: '8px 20px',
-          fontFamily: mono,
-          fontSize: '0.75rem',
-          color: lime,
-        }}
-      >
-        <div style={{ flex: 1, display: 'flex', alignItems: 'center' }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.png" alt="beatLabs" style={{ height: '1.4rem', width: 'auto' }} />
+    <Shell current="home">
+      {/* SHOWCASE: one product at a time, the icons below switch it (radio-driven, no JS) */}
+      <section className="showcase" aria-label="Featured apps">
+        {ordered.map((p, i) => (
+          <input key={p.slug} type="radio" name="showcase" id={`s${i}`} defaultChecked={i === 0} aria-label={`Show ${p.displayName}`} />
+        ))}
+        <div className="slides">
+          {ordered.map((p, i) => {
+            const prev = (i - 1 + ordered.length) % ordered.length
+            const next = (i + 1) % ordered.length
+            const isLive = p.status === 'live'
+            const primary = isLive && p.appStoreUrl ? { href: p.appStoreUrl, label: 'Get it on the App Store', ext: true } : p.siteUrl ? { href: p.siteUrl, label: `Open ${p.siteUrl.replace('https://', '').split('/')[0]}`, ext: true } : null
+            return (
+              <article key={p.slug} className="slide" aria-label={p.displayName}>
+                <label className="arrow arrow--prev" htmlFor={`s${prev}`} aria-label={`Previous: ${ordered[prev].displayName}`}><ChevronIcon left /></label>
+                <label className="arrow arrow--next" htmlFor={`s${next}`} aria-label={`Next: ${ordered[next].displayName}`}><ChevronIcon /></label>
+                {p.icon && (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img className="icon" src={p.icon} alt={`${p.displayName} icon`} width={240} height={240} />
+                )}
+                <div>
+                  <h1 className="h1">{p.displayName}</h1>
+                  <p className="sub">{p.tagline}</p>
+                  <p className="body">{p.oneLiner} <span className="mark">{STATUS[p.status]}</span></p>
+                  <div className="actions">
+                    {primary ? <Btn href={primary.href} external black>{primary.label}</Btn> : <Btn href={`/apps/${p.slug}`} black arrow={false}>Launching soon</Btn>}
+                    <Btn href={`/apps/${p.slug}`} arrow={false}>Learn more</Btn>
+                  </div>
+                </div>
+              </article>
+            )
+          })}
         </div>
-        <div style={{ flex: 1, textAlign: 'center' }}>FZE://ajman-media-city/53228</div>
-        <div style={{ flex: 1, textAlign: 'right' }}>[SYS: ONLINE] [TIME: {time} DXB]</div>
-      </div>
-
-      {/* ── MOBILE TOP BAR ── */}
-      <div
-        className="mobile-info-bar"
-        style={{
-          display: 'none',
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          zIndex: 100,
-          background: bg,
-          borderBottom: `1px solid ${borderColor}`,
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          padding: '8px 12px',
-          fontFamily: mono,
-          fontSize: '0.65rem',
-          color: lime,
-        }}
-      >
-        <span style={{ display: 'flex', alignItems: 'center' }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.png" alt="beatLabs" style={{ height: '1.2rem', width: 'auto' }} />
-        </span>
-        <span>{time} DXB</span>
-      </div>
-
-      <main
-        ref={mainRef}
-        style={{
-          background: bg,
-          color: textColor,
-          fontFamily: mono,
-          fontSize: '14px',
-          lineHeight: 1.6,
-          overflowX: 'hidden',
-          paddingTop: '50px',
-          maxWidth: '1100px',
-          margin: '0 auto',
-          paddingLeft: '20px',
-          paddingRight: '20px',
-          cursor: 'none',
-        }}
-      >
-        {/* ── BOOT SEQUENCE ── */}
-        <div style={{ padding: '30px 0 20px', minHeight: '200px' }}>
-          {bootLines.map((line, i) => (
-            <div
-              key={i}
-              style={{
-                opacity: visibleBootLines.includes(i) ? 1 : 0,
-                whiteSpace: 'pre',
-                color: lime,
-                fontFamily: mono,
-                fontSize: '0.85rem',
-                transition: 'opacity 0.1s',
-              }}
-            >
-              {renderBootLineContent(line)}
-            </div>
+        <div className="dots" role="tablist" aria-label="Choose an app">
+          {ordered.map((p, i) => (
+            <label key={p.slug} htmlFor={`s${i}`} title={p.displayName}>
+              {p.icon && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={p.icon} alt="" width={28} height={28} />
+              )}
+            </label>
           ))}
-          {/* Cursor after last boot line */}
-          <div style={{
-            opacity: visibleBootLines.includes(bootLines.length - 1) ? 1 : 0,
-            whiteSpace: 'pre',
-            color: lime,
-            fontFamily: mono,
-            fontSize: '0.85rem',
-          }}>
-            {'> '}<span className="terminal-cursor">_</span>
+        </div>
+        <div className="pips" aria-hidden="true">
+          {ordered.map((p, i) => <label key={p.slug} htmlFor={`s${i}`} />)}
+        </div>
+        <Autoplay group="showcase" interval={5000} />
+      </section>
+
+      {/* THE GRID */}
+      <Head title="Apps that stand on their own" />
+      <section className="cells cells--4" aria-label="All apps">
+        {ordered.map(p => <AppCell key={p.slug} app={p} />)}
+        {devProducts.map(p => <AppCell key={p.slug} app={p} />)}
+      </section>
+
+      {/* STUDIOS BANNER */}
+      <section className="banner" aria-label="Studios">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img className="photo" src="/apps/founder.webp" width={800} height={534} alt="Javier Estrela, founder, on location" />
+        <div className="copy">
+          <h2 className="h2">Two studios, open for client work</h2>
+          <ul>
+            <li><CheckIcon /><span><b>{studios[0].name}</b>{studios[0].tagline}</span></li>
+            <li><CheckIcon /><span><b>{studios[1].name}</b>{studios[1].tagline}</span></li>
+          </ul>
+          <div className="actions">
+            <Btn href="/studios" arrow={false}>About the studios</Btn>
           </div>
         </div>
+      </section>
 
-        {/* ── SEPARATOR ── */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={bootDone ? { opacity: 1 } : {}}
-          transition={{ duration: 0.3 }}
-          style={{
-            color: dimColor,
-            padding: '10px 0',
-            fontSize: '0.8rem',
-            userSelect: 'none',
-          }}
-        >
-          ────────────────────────────────────────────────────────────
-        </motion.div>
+      {/* MISSION BAND */}
+      <div className="band" style={{ marginTop: 'var(--section)' }}>
+        <div className="mission">
+          <h2 className="h2">We build companies. Not projects.</h2>
+          <p className="body">{company.mission[0]} {company.mission[1]} {company.mission[2]} Each app has its own name, colour, domain and legal pages; one entity stands behind all of them.</p>
+        </div>
+      </div>
 
-        {/* ── DASHBOARD ── */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={bootDone ? { opacity: 1 } : {}}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
-          <div
-            className="dashboard-grid"
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '30% 70%',
-              gap: 0,
-            }}
-          >
-            {/* ── LEFT PANEL (desktop only) ── */}
-            <div
-              className="panel-left-desktop"
-              style={{
-                paddingRight: '20px',
-                borderRight: `1px solid rgba(200,255,71,0.15)`,
-                fontFamily: mono,
-                fontSize: '0.8rem',
-                lineHeight: 1.5,
-              }}
-            >
-              {/* Entity box */}
-              <div style={{ marginBottom: '16px' }}>
-                <div style={{ color: 'rgba(200,255,71,0.3)' }}>┌─ ENTITY ──────────────────┐</div>
-                <div>│ <span style={{ color: brightWhite }}>BeatLabs FZE LLC</span>          │</div>
-                <div>│ <span style={{ color: dimColor }}>Reg:</span> <span style={{ color: brightWhite }}>53228</span>                │</div>
-                <div>│ <span style={{ color: dimColor }}>Zone:</span> <span style={{ color: brightWhite }}>Ajman Media City</span>    │</div>
-                <div>│ <span style={{ color: dimColor }}>Status:</span> <span style={{ color: lime }}>ACTIVE</span>            │</div>
-                <div>│ <span style={{ color: dimColor }}>Founded:</span> <span style={{ color: brightWhite }}>2026-03-25</span>       │</div>
-                <div style={{ color: 'rgba(200,255,71,0.3)' }}>└───────────────────────────┘</div>
-              </div>
-
-              {/* Contact box */}
-              <div style={{ marginBottom: '16px' }}>
-                <div style={{ color: 'rgba(200,255,71,0.3)' }}>┌─ CONTACT ─────────────────┐</div>
-                <div>│ <span style={{ color: brightWhite }}>info@beatlabs.ae</span>          │</div>
-                <div>│ <span style={{ color: brightWhite }}>+971585324519</span>             │</div>
-                <div style={{ color: 'rgba(200,255,71,0.3)' }}>└───────────────────────────┘</div>
-              </div>
-
-              {/* Divisions box */}
-              <div style={{ marginBottom: '16px' }}>
-                <div style={{ color: 'rgba(200,255,71,0.3)' }}>┌─ DIVISIONS ───────────────┐</div>
-                <div>│ <span style={{ color: brightWhite }}>APPS</span> <span style={{ color: dimColor }}>[5]</span>                  │</div>
-                <div>│ <span style={{ color: brightWhite }}>WEB &amp; CREATIVE</span> <span style={{ color: dimColor }}>[2]</span>        │</div>
-                <div style={{ color: 'rgba(200,255,71,0.3)' }}>└───────────────────────────┘</div>
-              </div>
-
-              {/* Status box */}
-              <div style={{ marginBottom: '16px' }}>
-                <div style={{ color: 'rgba(200,255,71,0.3)' }}>┌─ STATUS ──────────────────┐</div>
-                <div>│ <span style={{ color: dimColor }}>SYS:</span>    <span style={{ color: lime }}>ONLINE</span>             │</div>
-                <div>│ <span style={{ color: dimColor }}>DEPLOY:</span> <span style={{ color: brightWhite }}>2026-03-25</span>         │</div>
-                <div>│ <span style={{ color: dimColor }}>UPTIME:</span> <span style={{ color: brightWhite }}>100%</span>              │</div>
-                <div>│ <span style={{ color: dimColor }}>ENV:</span>    <span style={{ color: brightWhite }}>PRODUCTION</span>        │</div>
-                <div style={{ color: 'rgba(200,255,71,0.3)' }}>└───────────────────────────┘</div>
-              </div>
-            </div>
-
-            {/* ── RIGHT PANEL ── */}
-            <div
-              className="panel-right-desktop"
-              id="section-modules"
-              style={{ paddingLeft: '20px', fontFamily: mono }}
-            >
-              <div style={{ color: lime, fontSize: '0.8rem', marginBottom: '8px' }}>
-                MODULE_LIST &gt; STATUS_REPORT &gt; {reportDate}
-              </div>
-
-              {/* Desktop table */}
-              <div className="module-table-desktop">
-                <div style={{ fontSize: '0.75rem', color: dimColor, padding: '4px 0' }}>
-                  ID    NAME              TYPE        STATUS          UPTIME
-                </div>
-                <div style={{ color: borderColor, fontSize: '0.75rem', userSelect: 'none' }}>
-                  ────────────────────────────────────────────────────────────
-                </div>
-
-                {divisions.map(div => (
-                  <div key={div.key}>
-                    <div style={{ fontSize: '0.75rem', color: lime, padding: '8px 0 2px', userSelect: 'none' }}>
-                      ── {div.label} {'─'.repeat(Math.max(2, 44 - div.label.length))}
-                    </div>
-                    {modules.filter(m => m.division === div.key).map(mod => (
-                      <ModuleRow key={mod.id} mod={mod} />
-                    ))}
-                  </div>
-                ))}
-
-                <div style={{ color: borderColor, fontSize: '0.75rem', userSelect: 'none', paddingTop: '8px' }}>
-                  ────────────────────────────────────────────────────────────
-                </div>
-                <div style={{ fontSize: '0.75rem', color: textColor, paddingTop: '8px' }}>
-                  TOTAL: 7 | LIVE: 3 | LAUNCHING: 2 | IN_DEV: 2
-                </div>
-                <div style={{ fontSize: '0.78rem', paddingTop: '12px' }}>
-                  <a href="/apps" style={{ color: lime, fontWeight: 700 }}>
-                    {'> '}open /apps — view all applications →
-                  </a>
-                </div>
-              </div>
-
-              {/* Mobile cards */}
-              <div className="module-cards-mobile" style={{ display: 'none' }}>
-                {/* Mobile status panel */}
-                <div style={{
-                  fontFamily: mono,
-                  fontSize: '0.75rem',
-                  color: textColor,
-                  padding: '10px 0',
-                  borderBottom: `1px solid ${borderColor}`,
-                  marginBottom: '4px',
-                }}>
-                  <div style={{ color: lime, fontWeight: 700, marginBottom: '4px' }}>SYS_STATUS</div>
-                  <div><span style={{ color: dimColor }}>SYS:</span> <span style={{ color: lime }}>ONLINE</span></div>
-                  <div><span style={{ color: dimColor }}>DEPLOY:</span> <span style={{ color: brightWhite }}>2026-03-25</span></div>
-                  <div><span style={{ color: dimColor }}>UPTIME:</span> <span style={{ color: brightWhite }}>100%</span></div>
-                  <div><span style={{ color: dimColor }}>ENV:</span> <span style={{ color: brightWhite }}>PRODUCTION</span></div>
-                </div>
-                {divisions.map(div => (
-                  <div key={div.key}>
-                    <div style={{ fontFamily: mono, fontSize: '0.7rem', color: lime, padding: '10px 0 2px', userSelect: 'none' }}>
-                      ── {div.label} ──
-                    </div>
-                    {modules.filter(m => m.division === div.key).map(mod => (
-                      <MobileModuleCard key={mod.id} mod={mod} />
-                    ))}
-                  </div>
-                ))}
-                <div style={{ fontSize: '0.7rem', color: textColor, paddingTop: '8px' }}>
-                  TOTAL: 7 | LIVE: 3 | LAUNCHING: 2 | IN_DEV: 2
-                </div>
-                <div style={{ fontSize: '0.75rem', paddingTop: '10px' }}>
-                  <a href="/apps" style={{ color: lime, fontWeight: 700 }}>
-                    {'> '}open /apps →
-                  </a>
-                </div>
-              </div>
-
-              <div style={{ paddingTop: '16px', fontSize: '0.85rem', color: lime }}>
-                {'> '}<span className="terminal-cursor">_</span>
-              </div>
-            </div>
+      {/* FIND US */}
+      <div className="band links" style={{ paddingTop: 0 }}>
+        <div>
+          <div className="head" style={{ flexDirection: 'row', alignItems: 'baseline', justifyContent: 'space-between' }}>
+            <h2 className="h2">Find us across the internet</h2>
+            <span className="label">Every brand, its own domain</span>
           </div>
-        </motion.div>
-
-        {/* ── ABOUT SECTION ── */}
-        <motion.div
-          id="section-about"
-          initial={{ opacity: 0 }}
-          animate={bootDone ? { opacity: 1 } : {}}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          style={{ paddingTop: '10px' }}
-        >
-          <div style={{
-            color: borderColor,
-            fontSize: '0.75rem',
-            padding: '16px 0 8px',
-            userSelect: 'none',
-          }}>
-            ────────────────────────────────────────────────────────────
-          </div>
-
-          <p style={{ color: lime, fontWeight: 700, fontSize: '0.85rem', fontFamily: mono }}>
-            {'> whoami'}
-          </p>
-          <div style={{ fontSize: '0.8rem', padding: '4px 0', lineHeight: 1.6, fontFamily: mono }}>
-            <div>
-              <span style={{ color: dimColor, display: 'inline-block', minWidth: '100px' }}>NAME:</span>
-              <span style={{ color: brightWhite }}>Francisco Javier Estrela Belmonte</span>
-            </div>
-            <div>
-              <span style={{ color: dimColor, display: 'inline-block', minWidth: '100px' }}>ROLE:</span>
-              <span style={{ color: brightWhite }}>Founder &amp; Manager, BeatLabs FZE LLC</span>
-            </div>
-            <div>
-              <span style={{ color: dimColor, display: 'inline-block', minWidth: '100px' }}>LOCATION:</span>
-              <span style={{ color: brightWhite }}>Dubai, UAE</span>
-            </div>
-            <div>
-              <span style={{ color: dimColor, display: 'inline-block', minWidth: '100px' }}>SKILLS:</span>
-              <span style={{ color: brightWhite }}>design, code, launch, repeat</span>
-            </div>
-          </div>
-
-          <br />
-          <p style={{ color: lime, fontWeight: 700, fontSize: '0.85rem', fontFamily: mono }}>
-            {'> mission'}
-          </p>
-          <div style={{
-            fontSize: '0.8rem',
-            lineHeight: 1.7,
-            color: textColor,
-            maxWidth: '600px',
-            paddingTop: '6px',
-            fontFamily: mono,
-          }}>
-            beatLabs is the holding entity behind everything I build.<br />
-            Each project has its own identity, its own audience, its own path.<br />
-            Built properly. Always.
-          </div>
-          <div style={{ paddingTop: '16px', fontSize: '0.85rem', color: lime, fontFamily: mono }}>
-            {'> '}<span className="terminal-cursor">_</span>
-          </div>
-        </motion.div>
-
-        {/* ── CONTACT SECTION ── */}
-        <motion.div
-          id="section-contact"
-          initial={{ opacity: 0 }}
-          animate={bootDone ? { opacity: 1 } : {}}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          style={{ paddingTop: '10px' }}
-        >
-          <div style={{
-            color: borderColor,
-            fontSize: '0.75rem',
-            padding: '16px 0 8px',
-            userSelect: 'none',
-          }}>
-            ────────────────────────────────────────────────────────────
-          </div>
-
-          <p style={{ color: lime, fontWeight: 700, fontSize: '0.85rem', fontFamily: mono }}>
-            {'> contact'}
-          </p>
-          <div style={{ fontSize: '0.8rem', paddingTop: '8px', fontFamily: mono }}>
-            <div>$ mail info@beatlabs.ae</div>
-            <div>
-              <a
-                href="mailto:info@beatlabs.ae"
-                style={{
-                  color: lime,
-                  fontWeight: 700,
-                  textDecoration: 'none',
-                  transition: 'opacity 0.15s',
-                }}
-                onMouseEnter={e => (e.currentTarget.style.opacity = '0.7')}
-                onMouseLeave={e => (e.currentTarget.style.opacity = '1')}
-              >
-                [CLICK TO COMPOSE →]
+          <section className="cells cells--3">
+            {links.map(l => (
+              <a key={l.href} href={l.href} className="cell" target="_blank" rel="noopener noreferrer">
+                {l.icon ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={l.icon} alt="" width={32} height={32} />
+                ) : l.mark ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={l.mark} alt="" className="mark-img" width={512} height={99} />
+                ) : null}
+                <span className="more">{l.label}<ArrowIcon /></span>
               </a>
-            </div>
-          </div>
-        </motion.div>
+            ))}
+          </section>
+        </div>
+      </div>
 
-        {/* ── FOOTER ── */}
-        <motion.footer
-          initial={{ opacity: 0 }}
-          animate={bootDone ? { opacity: 1 } : {}}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          style={{
-            padding: '30px 0 20px',
-            fontSize: '0.7rem',
-            color: dimColor,
-            textAlign: 'center',
-            lineHeight: 1.8,
-            fontFamily: mono,
-          }}
-        >
-          <div style={{ color: 'rgba(200,255,71,0.15)', userSelect: 'none' }}>
-            ─────────────────────────────────────────────────────────────
-          </div>
-          <div style={{ paddingBottom: '6px' }}>
-            <a href="/apps" style={{ color: textColor }}>[APPS]</a>
-            {' · '}
-            <a href="/legal" style={{ color: textColor }}>[LEGAL]</a>
-            {' · '}
-            <a href="mailto:info@beatlabs.ae" style={{ color: textColor }}>[CONTACT]</a>
-          </div>
-          BEATLABS_OS · © 2026 BeatLabs FZE LLC · License 53228 · Ajman Media City Free Zone<br />
-          Free Zone Establishment incorporated under Amiri Decree No.8 of 2021
-          <div style={{ color: 'rgba(200,255,71,0.15)', userSelect: 'none' }}>
-            ─────────────────────────────────────────────────────────────
-          </div>
-        </motion.footer>
-      </main>
-    </>
+      {/* THE COMPANY: black fact cards */}
+      <Head title="The company" />
+      <section className="cells cells--3" aria-label="Company facts">
+        <div className="cell cell--black"><span className="h4" style={{ color: '#fff' }}>{company.legalName}</span><span className="label">The entity behind every brand · Founded {company.founded}</span></div>
+        <div className="cell cell--black"><span className="h4" style={{ color: '#fff' }}>Licence {company.license}</span><span className="label">{company.zone}, UAE · {company.form}</span></div>
+        <div className="cell cell--black"><span className="h4" style={{ color: '#fff' }}>{company.founder.name}</span><span className="label">{company.founder.role} · {company.city}</span></div>
+      </section>
+
+      {/* SUPPORT */}
+      <section className="support" aria-label="Contact">
+        <div className="cell">
+          <div className="row-ic"><BookIcon /><div><div className="h4">Company & legal</div><p className="line">Licence, address, founder, and where each product keeps its privacy policy and terms.</p></div></div>
+          <Link href="/legal" className="btn btn--black">Read<ArrowIcon up={false} /></Link>
+        </div>
+        <div className="cell">
+          <div className="row-ic"><MailIcon /><div><div className="h4">Contact us</div><p className="line">Partnerships, press, or a question about any of the brands. One inbox, answered by the founder.</p></div></div>
+          <a href={`mailto:${company.email}`} className="btn btn--black">Write to {company.email}<ArrowIcon /></a>
+        </div>
+        <div className="cell">
+          <div className="row-ic"><PhoneIcon /><div><div className="h4">WhatsApp</div><p className="line">Quicker for studio bookings and anything with a date on it.</p></div></div>
+          <a href={`https://wa.me/${company.phone.replace(/[^0-9]/g, '')}`} className="btn btn--black" target="_blank" rel="noopener noreferrer">Message <span className="mute" style={{ color: 'rgba(255,255,255,.6)', fontSize: 12, marginLeft: 'auto', marginRight: 8 }}>{company.phone}</span><ArrowIcon /></a>
+        </div>
+      </section>
+    </Shell>
   )
 }

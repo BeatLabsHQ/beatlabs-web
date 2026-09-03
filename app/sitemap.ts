@@ -15,6 +15,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
+    {
+      url: 'https://beatlabs.ae/studios',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
     ...publishedProducts.map(p => ({
       url: `https://beatlabs.ae/apps/${p.slug}`,
       lastModified: new Date(),

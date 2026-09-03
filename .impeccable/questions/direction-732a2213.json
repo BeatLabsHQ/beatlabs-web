@@ -1,0 +1,275 @@
+{
+  "title": "beatlabs.ae — cuarta mano: más opciones, todas con preview real",
+  "question": "La hoja de pegatinas sigue montada en localhost:3000 (te convence a medias). Aquí van diez mundos más, TODOS con preview HTML real de beatLabs, incluidos los cinco que yo descartaría (abajo, con mi motivo). Elige uno, escribe un steer, o re-tira.",
+  "options": [
+    {
+      "id": "booklet",
+      "label": "El manual de montaje",
+      "kicker": "THE ROLL",
+      "lineage": "Instrucciones de montaje de un kit (numeración de pasos, lista de piezas, vista explosionada)",
+      "thesis": "beatLabs es el manual de montaje: cada app es una pieza de color que encaja en el grupo, con su lista de piezas y su vista explosionada.",
+      "palette": [
+        "#F7F6F1",
+        "#14161A",
+        "#FFD21F",
+        "#007AFF",
+        "#EC6F2D",
+        "#FF4A00"
+      ],
+      "materials": [
+        "papel de manual",
+        "paso numerado en círculo negro",
+        "bloques isométricos con sombra dura",
+        "lista de piezas",
+        "Sora 800 + Azeret Mono"
+      ],
+      "viewport": "Paso 01 arriba a la izquierda. Titular con 'companies.' subrayado en amarillo. A la derecha, la vista explosionada: tres bloques isométricos en los colores reales (Nibango, Curb, Raved) unidos por líneas de montaje, con etiqueta 'fits together · no glue'. Abajo, la lista de piezas: 1× Nibango, 1× Curb, 1× Raved, 3× en desarrollo.",
+      "case": "El más literal de 'we build': la página es el manual de cómo se monta el grupo. Serio y juguetón a la vez; muy claro para socios. Las fichas son 'pasos' y 'piezas'; /legal es la hoja de garantía.",
+      "risk": "Si los bloques isométricos no se hacen bien en CSS, parece un diagrama de PowerPoint. Y el amarillo compite con Curb/Raved.",
+      "comp": ".impeccable/mocks/decision/booklet.png"
+    },
+    {
+      "id": "boarding",
+      "label": "Las tarjetas de embarque",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "Tarjetas de embarque y etiquetas de equipaje (DXB): banda de color, talón perforado, código de barras",
+      "thesis": "beatLabs es el hub; cada app es una salida con destino (su dominio), vuelo (BL 003) y estado: launching, live, scheduled.",
+      "palette": [
+        "#ECEDE8",
+        "#101214",
+        "#C8FF47",
+        "#007AFF",
+        "#EC6F2D",
+        "#FF4A00"
+      ],
+      "materials": [
+        "cartulina de tarjeta",
+        "talón perforado",
+        "código de barras",
+        "etiqueta de equipaje lima",
+        "Barlow Condensed 800 + B612 Mono (la fuente de cabina de Airbus)"
+      ],
+      "viewport": "Barra negra 'HUB: DXB'. Titular condensado enorme con 'COMPANIES.' invertido en negro. A la derecha, la pila de tarjetas de embarque: nibango.com · BL 003 · LAUNCHING, getcurbapp.com · BL 001 · LIVE, raved.app · BL 002 · LAUNCHING, y una tarjeta discontinua 'scheduled' para las apps en desarrollo. Etiqueta de equipaje 'GROUP TAG · beatLabs' colgando.",
+      "case": "El objeto más de Dubái de la mano y el que mejor convierte los estados en algo real (boarding / departed / scheduled). Cada ficha es la tarjeta completa; /legal es el mostrador de información. Crece sin límite.",
+      "risk": "La metáfora aeroportuaria hay que sostenerla con seriedad o parece agencia de viajes; y sin fotos, todo descansa en la tipografía.",
+      "comp": ".impeccable/mocks/decision/boarding.png"
+    },
+    {
+      "id": "billboard",
+      "label": "La valla de carteles",
+      "verdict": "competitive",
+      "lineage": "Décollage: capas de carteles pegados y rasgados a mano, cada rasgón deja ver la campaña anterior",
+      "thesis": "beatLabs es la valla; cada app es un cartel pegado encima en su color, y los rasgones dejan ver los demás.",
+      "palette": [
+        "#B8B3A8",
+        "#141414",
+        "#F4F1E9",
+        "#007AFF",
+        "#EC6F2D",
+        "#FF4A00"
+      ],
+      "materials": [
+        "tablero gris de engrudo",
+        "papel de cartel con semitono",
+        "bordes rasgados (clip-path)",
+        "sello 'post no bills'",
+        "Anton + Courier Prime"
+      ],
+      "viewport": "Un cartel-hoja a la izquierda con el titular en Anton y 'COMPANIES' invertido; a la derecha, la valla: NIBANGO azul, CURB naranja y RAVED rojo pegados y rasgados unos sobre otros, con un cartel viejo 'DEV SOON' debajo. Los iconos reales pegados como pegatinas en las esquinas.",
+      "case": "El retador del dado que sí encaja en tu brief: es el más WOW y el más 'calle'; identifica fuerte, y la claridad aguanta porque cada cartel lleva nombre, tipo y dominio. Pierde algo de corporativo.",
+      "risk": "El rasgado es difícil de hacer bien en código y en móvil; puede parecer caos si no se controla la jerarquía.",
+      "comp": ".impeccable/mocks/decision/billboard.png",
+      "hero": "https://impeccable.style/worlds/cards/design-canon-decollage-torn-billboard-hero.webp"
+    },
+    {
+      "id": "blueprint",
+      "label": "El juego de planos",
+      "verdict": "competitive",
+      "lineage": "Planos de construcción: papel azul, líneas blancas, cajetín con revisiones, sello 'issued for construction'",
+      "thesis": "beatLabs es la oficina técnica; cada app es un plano emitido para construcción, con su cajetín y su sello.",
+      "palette": [
+        "#1F4FB5",
+        "#FFFFFF",
+        "#FF3B30",
+        "#007AFF",
+        "#EC6F2D",
+        "#FF4A00"
+      ],
+      "materials": [
+        "papel azul de plano",
+        "rejilla de dibujo",
+        "cajetín",
+        "sello rojo",
+        "Barlow Condensed 800 + Share Tech Mono"
+      ],
+      "viewport": "Todo azul plano con rejilla. Titular condensado blanco con 'COMPANIES.' en blanco sobre azul. A la derecha, la planta del grupo: Nibango, Curb y Raved como estancias con su swatch de color e icono; la zona 'en desarrollo' en línea discontinua. Sello rojo 'ISSUED FOR CONSTRUCTION' y cajetín con proyecto, hoja, escala, cliente, licencia.",
+      "case": "El único con color a sangre y el más 'ingeniería seria': dice 'we build' sin decirlo. Muy corporativo para socios y partners; la claridad es total (todo está rotulado).",
+      "risk": "Es la dirección más monocroma: los colores de marca quedan como pequeñas muestras. Y el azul saturado cansa en páginas largas si no se alterna con hojas blancas.",
+      "comp": ".impeccable/mocks/decision/blueprint.png"
+    },
+    {
+      "id": "cards",
+      "label": "La colección de cartas",
+      "verdict": "competitive",
+      "lineage": "Cartas coleccionables: arte arriba, nombre, stats abajo, rareza, numeración de serie",
+      "thesis": "beatLabs es la serie; cada app es una carta con su arte, su color y sus stats. Las de desarrollo siguen en el sobre sin abrir.",
+      "palette": [
+        "#F2F1EC",
+        "#111111",
+        "#F5C400",
+        "#007AFF",
+        "#EC6F2D",
+        "#FF4A00"
+      ],
+      "materials": [
+        "cartulina con brillo holográfico",
+        "borde negro de 3px",
+        "etiqueta de rareza",
+        "numeración 003/008",
+        "Archivo Black + Azeret Mono"
+      ],
+      "viewport": "Titular en Archivo Black con 'COMPANIES' en contorno. A la derecha, la mano de cartas: Nibango (★ Flagship), Curb (Live), Raved (Launching), cada una con su icono como arte y sus stats reales (plataformas, comisión, idiomas, precio). Un sobre discontinuo 'unopened · in development'.",
+      "case": "La evolución de las pegatinas con más contenido por objeto: los stats y el estado viven en la carta. Muy WOW, muy coleccionable; algo menos corporativo.",
+      "risk": "Coleccionable = juego; si el tono no es sobrio parece un TCG. Y se parece a las pegatinas en gesto.",
+      "comp": ".impeccable/mocks/decision/cards.png"
+    },
+    {
+      "id": "challenger-akari",
+      "label": "Taller de lámparas Akari",
+      "verdict": "declined",
+      "lineage": "Washi sobre costillas de bambú, luz cálida",
+      "thesis": "Cada marca es un volumen de papel iluminado.",
+      "palette": [
+        "#F6EBD2",
+        "#B98A4C",
+        "#2B2B2B",
+        "#D6382C"
+      ],
+      "materials": [
+        "washi",
+        "bambú"
+      ],
+      "viewport": "Lunas de papel brillando.",
+      "case": "Bellísimo pero japonés-artesanal: no identifica a una holding del Golfo.",
+      "kept": "Un solo sello bermellón como marca activa.",
+      "risk": "Tienda de decoración.",
+      "comp": ".impeccable/mocks/decision/akari.png"
+    },
+    {
+      "id": "challenger-cyc",
+      "label": "Ciclorama de amanecer",
+      "verdict": "declined",
+      "lineage": "Fondo de teatro que pasa de noche a día solo con luz",
+      "thesis": "Un horizonte infinito de luz detrás de las marcas.",
+      "palette": [
+        "#000000",
+        "#1B3A8A",
+        "#E7A0B0",
+        "#FFFFFF"
+      ],
+      "materials": [
+        "luz",
+        "tela sin costuras"
+      ],
+      "viewport": "Horizonte cobalto sobre negro.",
+      "case": "Atmósfera sin objeto: contradice tu brief tangible.",
+      "kept": "El blanco de día reservado a lo activo.",
+      "risk": "Fondo de pantalla.",
+      "comp": ".impeccable/mocks/decision/cyc.png"
+    },
+    {
+      "id": "challenger-icepress",
+      "label": "Imprenta polar",
+      "verdict": "declined",
+      "lineage": "Periódico impreso sobre hielo con errores de cajista",
+      "thesis": "Una sola tinta negra sobre papel de trapo.",
+      "palette": [
+        "#EDE6D6",
+        "#111111"
+      ],
+      "materials": [
+        "litografía",
+        "papel de trapo"
+      ],
+      "viewport": "Planas desiguales.",
+      "case": "Tangible, sí, pero monocromo y de expedición: se come los colores de marca que son la tesis.",
+      "kept": "Dejar visibles las imperfecciones de impresión.",
+      "risk": "Museo.",
+      "comp": ".impeccable/mocks/decision/icepress.png"
+    },
+    {
+      "id": "challenger-darkroom",
+      "label": "Cuarto oscuro",
+      "verdict": "declined",
+      "lineage": "Luz de seguridad ámbar, cubetas, copias secándose",
+      "thesis": "Las marcas se revelan lentamente.",
+      "palette": [
+        "#3A2A10",
+        "#F2A93B",
+        "#111111",
+        "#FFFFFF"
+      ],
+      "materials": [
+        "luz ámbar",
+        "cubetas esmaltadas"
+      ],
+      "viewport": "Todo ámbar y sombra.",
+      "case": "Es el mundo de estrela.photo literal y además oscuro; no es beatLabs.",
+      "kept": "Nada.",
+      "risk": "Copia de tu otra web.",
+      "comp": ".impeccable/mocks/decision/darkroom.png"
+    },
+    {
+      "id": "challenger-algorave",
+      "label": "Pista de algorave",
+      "verdict": "declined",
+      "lineage": "Código en vivo proyectado sobre una pista de baile",
+      "thesis": "El código edita la música en directo.",
+      "palette": [
+        "#000000",
+        "#39FF6A",
+        "#FF2D9B",
+        "#FFB000"
+      ],
+      "materials": [
+        "proyector",
+        "monoespaciada"
+      ],
+      "viewport": "Buffer de código sobre negro.",
+      "case": "Oscuro, técnico y de nicho: todo lo que ya descartaste.",
+      "kept": "Nada.",
+      "risk": "Terminal otra vez.",
+      "comp": ".impeccable/mocks/decision/algorave.png"
+    }
+  ],
+  "reroll": {
+    "registers": [
+      "safer",
+      "bolder"
+    ]
+  },
+  "buildPath": {
+    "value": "code",
+    "toggle": true
+  },
+  "canon": true,
+  "canonCard": {
+    "label": "El estándar del sector",
+    "thesis": "Lo que publica cualquier venture studio: hero azul, mockups de móvil, tres tarjetas. Ejecutado impecable.",
+    "palette": [
+      "#FFFFFF",
+      "#0F172A",
+      "#2563EB",
+      "#F1F5F9"
+    ],
+    "materials": [
+      "Inter",
+      "tarjetas redondeadas",
+      "botón azul"
+    ],
+    "viewport": "Titular + CTA a la izquierda, tres móviles a la derecha, tarjetas debajo.",
+    "risk": "Indistinguible de la competencia por diseño.",
+    "comp": ".impeccable/mocks/decision/canon.png"
+  },
+  "steer": true
+}

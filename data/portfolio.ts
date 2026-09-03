@@ -8,6 +8,10 @@ export interface StudioModule {
   name: string
   tagline: string
   url: string
+  /** Square mark under /public (real asset from the studio's own site). */
+  icon?: string
+  /** Wide mark (signature/wordmark) under /public, used instead of a square icon. */
+  mark?: string
 }
 
 export interface ProductDoc {
@@ -30,8 +34,14 @@ export interface AppProduct {
   languages?: string
   oneLiner: string
   tagline: string
+  /** The word(s) of the tagline the ficha highlights, verbatim from `tagline`. */
+  highlight?: string
   lede: string
   siteUrl: string | null
+  /** Real app icon under /public, matted into graphite on the ficha. */
+  icon?: string
+  /** Real product screenshots under /public (never fabricated UI). */
+  screens?: string[]
   appStoreUrl?: string
   playStoreUrl?: string
   stats?: { value: string; label: string }[]
@@ -48,12 +58,14 @@ export const studios: StudioModule[] = [
     name: 'TrueLoveCreative',
     tagline: 'Web & creative studio. Brand, design and web for clients who care.',
     url: 'https://truelovecreative.es',
+    icon: '/apps/truelove-icon.png',
   },
   {
     id: '007',
     name: 'Estrela.photo',
     tagline: 'Photography studio. Portraits, events and visual stories.',
     url: 'https://estrela.photo',
+    mark: '/apps/estrela-mark.png',
   },
 ]
 
@@ -71,8 +83,11 @@ export const products: AppProduct[] = [
     platforms: 'iOS · Android · Web',
     oneLiner: 'Peer-to-peer second-hand marketplace reimagined for the Gulf. Buy, sell, trust.',
     tagline: 'The marketplace that actually works.',
+    highlight: 'works.',
     lede: 'Buy. Sell. Bid. Donate. Six categories, four pricing models, real-time chat — zero commissions. Your neighbourhood, reimagined for the Gulf.',
     siteUrl: 'https://nibango.com/uiapp',
+    icon: '/apps/nibango-icon.png',
+    screens: ['/apps/nibango-screen-1.png', '/apps/nibango-screen-2.png', '/apps/nibango-screen-3.png'],
     stats: [
       { value: '6', label: 'Categories' },
       { value: '4', label: 'Pricing models' },
@@ -116,14 +131,17 @@ export const products: AppProduct[] = [
     languages: '13 languages',
     oneLiner: 'Track all your subscriptions in one place. Know exactly what you’re paying, when, and cancel what you don’t need.',
     tagline: 'Never pay for a forgotten subscription again.',
+    highlight: 'forgotten',
     lede: 'Curb brings all your subscriptions into one place and warns you before every charge. Take back control of your recurring spending in minutes.',
     siteUrl: 'https://getcurbapp.com',
+    icon: '/apps/curb-icon.png',
+    screens: ['/apps/curb-screen-1.png', '/apps/curb-screen-2.png', '/apps/curb-screen-3.png'],
     appStoreUrl: 'https://apps.apple.com/app/curb-subscription-tracker/id6770895943',
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.beatlabs.curb',
     stats: [
-      { value: '$273', label: 'Avg. monthly spend on subscriptions' },
-      { value: '30%', label: 'Of subscriptions go forgotten' },
-      { value: '5 min', label: 'To take back control' },
+      { value: '13', label: 'Built-in categories, plus your own' },
+      { value: '4', label: 'Billing cycles, weekly to custom' },
+      { value: '15', label: 'Currencies, live rates' },
     ],
     features: [
       { id: '01', title: 'Calendar view.', desc: 'Every renewal on one calendar. See exactly what charges are coming, and when.' },
@@ -170,8 +188,11 @@ export const products: AppProduct[] = [
     languages: '6 languages',
     oneLiner: 'An inbox for recommendations. Save every song, movie, place, and tip your friends send you — and actually get to them.',
     tagline: 'Everything they rave about, in one place.',
+    highlight: 'one place.',
     lede: 'Films, shows, books, music, places — every recommendation your friends give you, captured in seconds and ready when you are.',
     siteUrl: 'https://raved.app',
+    icon: '/apps/raved-icon.png',
+    screens: ['/apps/raved-screen-1.png', '/apps/raved-screen-2.png', '/apps/raved-screen-3.png'],
     stats: [
       { value: '3', label: 'Taps to capture a rave' },
       { value: '10+', label: 'Categories, plus your own' },
@@ -228,6 +249,56 @@ export const products: AppProduct[] = [
     docs: [],
   },
   {
+    id: '008',
+    slug: 'blab',
+    accent: '#E3241C',
+    name: 'BLAB',
+    displayName: 'Blab',
+    type: 'Social App',
+    status: 'launching',
+    statusText: 'LAUNCHING',
+    flagship: false,
+    platforms: 'iOS',
+    languages: 'Spanish',
+    oneLiner: 'A social app of daily micro-challenges. Answer today’s challenge in your mode — confession, roast, hot take — inside worlds that get your context.',
+    tagline: 'Answer challenges. Pick your mode. Stand out.',
+    highlight: 'Stand out.',
+    lede: 'One challenge a day. Five modes to answer it. Eighteen worlds that get your context. Reactions that mean something — no generic like. Challenge + mode + world = a post with context.',
+    siteUrl: null,
+    icon: '/apps/blab-icon.png',
+    screens: ['/apps/blab-screen-1.png', '/apps/blab-screen-2.png', '/apps/blab-screen-3.png'],
+    stats: [
+      { value: '5', label: 'Modes' },
+      { value: '18', label: 'Worlds' },
+      { value: '4', label: 'Reactions' },
+    ],
+    features: [
+      { id: '01', title: 'A challenge a day.', desc: 'Every day the app proposes a challenge. Never stare at an empty box again — you always know what to post.' },
+      { id: '02', title: '5 modes.', desc: 'Confession, roast, hot take, idea, advice. Pick how you answer, and everyone knows the tone before they read.' },
+      { id: '03', title: '18 worlds.', desc: 'Developers, photography, music & DJs, fitness, startups, marketing and more. Choose up to five — each with its own challenges.' },
+      { id: '04', title: 'Reactions that mean something.', desc: '🙌 That’s me, 💥 Brutal, 🛠️ Useful, 🔖 Saved. Four reactions, no generic like.' },
+      { id: '05', title: 'Ranking & streak.', desc: 'Global, following, your country or each of your worlds — today, 7 days, 30 days. Keep the streak alive.' },
+      { id: '06', title: 'Photo, video, links.', desc: 'One photo per post, a link card that never hides its real domain, and short video for Pro.' },
+    ],
+    howItWorks: [
+      { step: '01', title: 'Pick your worlds', desc: 'Choose up to five worlds that match what you do. That is your feed.' },
+      { step: '02', title: 'Answer in a mode', desc: 'Open today’s challenge, pick confession, roast, hot take, idea or advice, and post.' },
+      { step: '03', title: 'Stand out', desc: 'Earn reactions, climb the ranking, keep your streak going.' },
+    ],
+    pricing: [
+      { name: 'Free', price: '€0', note: 'Everything you need', items: ['Daily challenges', 'All modes and worlds', 'One photo per post'] },
+      { name: 'Pro', price: '€2.99', note: 'Monthly, or €24.99 a year', items: ['Video up to 15 s', 'PRO badge'], highlight: true },
+    ],
+    faq: [
+      { q: 'What is BLAB?', a: 'A social app where every post starts from a challenge. The app proposes one daily; you answer in a mode, inside a world of people who get your context.' },
+      { q: 'What are modes and worlds?', a: 'A mode is the tone of your answer: confession, roast, hot take, idea or advice. A world is the community it belongs to — developers, photography, music, fitness, startups, marketing and twelve more.' },
+      { q: 'Can I create my own world?', a: 'Not yet. Worlds are a curated catalogue of eighteen so communities don’t fragment. New ones are added by us.' },
+      { q: 'Is BLAB free?', a: 'Yes. Pro (€2.99 a month or €24.99 a year) adds video posts up to 15 seconds and the PRO badge.' },
+      { q: 'Where is it available?', a: 'BLAB is launching on iOS, in Spanish first. Android and web are next.' },
+    ],
+    docs: [],
+  },
+  {
     id: '005',
     slug: 'timeup',
     accent: '#8A8A85',
@@ -254,4 +325,44 @@ export const devProducts = products.filter(p => p.status === 'dev')
 
 export function getProduct(slug: string): AppProduct | undefined {
   return products.find(p => p.slug === slug && p.status !== 'dev')
+}
+
+// ── Company identity — the entity behind every module ──
+export const company = {
+  brand: 'beatLabs',
+  legalName: 'BeatLabs FZE LLC',
+  license: '53228',
+  zone: 'Ajman Media City Free Zone',
+  form: 'Free Zone Establishment, Amiri Decree No.8 of 2021',
+  address: 'AMC-BLA-B.C-6010468, AMC Boulevard-A, Ajman, UAE',
+  founded: '2026-03-25',
+  email: 'info@beatlabs.ae',
+  phone: '+971585324519',
+  city: 'Dubai, UAE',
+  founder: {
+    name: 'Francisco Javier Estrela Belmonte',
+    role: 'Founder & Manager',
+    line: 'design, code, launch, repeat',
+  },
+  mission: [
+    'beatLabs is the holding entity behind everything I build.',
+    'Each project has its own identity, its own audience, its own path.',
+    'Built properly. Always.',
+  ],
+} as const
+
+export const divisions = [
+  { key: 'apps', label: 'Apps', count: products.length },
+  { key: 'creative', label: 'Web & Creative', count: studios.length },
+] as const
+
+/** Status counts across every module (apps and studios), for the readouts. */
+export function statusCounts() {
+  const all: ModuleStatus[] = [...products.map(p => p.status), ...studios.map(() => 'live' as const)]
+  return {
+    total: all.length,
+    live: all.filter(s => s === 'live').length,
+    launching: all.filter(s => s === 'launching').length,
+    dev: all.filter(s => s === 'dev').length,
+  }
 }

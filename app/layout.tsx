@@ -44,7 +44,7 @@ const CONTRACT = '<!-- impeccable contract · owner-pinned canon (MacPaw registe
 
 export const metadata: Metadata = {
   title: 'beatLabs — Independent app group. Dubai, UAE.',
-  description: 'beatLabs (BeatLabs FZE LLC) is a UAE-registered group building independent app brands. Home of Nibango, Curb - Subscription Tracker, Raved, TrueLoveCreative and Estrela.photo.',
+  description: 'beatLabs (BeatLabs FZE LLC) is a UAE-registered group building independent app brands. Home of Nibango, Curb, Raved, Blab, TrueLoveCreative and Estrela.photo.',
   keywords: [
     'beatLabs', 'digital studio UAE', 'UAE startup studio', 'tech studio Dubai', 'digital studio Dubai',
     'Nibango', 'Curb', 'Curb Subscription Tracker', 'Raved', 'Raved app', 'TrueLoveCreative', 'Estrela photo',
@@ -62,14 +62,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'beatLabs — Independent app group. Dubai, UAE.',
-    description: 'UAE-registered group building independent app brands. Home of Nibango, Curb - Subscription Tracker, Raved, TrueLoveCreative and Estrela.photo.',
+    description: 'UAE-registered group building independent app brands. Home of Nibango, Curb, Raved, Blab, TrueLoveCreative and Estrela.photo.',
     url: 'https://beatlabs.ae',
     siteName: 'beatLabs',
     type: 'website',
     locale: 'en_US',
     images: [
       {
-        url: 'https://beatlabs.ae/og-image.png',
+        url: 'https://beatlabs.ae/og.png',
         width: 1200,
         height: 630,
         alt: 'beatLabs — Independent app group, Dubai, UAE',
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'beatLabs — Independent app group. Dubai, UAE.',
     description: 'UAE-registered group building independent app brands.',
-    images: ['https://beatlabs.ae/og-image.png'],
+    images: ['https://beatlabs.ae/og.png'],
   },
   alternates: {
     canonical: 'https://beatlabs.ae',

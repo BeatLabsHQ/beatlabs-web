@@ -15,6 +15,6 @@ All files are real brand assets; none is generated.
 
 ## Site rasters (public/)
 
-- favicon.png, favicon.ico, apple-icon.png, icon-512.png — the beatLabs flask app icon (orange tile), supplied by the owner on 2026-09-03 and resized; replaces the earlier placeholder "b" favicon.svg.
+- favicon.png, favicon.ico, apple-icon.png, icon-512.png — the beatLabs flask app icon (orange tile, teal flask), supplied by the owner on 2026-09-03 and resized; a first orange/green version was replaced the same day by this one.
 - logo.png (white "beat"), logo-black.png (black "beat") — the beatLabs logotype with the flask as the A of "Labs", supplied by the owner; used as the wordmark in the bar and footer.
 - og.png — the Open Graph card (1200×630), rendered on 2026-09-03 from the site's own assets (logo-black.png, the four real app icons, Fixel) in the current visual world; replaces the old terminal-style og-image.png. Source HTML kept out of the repo; regenerate by rendering the same layout if the portfolio changes.

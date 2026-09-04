@@ -259,8 +259,8 @@ export const products: AppProduct[] = [
     statusText: 'LAUNCHING',
     flagship: false,
     platforms: 'iOS',
-    languages: 'Spanish',
-    oneLiner: 'A social app of daily micro-challenges. Answer today’s challenge in your mode — confession, roast, hot take — inside worlds that get your context.',
+    languages: 'English, Spanish',
+    oneLiner: 'A social app of daily micro-challenges. Answer today’s challenge in your mode — confession, roast, unpopular opinion — inside worlds that get your context.',
     tagline: 'Answer challenges. Pick your mode. Stand out.',
     highlight: 'Stand out.',
     lede: 'One challenge a day. Five modes to answer it. Eighteen worlds that get your context. Reactions that mean something — no generic like. Challenge + mode + world = a post with context.',
@@ -274,7 +274,7 @@ export const products: AppProduct[] = [
     ],
     features: [
       { id: '01', title: 'A challenge a day.', desc: 'Every day the app proposes a challenge. Never stare at an empty box again — you always know what to post.' },
-      { id: '02', title: '5 modes.', desc: 'Confession, roast, hot take, idea, advice. Pick how you answer, and everyone knows the tone before they read.' },
+      { id: '02', title: '5 modes.', desc: 'Confession, roast, unpopular opinion, idea, advice. Pick how you answer, and everyone knows the tone before they read.' },
       { id: '03', title: '18 worlds.', desc: 'Developers, photography, music & DJs, fitness, startups, marketing and more. Choose up to five — each with its own challenges.' },
       { id: '04', title: 'Reactions that mean something.', desc: '🙌 That’s me, 💥 Brutal, 🛠️ Useful, 🔖 Saved. Four reactions, no generic like.' },
       { id: '05', title: 'Ranking & streak.', desc: 'Global, following, your country or each of your worlds — today, 7 days, 30 days. Keep the streak alive.' },
@@ -282,7 +282,7 @@ export const products: AppProduct[] = [
     ],
     howItWorks: [
       { step: '01', title: 'Pick your worlds', desc: 'Choose up to five worlds that match what you do. That is your feed.' },
-      { step: '02', title: 'Answer in a mode', desc: 'Open today’s challenge, pick confession, roast, hot take, idea or advice, and post.' },
+      { step: '02', title: 'Answer in a mode', desc: 'Open today’s challenge, pick confession, roast, unpopular opinion, idea or advice, and post.' },
       { step: '03', title: 'Stand out', desc: 'Earn reactions, climb the ranking, keep your streak going.' },
     ],
     pricing: [
@@ -291,10 +291,10 @@ export const products: AppProduct[] = [
     ],
     faq: [
       { q: 'What is BLAB?', a: 'A social app where every post starts from a challenge. The app proposes one daily; you answer in a mode, inside a world of people who get your context.' },
-      { q: 'What are modes and worlds?', a: 'A mode is the tone of your answer: confession, roast, hot take, idea or advice. A world is the community it belongs to — developers, photography, music, fitness, startups, marketing and twelve more.' },
+      { q: 'What are modes and worlds?', a: 'A mode is the tone of your answer: confession, roast, unpopular opinion, idea or advice. A world is the community it belongs to — developers, photography, music, fitness, startups, marketing and twelve more.' },
       { q: 'Can I create my own world?', a: 'Not yet. Worlds are a curated catalogue of eighteen so communities don’t fragment. New ones are added by us.' },
       { q: 'Is BLAB free?', a: 'Yes. Pro (€2.99 a month or €24.99 a year) adds video posts up to 15 seconds and the PRO badge.' },
-      { q: 'Where is it available?', a: 'BLAB is launching on iOS, in Spanish first. Android and web are next.' },
+      { q: 'Where is it available?', a: 'BLAB is launching on iOS, in English and Spanish. Android and web are next.' },
     ],
     docs: [],
   },

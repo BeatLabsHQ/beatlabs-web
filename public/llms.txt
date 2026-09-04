@@ -11,7 +11,7 @@ beatLabs is the holding entity behind a portfolio of independent digital brands.
 - [Raved](https://raved.app) — An inbox for recommendations: save every song, movie, place, and tip your friends send you. Launching.
 - Epiloq — Track shows, movies, comics, and books in one place. In development.
 - TimeUp — Focus blocks and deep work sessions for iOS. In development.
-- Blab — Social app of daily micro-challenges: answer in your mode, inside worlds that get your context. iOS, Spanish first. Launching.
+- Blab — Social app of daily micro-challenges: answer in your mode, inside worlds that get your context. iOS, English and Spanish. Launching.
 
 ## Web & Creative
 

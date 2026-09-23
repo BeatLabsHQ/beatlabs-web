@@ -50,6 +50,7 @@ export default function AppDetailPage({ params }: { params: { slug: string } }) 
   const ctas = (
     <>
       {primaryCta && <Btn href={primaryCta.href} external black>{primaryCta.label}</Btn>}
+      {app.siteUrl && primaryCta?.href !== app.siteUrl && <Btn href={app.siteUrl} external>Website</Btn>}
       {isLive && app.playStoreUrl && <Btn href={app.playStoreUrl} external>Google Play</Btn>}
       {!isLive && <Btn href="/apps" arrow={false}>All apps</Btn>}
     </>

@@ -174,7 +174,7 @@ export default function AppDetailPage({ params }: { params: { slug: string } }) 
 
         {/* GET IT */}
         <section className="contact">
-          <p className="h2">Get {app.displayName}: {isLive ? `out now on ${app.platforms}.` : `launching now.${app.siteUrl ? ' Try it on the web today.' : ''}`}</p>
+          <p className="h2">Get {app.displayName}: {isLive ? `out now on ${app.platforms}.` : `launching now.${app.siteUrl ? ' Visit the website.' : ''}`}</p>
           <div className="actions" style={{ justifyContent: 'flex-start', paddingTop: 22 }}>{ctas}</div>
         </section>
       </Shell>

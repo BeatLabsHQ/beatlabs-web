@@ -181,10 +181,10 @@ export const products: AppProduct[] = [
     name: 'RAVED',
     displayName: 'Raved',
     type: 'Social App',
-    status: 'launching',
-    statusText: 'LAUNCHING',
+    status: 'live',
+    statusText: 'LIVE',
     flagship: false,
-    platforms: 'iOS · Android',
+    platforms: 'iOS',
     languages: '6 languages',
     oneLiner: 'An inbox for recommendations. Save every song, movie, place, and tip your friends send you — and actually get to them.',
     tagline: 'Everything they rave about, in one place.',
@@ -196,7 +196,7 @@ export const products: AppProduct[] = [
     stats: [
       { value: '3', label: 'Taps to capture a rave' },
       { value: '10+', label: 'Categories, plus your own' },
-      { value: '2', label: 'Platforms at launch' },
+      { value: 'iOS', label: 'Available now' },
     ],
     features: [
       { id: '01', title: 'Quick capture.', desc: 'Type a title, pick who raved about it, done. Cover art and details fill in automatically.' },
@@ -217,7 +217,7 @@ export const products: AppProduct[] = [
     ],
     faq: [
       { q: 'Is Raved free?', a: 'Yes — free up to 30 saved raves. Pro unlocks unlimited raves, all skins and custom categories, from €0.99.' },
-      { q: 'Which platforms?', a: 'iOS and Android, with full feature parity.' },
+      { q: 'Which platforms?', a: 'Raved is currently available on iOS. Android is not available yet.' },
       { q: 'What can I save?', a: 'Films, shows, books, music, podcasts, places, games and more — plus your own custom categories.' },
       { q: 'How do groups work?', a: 'Create a group with friends and raves flow between your apps automatically. No more lost WhatsApp recommendations.' },
       { q: 'Is my data private?', a: 'Raved has no ads and no tracking. Your raves sync through your account and stay yours.' },

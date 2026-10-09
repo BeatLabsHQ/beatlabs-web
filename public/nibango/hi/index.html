@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="hi" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nibango — खरीदें। बेचें। बोली लगाएँ। दान करें। वह मार्केटप्लेस जो समझता है।</title>
+<meta name="description" content="nibango वह मार्केटप्लेस है जो समझता है: तय दाम, मोल-भाव, नीलामी और दान, रियल-टाइम चैट और शून्य कमीशन के साथ। प्रॉपर्टी, वाहन, सेवाएँ, नौकरियाँ, पालतू जानवर और क्लासिफ़ाइड, आपके पास।">
+<meta property="og:title" content="nibango — वह मार्केटप्लेस जो समझता है">
+<meta property="og:description" content="खरीदें, बेचें, बोली लगाएँ या दान करें। रियल-टाइम चैट, शून्य कमीशन, आपके आसपास 1 से 200 किमी तक।">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://beatlabs.ae/nibango/hi">
+<meta property="og:image" content="/nibango/assets/img/og.png">
+<meta property="og:locale" content="hi_IN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://beatlabs.ae/nibango/hi">
+<link rel="alternate" hreflang="en" href="https://beatlabs.ae/nibango">
+<link rel="alternate" hreflang="es" href="https://beatlabs.ae/nibango/es">
+<link rel="alternate" hreflang="ar" href="https://beatlabs.ae/nibango/ar">
+<link rel="alternate" hreflang="de" href="https://beatlabs.ae/nibango/de">
+<link rel="alternate" hreflang="fr" href="https://beatlabs.ae/nibango/fr">
+<link rel="alternate" hreflang="hi" href="https://beatlabs.ae/nibango/hi">
+<link rel="alternate" hreflang="id" href="https://beatlabs.ae/nibango/id">
+<link rel="alternate" hreflang="it" href="https://beatlabs.ae/nibango/it">
+<link rel="alternate" hreflang="ja" href="https://beatlabs.ae/nibango/ja">
+<link rel="alternate" hreflang="ko" href="https://beatlabs.ae/nibango/ko">
+<link rel="alternate" hreflang="nl" href="https://beatlabs.ae/nibango/nl">
+<link rel="alternate" hreflang="pl" href="https://beatlabs.ae/nibango/pl">
+<link rel="alternate" hreflang="pt-br" href="https://beatlabs.ae/nibango/pt-br">
+<link rel="alternate" hreflang="ru" href="https://beatlabs.ae/nibango/ru">
+<link rel="alternate" hreflang="sv" href="https://beatlabs.ae/nibango/sv">
+<link rel="alternate" hreflang="tr" href="https://beatlabs.ae/nibango/tr">
+<link rel="alternate" hreflang="zh-hans" href="https://beatlabs.ae/nibango/zh-hans">
+<link rel="alternate" hreflang="x-default" href="https://beatlabs.ae/nibango">
+<link rel="icon" href="/nibango/assets/img/favicon.png">
+<link rel="preload" href="/nibango/assets/fonts/ClashGrotesk-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Clash";src:url("/nibango/assets/fonts/ClashGrotesk-Variable.woff2") format("woff2");font-weight:200 700;font-display:swap}
+:root{
+  --niban:#007AFF;--go:#34C759;--fixed:#FF3B30;--auction:#FF9500;--ink:#0B0F19;--ink-2:#4B5563;--ink-3:#8A94A6;
+  --paper:#FFFFFF;--paper-2:#F5F6F8;--line:#E6E8EE;
+  --r:22px;--r-sm:14px;--gutter:clamp(16px,4vw,64px);--max:1240px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:"Clash",system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.45;font-weight:400;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,select{font:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+.wordmark{height:1.1em;width:3.456em;vertical-align:-.3em}
+h1,h2,h3{font-weight:600;letter-spacing:-.03em;line-height:1}
+h2{font-size:clamp(34px,5.4vw,66px)}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+[dir=rtl] .eyebrow{letter-spacing:0}
+[dir=rtl] h1,[dir=rtl] h2,[dir=rtl] h3{letter-spacing:0}
+.lead{font-size:clamp(17px,1.6vw,21px);color:var(--ink-2);max-width:56ch}
+.sec{padding:clamp(72px,10vw,140px) 0}
+.sec-head{display:grid;gap:18px;max-width:880px;margin-bottom:clamp(36px,5vw,64px)}
+.btn{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 22px;border-radius:999px;font-weight:600;font-size:16px;border:1.5px solid var(--ink);transition:transform .25s var(--ease),background .25s,color .25s}
+.btn:hover{transform:translateY(-2px)}
+.btn--ink{background:var(--ink);color:#fff}
+.btn--ink:hover{background:var(--niban);border-color:var(--niban)}
+.badges{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.badges img{height:48px;width:auto}
+.badges a{transition:transform .25s var(--ease)}
+.badges a:hover{transform:translateY(-2px)}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 82%,transparent);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
+.nav.is-stuck{border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
+.nav .brand{font-size:28px;line-height:1}
+.nav ul{display:flex;gap:28px;list-style:none;font-weight:500;font-size:15px;color:var(--ink-2)}
+.nav ul a:hover{color:var(--ink)}
+.nav .right{display:flex;align-items:center;gap:12px}
+.nav .btn{height:42px;padding:0 18px;font-size:15px}
+.lang{appearance:none;-webkit-appearance:none;height:42px;padding:0 34px 0 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%230B0F19' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 14px center;font-weight:500;font-size:14px;color:var(--ink);cursor:pointer}
+[dir=rtl] .lang{padding:0 14px 0 34px;background-position:left 14px center}
+@media (max-width:760px){.nav ul{display:none}.nav .btn{display:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding:clamp(40px,7vw,96px) 0 0;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(24px,5vw,72px);align-items:center}
+.hero h1{font-size:clamp(50px,8.6vw,128px);font-weight:600;letter-spacing:-.045em;line-height:.95}
+.hero h1 span{display:block}
+.hero h1 .w{display:inline-block;font-style:normal}
+.hero h1 .w-sell{color:var(--niban)}
+.hero h1 .w-bid{color:var(--auction)}
+.hero h1 .w-give{color:var(--go)}
+.hero h1 .w-buy{color:var(--fixed)}
+.hero .lead{margin:28px 0 32px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.hero .fine{margin-top:22px;font-size:14px;color:var(--ink-3);display:flex;gap:18px;flex-wrap:wrap}
+.hero .fine b{color:var(--ink);font-weight:600}
+.reveal{opacity:0;transform:translateY(22px);animation:up .9s var(--ease) forwards}
+.reveal:nth-child(2){animation-delay:.08s}.reveal:nth-child(3){animation-delay:.16s}.reveal:nth-child(4){animation-delay:.24s}.reveal:nth-child(5){animation-delay:.32s}
+@keyframes up{to{opacity:1;transform:none}}
+
+/* the feed itself is the hero: two live columns of real-looking cards */
+.feed{position:relative;height:min(78vh,760px);display:grid;grid-template-columns:1fr 1fr;gap:16px;mask-image:linear-gradient(to bottom,transparent,#000 12%,#000 88%,transparent);-webkit-mask-image:linear-gradient(to bottom,transparent,#000 12%,#000 88%,transparent)}
+.col{display:flex;flex-direction:column;gap:16px;min-width:0;animation:scroll 42s linear infinite}
+.col--b{animation-direction:reverse;animation-duration:50s;margin-top:-120px}
+.feed:hover .col{animation-play-state:paused}
+@keyframes scroll{to{transform:translateY(-50%)}}
+.card{min-width:0;background:#fff;border-radius:var(--r);padding:12px;box-shadow:0 1px 2px rgba(11,15,25,.06),0 18px 40px -22px rgba(11,15,25,.28);border:1px solid var(--line);flex:none;transition:transform .35s var(--ease)}
+.card:hover{transform:translateY(-4px) rotate(-.6deg)}
+.card .ph{position:relative;aspect-ratio:1;border-radius:14px;overflow:hidden;background:var(--paper-2)}
+.card .ph img{width:100%;height:100%;object-fit:cover}
+.card .price{position:absolute;inset-inline-end:10px;bottom:10px;background:#fff;border:1.5px solid var(--ink);border-radius:999px;padding:5px 11px;font-weight:600;font-size:14px;direction:ltr}
+.card .heart{position:absolute;top:10px;inset-inline-end:10px;width:34px;height:34px;border-radius:50%;background:#fff;display:grid;place-items:center;border:1px solid var(--line)}
+.card .vip{position:absolute;top:10px;inset-inline-start:10px;background:#FFCC00;border-radius:999px;padding:4px 10px;font-size:12px;font-weight:700;display:flex;align-items:center;gap:4px}
+.card h4{font-size:16px;font-weight:600;margin:10px 2px 2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:-.01em}
+.card .sub{font-size:13px;color:var(--ink-3);margin:0 2px 8px}
+.chip{display:inline-block;border-radius:999px;padding:4px 10px;font-size:12.5px;font-weight:600;color:#fff}
+.chip--neg{background:var(--niban)}.chip--fix{background:var(--fixed)}.chip--auc{background:var(--auction)}.chip--don{background:var(--go)}
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:minmax(0,1fr)}
+  .feed{height:420px;margin-top:8px}
+}
+
+/* ---------- ticker strip ---------- */
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper-2);overflow:hidden;white-space:nowrap;padding:14px 0;margin-top:clamp(40px,6vw,80px);direction:ltr}
+.strip .track{display:inline-flex;gap:40px;animation:ticker 40s linear infinite;font-weight:500;font-size:15px;color:var(--ink-2)}
+.strip .track span{direction:ltr;unicode-bidi:isolate}
+.strip .track span::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--go);margin-inline-end:12px;vertical-align:middle}
+.strip:hover .track{animation-play-state:paused}
+@keyframes ticker{to{transform:translateX(-50%)}}
+
+/* ---------- deals ---------- */
+.deals{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.deal{position:relative;border-radius:var(--r);padding:28px 26px 26px;min-height:360px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;overflow:hidden;isolation:isolate;transition:transform .4s var(--ease)}
+.deal:hover{transform:translateY(-6px)}
+.deal::after{content:"";position:absolute;inset:auto -30% -40% auto;width:70%;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.16);z-index:-1;filter:blur(2px)}
+.deal--neg{background:var(--niban)}.deal--fix{background:var(--fixed)}.deal--auc{background:var(--auction)}.deal--don{background:var(--go)}
+.deal .k{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+[dir=rtl] .deal .k{letter-spacing:0}
+.deal h3{font-size:clamp(28px,3vw,38px);margin-top:10px;letter-spacing:-.03em}
+.deal p{margin-top:14px;font-size:15.5px;opacity:.92;max-width:28ch}
+.deal .demo{margin-top:26px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:14px;padding:12px 14px;font-size:14px;font-weight:500;backdrop-filter:blur(6px)}
+.deal .demo b{font-weight:600;font-size:22px;letter-spacing:-.02em;display:block}
+.deal .demo small{opacity:.85;font-size:12.5px}
+@media (max-width:980px){.deals{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.deals{grid-template-columns:1fr}.deal{min-height:0}}
+
+/* ---------- radius / map ---------- */
+.near{background:var(--ink);color:#fff;overflow:hidden}
+.near .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,6vw,96px);align-items:center}
+.near .eyebrow{color:#9CA3AF}
+.near .lead{color:#C7CCD6}
+.near h2{color:#fff}
+.radar{position:relative;aspect-ratio:1;width:min(100%,560px);margin-inline:auto;border-radius:50%;background:
+  radial-gradient(circle at 50% 50%,rgba(0,122,255,.25),transparent 60%),
+  repeating-radial-gradient(circle at 50% 50%,rgba(255,255,255,.12) 0 1px,transparent 1px 56px);
+}
+.radar::before{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,rgba(0,122,255,0),rgba(0,122,255,.35));animation:spin 6s linear infinite;mix-blend-mode:screen}
+@keyframes spin{to{transform:rotate(360deg)}}
+.radar .me{position:absolute;left:50%;top:50%;width:18px;height:18px;border-radius:50%;background:var(--niban);transform:translate(-50%,-50%);box-shadow:0 0 0 6px rgba(0,122,255,.3),0 0 0 14px rgba(0,122,255,.12)}
+.radar .ring{position:absolute;left:50%;top:50%;border-radius:50%;border:1.5px solid var(--niban);transform:translate(-50%,-50%);width:var(--d);height:var(--d);background:rgba(0,122,255,.14);transition:width .5s var(--ease),height .5s var(--ease)}
+.pin{position:absolute;transform:translate(-50%,-100%);background:#fff;color:var(--ink);font-weight:600;font-size:13px;border-radius:999px;padding:5px 10px;white-space:nowrap;box-shadow:0 10px 24px -10px rgba(0,0,0,.6);transition:opacity .4s,transform .4s var(--ease);direction:ltr}
+.pin::after{content:"";position:absolute;left:50%;bottom:-6px;width:10px;height:10px;background:#fff;transform:translateX(-50%) rotate(45deg);border-radius:2px}
+.pin.is-out{opacity:.25;transform:translate(-50%,-100%) scale(.9)}
+.range{margin-top:34px;display:grid;gap:12px}
+.range label{display:flex;justify-content:space-between;font-weight:500;color:#C7CCD6}
+.range output{color:#fff;font-weight:600;font-variant-numeric:tabular-nums}
+.range input{appearance:none;-webkit-appearance:none;width:100%;height:6px;border-radius:999px;background:linear-gradient(to right,var(--niban) var(--p,40%),rgba(255,255,255,.18) var(--p,40%));direction:ltr}
+.range input::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;border-radius:50%;background:#fff;border:0;box-shadow:0 2px 10px rgba(0,0,0,.4);cursor:pointer}
+.range input::-moz-range-thumb{width:28px;height:28px;border-radius:50%;background:#fff;border:0;cursor:pointer}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
+.fact{border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:16px}
+.fact b{display:block;font-size:30px;font-weight:600;letter-spacing:-.03em}
+.fact span{font-size:13px;color:#9CA3AF}
+@media (max-width:900px){.near .wrap{grid-template-columns:minmax(0,1fr)}.facts{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:520px){.facts{grid-template-columns:1fr 1fr}}
+
+/* ---------- categories ---------- */
+.cats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.cat{border:1px solid var(--line);border-radius:var(--r);padding:24px;background:#fff;transition:transform .35s var(--ease),box-shadow .35s}
+.cat:hover{transform:translateY(-4px);box-shadow:0 24px 50px -30px rgba(11,15,25,.35)}
+.cat .ic{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:var(--paper-2);margin-bottom:18px}
+.cat h3{font-size:22px;letter-spacing:-.02em}
+.cat p{font-size:14.5px;color:var(--ink-2);margin:6px 0 14px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{font-size:12.5px;font-weight:500;border:1px solid var(--line);border-radius:999px;padding:4px 9px;color:var(--ink-2);background:var(--paper-2)}
+@media (max-width:900px){.cats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.cats{grid-template-columns:1fr}}
+
+/* ---------- inside (CSS phones, real screens) ---------- */
+.inside{background:var(--paper-2)}
+.phones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,3vw,40px);align-items:end;perspective:1600px}
+.phone{position:relative;border-radius:46px;background:#0B0F19;padding:10px;box-shadow:0 40px 80px -40px rgba(11,15,25,.55),inset 0 0 0 1.5px rgba(255,255,255,.08);transform:rotateX(var(--rx,0)) rotateY(var(--ry,0)) translateY(var(--ty,0));transition:transform .8s var(--ease)}
+.phone .screen{border-radius:38px;overflow:hidden;background:#fff;aspect-ratio:1320/2868}
+.phone .screen img{width:100%;height:100%;object-fit:cover}
+.phone .isl{position:absolute;top:22px;left:50%;transform:translateX(-50%);width:96px;height:28px;border-radius:999px;background:#0B0F19}
+.phone figcaption{position:absolute;left:50%;bottom:-54px;transform:translateX(-50%);white-space:nowrap;font-size:14px;color:var(--ink-2);font-weight:500}
+.phones .phone:nth-child(1){--ry:14deg;--ty:28px}
+.phones .phone:nth-child(2){--ty:-10px;z-index:2}
+.phones .phone:nth-child(3){--ry:-14deg;--ty:28px}
+.phones.in-view .phone{--ry:0deg;--ty:0}
+.phones.in-view .phone:nth-child(1){--ry:6deg;--ty:18px}
+.phones.in-view .phone:nth-child(3){--ry:-6deg;--ty:18px}
+.inside .phones{padding-bottom:70px}
+@media (max-width:760px){.phones{grid-template-columns:1fr;max-width:300px;margin-inline:auto}.phones .phone{--ry:0;--ty:0}.phone figcaption{bottom:-40px}.inside .phones{gap:70px}}
+
+/* ---------- chat ---------- */
+.chat .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:center}
+.thread{background:#fff;border:1px solid var(--line);border-radius:28px;padding:22px;box-shadow:0 30px 60px -40px rgba(11,15,25,.4);max-width:460px;margin-inline:auto;width:100%}
+.thread .hd{display:flex;align-items:center;gap:12px;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:16px}
+.thread .av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--niban),var(--go))}
+.thread .hd b{display:block;font-weight:600}
+.thread .hd small{color:var(--go);font-weight:500;font-size:13px}
+.msgs{display:flex;flex-direction:column;gap:10px}
+.msg{max-width:78%;padding:11px 14px;border-radius:18px;font-size:15px;line-height:1.35;opacity:0;transform:translateY(10px) scale(.98)}
+.msg.in{align-self:flex-start;background:var(--paper-2);border-end-start-radius:6px}
+.msg.out{align-self:flex-end;background:var(--niban);color:#fff;border-end-end-radius:6px}
+.msg.offer{background:#fff;border:1.5px solid var(--ink);color:var(--ink)}
+.msg.offer b{display:block;font-size:20px;letter-spacing:-.02em}
+.msg .ticks{display:block;text-align:end;font-size:11px;opacity:.75;margin-top:4px}
+.thread.play .msg{animation:pop .5s var(--ease) forwards}
+.thread.play .msg:nth-child(1){animation-delay:.2s}.thread.play .msg:nth-child(2){animation-delay:1.1s}.thread.play .msg:nth-child(3){animation-delay:2.1s}.thread.play .msg:nth-child(4){animation-delay:3.2s}.thread.play .msg:nth-child(5){animation-delay:4.2s}
+@keyframes pop{to{opacity:1;transform:none}}
+.points{display:grid;gap:18px;margin-top:30px}
+.point{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
+.point .ic{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:var(--paper-2)}
+.point b{display:block;font-weight:600;font-size:17px}
+.point span{color:var(--ink-2);font-size:15px}
+@media (max-width:900px){.chat .wrap{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------- trust ---------- */
+.trust{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.t{border-radius:var(--r);padding:26px;background:var(--paper-2)}
+.t b{display:block;font-size:clamp(34px,4vw,52px);font-weight:600;letter-spacing:-.04em;line-height:1}
+.t span{display:block;margin-top:10px;color:var(--ink-2);font-size:15px}
+.t--blue{background:var(--niban);color:#fff}.t--blue span{color:#DDEBFF}
+.t--green{background:var(--go);color:#fff}.t--green span{color:#E3FBE8}
+@media (max-width:900px){.trust{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* ---------- download ---------- */
+.dl{position:relative;overflow:hidden;background:var(--ink);color:#fff;border-radius:34px;padding:clamp(40px,6vw,80px);text-align:center;isolation:isolate}
+.dl::before{content:"";position:absolute;inset:-40%;z-index:-1;background:radial-gradient(40% 40% at 30% 40%,rgba(0,122,255,.55),transparent 70%),radial-gradient(35% 35% at 75% 65%,rgba(52,199,89,.5),transparent 70%);filter:blur(40px);animation:drift 12s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate(6%,-4%) scale(1.06)}}
+.dl h2{color:#fff;font-size:clamp(38px,6vw,84px)}
+.dl p{color:#C7CCD6;margin:18px auto 30px;max-width:48ch;font-size:18px}
+.dl .badges{justify-content:center}
+.dl .web{margin-top:22px;color:#9CA3AF;font-size:15px}
+.dl .web a{color:#fff;font-weight:600;border-bottom:1.5px solid rgba(255,255,255,.5)}
+
+/* ---------- footer ---------- */
+footer{padding:48px 0 40px;font-size:14px;color:var(--ink-2)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:18px 32px;align-items:center;justify-content:space-between}
+footer ul{display:flex;flex-wrap:wrap;gap:18px;list-style:none}
+footer a:hover{color:var(--ink)}
+footer .by b{color:var(--ink);font-weight:600}
+
+/* scroll reveal */
+.io{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.io.in-view{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .reveal,.io,.msg{opacity:1;transform:none}
+  .col{transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="nibango">
+      <svg class="wordmark" aria-hidden="true" focusable="false" viewBox="0 -800 3456 1100"><path fill="#007AFF" d="M260 -509C95 -509 30 -385 30 -298V0H150V-295C150 -366 202 -398 260 -398C318 -398 370 -366 370 -295V0H490V-298C490 -385 425 -509 260 -509ZM544 -645C544 -607 573 -578 610 -578C647 -578 676 -607 676 -645C676 -681 647 -711 610 -711C573 -711 544 -681 544 -645ZM550 0H670V-500H550ZM731 -700V-249C731 -88 846 8 992 8C1144 8 1248 -95 1248 -249C1248 -404 1144 -508 998 -508C926 -508 875 -482 851 -451V-700ZM1128 -250C1128 -157 1073 -102 989 -102C906 -102 851 -157 851 -250C851 -343 906 -398 989 -398C1073 -398 1128 -343 1128 -250ZM1536 -507C1382 -507 1278 -404 1278 -250C1278 -95 1382 9 1527 9C1600 9 1651 -17 1675 -48V0H1795V-248C1795 -403 1691 -507 1536 -507ZM1675 -249C1675 -156 1620 -101 1537 -101C1453 -101 1398 -156 1398 -249C1398 -342 1453 -397 1537 -397C1620 -397 1675 -342 1675 -249ZM2085 -509C1920 -509 1855 -385 1855 -298V0H1975V-295C1975 -366 2027 -398 2085 -398C2143 -398 2195 -366 2195 -295V0H2315V-298C2315 -385 2250 -509 2085 -509Z"/><path fill="#34C759" d="M2877 -249C2877 -404 2773 -508 2618 -508C2464 -508 2360 -405 2360 -251C2360 -96 2464 8 2609 8C2682 8 2733 -18 2757 -49V-20C2757 47 2711 96 2628 96C2559 96 2518 61 2491 28L2393 97C2445 163 2526 206 2627 206C2778 206 2877 112 2877 -20ZM2757 -250C2757 -157 2702 -102 2619 -102C2535 -102 2480 -157 2480 -250C2480 -343 2535 -398 2619 -398C2702 -398 2757 -343 2757 -250ZM2923 -250C2923 -95 3027 9 3182 9C3337 9 3440 -95 3440 -250C3440 -404 3337 -507 3182 -507C3027 -507 2923 -404 2923 -250ZM3043 -249C3043 -342 3098 -397 3181 -397C3265 -397 3320 -342 3320 -249C3320 -156 3265 -101 3181 -101C3098 -101 3043 -156 3043 -249Z"/></svg>
+    </a>
+    <nav aria-label="अनुभाग">
+      <ul>
+        <li><a href="#deals">सौदे</a></li>
+        <li><a href="#near">आपके पास</a></li>
+        <li><a href="#categories">श्रेणियाँ</a></li>
+        <li><a href="#inside">अंदर की झलक</a></li>
+        <li><a href="#chat">चैट</a></li>
+      </ul>
+    </nav>
+    <div class="right">
+      <label class="sr-only" for="lang" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">भाषा</label>
+      <select class="lang" id="lang" aria-label="भाषा"><option value="en">English</option><option value="es">Español</option><option value="ar">العربية</option><option value="de">Deutsch</option><option value="fr">Français</option><option value="hi" selected>हिन्दी</option><option value="id">Bahasa Indonesia</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="nl">Nederlands</option><option value="pl">Polski</option><option value="pt-br">Português (Brasil)</option><option value="ru">Русский</option><option value="sv">Svenska</option><option value="tr">Türkçe</option><option value="zh-hans">简体中文</option></select>
+      <a class="btn btn--ink" href="#download">ऐप पाएँ</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow reveal">वह मार्केटप्लेस जो समझता है</p>
+      <h1 class="reveal" aria-label="खरीदें। बेचें। बोली लगाएँ। दान करें।">
+        <span><i class="w w-buy">खरीदें।</i> <i class="w w-sell">बेचें।</i></span>
+        <span><i class="w w-bid">बोली लगाएँ।</i> <i class="w w-give">दान करें।</i></span>
+      </h1>
+      <p class="lead reveal">तय दाम, मोल-भाव, नीलामी और दान, सब एक जगह। प्रॉपर्टी, वाहन, सेवाएँ, नौकरियाँ, पालतू जानवर और क्लासिफ़ाइड, रियल-टाइम चैट और शून्य कमीशन के साथ।</p>
+      <div class="cta reveal">
+        <div class="badges">
+          <a href="https://apps.apple.com/app/nibango" aria-label="App Store से डाउनलोड करें"><img src="/nibango/assets/img/app-store-badge-black.svg" alt="" width="144" height="48"></a>
+          <a href="https://play.google.com/store/apps/details?id=com.nibango.app" aria-label="Google Play पर पाएँ"><img src="/nibango/assets/img/google-play-badge.svg" alt="" width="162" height="48"></a>
+        </div>
+        <a class="btn" href="https://nibango.com/?lang=hi">वेब पर खोलें</a>
+      </div>
+      <p class="fine reveal"><span><b>मुफ़्त</b> इस्तेमाल</span><span><b>0%</b> कमीशन</span><span><b>17</b> भाषाएँ</span></p>
+    </div>
+
+    <div class="feed" aria-hidden="true">
+      <div class="col col--a" id="colA"></div>
+      <div class="col col--b" id="colB"></div>
+    </div>
+  </div>
+
+  <div class="strip" aria-hidden="true">
+    <div class="track" id="ticker"></div>
+  </div>
+</section>
+
+<!-- DEALS -->
+<section class="sec" id="deals">
+  <div class="wrap">
+    <div class="sec-head io">
+      <p class="eyebrow">सौदे के चार तरीक़े</p>
+      <h2>हर लिस्टिंग बताती है कि उसे कैसे ख़रीदा जाए।</h2>
+      <p class="lead">हर रंग एक तरह का सौदा है। टैप करने से पहले ही कार्ड पर दिख जाता है, ताकि कोई "दाम पक्का है?" पूछने में मैसेज न गँवाए।</p>
+    </div>
+    <div class="deals">
+      <article class="deal deal--fix io">
+        <div><p class="k">तय दाम</p><h3>लो या छोड़ो।</h3><p>विक्रेता ने दाम तय किया है और वह गंभीर है। स्वीकार करें और सौंपने की बात के लिए चैट खुल जाती है।</p></div>
+        <div class="demo"><small>Canon EOS 800D + किट लेंस</small><b data-price="1900">AED 1,900</b><small data-tpl="deal_fix_meta">तय · {hood3}</small></div>
+      </article>
+      <article class="deal deal--neg io">
+        <div><p class="k">मोल-भाव</p><h3>ऑफ़र दें।</h3><p>चैट से सीधे रक़म भेजें। विक्रेता स्वीकार करता है, जवाबी ऑफ़र देता है या मना करता है, सब उसी थ्रेड में।</p></div>
+        <div class="demo"><small>आपका ऑफ़र</small><b data-price="1400">AED 1,400</b><small data-tpl="deal_neg_countered">विक्रेता का जवाबी ऑफ़र · {price}</small></div>
+      </article>
+      <article class="deal deal--auc io">
+        <div><p class="k">नीलामी</p><h3>सबसे ऊँची बोली जीतती है।</h3><p>शुरुआती दाम और समय-सीमा तय करें, या इंतज़ार न कर सकने वालों के लिए अभी-ख़रीदें दाम।</p></div>
+        <div class="demo"><small data-tpl="deal_auc_ends">DJI Phantom 4 · {time} में ख़त्म</small><b id="bid" data-price="2350">AED 2,350</b><small id="bids" data-tpl="deal_auc_bids">{n} बोलियाँ</small></div>
+      </article>
+      <article class="deal deal--don io">
+        <div><p class="k">दान</p><h3>दे दीजिए।</h3><p>उन चीज़ों के लिए मुफ़्त लिस्टिंग जिन्हें आप फेंकने की बजाय इस्तेमाल होते देखना चाहेंगे। जो पहले लेने का इंतज़ाम करे, उसकी।</p></div>
+        <div class="demo"><small>LEGO के मिले-जुले टुकड़े, 5 किलो</small><b>मुफ़्त</b><small data-tpl="deal_don_meta">दान · {hood4}</small></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- NEAR YOU -->
+<section class="sec near" id="near">
+  <div class="wrap">
+    <div class="io">
+      <p class="eyebrow">सच में आपके पास</p>
+      <h2>जगह चुनें। दायरा चुनें। यही आपका बाज़ार है।</h2>
+      <p class="lead" data-tpl="near_lead">अपना शहर सेट करें या पिन लगाएँ, फिर 1 से 200 किमी तक स्लाइड करें। लिस्टिंग उसी क्रम में दिखती हैं जहाँ आप सच में पहुँच सकते हैं, {city} में या जहाँ भी आप हों।</p>
+      <div class="range">
+        <label for="km">खोज का दायरा <output id="kmOut">25 km</output></label>
+        <input id="km" type="range" min="1" max="200" value="25">
+      </div>
+      <div class="facts">
+        <div class="fact"><b>1–200</b><span>किमी, आपकी मर्ज़ी</span></div>
+        <div class="fact"><b>दुनिया भर में</b><span>कोई भी शहर, कोई भी भाषा</span></div>
+        <div class="fact"><b>नक़्शा</b><span>या सूची, आपकी पसंद</span></div>
+      </div>
+    </div>
+    <div class="radar io" id="radar" aria-hidden="true">
+      <div class="ring" id="ring" style="--d:46%"></div>
+      <div class="me"></div>
+      <span class="pin" data-r="8" data-price="1650" style="left:60%;top:42%">AED 1,650</span>
+      <span class="pin" data-r="14" data-price="220" style="left:35%;top:36%">AED 220</span>
+      <span class="pin" data-r="21" data-price="4900" style="left:72%;top:66%">AED 4,900</span>
+      <span class="pin" data-r="30" data-price="0" style="left:22%;top:70%">मुफ़्त</span>
+      <span class="pin" data-r="44" data-price="950" style="left:84%;top:28%">AED 950</span>
+      <span class="pin" data-r="60" data-price="2350" style="left:14%;top:30%">AED 2,350</span>
+      <span class="pin" data-r="85" data-price="1450" style="left:48%;top:92%">AED 1,450</span>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="sec" id="categories">
+  <div class="wrap">
+    <div class="sec-head io">
+      <p class="eyebrow">सब कुछ, व्यवस्थित</p>
+      <h2>टैग नहीं। असली फ़ील्ड।</h2>
+      <p class="lead">हर श्रेणी का अपना फ़ॉर्म और अपने फ़िल्टर हैं: फ़्लैट बेडरूम से और कार किलोमीटर से खोजी जाती है, इससे नहीं कि किसे सही शब्द लिखना याद रहा।</p>
+    </div>
+    <div class="cats">
+      <article class="cat io"><div class="ic">🏠</div><h3>प्रॉपर्टी</h3><p>ख़रीदें, बेचें या किराए पर लें।</p><div class="tags"><span>बेडरूम</span><span>क्षेत्रफल m²</span><span>फ़र्निश्ड</span><span>किराया / बिक्री</span></div></article>
+      <article class="cat io"><div class="ic">🚗</div><h3>वाहन</h3><p>कार, बाइक और नाव।</p><div class="tags"><span>साल</span><span>किलोमीटर</span><span>गियरबॉक्स</span><span>ईंधन</span></div></article>
+      <article class="cat io"><div class="ic">🛠️</div><h3>सेवाएँ</h3><p>आपके पास के पेशेवर।</p><div class="tags"><span>प्रति घंटा दर</span><span>उपलब्धता</span><span>ऑन-साइट</span></div></article>
+      <article class="cat io"><div class="ic">💼</div><h3>नौकरियाँ</h3><p>भर्ती करें या नौकरी पाएँ।</p><div class="tags"><span>वेतन</span><span>फ़ुल / पार्ट टाइम</span><span>रिमोट</span></div></article>
+      <article class="cat io"><div class="ic">🐾</div><h3>पालतू जानवर</h3><p>ज़िम्मेदारी से गोद लें या नया घर दें।</p><div class="tags"><span>प्रजाति</span><span>उम्र</span><span>टीकाकृत</span></div></article>
+      <article class="cat io"><div class="ic">📦</div><h3>क्लासिफ़ाइड</h3><p>बाक़ी सब कुछ, फ़ोन से सोफ़े तक।</p><div class="tags"><span>हालत</span><span>ब्रांड</span><span>डिलीवरी</span></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- INSIDE -->
+<section class="sec inside" id="inside">
+  <div class="wrap">
+    <div class="sec-head io">
+      <p class="eyebrow">अंदर की झलक</p>
+      <h2>वादे नहीं, स्क्रीन।</h2>
+      <p class="lead">ये ऐप की असली स्क्रीन हैं, रेंडर नहीं। फ़ोटो, दाम और सौदे का प्रकार एक नज़र में; एक टैप लिस्टिंग पर, एक और चैट पर।</p>
+    </div>
+    <div class="phones io" id="phones">
+      <figure class="phone"><div class="isl"></div><div class="screen"><img src="/nibango/assets/img/shots/en/1_home.webp" alt="लिस्टिंग कार्ड के साथ nibango का होम फ़ीड" loading="lazy" width="640" height="1391"></div><figcaption>फ़ीड</figcaption></figure>
+      <figure class="phone"><div class="isl"></div><div class="screen"><img src="/nibango/assets/img/shots/en/3_product.webp" alt="फ़ोटो, दाम और सौदे के प्रकार वाली लिस्टिंग" loading="lazy" width="640" height="1391"></div><figcaption>लिस्टिंग</figcaption></figure>
+      <figure class="phone"><div class="isl"></div><div class="screen"><img src="/nibango/assets/img/shots/en/4_chat.webp" alt="ऑफ़र के साथ रियल-टाइम चैट" loading="lazy" width="640" height="1391"></div><figcaption>चैट</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- CHAT -->
+<section class="sec chat" id="chat">
+  <div class="wrap">
+    <div class="thread io" id="thread" aria-label="उदाहरण बातचीत">
+      <div class="hd"><div class="av"></div><div><b>Sara · iPhone 11 Pro</b><small>ऑनलाइन</small></div></div>
+      <div class="msgs">
+        <div class="msg in">नमस्ते! क्या iPhone अभी उपलब्ध है?</div>
+        <div class="msg out">हाँ, है। बैटरी 91% पर है।<span class="ticks">पढ़ा गया ✓✓</span></div>
+        <div class="msg in offer"><small>ऑफ़र</small><b data-price="1450">AED 1,450</b><small data-tpl="chat_pickup">आज {hood} में पिकअप</small></div>
+        <div class="msg out">डील पक्की। मैं लोकेशन भेजता हूँ।<span class="ticks">पढ़ा गया ✓✓</span></div>
+        <div class="msg in" data-tpl="chat_m5">📍 {hood}, {city}</div>
+      </div>
+    </div>
+    <div class="io">
+      <p class="eyebrow">चैट जो साथ चलती है</p>
+      <h2>"उपलब्ध है?" से "छह बजे मिलते हैं" तक।</h2>
+      <p class="lead">मैसेज तुरंत पहुँचते हैं, ऑफ़र थ्रेड के भीतर रहते हैं, और आप ऐप छोड़े बिना फ़ोटो और मिलने की जगह भेज सकते हैं।</p>
+      <div class="points">
+        <div class="point"><div class="ic">⚡</div><div><b>रियल टाइम</b><span>डिलीवर्ड और रीड रसीदें, टाइपिंग संकेत, दूर होने पर पुश।</span></div></div>
+        <div class="point"><div class="ic">💬</div><div><b>थ्रेड में ऑफ़र</b><span>एक टैप में ऑफ़र दें, जवाबी ऑफ़र दें या स्वीकार करें। रक़म के स्क्रीनशॉट नहीं।</span></div></div>
+        <div class="point"><div class="ic">🛡️</div><div><b>रिपोर्ट और ब्लॉक</b><span>कुछ गड़बड़? चैट से रिपोर्ट करें। मॉडरेशन सबूत के साथ जाँचता है।</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="sec" id="trust">
+  <div class="wrap">
+    <div class="trust">
+      <div class="t t--blue io"><b>0%</b><span>कमीशन, आप जो भी बेचें</span></div>
+      <div class="t io"><b>17</b><span>भाषाएँ, दाएँ-से-बाएँ अरबी समेत</span></div>
+      <div class="t t--green io"><b>3</b><span>प्लेटफ़ॉर्म: iOS, Android और वेब</span></div>
+      <div class="t io"><b>30</b><span>दिन प्रति लिस्टिंग, एक टैप में नवीनीकरण</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- DOWNLOAD -->
+<section class="sec" id="download" style="padding-top:0">
+  <div class="wrap">
+    <div class="dl io">
+      <h2 data-tpl="dl_h2">{city} पहले से बेच रहा है।</h2>
+      <p>nibango अपने फ़ोन पर पाएँ या ब्राउज़र में खोलें। वही लिस्टिंग, वही चैट, हर जगह।</p>
+      <div class="badges">
+        <a href="https://apps.apple.com/app/nibango" aria-label="App Store से डाउनलोड करें"><img src="/nibango/assets/img/app-store-badge.svg" alt="" width="144" height="48"></a>
+        <a href="https://play.google.com/store/apps/details?id=com.nibango.app" aria-label="Google Play पर पाएँ"><img src="/nibango/assets/img/google-play-badge.svg" alt="" width="162" height="48"></a>
+      </div>
+      <p class="web">या जाएँ <a href="https://nibango.com/?lang=hi">nibango.com</a></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="by">एक उत्पाद: <b>beatLabs</b> · Dubai</p>
+    <ul>
+      <li><a href="https://nibango.com/privacy/?lang=hi">गोपनीयता</a></li>
+      <li><a href="https://nibango.com/terms/?lang=hi">शर्तें</a></li>
+      <li><a href="https://nibango.com/cookies/?lang=hi">कुकीज़</a></li>
+      <li><a href="https://nibango.com/support/?lang=hi">सहायता</a></li>
+      <li><a href="https://nibango.com/contact/?lang=hi">संपर्क</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script id="nb-data" type="application/json">{"lang":"hi","base":"/nibango","isRoot":false,"languages":["en","es","ar","de","fr","hi","id","it","ja","ko","nl","pl","pt-br","ru","sv","tr","zh-hans"],"defaultCity":"Asia/Dubai","cities":{"Asia/Dubai":{"name":"Dubai","country":"AE","currency":"AED","hoods":["Dubai Marina","JLT","Al Barsha","Downtown","Business Bay","Jumeirah","Mirdif"]},"Asia/Riyadh":{"name":"Riyadh","country":"SA","currency":"SAR","hoods":["Al Olaya","Al Malaz","Al Nakheel","Al Yasmin","Al Rawdah"]},"Asia/Qatar":{"name":"Doha","country":"QA","currency":"QAR","hoods":["West Bay","The Pearl","Al Sadd","Lusail","Al Waab"]},"Asia/Kuwait":{"name":"Kuwait City","country":"KW","currency":"KWD","hoods":["Salmiya","Hawally","Jabriya","Sharq","Mahboula"]},"Asia/Bahrain":{"name":"Manama","country":"BH","currency":"BHD","hoods":["Juffair","Seef","Adliya","Amwaj","Riffa"]},"Asia/Muscat":{"name":"Muscat","country":"OM","currency":"OMR","hoods":["Al Khuwair","Qurum","Ruwi","Al Mouj","Bausher"]},"Asia/Amman":{"name":"Amman","country":"JO","currency":"JOD","hoods":["Abdoun","Sweifieh","Jabal Amman","Khalda","Dabouq"]},"Africa/Cairo":{"name":"Cairo","country":"EG","currency":"EGP","hoods":["Zamalek","Maadi","Heliopolis","Nasr City","New Cairo"]},"Africa/Casablanca":{"name":"Casablanca","country":"MA","currency":"MAD","hoods":["Maarif","Anfa","Gauthier","Ain Diab","Bourgogne"]},"Africa/Lagos":{"name":"Lagos","country":"NG","currency":"NGN","hoods":["Lekki","Ikeja","Victoria Island","Yaba","Surulere"]},"Africa/Johannesburg":{"name":"Johannesburg","country":"ZA","currency":"ZAR","hoods":["Sandton","Rosebank","Melville","Fourways","Soweto"]},"Africa/Nairobi":{"name":"Nairobi","country":"KE","currency":"KES","hoods":["Westlands","Kilimani","Karen","Lavington","Parklands"]},"Europe/Madrid":{"name":"Madrid","country":"ES","currency":"EUR","hoods":["Chamberí","Lavapiés","Salamanca","Malasaña","Chamartín","Vallecas","Retiro"]},"Atlantic/Canary":{"name":"Las Palmas","country":"ES","currency":"EUR","hoods":["Vegueta","Triana","Las Canteras","Ciudad Jardín","Tafira"]},"Europe/Lisbon":{"name":"Lisbon","country":"PT","currency":"EUR","hoods":["Alfama","Chiado","Campo de Ourique","Benfica","Parque das Nações"]},"Europe/Paris":{"name":"Paris","country":"FR","currency":"EUR","hoods":["Le Marais","Belleville","Montmartre","Bastille","Batignolles"]},"Europe/Brussels":{"name":"Brussels","country":"BE","currency":"EUR","hoods":["Ixelles","Saint-Gilles","Uccle","Etterbeek","Schaerbeek"]},"Europe/Amsterdam":{"name":"Amsterdam","country":"NL","currency":"EUR","hoods":["De Pijp","Jordaan","Oud-West","Noord","Zuidas"]},"Europe/Berlin":{"name":"Berlin","country":"DE","currency":"EUR","hoods":["Kreuzberg","Neukölln","Prenzlauer Berg","Charlottenburg","Mitte"]},"Europe/Vienna":{"name":"Vienna","country":"AT","currency":"EUR","hoods":["Neubau","Leopoldstadt","Wieden","Döbling","Favoriten"]},"Europe/Zurich":{"name":"Zurich","country":"CH","currency":"CHF","hoods":["Kreis 4","Seefeld","Oerlikon","Wiedikon","Altstetten"]},"Europe/Rome":{"name":"Rome","country":"IT","currency":"EUR","hoods":["Trastevere","Monti","Prati","Testaccio","EUR"]},"Europe/Athens":{"name":"Athens","country":"GR","currency":"EUR","hoods":["Kolonaki","Koukaki","Glyfada","Kifisia","Pagkrati"]},"Europe/Dublin":{"name":"Dublin","country":"IE","currency":"EUR","hoods":["Rathmines","Ranelagh","Smithfield","Drumcondra","Dún Laoghaire"]},"Europe/London":{"name":"London","country":"GB","currency":"GBP","hoods":["Shoreditch","Camden","Brixton","Hackney","Islington","Clapham"]},"Europe/Stockholm":{"name":"Stockholm","country":"SE","currency":"SEK","hoods":["Södermalm","Vasastan","Östermalm","Kungsholmen","Solna"]},"Europe/Oslo":{"name":"Oslo","country":"NO","currency":"NOK","hoods":["Grünerløkka","Frogner","Majorstuen","Sagene","Bjørvika"]},"Europe/Copenhagen":{"name":"Copenhagen","country":"DK","currency":"DKK","hoods":["Nørrebro","Vesterbro","Østerbro","Frederiksberg","Amager"]},"Europe/Helsinki":{"name":"Helsinki","country":"FI","currency":"EUR","hoods":["Kallio","Töölö","Punavuori","Lauttasaari","Pasila"]},"Europe/Warsaw":{"name":"Warsaw","country":"PL","currency":"PLN","hoods":["Mokotów","Śródmieście","Wola","Praga","Ursynów"]},"Europe/Prague":{"name":"Prague","country":"CZ","currency":"CZK","hoods":["Vinohrady","Žižkov","Karlín","Smíchov","Dejvice"]},"Europe/Budapest":{"name":"Budapest","country":"HU","currency":"HUF","hoods":["Erzsébetváros","Újlipótváros","Buda","Ferencváros","Óbuda"]},"Europe/Bucharest":{"name":"Bucharest","country":"RO","currency":"RON","hoods":["Dorobanți","Cotroceni","Floreasca","Primăverii","Titan"]},"Europe/Istanbul":{"name":"Istanbul","country":"TR","currency":"TRY","hoods":["Kadıköy","Beşiktaş","Beyoğlu","Şişli","Üsküdar"]},"Europe/Moscow":{"name":"Moscow","country":"RU","currency":"RUB","hoods":["Arbat","Khamovniki","Presnensky","Sokolniki","Tverskoy"]},"Asia/Kolkata":{"name":"Mumbai","country":"IN","currency":"INR","hoods":["Bandra","Andheri","Powai","Juhu","Colaba"]},"Asia/Karachi":{"name":"Karachi","country":"PK","currency":"PKR","hoods":["Clifton","DHA","Gulshan-e-Iqbal","Saddar","Nazimabad"]},"Asia/Jakarta":{"name":"Jakarta","country":"ID","currency":"IDR","hoods":["Kemang","Menteng","Senopati","Kelapa Gading","Pondok Indah"]},"Asia/Kuala_Lumpur":{"name":"Kuala Lumpur","country":"MY","currency":"MYR","hoods":["Bangsar","Mont Kiara","Bukit Bintang","Damansara","Cheras"]},"Asia/Singapore":{"name":"Singapore","country":"SG","currency":"SGD","hoods":["Tiong Bahru","Bukit Timah","Tampines","Jurong","Orchard"]},"Asia/Manila":{"name":"Manila","country":"PH","currency":"PHP","hoods":["Makati","BGC","Quezon City","Ortigas","Pasay"]},"Asia/Shanghai":{"name":"Shanghai","country":"CN","currency":"CNY","hoods":["Jing'an","Xuhui","Pudong","Huangpu","Changning"]},"Asia/Tokyo":{"name":"Tokyo","country":"JP","currency":"JPY","hoods":["Shibuya","Shinjuku","Meguro","Setagaya","Minato"]},"Asia/Seoul":{"name":"Seoul","country":"KR","currency":"KRW","hoods":["Gangnam","Mapo","Itaewon","Songpa","Seongsu"]},"Australia/Sydney":{"name":"Sydney","country":"AU","currency":"AUD","hoods":["Surry Hills","Newtown","Bondi","Parramatta","Manly"]},"Australia/Melbourne":{"name":"Melbourne","country":"AU","currency":"AUD","hoods":["Fitzroy","St Kilda","Richmond","Brunswick","South Yarra"]},"Pacific/Auckland":{"name":"Auckland","country":"NZ","currency":"NZD","hoods":["Ponsonby","Parnell","Mt Eden","Takapuna","Newmarket"]},"America/New_York":{"name":"New York","country":"US","currency":"USD","hoods":["Brooklyn","Astoria","Harlem","Williamsburg","Upper West Side"]},"America/Chicago":{"name":"Chicago","country":"US","currency":"USD","hoods":["Wicker Park","Logan Square","Lincoln Park","Pilsen","Hyde Park"]},"America/Denver":{"name":"Denver","country":"US","currency":"USD","hoods":["Capitol Hill","RiNo","Highlands","Cherry Creek","Baker"]},"America/Los_Angeles":{"name":"Los Angeles","country":"US","currency":"USD","hoods":["Silver Lake","Venice","Echo Park","Koreatown","Pasadena"]},"America/Toronto":{"name":"Toronto","country":"CA","currency":"CAD","hoods":["Queen West","Leslieville","The Annex","Scarborough","Etobicoke"]},"America/Vancouver":{"name":"Vancouver","country":"CA","currency":"CAD","hoods":["Kitsilano","Mount Pleasant","Yaletown","Burnaby","Richmond"]},"America/Mexico_City":{"name":"Mexico City","country":"MX","currency":"MXN","hoods":["Roma","Condesa","Polanco","Coyoacán","Del Valle"]},"America/Bogota":{"name":"Bogotá","country":"CO","currency":"COP","hoods":["Chapinero","Usaquén","Teusaquillo","La Candelaria","Suba"]},"America/Lima":{"name":"Lima","country":"PE","currency":"PEN","hoods":["Miraflores","Barranco","San Isidro","Surco","Jesús María"]},"America/Santiago":{"name":"Santiago","country":"CL","currency":"CLP","hoods":["Providencia","Ñuñoa","Las Condes","Bellavista","Maipú"]},"America/Argentina/Buenos_Aires":{"name":"Buenos Aires","country":"AR","currency":"ARS","hoods":["Palermo","Recoleta","San Telmo","Belgrano","Caballito"]},"America/Sao_Paulo":{"name":"São Paulo","country":"BR","currency":"BRL","hoods":["Pinheiros","Vila Madalena","Moema","Itaim Bibi","Tatuapé"]}},"t":{"language_name":"हिन्दी","language":"भाषा","meta_title":"nibango — खरीदें। बेचें। बोली लगाएँ। दान करें। वह मार्केटप्लेस जो समझता है।","meta_description":"nibango वह मार्केटप्लेस है जो समझता है: तय दाम, मोल-भाव, नीलामी और दान, रियल-टाइम चैट और शून्य कमीशन के साथ। प्रॉपर्टी, वाहन, सेवाएँ, नौकरियाँ, पालतू जानवर और क्लासिफ़ाइड, आपके पास।","og_title":"nibango — वह मार्केटप्लेस जो समझता है","og_description":"खरीदें, बेचें, बोली लगाएँ या दान करें। रियल-टाइम चैट, शून्य कमीशन, आपके आसपास 1 से 200 किमी तक।","nav_sections":"अनुभाग","nav_deals":"सौदे","nav_near":"आपके पास","nav_categories":"श्रेणियाँ","nav_inside":"अंदर की झलक","nav_chat":"चैट","nav_get":"ऐप पाएँ","hero_eyebrow":"वह मार्केटप्लेस जो समझता है","h1_aria":"खरीदें। बेचें। बोली लगाएँ। दान करें।","h1_buy":"खरीदें।","h1_sell":"बेचें।","h1_bid":"बोली लगाएँ।","h1_give":"दान करें।","hero_lead":"तय दाम, मोल-भाव, नीलामी और दान, सब एक जगह। प्रॉपर्टी, वाहन, सेवाएँ, नौकरियाँ, पालतू जानवर और क्लासिफ़ाइड, रियल-टाइम चैट और शून्य कमीशन के साथ।","app_store_aria":"App Store से डाउनलोड करें","play_aria":"Google Play पर पाएँ","open_web":"वेब पर खोलें","fine_free":"<b>मुफ़्त<\/b> इस्तेमाल","fine_commission":"<b>0%<\/b> कमीशन","fine_languages":"<b>17<\/b> भाषाएँ","chip_neg":"मोल-भाव","chip_fix":"तय दाम","chip_auc":"नीलामी","chip_don":"दान","free":"मुफ़्त","item_bike":"विंटेज स्टील रोड बाइक","item_headphones":"नॉइज़-कैंसलिंग हेडफ़ोन","item_sofa":"हरा वेलवेट सोफ़ा, 3 सीटर","item_guitar":"अकूस्टिक गिटार + केस","tk_new":"{hood} में नया: iPhone 11 Pro · {price}","tk_auction":"{hood2} में नीलामी जल्द ख़त्म: DJI Phantom 4 · 12 बोलियाँ","tk_donation":"{hood3} में दान: LEGO 5 किलो · मुफ़्त","tk_offer":"ऑफ़र स्वीकार: PlayStation 5 · {price}","tk_flat":"{hood4} में 2 BHK फ़्लैट · {price} / साल","tk_service":"सेवा: AC मेंटेनेंस · {price} से","tk_job":"नौकरी: {hood2} में बरिस्ता · फ़ुल टाइम","deals_eyebrow":"सौदे के चार तरीक़े","deals_h2":"हर लिस्टिंग बताती है कि उसे कैसे ख़रीदा जाए।","deals_lead":"हर रंग एक तरह का सौदा है। टैप करने से पहले ही कार्ड पर दिख जाता है, ताकि कोई \"दाम पक्का है?\" पूछने में मैसेज न गँवाए।","deal_fix_k":"तय दाम","deal_fix_h3":"लो या छोड़ो।","deal_fix_p":"विक्रेता ने दाम तय किया है और वह गंभीर है। स्वीकार करें और सौंपने की बात के लिए चैट खुल जाती है।","deal_fix_item":"Canon EOS 800D + किट लेंस","deal_fix_meta":"तय · {hood3}","deal_neg_k":"मोल-भाव","deal_neg_h3":"ऑफ़र दें।","deal_neg_p":"चैट से सीधे रक़म भेजें। विक्रेता स्वीकार करता है, जवाबी ऑफ़र देता है या मना करता है, सब उसी थ्रेड में।","deal_neg_your_offer":"आपका ऑफ़र","deal_neg_countered":"विक्रेता का जवाबी ऑफ़र · {price}","deal_auc_k":"नीलामी","deal_auc_h3":"सबसे ऊँची बोली जीतती है।","deal_auc_p":"शुरुआती दाम और समय-सीमा तय करें, या इंतज़ार न कर सकने वालों के लिए अभी-ख़रीदें दाम।","deal_auc_ends":"DJI Phantom 4 · {time} में ख़त्म","deal_auc_bids":"{n} बोलियाँ","deal_don_k":"दान","deal_don_h3":"दे दीजिए।","deal_don_p":"उन चीज़ों के लिए मुफ़्त लिस्टिंग जिन्हें आप फेंकने की बजाय इस्तेमाल होते देखना चाहेंगे। जो पहले लेने का इंतज़ाम करे, उसकी।","deal_don_item":"LEGO के मिले-जुले टुकड़े, 5 किलो","deal_don_meta":"दान · {hood4}","near_eyebrow":"सच में आपके पास","near_h2":"जगह चुनें। दायरा चुनें। यही आपका बाज़ार है।","near_lead":"अपना शहर सेट करें या पिन लगाएँ, फिर 1 से 200 किमी तक स्लाइड करें। लिस्टिंग उसी क्रम में दिखती हैं जहाँ आप सच में पहुँच सकते हैं, {city} में या जहाँ भी आप हों।","near_radius":"खोज का दायरा","fact_km":"किमी, आपकी मर्ज़ी","fact_world_b":"दुनिया भर में","fact_world":"कोई भी शहर, कोई भी भाषा","fact_map_b":"नक़्शा","fact_map":"या सूची, आपकी पसंद","cats_eyebrow":"सब कुछ, व्यवस्थित","cats_h2":"टैग नहीं। असली फ़ील्ड।","cats_lead":"हर श्रेणी का अपना फ़ॉर्म और अपने फ़िल्टर हैं: फ़्लैट बेडरूम से और कार किलोमीटर से खोजी जाती है, इससे नहीं कि किसे सही शब्द लिखना याद रहा।","cat_property":"प्रॉपर्टी","cat_property_p":"ख़रीदें, बेचें या किराए पर लें।","cat_motor":"वाहन","cat_motor_p":"कार, बाइक और नाव।","cat_services":"सेवाएँ","cat_services_p":"आपके पास के पेशेवर।","cat_jobs":"नौकरियाँ","cat_jobs_p":"भर्ती करें या नौकरी पाएँ।","cat_pets":"पालतू जानवर","cat_pets_p":"ज़िम्मेदारी से गोद लें या नया घर दें।","cat_classifieds":"क्लासिफ़ाइड","cat_classifieds_p":"बाक़ी सब कुछ, फ़ोन से सोफ़े तक।","tag_bedrooms":"बेडरूम","tag_size":"क्षेत्रफल m²","tag_furnished":"फ़र्निश्ड","tag_rent_sale":"किराया / बिक्री","tag_year":"साल","tag_mileage":"किलोमीटर","tag_gearbox":"गियरबॉक्स","tag_fuel":"ईंधन","tag_hourly":"प्रति घंटा दर","tag_availability":"उपलब्धता","tag_on_site":"ऑन-साइट","tag_salary":"वेतन","tag_full_part":"फ़ुल / पार्ट टाइम","tag_remote":"रिमोट","tag_species":"प्रजाति","tag_age":"उम्र","tag_vaccinated":"टीकाकृत","tag_condition":"हालत","tag_brand":"ब्रांड","tag_delivery":"डिलीवरी","inside_eyebrow":"अंदर की झलक","inside_h2":"वादे नहीं, स्क्रीन।","inside_lead":"ये ऐप की असली स्क्रीन हैं, रेंडर नहीं। फ़ोटो, दाम और सौदे का प्रकार एक नज़र में; एक टैप लिस्टिंग पर, एक और चैट पर।","alt_home":"लिस्टिंग कार्ड के साथ nibango का होम फ़ीड","alt_listing":"फ़ोटो, दाम और सौदे के प्रकार वाली लिस्टिंग","alt_chat":"ऑफ़र के साथ रियल-टाइम चैट","cap_feed":"फ़ीड","cap_listing":"लिस्टिंग","cap_chat":"चैट","chat_example":"उदाहरण बातचीत","chat_online":"ऑनलाइन","chat_m1":"नमस्ते! क्या iPhone अभी उपलब्ध है?","chat_m2":"हाँ, है। बैटरी 91% पर है।","chat_read":"पढ़ा गया","chat_offer":"ऑफ़र","chat_pickup":"आज {hood} में पिकअप","chat_m4":"डील पक्की। मैं लोकेशन भेजता हूँ।","chat_m5":"📍 {hood}, {city}","chat_eyebrow":"चैट जो साथ चलती है","chat_h2":"\"उपलब्ध है?\" से \"छह बजे मिलते हैं\" तक।","chat_lead":"मैसेज तुरंत पहुँचते हैं, ऑफ़र थ्रेड के भीतर रहते हैं, और आप ऐप छोड़े बिना फ़ोटो और मिलने की जगह भेज सकते हैं।","pt_rt":"रियल टाइम","pt_rt_p":"डिलीवर्ड और रीड रसीदें, टाइपिंग संकेत, दूर होने पर पुश।","pt_offers":"थ्रेड में ऑफ़र","pt_offers_p":"एक टैप में ऑफ़र दें, जवाबी ऑफ़र दें या स्वीकार करें। रक़म के स्क्रीनशॉट नहीं।","pt_report":"रिपोर्ट और ब्लॉक","pt_report_p":"कुछ गड़बड़? चैट से रिपोर्ट करें। मॉडरेशन सबूत के साथ जाँचता है।","trust_commission":"कमीशन, आप जो भी बेचें","trust_languages":"भाषाएँ, दाएँ-से-बाएँ अरबी समेत","trust_platforms":"प्लेटफ़ॉर्म: iOS, Android और वेब","trust_days":"दिन प्रति लिस्टिंग, एक टैप में नवीनीकरण","dl_h2":"{city} पहले से बेच रहा है।","dl_p":"nibango अपने फ़ोन पर पाएँ या ब्राउज़र में खोलें। वही लिस्टिंग, वही चैट, हर जगह।","dl_web":"या जाएँ","footer_by":"एक उत्पाद:","footer_privacy":"गोपनीयता","footer_terms":"शर्तें","footer_cookies":"कुकीज़","footer_support":"सहायता","footer_contact":"संपर्क"}}</script>
+<script src="/nibango/assets/js/locale.js"></script>
+<script>
+(function () {
+  'use strict';
+  var NB = JSON.parse(document.getElementById('nb-data').textContent);
+  var T = NB.t, L = window.NibangoLocale;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* --- where is the visitor? time zone → city, currency, neighbourhoods --- */
+  var city = L.cityFor(NB.cities, L.timeZone(), NB.defaultCity);
+  var fmt = function (aed) { return aed === 0 ? T.free : L.formatPrice(aed, city, NB.lang); };
+  var hood = function (i) { return city.hoods[i % city.hoods.length]; };
+  var fill = function (tpl, vars) { return L.fill(tpl, Object.assign({ city: city.name, hood: hood(0), hood2: hood(1), hood3: hood(2), hood4: hood(3) }, vars || {})); };
+
+  /* --- hero feed: real-looking cards from the demo photos --- */
+  var chips = { neg: T.chip_neg, fix: T.chip_fix, auc: T.chip_auc, don: T.chip_don };
+  var items = [
+    ['iphone', 'iPhone 11 Pro 256GB', 'Apple', 1650, 'neg', true],
+    ['ps5', 'PlayStation 5 + 2 controllers', 'Sony', 1450, 'fix'],
+    ['drone', 'DJI Phantom 4', 'DJI', 2350, 'auc'],
+    ['lego', 'LEGO 5 kg', '', 0, 'don'],
+    ['camera', 'Canon EOS 800D + 18-55', 'Canon', 1900, 'neg'],
+    ['sneakers', 'Nike Free RN Flyknit 42', 'Nike', 220, 'fix'],
+    ['bike', T.item_bike, '', 950, 'neg'],
+    ['headphones', T.item_headphones, 'Sony', 480, 'fix'],
+    ['sofa', T.item_sofa, '', 0, 'don'],
+    ['guitar', T.item_guitar, 'Yamaha', 600, 'auc']
+  ];
+  function card(it, i) {
+    var sub = (it[2] ? it[2] + ' · ' : '') + hood(i);
+    return '<article class="card"><div class="ph"><img src="' + NB.base + '/assets/img/demo/' + it[0] + '.webp" alt="" width="480" height="480" loading="eager">' +
+      (it[5] ? '<span class="vip">♛ VIP</span>' : '') +
+      '<span class="heart">♡</span><span class="price">' + fmt(it[3]) + '</span></div>' +
+      '<h4>' + it[1] + '</h4><p class="sub">' + sub + '</p><span class="chip chip--' + it[4] + '">' + chips[it[4]] + '</span></article>';
+  }
+  function col(id, list) {
+    var el = document.getElementById(id), html = list.map(card).join('');
+    el.innerHTML = html + html; /* duplicated so the loop is seamless */
+  }
+  col('colA', items.filter(function (_, i) { return i % 2 === 0; }));
+  col('colB', items.filter(function (_, i) { return i % 2 === 1; }));
+
+  /* --- ticker --- */
+  var lines = [
+    fill(T.tk_new, { price: fmt(1650) }), fill(T.tk_auction), fill(T.tk_donation),
+    fill(T.tk_offer, { price: fmt(1400) }), fill(T.tk_flat, { price: fmt(95000) }),
+    fill(T.tk_service, { price: fmt(150) }), fill(T.tk_job)
+  ];
+  var t = document.getElementById('ticker'), tk = lines.map(function (l) { return '<span>' + l + '</span>'; }).join('');
+  t.innerHTML = tk + tk;
+
+  /* --- localised prices and sentences in the static sections --- */
+  document.querySelectorAll('[data-price]').forEach(function (el) { el.textContent = fmt(Number(el.dataset.price)); });
+  document.querySelectorAll('[data-tpl]').forEach(function (el) {
+    var vars = {};
+    if (el.dataset.tpl === 'deal_neg_countered') vars.price = fmt(1550);
+    if (el.dataset.tpl === 'deal_auc_ends') vars.time = '<span id="cd">02:14:09</span>';
+    if (el.dataset.tpl === 'deal_auc_bids') vars.n = '12';
+    el.innerHTML = fill(T[el.dataset.tpl], vars);
+  });
+
+  /* --- language switch --- */
+  var sel = document.getElementById('lang');
+  sel.value = NB.lang;
+  sel.addEventListener('change', function () { window.location.href = L.pageFor(NB.base, sel.value); });
+  /* The root page is English: send first-time visitors to their browser's language. */
+  if (NB.isRoot) {
+    var want = L.pickLanguage(navigator.languages || [navigator.language], NB.languages);
+    if (want && want !== 'en' && !/[?&]stay/.test(location.search)) window.location.replace(L.pageFor(NB.base, want));
+  }
+
+  /* --- scroll reveal --- */
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in-view');
+      if (e.target.id === 'thread') e.target.classList.add('play');
+      io.unobserve(e.target);
+    });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.15 });
+  document.querySelectorAll('.io').forEach(function (el) { io.observe(el); });
+
+  /* --- sticky nav border --- */
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function () { nav.classList.toggle('is-stuck', window.scrollY > 8); }, { passive: true });
+
+  /* --- radius demo --- */
+  var km = document.getElementById('km'), out = document.getElementById('kmOut'), ring = document.getElementById('ring');
+  var pins = document.querySelectorAll('.pin');
+  function radius() {
+    var v = Number(km.value);
+    out.textContent = v + ' km';
+    km.style.setProperty('--p', (v / 200 * 100) + '%');
+    ring.style.setProperty('--d', L.ringPercent(v) + '%');
+    pins.forEach(function (p) { p.classList.toggle('is-out', Number(p.dataset.r) > v); });
+  }
+  km.addEventListener('input', radius);
+  radius();
+
+  /* --- auction demo --- */
+  var secs = 2 * 3600 + 14 * 60 + 9, bid = 2350, bids = 12;
+  var bidEl = document.getElementById('bid'), bidsEl = document.getElementById('bids');
+  function two(n) { return (n < 10 ? '0' : '') + n; }
+  if (!reduce) {
+    setInterval(function () {
+      secs = Math.max(0, secs - 1);
+      var cd = document.getElementById('cd');
+      if (cd) cd.textContent = two(Math.floor(secs / 3600)) + ':' + two(Math.floor(secs % 3600 / 60)) + ':' + two(secs % 60);
+    }, 1000);
+    setInterval(function () {
+      bid += 25; bids += 1;
+      bidEl.textContent = fmt(bid);
+      bidsEl.innerHTML = fill(T.deal_auc_bids, { n: String(bids) });
+    }, 7000);
+  }
+}());
+</script>
+</body>
+</html>

@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="pl" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nibango — Kupuj. Sprzedawaj. Licytuj. Oddawaj. Marketplace, który rozumie.</title>
+<meta name="description" content="nibango to marketplace, który rozumie: cena stała, do negocjacji, aukcje i darowizny, z czatem w czasie rzeczywistym i zerową prowizją. Nieruchomości, motoryzacja, usługi, praca, zwierzęta i ogłoszenia blisko ciebie.">
+<meta property="og:title" content="nibango — marketplace, który rozumie">
+<meta property="og:description" content="Kupuj, sprzedawaj, licytuj lub oddawaj. Czat w czasie rzeczywistym, zero prowizji, od 1 do 200 km wokół ciebie.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://beatlabs.ae/nibango/pl">
+<meta property="og:image" content="/nibango/assets/img/og.png">
+<meta property="og:locale" content="pl_PL">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://beatlabs.ae/nibango/pl">
+<link rel="alternate" hreflang="en" href="https://beatlabs.ae/nibango">
+<link rel="alternate" hreflang="es" href="https://beatlabs.ae/nibango/es">
+<link rel="alternate" hreflang="ar" href="https://beatlabs.ae/nibango/ar">
+<link rel="alternate" hreflang="de" href="https://beatlabs.ae/nibango/de">
+<link rel="alternate" hreflang="fr" href="https://beatlabs.ae/nibango/fr">
+<link rel="alternate" hreflang="hi" href="https://beatlabs.ae/nibango/hi">
+<link rel="alternate" hreflang="id" href="https://beatlabs.ae/nibango/id">
+<link rel="alternate" hreflang="it" href="https://beatlabs.ae/nibango/it">
+<link rel="alternate" hreflang="ja" href="https://beatlabs.ae/nibango/ja">
+<link rel="alternate" hreflang="ko" href="https://beatlabs.ae/nibango/ko">
+<link rel="alternate" hreflang="nl" href="https://beatlabs.ae/nibango/nl">
+<link rel="alternate" hreflang="pl" href="https://beatlabs.ae/nibango/pl">
+<link rel="alternate" hreflang="pt-br" href="https://beatlabs.ae/nibango/pt-br">
+<link rel="alternate" hreflang="ru" href="https://beatlabs.ae/nibango/ru">
+<link rel="alternate" hreflang="sv" href="https://beatlabs.ae/nibango/sv">
+<link rel="alternate" hreflang="tr" href="https://beatlabs.ae/nibango/tr">
+<link rel="alternate" hreflang="zh-hans" href="https://beatlabs.ae/nibango/zh-hans">
+<link rel="alternate" hreflang="x-default" href="https://beatlabs.ae/nibango">
+<link rel="icon" href="/nibango/assets/img/favicon.png">
+<link rel="preload" href="/nibango/assets/fonts/ClashGrotesk-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Clash";src:url("/nibango/assets/fonts/ClashGrotesk-Variable.woff2") format("woff2");font-weight:200 700;font-display:swap}
+:root{
+  --niban:#007AFF;--go:#34C759;--fixed:#FF3B30;--auction:#FF9500;--ink:#0B0F19;--ink-2:#4B5563;--ink-3:#8A94A6;
+  --paper:#FFFFFF;--paper-2:#F5F6F8;--line:#E6E8EE;
+  --r:22px;--r-sm:14px;--gutter:clamp(16px,4vw,64px);--max:1240px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:"Clash",system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.45;font-weight:400;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,select{font:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+.wordmark{height:1.1em;width:3.456em;vertical-align:-.3em}
+h1,h2,h3{font-weight:600;letter-spacing:-.03em;line-height:1}
+h2{font-size:clamp(34px,5.4vw,66px)}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+[dir=rtl] .eyebrow{letter-spacing:0}
+[dir=rtl] h1,[dir=rtl] h2,[dir=rtl] h3{letter-spacing:0}
+.lead{font-size:clamp(17px,1.6vw,21px);color:var(--ink-2);max-width:56ch}
+.sec{padding:clamp(72px,10vw,140px) 0}
+.sec-head{display:grid;gap:18px;max-width:880px;margin-bottom:clamp(36px,5vw,64px)}
+.btn{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 22px;border-radius:999px;font-weight:600;font-size:16px;border:1.5px solid var(--ink);transition:transform .25s var(--ease),background .25s,color .25s}
+.btn:hover{transform:translateY(-2px)}
+.btn--ink{background:var(--ink);color:#fff}
+.btn--ink:hover{background:var(--niban);border-color:var(--niban)}
+.badges{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.badges img{height:48px;width:auto}
+.badges a{transition:transform .25s var(--ease)}
+.badges a:hover{transform:translateY(-2px)}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 82%,transparent);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
+.nav.is-stuck{border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
+.nav .brand{font-size:28px;line-height:1}
+.nav ul{display:flex;gap:28px;list-style:none;font-weight:500;font-size:15px;color:var(--ink-2)}
+.nav ul a:hover{color:var(--ink)}
+.nav .right{display:flex;align-items:center;gap:12px}
+.nav .btn{height:42px;padding:0 18px;font-size:15px}
+.lang{appearance:none;-webkit-appearance:none;height:42px;padding:0 34px 0 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%230B0F19' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 14px center;font-weight:500;font-size:14px;color:var(--ink);cursor:pointer}
+[dir=rtl] .lang{padding:0 14px 0 34px;background-position:left 14px center}
+@media (max-width:760px){.nav ul{display:none}.nav .btn{display:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding:clamp(40px,7vw,96px) 0 0;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(24px,5vw,72px);align-items:center}
+.hero h1{font-size:clamp(50px,8.6vw,128px);font-weight:600;letter-spacing:-.045em;line-height:.95}
+.hero h1 span{display:block}
+.hero h1 .w{display:inline-block;font-style:normal}
+.hero h1 .w-sell{color:var(--niban)}
+.hero h1 .w-bid{color:var(--auction)}
+.hero h1 .w-give{color:var(--go)}
+.hero h1 .w-buy{color:var(--fixed)}
+.hero .lead{margin:28px 0 32px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.hero .fine{margin-top:22px;font-size:14px;color:var(--ink-3);display:flex;gap:18px;flex-wrap:wrap}
+.hero .fine b{color:var(--ink);font-weight:600}
+.reveal{opacity:0;transform:translateY(22px);animation:up .9s var(--ease) forwards}
+.reveal:nth-child(2){animation-delay:.08s}.reveal:nth-child(3){animation-delay:.16s}.reveal:nth-child(4){animation-delay:.24s}.reveal:nth-child(5){animation-delay:.32s}
+@keyframes up{to{opacity:1;transform:none}}
+
+/* the feed itself is the hero: two live columns of real-looking cards */
+.feed{position:relative;height:min(78vh,760px);display:grid;grid-template-columns:1fr 1fr;gap:16px;mask-image:linear-gradient(to bottom,transparent,#000 12%,#000 88%,transparent);-webkit-mask-image:linear-gradient(to bottom,transparent,#000 12%,#000 88%,transparent)}
+.col{display:flex;flex-direction:column;gap:16px;min-width:0;animation:scroll 42s linear infinite}
+.col--b{animation-direction:reverse;animation-duration:50s;margin-top:-120px}
+.feed:hover .col{animation-play-state:paused}
+@keyframes scroll{to{transform:translateY(-50%)}}
+.card{min-width:0;background:#fff;border-radius:var(--r);padding:12px;box-shadow:0 1px 2px rgba(11,15,25,.06),0 18px 40px -22px rgba(11,15,25,.28);border:1px solid var(--line);flex:none;transition:transform .35s var(--ease)}
+.card:hover{transform:translateY(-4px) rotate(-.6deg)}
+.card .ph{position:relative;aspect-ratio:1;border-radius:14px;overflow:hidden;background:var(--paper-2)}
+.card .ph img{width:100%;height:100%;object-fit:cover}
+.card .price{position:absolute;inset-inline-end:10px;bottom:10px;background:#fff;border:1.5px solid var(--ink);border-radius:999px;padding:5px 11px;font-weight:600;font-size:14px;direction:ltr}
+.card .heart{position:absolute;top:10px;inset-inline-end:10px;width:34px;height:34px;border-radius:50%;background:#fff;display:grid;place-items:center;border:1px solid var(--line)}
+.card .vip{position:absolute;top:10px;inset-inline-start:10px;background:#FFCC00;border-radius:999px;padding:4px 10px;font-size:12px;font-weight:700;display:flex;align-items:center;gap:4px}
+.card h4{font-size:16px;font-weight:600;margin:10px 2px 2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:-.01em}
+.card .sub{font-size:13px;color:var(--ink-3);margin:0 2px 8px}
+.chip{display:inline-block;border-radius:999px;padding:4px 10px;font-size:12.5px;font-weight:600;color:#fff}
+.chip--neg{background:var(--niban)}.chip--fix{background:var(--fixed)}.chip--auc{background:var(--auction)}.chip--don{background:var(--go)}
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:minmax(0,1fr)}
+  .feed{height:420px;margin-top:8px}
+}
+
+/* ---------- ticker strip ---------- */
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper-2);overflow:hidden;white-space:nowrap;padding:14px 0;margin-top:clamp(40px,6vw,80px);direction:ltr}
+.strip .track{display:inline-flex;gap:40px;animation:ticker 40s linear infinite;font-weight:500;font-size:15px;color:var(--ink-2)}
+.strip .track span{direction:ltr;unicode-bidi:isolate}
+.strip .track span::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--go);margin-inline-end:12px;vertical-align:middle}
+.strip:hover .track{animation-play-state:paused}
+@keyframes ticker{to{transform:translateX(-50%)}}
+
+/* ---------- deals ---------- */
+.deals{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.deal{position:relative;border-radius:var(--r);padding:28px 26px 26px;min-height:360px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;overflow:hidden;isolation:isolate;transition:transform .4s var(--ease)}
+.deal:hover{transform:translateY(-6px)}
+.deal::after{content:"";position:absolute;inset:auto -30% -40% auto;width:70%;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.16);z-index:-1;filter:blur(2px)}
+.deal--neg{background:var(--niban)}.deal--fix{background:var(--fixed)}.deal--auc{background:var(--auction)}.deal--don{background:var(--go)}
+.deal .k{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+[dir=rtl] .deal .k{letter-spacing:0}
+.deal h3{font-size:clamp(28px,3vw,38px);margin-top:10px;letter-spacing:-.03em}
+.deal p{margin-top:14px;font-size:15.5px;opacity:.92;max-width:28ch}
+.deal .demo{margin-top:26px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:14px;padding:12px 14px;font-size:14px;font-weight:500;backdrop-filter:blur(6px)}
+.deal .demo b{font-weight:600;font-size:22px;letter-spacing:-.02em;display:block}
+.deal .demo small{opacity:.85;font-size:12.5px}
+@media (max-width:980px){.deals{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.deals{grid-template-columns:1fr}.deal{min-height:0}}
+
+/* ---------- radius / map ---------- */
+.near{background:var(--ink);color:#fff;overflow:hidden}
+.near .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,6vw,96px);align-items:center}
+.near .eyebrow{color:#9CA3AF}
+.near .lead{color:#C7CCD6}
+.near h2{color:#fff}
+.radar{position:relative;aspect-ratio:1;width:min(100%,560px);margin-inline:auto;border-radius:50%;background:
+  radial-gradient(circle at 50% 50%,rgba(0,122,255,.25),transparent 60%),
+  repeating-radial-gradient(circle at 50% 50%,rgba(255,255,255,.12) 0 1px,transparent 1px 56px);
+}
+.radar::before{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,rgba(0,122,255,0),rgba(0,122,255,.35));animation:spin 6s linear infinite;mix-blend-mode:screen}
+@keyframes spin{to{transform:rotate(360deg)}}
+.radar .me{position:absolute;left:50%;top:50%;width:18px;height:18px;border-radius:50%;background:var(--niban);transform:translate(-50%,-50%);box-shadow:0 0 0 6px rgba(0,122,255,.3),0 0 0 14px rgba(0,122,255,.12)}
+.radar .ring{position:absolute;left:50%;top:50%;border-radius:50%;border:1.5px solid var(--niban);transform:translate(-50%,-50%);width:var(--d);height:var(--d);background:rgba(0,122,255,.14);transition:width .5s var(--ease),height .5s var(--ease)}
+.pin{position:absolute;transform:translate(-50%,-100%);background:#fff;color:var(--ink);font-weight:600;font-size:13px;border-radius:999px;padding:5px 10px;white-space:nowrap;box-shadow:0 10px 24px -10px rgba(0,0,0,.6);transition:opacity .4s,transform .4s var(--ease);direction:ltr}
+.pin::after{content:"";position:absolute;left:50%;bottom:-6px;width:10px;height:10px;background:#fff;transform:translateX(-50%) rotate(45deg);border-radius:2px}
+.pin.is-out{opacity:.25;transform:translate(-50%,-100%) scale(.9)}
+.range{margin-top:34px;display:grid;gap:12px}
+.range label{display:flex;justify-content:space-between;font-weight:500;color:#C7CCD6}
+.range output{color:#fff;font-weight:600;font-variant-numeric:tabular-nums}
+.range input{appearance:none;-webkit-appearance:none;width:100%;height:6px;border-radius:999px;background:linear-gradient(to right,var(--niban) var(--p,40%),rgba(255,255,255,.18) var(--p,40%));direction:ltr}
+.range input::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;border-radius:50%;background:#fff;border:0;box-shadow:0 2px 10px rgba(0,0,0,.4);cursor:pointer}
+.range input::-moz-range-thumb{width:28px;height:28px;border-radius:50%;background:#fff;border:0;cursor:pointer}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
+.fact{border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:16px}
+.fact b{display:block;font-size:30px;font-weight:600;letter-spacing:-.03em}
+.fact span{font-size:13px;color:#9CA3AF}
+@media (max-width:900px){.near .wrap{grid-template-columns:minmax(0,1fr)}.facts{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:520px){.facts{grid-template-columns:1fr 1fr}}
+
+/* ---------- categories ---------- */
+.cats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.cat{border:1px solid var(--line);border-radius:var(--r);padding:24px;background:#fff;transition:transform .35s var(--ease),box-shadow .35s}
+.cat:hover{transform:translateY(-4px);box-shadow:0 24px 50px -30px rgba(11,15,25,.35)}
+.cat .ic{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:var(--paper-2);margin-bottom:18px}
+.cat h3{font-size:22px;letter-spacing:-.02em}
+.cat p{font-size:14.5px;color:var(--ink-2);margin:6px 0 14px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{font-size:12.5px;font-weight:500;border:1px solid var(--line);border-radius:999px;padding:4px 9px;color:var(--ink-2);background:var(--paper-2)}
+@media (max-width:900px){.cats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.cats{grid-template-columns:1fr}}
+
+/* ---------- inside (CSS phones, real screens) ---------- */
+.inside{background:var(--paper-2)}
+.phones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,3vw,40px);align-items:end;perspective:1600px}
+.phone{position:relative;border-radius:46px;background:#0B0F19;padding:10px;box-shadow:0 40px 80px -40px rgba(11,15,25,.55),inset 0 0 0 1.5px rgba(255,255,255,.08);transform:rotateX(var(--rx,0)) rotateY(var(--ry,0)) translateY(var(--ty,0));transition:transform .8s var(--ease)}
+.phone .screen{border-radius:38px;overflow:hidden;background:#fff;aspect-ratio:1320/2868}
+.phone .screen img{width:100%;height:100%;object-fit:cover}
+.phone .isl{position:absolute;top:22px;left:50%;transform:translateX(-50%);width:96px;height:28px;border-radius:999px;background:#0B0F19}
+.phone figcaption{position:absolute;left:50%;bottom:-54px;transform:translateX(-50%);white-space:nowrap;font-size:14px;color:var(--ink-2);font-weight:500}
+.phones .phone:nth-child(1){--ry:14deg;--ty:28px}
+.phones .phone:nth-child(2){--ty:-10px;z-index:2}
+.phones .phone:nth-child(3){--ry:-14deg;--ty:28px}
+.phones.in-view .phone{--ry:0deg;--ty:0}
+.phones.in-view .phone:nth-child(1){--ry:6deg;--ty:18px}
+.phones.in-view .phone:nth-child(3){--ry:-6deg;--ty:18px}
+.inside .phones{padding-bottom:70px}
+@media (max-width:760px){.phones{grid-template-columns:1fr;max-width:300px;margin-inline:auto}.phones .phone{--ry:0;--ty:0}.phone figcaption{bottom:-40px}.inside .phones{gap:70px}}
+
+/* ---------- chat ---------- */
+.chat .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:center}
+.thread{background:#fff;border:1px solid var(--line);border-radius:28px;padding:22px;box-shadow:0 30px 60px -40px rgba(11,15,25,.4);max-width:460px;margin-inline:auto;width:100%}
+.thread .hd{display:flex;align-items:center;gap:12px;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:16px}
+.thread .av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--niban),var(--go))}
+.thread .hd b{display:block;font-weight:600}
+.thread .hd small{color:var(--go);font-weight:500;font-size:13px}
+.msgs{display:flex;flex-direction:column;gap:10px}
+.msg{max-width:78%;padding:11px 14px;border-radius:18px;font-size:15px;line-height:1.35;opacity:0;transform:translateY(10px) scale(.98)}
+.msg.in{align-self:flex-start;background:var(--paper-2);border-end-start-radius:6px}
+.msg.out{align-self:flex-end;background:var(--niban);color:#fff;border-end-end-radius:6px}
+.msg.offer{background:#fff;border:1.5px solid var(--ink);color:var(--ink)}
+.msg.offer b{display:block;font-size:20px;letter-spacing:-.02em}
+.msg .ticks{display:block;text-align:end;font-size:11px;opacity:.75;margin-top:4px}
+.thread.play .msg{animation:pop .5s var(--ease) forwards}
+.thread.play .msg:nth-child(1){animation-delay:.2s}.thread.play .msg:nth-child(2){animation-delay:1.1s}.thread.play .msg:nth-child(3){animation-delay:2.1s}.thread.play .msg:nth-child(4){animation-delay:3.2s}.thread.play .msg:nth-child(5){animation-delay:4.2s}
+@keyframes pop{to{opacity:1;transform:none}}
+.points{display:grid;gap:18px;margin-top:30px}
+.point{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
+.point .ic{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:var(--paper-2)}
+.point b{display:block;font-weight:600;font-size:17px}
+.point span{color:var(--ink-2);font-size:15px}
+@media (max-width:900px){.chat .wrap{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------- trust ---------- */
+.trust{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.t{border-radius:var(--r);padding:26px;background:var(--paper-2)}
+.t b{display:block;font-size:clamp(34px,4vw,52px);font-weight:600;letter-spacing:-.04em;line-height:1}
+.t span{display:block;margin-top:10px;color:var(--ink-2);font-size:15px}
+.t--blue{background:var(--niban);color:#fff}.t--blue span{color:#DDEBFF}
+.t--green{background:var(--go);color:#fff}.t--green span{color:#E3FBE8}
+@media (max-width:900px){.trust{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* ---------- download ---------- */
+.dl{position:relative;overflow:hidden;background:var(--ink);color:#fff;border-radius:34px;padding:clamp(40px,6vw,80px);text-align:center;isolation:isolate}
+.dl::before{content:"";position:absolute;inset:-40%;z-index:-1;background:radial-gradient(40% 40% at 30% 40%,rgba(0,122,255,.55),transparent 70%),radial-gradient(35% 35% at 75% 65%,rgba(52,199,89,.5),transparent 70%);filter:blur(40px);animation:drift 12s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate(6%,-4%) scale(1.06)}}
+.dl h2{color:#fff;font-size:clamp(38px,6vw,84px)}
+.dl p{color:#C7CCD6;margin:18px auto 30px;max-width:48ch;font-size:18px}
+.dl .badges{justify-content:center}
+.dl .web{margin-top:22px;color:#9CA3AF;font-size:15px}
+.dl .web a{color:#fff;font-weight:600;border-bottom:1.5px solid rgba(255,255,255,.5)}
+
+/* ---------- footer ---------- */
+footer{padding:48px 0 40px;font-size:14px;color:var(--ink-2)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:18px 32px;align-items:center;justify-content:space-between}
+footer ul{display:flex;flex-wrap:wrap;gap:18px;list-style:none}
+footer a:hover{color:var(--ink)}
+footer .by b{color:var(--ink);font-weight:600}
+
+/* scroll reveal */
+.io{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.io.in-view{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .reveal,.io,.msg{opacity:1;transform:none}
+  .col{transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="nibango">
+      <svg class="wordmark" aria-hidden="true" focusable="false" viewBox="0 -800 3456 1100"><path fill="#007AFF" d="M260 -509C95 -509 30 -385 30 -298V0H150V-295C150 -366 202 -398 260 -398C318 -398 370 -366 370 -295V0H490V-298C490 -385 425 -509 260 -509ZM544 -645C544 -607 573 -578 610 -578C647 -578 676 -607 676 -645C676 -681 647 -711 610 -711C573 -711 544 -681 544 -645ZM550 0H670V-500H550ZM731 -700V-249C731 -88 846 8 992 8C1144 8 1248 -95 1248 -249C1248 -404 1144 -508 998 -508C926 -508 875 -482 851 -451V-700ZM1128 -250C1128 -157 1073 -102 989 -102C906 -102 851 -157 851 -250C851 -343 906 -398 989 -398C1073 -398 1128 -343 1128 -250ZM1536 -507C1382 -507 1278 -404 1278 -250C1278 -95 1382 9 1527 9C1600 9 1651 -17 1675 -48V0H1795V-248C1795 -403 1691 -507 1536 -507ZM1675 -249C1675 -156 1620 -101 1537 -101C1453 -101 1398 -156 1398 -249C1398 -342 1453 -397 1537 -397C1620 -397 1675 -342 1675 -249ZM2085 -509C1920 -509 1855 -385 1855 -298V0H1975V-295C1975 -366 2027 -398 2085 -398C2143 -398 2195 -366 2195 -295V0H2315V-298C2315 -385 2250 -509 2085 -509Z"/><path fill="#34C759" d="M2877 -249C2877 -404 2773 -508 2618 -508C2464 -508 2360 -405 2360 -251C2360 -96 2464 8 2609 8C2682 8 2733 -18 2757 -49V-20C2757 47 2711 96 2628 96C2559 96 2518 61 2491 28L2393 97C2445 163 2526 206 2627 206C2778 206 2877 112 2877 -20ZM2757 -250C2757 -157 2702 -102 2619 -102C2535 -102 2480 -157 2480 -250C2480 -343 2535 -398 2619 -398C2702 -398 2757 -343 2757 -250ZM2923 -250C2923 -95 3027 9 3182 9C3337 9 3440 -95 3440 -250C3440 -404 3337 -507 3182 -507C3027 -507 2923 -404 2923 -250ZM3043 -249C3043 -342 3098 -397 3181 -397C3265 -397 3320 -342 3320 -249C3320 -156 3265 -101 3181 -101C3098 -101 3043 -156 3043 -249Z"/></svg>
+    </a>
+    <nav aria-label="Sekcje">
+      <ul>
+        <li><a href="#deals">Transakcje</a></li>
+        <li><a href="#near">Blisko ciebie</a></li>
+        <li><a href="#categories">Kategorie</a></li>
+        <li><a href="#inside">Od środka</a></li>
+        <li><a href="#chat">Czat</a></li>
+      </ul>
+    </nav>
+    <div class="right">
+      <label class="sr-only" for="lang" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Język</label>
+      <select class="lang" id="lang" aria-label="Język"><option value="en">English</option><option value="es">Español</option><option value="ar">العربية</option><option value="de">Deutsch</option><option value="fr">Français</option><option value="hi">हिन्दी</option><option value="id">Bahasa Indonesia</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="nl">Nederlands</option><option value="pl" selected>Polski</option><option value="pt-br">Português (Brasil)</option><option value="ru">Русский</option><option value="sv">Svenska</option><option value="tr">Türkçe</option><option value="zh-hans">简体中文</option></select>
+      <a class="btn btn--ink" href="#download">Pobierz aplikację</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow reveal">Marketplace, który rozumie</p>
+      <h1 class="reveal" aria-label="Kupuj. Sprzedawaj. Licytuj. Oddawaj.">
+        <span><i class="w w-buy">Kupuj.</i> <i class="w w-sell">Sprzedawaj.</i></span>
+        <span><i class="w w-bid">Licytuj.</i> <i class="w w-give">Oddawaj.</i></span>
+      </h1>
+      <p class="lead reveal">Cena stała, do negocjacji, aukcje i darowizny w jednym miejscu. Nieruchomości, motoryzacja, usługi, praca, zwierzęta i ogłoszenia, z czatem w czasie rzeczywistym i zerową prowizją.</p>
+      <div class="cta reveal">
+        <div class="badges">
+          <a href="https://apps.apple.com/app/nibango" aria-label="Pobierz z App Store"><img src="/nibango/assets/img/app-store-badge-black.svg" alt="" width="144" height="48"></a>
+          <a href="https://play.google.com/store/apps/details?id=com.nibango.app" aria-label="Pobierz z Google Play"><img src="/nibango/assets/img/google-play-badge.svg" alt="" width="162" height="48"></a>
+        </div>
+        <a class="btn" href="https://nibango.com/?lang=pl">Otwórz w przeglądarce</a>
+      </div>
+      <p class="fine reveal"><span><b>Za darmo</b></span><span><b>0%</b> prowizji</span><span><b>17</b> języków</span></p>
+    </div>
+
+    <div class="feed" aria-hidden="true">
+      <div class="col col--a" id="colA"></div>
+      <div class="col col--b" id="colB"></div>
+    </div>
+  </div>
+
+  <div class="strip" aria-hidden="true">
+    <div class="track" id="ticker"></div>
+  </div>
+</section>
+
+<!-- DEALS -->
+<section class="sec" id="deals">
+  <div class="wrap">
+    <div class="sec-head io">
+      <p class="eyebrow">Cztery sposoby na transakcję</p>
+      <h2>Każde ogłoszenie mówi, jak chce zostać kupione.</h2>
+      <p class="lead">Każdy kolor to rodzaj transakcji. Widzisz go na karcie, zanim klikniesz, więc nikt nie traci wiadomości na pytanie „czy cena jest ostateczna?”.</p>
+    </div>
+    <div class="deals">
+      <article class="deal deal--fix io">
+        <div><p class="k">Cena stała</p><h3>Bierzesz albo nie.</h3><p>Sprzedający ustalił cenę i mówi serio. Zaakceptuj, a czat otworzy się, by umówić odbiór.</p></div>
+        <div class="demo"><small>Canon EOS 800D + obiektyw kit</small><b data-price="1900">AED 1,900</b><small data-tpl="deal_fix_meta">Stała · {hood3}</small></div>
+      </article>
+      <article class="deal deal--neg io">
+        <div><p class="k">Do negocjacji</p><h3>Złóż ofertę.</h3><p>Wyślij kwotę prosto z czatu. Sprzedający przyjmuje, kontruje lub odrzuca, wszystko w tym samym wątku.</p></div>
+        <div class="demo"><small>Twoja oferta</small><b data-price="1400">AED 1,400</b><small data-tpl="deal_neg_countered">Kontroferta sprzedającego · {price}</small></div>
+      </article>
+      <article class="deal deal--auc io">
+        <div><p class="k">Aukcja</p><h3>Wygrywa najwyższa oferta.</h3><p>Ustaw cenę wywoławczą i termin albo cenę „kup teraz” dla tych, którzy nie chcą czekać.</p></div>
+        <div class="demo"><small data-tpl="deal_auc_ends">DJI Phantom 4 · koniec za {time}</small><b id="bid" data-price="2350">AED 2,350</b><small id="bids" data-tpl="deal_auc_bids">{n} ofert</small></div>
+      </article>
+      <article class="deal deal--don io">
+        <div><p class="k">Darowizna</p><h3>Oddaj.</h3><p>Darmowe ogłoszenia dla rzeczy, które wolisz widzieć w użyciu niż na śmietniku. Bierze ten, kto pierwszy umówi odbiór.</p></div>
+        <div class="demo"><small>Klocki LEGO luzem, 5 kg</small><b>Za darmo</b><small data-tpl="deal_don_meta">Darowizna · {hood4}</small></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- NEAR YOU -->
+<section class="sec near" id="near">
+  <div class="wrap">
+    <div class="io">
+      <p class="eyebrow">Naprawdę blisko ciebie</p>
+      <h2>Wybierz miejsce. Wybierz promień. To twój rynek.</h2>
+      <p class="lead" data-tpl="near_lead">Ustaw miasto lub wbij pinezkę, potem przesuń od 1 do 200 km. Ogłoszenia są sortowane według tego, co naprawdę jest w zasięgu, w {city} czy gdziekolwiek jesteś.</p>
+      <div class="range">
+        <label for="km">Promień wyszukiwania <output id="kmOut">25 km</output></label>
+        <input id="km" type="range" min="1" max="200" value="25">
+      </div>
+      <div class="facts">
+        <div class="fact"><b>1–200</b><span>km, twoja decyzja</span></div>
+        <div class="fact"><b>Cały świat</b><span>każde miasto, każdy język</span></div>
+        <div class="fact"><b>Mapa</b><span>albo lista, jak wolisz</span></div>
+      </div>
+    </div>
+    <div class="radar io" id="radar" aria-hidden="true">
+      <div class="ring" id="ring" style="--d:46%"></div>
+      <div class="me"></div>
+      <span class="pin" data-r="8" data-price="1650" style="left:60%;top:42%">AED 1,650</span>
+      <span class="pin" data-r="14" data-price="220" style="left:35%;top:36%">AED 220</span>
+      <span class="pin" data-r="21" data-price="4900" style="left:72%;top:66%">AED 4,900</span>
+      <span class="pin" data-r="30" data-price="0" style="left:22%;top:70%">Za darmo</span>
+      <span class="pin" data-r="44" data-price="950" style="left:84%;top:28%">AED 950</span>
+      <span class="pin" data-r="60" data-price="2350" style="left:14%;top:30%">AED 2,350</span>
+      <span class="pin" data-r="85" data-price="1450" style="left:48%;top:92%">AED 1,450</span>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="sec" id="categories">
+  <div class="wrap">
+    <div class="sec-head io">
+      <p class="eyebrow">Wszystko uporządkowane</p>
+      <h2>Nie tagi. Prawdziwe pola.</h2>
+      <p class="lead">Każda kategoria ma własny formularz i własne filtry: mieszkania szuka się po liczbie pokoi, a auta po przebiegu, a nie po tym, kto pamiętał wpisać właściwe słowo.</p>
+    </div>
+    <div class="cats">
+      <article class="cat io"><div class="ic">🏠</div><h3>Nieruchomości</h3><p>Kup, sprzedaj lub wynajmij.</p><div class="tags"><span>Sypialnie</span><span>Powierzchnia m²</span><span>Umeblowane</span><span>Wynajem / sprzedaż</span></div></article>
+      <article class="cat io"><div class="ic">🚗</div><h3>Motoryzacja</h3><p>Samochody, motocykle i łodzie.</p><div class="tags"><span>Rocznik</span><span>Przebieg</span><span>Skrzynia biegów</span><span>Paliwo</span></div></article>
+      <article class="cat io"><div class="ic">🛠️</div><h3>Usługi</h3><p>Fachowcy blisko ciebie.</p><div class="tags"><span>Stawka godzinowa</span><span>Dostępność</span><span>Na miejscu</span></div></article>
+      <article class="cat io"><div class="ic">💼</div><h3>Praca</h3><p>Zatrudnij lub daj się zatrudnić.</p><div class="tags"><span>Wynagrodzenie</span><span>Pełny / niepełny etat</span><span>Zdalnie</span></div></article>
+      <article class="cat io"><div class="ic">🐾</div><h3>Zwierzęta</h3><p>Adoptuj lub znajdź nowy dom, odpowiedzialnie.</p><div class="tags"><span>Gatunek</span><span>Wiek</span><span>Zaszczepione</span></div></article>
+      <article class="cat io"><div class="ic">📦</div><h3>Ogłoszenia</h3><p>Cała reszta, od telefonów po sofy.</p><div class="tags"><span>Stan</span><span>Marka</span><span>Dostawa</span></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- INSIDE -->
+<section class="sec inside" id="inside">
+  <div class="wrap">
+    <div class="sec-head io">
+      <p class="eyebrow">Zajrzyj do środka</p>
+      <h2>Ekrany, nie obietnice.</h2>
+      <p class="lead">To prawdziwe ekrany aplikacji, nie wizualizacje. Zdjęcie, cena i rodzaj transakcji na pierwszy rzut oka; jedno dotknięcie do ogłoszenia, drugie do czatu.</p>
+    </div>
+    <div class="phones io" id="phones">
+      <figure class="phone"><div class="isl"></div><div class="screen"><img src="/nibango/assets/img/shots/en/1_home.webp" alt="Ekran główny nibango z kartami ogłoszeń" loading="lazy" width="640" height="1391"></div><figcaption>Strona główna</figcaption></figure>
+      <figure class="phone"><div class="isl"></div><div class="screen"><img src="/nibango/assets/img/shots/en/3_product.webp" alt="Ogłoszenie ze zdjęciami, ceną i rodzajem transakcji" loading="lazy" width="640" height="1391"></div><figcaption>Ogłoszenie</figcaption></figure>
+      <figure class="phone"><div class="isl"></div><div class="screen"><img src="/nibango/assets/img/shots/en/4_chat.webp" alt="Czat w czasie rzeczywistym z ofertą" loading="lazy" width="640" height="1391"></div><figcaption>Czat</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- CHAT -->
+<section class="sec chat" id="chat">
+  <div class="wrap">
+    <div class="thread io" id="thread" aria-label="Przykładowa rozmowa">
+      <div class="hd"><div class="av"></div><div><b>Sara · iPhone 11 Pro</b><small>online</small></div></div>
+      <div class="msgs">
+        <div class="msg in">Cześć! iPhone jeszcze dostępny?</div>
+        <div class="msg out">Tak. Bateria ma 91%.<span class="ticks">Przeczytano ✓✓</span></div>
+        <div class="msg in offer"><small>Oferta</small><b data-price="1450">AED 1,450</b><small data-tpl="chat_pickup">Odbiór dziś na {hood}</small></div>
+        <div class="msg out">Umowa stoi. Wyślę ci lokalizację.<span class="ticks">Przeczytano ✓✓</span></div>
+        <div class="msg in" data-tpl="chat_m5">📍 {hood}, {city}</div>
+      </div>
+    </div>
+    <div class="io">
+      <p class="eyebrow">Czat, który nadąża</p>
+      <h2>Od „jeszcze dostępne?” do „do zobaczenia o szóstej”.</h2>
+      <p class="lead">Wiadomości docierają natychmiast, oferty żyją w wątku, a zdjęcia i miejsce spotkania wysyłasz bez wychodzenia z aplikacji.</p>
+      <div class="points">
+        <div class="point"><div class="ic">⚡</div><div><b>Czas rzeczywisty</b><span>Potwierdzenia dostarczenia i odczytu, wskaźnik pisania, powiadomienia, gdy cię nie ma.</span></div></div>
+        <div class="point"><div class="ic">💬</div><div><b>Oferty w wątku</b><span>Złóż, skontruj lub przyjmij ofertę jednym dotknięciem. Bez zrzutów ekranu z kwotami.</span></div></div>
+        <div class="point"><div class="ic">🛡️</div><div><b>Zgłoś i zablokuj</b><span>Coś nie gra? Zgłoś z czatu. Moderacja to sprawdzi, z dowodami.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="sec" id="trust">
+  <div class="wrap">
+    <div class="trust">
+      <div class="t t--blue io"><b>0%</b><span>prowizji od wszystkiego, co sprzedasz</span></div>
+      <div class="t io"><b>17</b><span>języków, w tym arabski od prawej do lewej</span></div>
+      <div class="t t--green io"><b>3</b><span>platformy: iOS, Android i web</span></div>
+      <div class="t io"><b>30</b><span>dni na ogłoszenie, odnawiane jednym dotknięciem</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- DOWNLOAD -->
+<section class="sec" id="download" style="padding-top:0">
+  <div class="wrap">
+    <div class="dl io">
+      <h2 data-tpl="dl_h2">{city} już sprzedaje.</h2>
+      <p>Miej nibango w telefonie albo otwórz w przeglądarce. Te same ogłoszenia, te same czaty, wszędzie.</p>
+      <div class="badges">
+        <a href="https://apps.apple.com/app/nibango" aria-label="Pobierz z App Store"><img src="/nibango/assets/img/app-store-badge.svg" alt="" width="144" height="48"></a>
+        <a href="https://play.google.com/store/apps/details?id=com.nibango.app" aria-label="Pobierz z Google Play"><img src="/nibango/assets/img/google-play-badge.svg" alt="" width="162" height="48"></a>
+      </div>
+      <p class="web">Albo wejdź na <a href="https://nibango.com/?lang=pl">nibango.com</a></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="by">Produkt od <b>beatLabs</b> · Dubai</p>
+    <ul>
+      <li><a href="https://nibango.com/privacy/?lang=pl">Prywatność</a></li>
+      <li><a href="https://nibango.com/terms/?lang=pl">Regulamin</a></li>
+      <li><a href="https://nibango.com/cookies/?lang=pl">Pliki cookie</a></li>
+      <li><a href="https://nibango.com/support/?lang=pl">Pomoc</a></li>
+      <li><a href="https://nibango.com/contact/?lang=pl">Kontakt</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script id="nb-data" type="application/json">{"lang":"pl","base":"/nibango","isRoot":false,"languages":["en","es","ar","de","fr","hi","id","it","ja","ko","nl","pl","pt-br","ru","sv","tr","zh-hans"],"defaultCity":"Asia/Dubai","cities":{"Asia/Dubai":{"name":"Dubai","country":"AE","currency":"AED","hoods":["Dubai Marina","JLT","Al Barsha","Downtown","Business Bay","Jumeirah","Mirdif"]},"Asia/Riyadh":{"name":"Riyadh","country":"SA","currency":"SAR","hoods":["Al Olaya","Al Malaz","Al Nakheel","Al Yasmin","Al Rawdah"]},"Asia/Qatar":{"name":"Doha","country":"QA","currency":"QAR","hoods":["West Bay","The Pearl","Al Sadd","Lusail","Al Waab"]},"Asia/Kuwait":{"name":"Kuwait City","country":"KW","currency":"KWD","hoods":["Salmiya","Hawally","Jabriya","Sharq","Mahboula"]},"Asia/Bahrain":{"name":"Manama","country":"BH","currency":"BHD","hoods":["Juffair","Seef","Adliya","Amwaj","Riffa"]},"Asia/Muscat":{"name":"Muscat","country":"OM","currency":"OMR","hoods":["Al Khuwair","Qurum","Ruwi","Al Mouj","Bausher"]},"Asia/Amman":{"name":"Amman","country":"JO","currency":"JOD","hoods":["Abdoun","Sweifieh","Jabal Amman","Khalda","Dabouq"]},"Africa/Cairo":{"name":"Cairo","country":"EG","currency":"EGP","hoods":["Zamalek","Maadi","Heliopolis","Nasr City","New Cairo"]},"Africa/Casablanca":{"name":"Casablanca","country":"MA","currency":"MAD","hoods":["Maarif","Anfa","Gauthier","Ain Diab","Bourgogne"]},"Africa/Lagos":{"name":"Lagos","country":"NG","currency":"NGN","hoods":["Lekki","Ikeja","Victoria Island","Yaba","Surulere"]},"Africa/Johannesburg":{"name":"Johannesburg","country":"ZA","currency":"ZAR","hoods":["Sandton","Rosebank","Melville","Fourways","Soweto"]},"Africa/Nairobi":{"name":"Nairobi","country":"KE","currency":"KES","hoods":["Westlands","Kilimani","Karen","Lavington","Parklands"]},"Europe/Madrid":{"name":"Madrid","country":"ES","currency":"EUR","hoods":["Chamberí","Lavapiés","Salamanca","Malasaña","Chamartín","Vallecas","Retiro"]},"Atlantic/Canary":{"name":"Las Palmas","country":"ES","currency":"EUR","hoods":["Vegueta","Triana","Las Canteras","Ciudad Jardín","Tafira"]},"Europe/Lisbon":{"name":"Lisbon","country":"PT","currency":"EUR","hoods":["Alfama","Chiado","Campo de Ourique","Benfica","Parque das Nações"]},"Europe/Paris":{"name":"Paris","country":"FR","currency":"EUR","hoods":["Le Marais","Belleville","Montmartre","Bastille","Batignolles"]},"Europe/Brussels":{"name":"Brussels","country":"BE","currency":"EUR","hoods":["Ixelles","Saint-Gilles","Uccle","Etterbeek","Schaerbeek"]},"Europe/Amsterdam":{"name":"Amsterdam","country":"NL","currency":"EUR","hoods":["De Pijp","Jordaan","Oud-West","Noord","Zuidas"]},"Europe/Berlin":{"name":"Berlin","country":"DE","currency":"EUR","hoods":["Kreuzberg","Neukölln","Prenzlauer Berg","Charlottenburg","Mitte"]},"Europe/Vienna":{"name":"Vienna","country":"AT","currency":"EUR","hoods":["Neubau","Leopoldstadt","Wieden","Döbling","Favoriten"]},"Europe/Zurich":{"name":"Zurich","country":"CH","currency":"CHF","hoods":["Kreis 4","Seefeld","Oerlikon","Wiedikon","Altstetten"]},"Europe/Rome":{"name":"Rome","country":"IT","currency":"EUR","hoods":["Trastevere","Monti","Prati","Testaccio","EUR"]},"Europe/Athens":{"name":"Athens","country":"GR","currency":"EUR","hoods":["Kolonaki","Koukaki","Glyfada","Kifisia","Pagkrati"]},"Europe/Dublin":{"name":"Dublin","country":"IE","currency":"EUR","hoods":["Rathmines","Ranelagh","Smithfield","Drumcondra","Dún Laoghaire"]},"Europe/London":{"name":"London","country":"GB","currency":"GBP","hoods":["Shoreditch","Camden","Brixton","Hackney","Islington","Clapham"]},"Europe/Stockholm":{"name":"Stockholm","country":"SE","currency":"SEK","hoods":["Södermalm","Vasastan","Östermalm","Kungsholmen","Solna"]},"Europe/Oslo":{"name":"Oslo","country":"NO","currency":"NOK","hoods":["Grünerløkka","Frogner","Majorstuen","Sagene","Bjørvika"]},"Europe/Copenhagen":{"name":"Copenhagen","country":"DK","currency":"DKK","hoods":["Nørrebro","Vesterbro","Østerbro","Frederiksberg","Amager"]},"Europe/Helsinki":{"name":"Helsinki","country":"FI","currency":"EUR","hoods":["Kallio","Töölö","Punavuori","Lauttasaari","Pasila"]},"Europe/Warsaw":{"name":"Warsaw","country":"PL","currency":"PLN","hoods":["Mokotów","Śródmieście","Wola","Praga","Ursynów"]},"Europe/Prague":{"name":"Prague","country":"CZ","currency":"CZK","hoods":["Vinohrady","Žižkov","Karlín","Smíchov","Dejvice"]},"Europe/Budapest":{"name":"Budapest","country":"HU","currency":"HUF","hoods":["Erzsébetváros","Újlipótváros","Buda","Ferencváros","Óbuda"]},"Europe/Bucharest":{"name":"Bucharest","country":"RO","currency":"RON","hoods":["Dorobanți","Cotroceni","Floreasca","Primăverii","Titan"]},"Europe/Istanbul":{"name":"Istanbul","country":"TR","currency":"TRY","hoods":["Kadıköy","Beşiktaş","Beyoğlu","Şişli","Üsküdar"]},"Europe/Moscow":{"name":"Moscow","country":"RU","currency":"RUB","hoods":["Arbat","Khamovniki","Presnensky","Sokolniki","Tverskoy"]},"Asia/Kolkata":{"name":"Mumbai","country":"IN","currency":"INR","hoods":["Bandra","Andheri","Powai","Juhu","Colaba"]},"Asia/Karachi":{"name":"Karachi","country":"PK","currency":"PKR","hoods":["Clifton","DHA","Gulshan-e-Iqbal","Saddar","Nazimabad"]},"Asia/Jakarta":{"name":"Jakarta","country":"ID","currency":"IDR","hoods":["Kemang","Menteng","Senopati","Kelapa Gading","Pondok Indah"]},"Asia/Kuala_Lumpur":{"name":"Kuala Lumpur","country":"MY","currency":"MYR","hoods":["Bangsar","Mont Kiara","Bukit Bintang","Damansara","Cheras"]},"Asia/Singapore":{"name":"Singapore","country":"SG","currency":"SGD","hoods":["Tiong Bahru","Bukit Timah","Tampines","Jurong","Orchard"]},"Asia/Manila":{"name":"Manila","country":"PH","currency":"PHP","hoods":["Makati","BGC","Quezon City","Ortigas","Pasay"]},"Asia/Shanghai":{"name":"Shanghai","country":"CN","currency":"CNY","hoods":["Jing'an","Xuhui","Pudong","Huangpu","Changning"]},"Asia/Tokyo":{"name":"Tokyo","country":"JP","currency":"JPY","hoods":["Shibuya","Shinjuku","Meguro","Setagaya","Minato"]},"Asia/Seoul":{"name":"Seoul","country":"KR","currency":"KRW","hoods":["Gangnam","Mapo","Itaewon","Songpa","Seongsu"]},"Australia/Sydney":{"name":"Sydney","country":"AU","currency":"AUD","hoods":["Surry Hills","Newtown","Bondi","Parramatta","Manly"]},"Australia/Melbourne":{"name":"Melbourne","country":"AU","currency":"AUD","hoods":["Fitzroy","St Kilda","Richmond","Brunswick","South Yarra"]},"Pacific/Auckland":{"name":"Auckland","country":"NZ","currency":"NZD","hoods":["Ponsonby","Parnell","Mt Eden","Takapuna","Newmarket"]},"America/New_York":{"name":"New York","country":"US","currency":"USD","hoods":["Brooklyn","Astoria","Harlem","Williamsburg","Upper West Side"]},"America/Chicago":{"name":"Chicago","country":"US","currency":"USD","hoods":["Wicker Park","Logan Square","Lincoln Park","Pilsen","Hyde Park"]},"America/Denver":{"name":"Denver","country":"US","currency":"USD","hoods":["Capitol Hill","RiNo","Highlands","Cherry Creek","Baker"]},"America/Los_Angeles":{"name":"Los Angeles","country":"US","currency":"USD","hoods":["Silver Lake","Venice","Echo Park","Koreatown","Pasadena"]},"America/Toronto":{"name":"Toronto","country":"CA","currency":"CAD","hoods":["Queen West","Leslieville","The Annex","Scarborough","Etobicoke"]},"America/Vancouver":{"name":"Vancouver","country":"CA","currency":"CAD","hoods":["Kitsilano","Mount Pleasant","Yaletown","Burnaby","Richmond"]},"America/Mexico_City":{"name":"Mexico City","country":"MX","currency":"MXN","hoods":["Roma","Condesa","Polanco","Coyoacán","Del Valle"]},"America/Bogota":{"name":"Bogotá","country":"CO","currency":"COP","hoods":["Chapinero","Usaquén","Teusaquillo","La Candelaria","Suba"]},"America/Lima":{"name":"Lima","country":"PE","currency":"PEN","hoods":["Miraflores","Barranco","San Isidro","Surco","Jesús María"]},"America/Santiago":{"name":"Santiago","country":"CL","currency":"CLP","hoods":["Providencia","Ñuñoa","Las Condes","Bellavista","Maipú"]},"America/Argentina/Buenos_Aires":{"name":"Buenos Aires","country":"AR","currency":"ARS","hoods":["Palermo","Recoleta","San Telmo","Belgrano","Caballito"]},"America/Sao_Paulo":{"name":"São Paulo","country":"BR","currency":"BRL","hoods":["Pinheiros","Vila Madalena","Moema","Itaim Bibi","Tatuapé"]}},"t":{"language_name":"Polski","language":"Język","meta_title":"nibango — Kupuj. Sprzedawaj. Licytuj. Oddawaj. Marketplace, który rozumie.","meta_description":"nibango to marketplace, który rozumie: cena stała, do negocjacji, aukcje i darowizny, z czatem w czasie rzeczywistym i zerową prowizją. Nieruchomości, motoryzacja, usługi, praca, zwierzęta i ogłoszenia blisko ciebie.","og_title":"nibango — marketplace, który rozumie","og_description":"Kupuj, sprzedawaj, licytuj lub oddawaj. Czat w czasie rzeczywistym, zero prowizji, od 1 do 200 km wokół ciebie.","nav_sections":"Sekcje","nav_deals":"Transakcje","nav_near":"Blisko ciebie","nav_categories":"Kategorie","nav_inside":"Od środka","nav_chat":"Czat","nav_get":"Pobierz aplikację","hero_eyebrow":"Marketplace, który rozumie","h1_aria":"Kupuj. Sprzedawaj. Licytuj. Oddawaj.","h1_buy":"Kupuj.","h1_sell":"Sprzedawaj.","h1_bid":"Licytuj.","h1_give":"Oddawaj.","hero_lead":"Cena stała, do negocjacji, aukcje i darowizny w jednym miejscu. Nieruchomości, motoryzacja, usługi, praca, zwierzęta i ogłoszenia, z czatem w czasie rzeczywistym i zerową prowizją.","app_store_aria":"Pobierz z App Store","play_aria":"Pobierz z Google Play","open_web":"Otwórz w przeglądarce","fine_free":"<b>Za darmo<\/b>","fine_commission":"<b>0%<\/b> prowizji","fine_languages":"<b>17<\/b> języków","chip_neg":"Do negocjacji","chip_fix":"Cena stała","chip_auc":"Aukcja","chip_don":"Darowizna","free":"Za darmo","item_bike":"Stalowa szosówka vintage","item_headphones":"Słuchawki z redukcją szumów","item_sofa":"Zielona aksamitna sofa, 3-osobowa","item_guitar":"Gitara akustyczna + pokrowiec","tk_new":"Nowe na {hood}: iPhone 11 Pro · {price}","tk_auction":"Aukcja kończy się wkrótce na {hood2}: DJI Phantom 4 · 12 ofert","tk_donation":"Darowizna na {hood3}: LEGO 5 kg · za darmo","tk_offer":"Oferta przyjęta: PlayStation 5 · {price}","tk_flat":"Mieszkanie 2-pokojowe na {hood4} · {price} / rok","tk_service":"Usługa: serwis klimatyzacji · od {price}","tk_job":"Praca: barista na {hood2} · pełny etat","deals_eyebrow":"Cztery sposoby na transakcję","deals_h2":"Każde ogłoszenie mówi, jak chce zostać kupione.","deals_lead":"Każdy kolor to rodzaj transakcji. Widzisz go na karcie, zanim klikniesz, więc nikt nie traci wiadomości na pytanie „czy cena jest ostateczna?”.","deal_fix_k":"Cena stała","deal_fix_h3":"Bierzesz albo nie.","deal_fix_p":"Sprzedający ustalił cenę i mówi serio. Zaakceptuj, a czat otworzy się, by umówić odbiór.","deal_fix_item":"Canon EOS 800D + obiektyw kit","deal_fix_meta":"Stała · {hood3}","deal_neg_k":"Do negocjacji","deal_neg_h3":"Złóż ofertę.","deal_neg_p":"Wyślij kwotę prosto z czatu. Sprzedający przyjmuje, kontruje lub odrzuca, wszystko w tym samym wątku.","deal_neg_your_offer":"Twoja oferta","deal_neg_countered":"Kontroferta sprzedającego · {price}","deal_auc_k":"Aukcja","deal_auc_h3":"Wygrywa najwyższa oferta.","deal_auc_p":"Ustaw cenę wywoławczą i termin albo cenę „kup teraz” dla tych, którzy nie chcą czekać.","deal_auc_ends":"DJI Phantom 4 · koniec za {time}","deal_auc_bids":"{n} ofert","deal_don_k":"Darowizna","deal_don_h3":"Oddaj.","deal_don_p":"Darmowe ogłoszenia dla rzeczy, które wolisz widzieć w użyciu niż na śmietniku. Bierze ten, kto pierwszy umówi odbiór.","deal_don_item":"Klocki LEGO luzem, 5 kg","deal_don_meta":"Darowizna · {hood4}","near_eyebrow":"Naprawdę blisko ciebie","near_h2":"Wybierz miejsce. Wybierz promień. To twój rynek.","near_lead":"Ustaw miasto lub wbij pinezkę, potem przesuń od 1 do 200 km. Ogłoszenia są sortowane według tego, co naprawdę jest w zasięgu, w {city} czy gdziekolwiek jesteś.","near_radius":"Promień wyszukiwania","fact_km":"km, twoja decyzja","fact_world_b":"Cały świat","fact_world":"każde miasto, każdy język","fact_map_b":"Mapa","fact_map":"albo lista, jak wolisz","cats_eyebrow":"Wszystko uporządkowane","cats_h2":"Nie tagi. Prawdziwe pola.","cats_lead":"Każda kategoria ma własny formularz i własne filtry: mieszkania szuka się po liczbie pokoi, a auta po przebiegu, a nie po tym, kto pamiętał wpisać właściwe słowo.","cat_property":"Nieruchomości","cat_property_p":"Kup, sprzedaj lub wynajmij.","cat_motor":"Motoryzacja","cat_motor_p":"Samochody, motocykle i łodzie.","cat_services":"Usługi","cat_services_p":"Fachowcy blisko ciebie.","cat_jobs":"Praca","cat_jobs_p":"Zatrudnij lub daj się zatrudnić.","cat_pets":"Zwierzęta","cat_pets_p":"Adoptuj lub znajdź nowy dom, odpowiedzialnie.","cat_classifieds":"Ogłoszenia","cat_classifieds_p":"Cała reszta, od telefonów po sofy.","tag_bedrooms":"Sypialnie","tag_size":"Powierzchnia m²","tag_furnished":"Umeblowane","tag_rent_sale":"Wynajem / sprzedaż","tag_year":"Rocznik","tag_mileage":"Przebieg","tag_gearbox":"Skrzynia biegów","tag_fuel":"Paliwo","tag_hourly":"Stawka godzinowa","tag_availability":"Dostępność","tag_on_site":"Na miejscu","tag_salary":"Wynagrodzenie","tag_full_part":"Pełny / niepełny etat","tag_remote":"Zdalnie","tag_species":"Gatunek","tag_age":"Wiek","tag_vaccinated":"Zaszczepione","tag_condition":"Stan","tag_brand":"Marka","tag_delivery":"Dostawa","inside_eyebrow":"Zajrzyj do środka","inside_h2":"Ekrany, nie obietnice.","inside_lead":"To prawdziwe ekrany aplikacji, nie wizualizacje. Zdjęcie, cena i rodzaj transakcji na pierwszy rzut oka; jedno dotknięcie do ogłoszenia, drugie do czatu.","alt_home":"Ekran główny nibango z kartami ogłoszeń","alt_listing":"Ogłoszenie ze zdjęciami, ceną i rodzajem transakcji","alt_chat":"Czat w czasie rzeczywistym z ofertą","cap_feed":"Strona główna","cap_listing":"Ogłoszenie","cap_chat":"Czat","chat_example":"Przykładowa rozmowa","chat_online":"online","chat_m1":"Cześć! iPhone jeszcze dostępny?","chat_m2":"Tak. Bateria ma 91%.","chat_read":"Przeczytano","chat_offer":"Oferta","chat_pickup":"Odbiór dziś na {hood}","chat_m4":"Umowa stoi. Wyślę ci lokalizację.","chat_m5":"📍 {hood}, {city}","chat_eyebrow":"Czat, który nadąża","chat_h2":"Od „jeszcze dostępne?” do „do zobaczenia o szóstej”.","chat_lead":"Wiadomości docierają natychmiast, oferty żyją w wątku, a zdjęcia i miejsce spotkania wysyłasz bez wychodzenia z aplikacji.","pt_rt":"Czas rzeczywisty","pt_rt_p":"Potwierdzenia dostarczenia i odczytu, wskaźnik pisania, powiadomienia, gdy cię nie ma.","pt_offers":"Oferty w wątku","pt_offers_p":"Złóż, skontruj lub przyjmij ofertę jednym dotknięciem. Bez zrzutów ekranu z kwotami.","pt_report":"Zgłoś i zablokuj","pt_report_p":"Coś nie gra? Zgłoś z czatu. Moderacja to sprawdzi, z dowodami.","trust_commission":"prowizji od wszystkiego, co sprzedasz","trust_languages":"języków, w tym arabski od prawej do lewej","trust_platforms":"platformy: iOS, Android i web","trust_days":"dni na ogłoszenie, odnawiane jednym dotknięciem","dl_h2":"{city} już sprzedaje.","dl_p":"Miej nibango w telefonie albo otwórz w przeglądarce. Te same ogłoszenia, te same czaty, wszędzie.","dl_web":"Albo wejdź na","footer_by":"Produkt od","footer_privacy":"Prywatność","footer_terms":"Regulamin","footer_cookies":"Pliki cookie","footer_support":"Pomoc","footer_contact":"Kontakt"}}</script>
+<script src="/nibango/assets/js/locale.js"></script>
+<script>
+(function () {
+  'use strict';
+  var NB = JSON.parse(document.getElementById('nb-data').textContent);
+  var T = NB.t, L = window.NibangoLocale;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* --- where is the visitor? time zone → city, currency, neighbourhoods --- */
+  var city = L.cityFor(NB.cities, L.timeZone(), NB.defaultCity);
+  var fmt = function (aed) { return aed === 0 ? T.free : L.formatPrice(aed, city, NB.lang); };
+  var hood = function (i) { return city.hoods[i % city.hoods.length]; };
+  var fill = function (tpl, vars) { return L.fill(tpl, Object.assign({ city: city.name, hood: hood(0), hood2: hood(1), hood3: hood(2), hood4: hood(3) }, vars || {})); };
+
+  /* --- hero feed: real-looking cards from the demo photos --- */
+  var chips = { neg: T.chip_neg, fix: T.chip_fix, auc: T.chip_auc, don: T.chip_don };
+  var items = [
+    ['iphone', 'iPhone 11 Pro 256GB', 'Apple', 1650, 'neg', true],
+    ['ps5', 'PlayStation 5 + 2 controllers', 'Sony', 1450, 'fix'],
+    ['drone', 'DJI Phantom 4', 'DJI', 2350, 'auc'],
+    ['lego', 'LEGO 5 kg', '', 0, 'don'],
+    ['camera', 'Canon EOS 800D + 18-55', 'Canon', 1900, 'neg'],
+    ['sneakers', 'Nike Free RN Flyknit 42', 'Nike', 220, 'fix'],
+    ['bike', T.item_bike, '', 950, 'neg'],
+    ['headphones', T.item_headphones, 'Sony', 480, 'fix'],
+    ['sofa', T.item_sofa, '', 0, 'don'],
+    ['guitar', T.item_guitar, 'Yamaha', 600, 'auc']
+  ];
+  function card(it, i) {
+    var sub = (it[2] ? it[2] + ' · ' : '') + hood(i);
+    return '<article class="card"><div class="ph"><img src="' + NB.base + '/assets/img/demo/' + it[0] + '.webp" alt="" width="480" height="480" loading="eager">' +
+      (it[5] ? '<span class="vip">♛ VIP</span>' : '') +
+      '<span class="heart">♡</span><span class="price">' + fmt(it[3]) + '</span></div>' +
+      '<h4>' + it[1] + '</h4><p class="sub">' + sub + '</p><span class="chip chip--' + it[4] + '">' + chips[it[4]] + '</span></article>';
+  }
+  function col(id, list) {
+    var el = document.getElementById(id), html = list.map(card).join('');
+    el.innerHTML = html + html; /* duplicated so the loop is seamless */
+  }
+  col('colA', items.filter(function (_, i) { return i % 2 === 0; }));
+  col('colB', items.filter(function (_, i) { return i % 2 === 1; }));
+
+  /* --- ticker --- */
+  var lines = [
+    fill(T.tk_new, { price: fmt(1650) }), fill(T.tk_auction), fill(T.tk_donation),
+    fill(T.tk_offer, { price: fmt(1400) }), fill(T.tk_flat, { price: fmt(95000) }),
+    fill(T.tk_service, { price: fmt(150) }), fill(T.tk_job)
+  ];
+  var t = document.getElementById('ticker'), tk = lines.map(function (l) { return '<span>' + l + '</span>'; }).join('');
+  t.innerHTML = tk + tk;
+
+  /* --- localised prices and sentences in the static sections --- */
+  document.querySelectorAll('[data-price]').forEach(function (el) { el.textContent = fmt(Number(el.dataset.price)); });
+  document.querySelectorAll('[data-tpl]').forEach(function (el) {
+    var vars = {};
+    if (el.dataset.tpl === 'deal_neg_countered') vars.price = fmt(1550);
+    if (el.dataset.tpl === 'deal_auc_ends') vars.time = '<span id="cd">02:14:09</span>';
+    if (el.dataset.tpl === 'deal_auc_bids') vars.n = '12';
+    el.innerHTML = fill(T[el.dataset.tpl], vars);
+  });
+
+  /* --- language switch --- */
+  var sel = document.getElementById('lang');
+  sel.value = NB.lang;
+  sel.addEventListener('change', function () { window.location.href = L.pageFor(NB.base, sel.value); });
+  /* The root page is English: send first-time visitors to their browser's language. */
+  if (NB.isRoot) {
+    var want = L.pickLanguage(navigator.languages || [navigator.language], NB.languages);
+    if (want && want !== 'en' && !/[?&]stay/.test(location.search)) window.location.replace(L.pageFor(NB.base, want));
+  }
+
+  /* --- scroll reveal --- */
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in-view');
+      if (e.target.id === 'thread') e.target.classList.add('play');
+      io.unobserve(e.target);
+    });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.15 });
+  document.querySelectorAll('.io').forEach(function (el) { io.observe(el); });
+
+  /* --- sticky nav border --- */
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function () { nav.classList.toggle('is-stuck', window.scrollY > 8); }, { passive: true });
+
+  /* --- radius demo --- */
+  var km = document.getElementById('km'), out = document.getElementById('kmOut'), ring = document.getElementById('ring');
+  var pins = document.querySelectorAll('.pin');
+  function radius() {
+    var v = Number(km.value);
+    out.textContent = v + ' km';
+    km.style.setProperty('--p', (v / 200 * 100) + '%');
+    ring.style.setProperty('--d', L.ringPercent(v) + '%');
+    pins.forEach(function (p) { p.classList.toggle('is-out', Number(p.dataset.r) > v); });
+  }
+  km.addEventListener('input', radius);
+  radius();
+
+  /* --- auction demo --- */
+  var secs = 2 * 3600 + 14 * 60 + 9, bid = 2350, bids = 12;
+  var bidEl = document.getElementById('bid'), bidsEl = document.getElementById('bids');
+  function two(n) { return (n < 10 ? '0' : '') + n; }
+  if (!reduce) {
+    setInterval(function () {
+      secs = Math.max(0, secs - 1);
+      var cd = document.getElementById('cd');
+      if (cd) cd.textContent = two(Math.floor(secs / 3600)) + ':' + two(Math.floor(secs % 3600 / 60)) + ':' + two(secs % 60);
+    }, 1000);
+    setInterval(function () {
+      bid += 25; bids += 1;
+      bidEl.textContent = fmt(bid);
+      bidsEl.innerHTML = fill(T.deal_auc_bids, { n: String(bids) });
+    }, 7000);
+  }
+}());
+</script>
+</body>
+</html>

@@ -85,7 +85,7 @@ export const products: AppProduct[] = [
     tagline: 'The marketplace that actually works.',
     highlight: 'works.',
     lede: 'Buy. Sell. Bid. Donate. Six categories, four pricing models, real-time chat — zero commissions. Your neighbourhood, reimagined for the Gulf.',
-    siteUrl: 'https://nibango.com/uiapp',
+    siteUrl: 'https://nibango.com',
     icon: '/apps/nibango-icon.png',
     screens: ['/apps/nibango-screen-1.png', '/apps/nibango-screen-2.png', '/apps/nibango-screen-3.png'],
     stats: [

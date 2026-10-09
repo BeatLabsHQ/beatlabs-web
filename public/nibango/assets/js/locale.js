@@ -24,7 +24,15 @@
   function cityFor(cities, tz, fallback) {
     var hit = cities[tz];
     if (hit) return hit;
-    return cities[fallback];
+    var base = cities[fallback], name = '';
+    /* "Asia/Ho_Chi_Minh" → "Ho Chi Minh": the zone itself names the city. */
+    if (tz && tz.indexOf('/') > 0) name = tz.split('/').pop().replace(/_/g, ' ');
+    return { name: name, country: base.country, currency: base.currency, hoods: base.hoods };
+  }
+
+  /* An empty {city} leaves "Downtown, " or "、" behind: trim the dangling separator. */
+  function tidy(text) {
+    return String(text).replace(/\s*[,、،]\s*$/, '').replace(/^\s*[,、،]\s*/, '').replace(/\s*[,、،]\s*(?=[)\]]|$)/g, '');
   }
 
   /* A "nice" number in the visitor's currency: 1,650 AED → 410 EUR, not 412.5. */
@@ -81,6 +89,6 @@
 
   root.NibangoLocale = {
     RATES: RATES, timeZone: timeZone, cityFor: cityFor, roundNice: roundNice, convert: convert,
-    formatPrice: formatPrice, fill: fill, pickLanguage: pickLanguage, pageFor: pageFor, ringPercent: ringPercent
+    formatPrice: formatPrice, fill: fill, tidy: tidy, pickLanguage: pickLanguage, pageFor: pageFor, ringPercent: ringPercent
   };
 }(typeof window !== 'undefined' ? window : module.exports));

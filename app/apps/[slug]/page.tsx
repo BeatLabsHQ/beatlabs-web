@@ -97,11 +97,22 @@ export default function AppDetailPage({ params }: { params: { slug: string } }) 
         {/* SCREENS */}
         {app.screens && app.screens.length > 0 && (
           <>
-            <Head title="On the phone" label={app.platforms} />
+            <Head title="On the phone" label={app.androidScreens ? 'iOS' : app.platforms} />
             <div className="screens">
               {app.screens.map((src, i) => (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img key={src} src={src} alt={`${app.displayName} screen ${i + 1}`} loading="lazy" width={1320} height={2868} />
+              ))}
+            </div>
+          </>
+        )}
+        {app.androidScreens && app.androidScreens.length > 0 && (
+          <>
+            <Head title="On Android" label="Google Play" />
+            <div className="screens">
+              {app.androidScreens.map((src, i) => (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img key={src} src={src} alt={`${app.displayName} Android screen ${i + 1}`} loading="lazy" width={1080} height={2400} />
               ))}
             </div>
           </>

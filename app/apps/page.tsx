@@ -22,7 +22,7 @@ export default function AppsPage() {
       <section className="hero">
         <h1 className="wall">Every app, <span className="out">its own</span> company.</h1>
         <div className="hero-lower">
-          <p className="body">{publishedProducts.length} published, {devProducts.length} in development. Each with its own name, colour and domain. Open one to read its page.</p>
+          <p className="body">{publishedProducts.length} published{devProducts.length > 0 ? `, ${devProducts.length} in development` : ''}. Each with its own name, colour and domain. Open one to read its page.</p>
           <div className="actions"><Btn href={`mailto:${company.email}`} external>Contact</Btn></div>
         </div>
       </section>
@@ -32,12 +32,16 @@ export default function AppsPage() {
           <AppCell key={p.slug} app={p} big />
         ))}
       </section>
-      <Head title="In development" label="Listed, not launched" />
-      <section className="cells cells--3" aria-label="Apps in development">
-        {devProducts.map(p => (
-          <AppCell key={p.slug} app={p} />
-        ))}
-      </section>
+      {devProducts.length > 0 && (
+        <>
+          <Head title="In development" label="Listed, not launched" />
+          <section className="cells cells--3" aria-label="Apps in development">
+            {devProducts.map(p => (
+              <AppCell key={p.slug} app={p} />
+            ))}
+          </section>
+        </>
+      )}
       <Head title="Studios" label="Open for work" />
       <section className="cells cells--2" aria-label="Studios">
         {studios.map(s => (

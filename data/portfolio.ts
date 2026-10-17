@@ -204,6 +204,7 @@ export const products: AppProduct[] = [
     siteUrl: 'https://raved.app',
     icon: '/apps/raved-icon.png',
     screens: ['/apps/raved-screen-1.png', '/apps/raved-screen-2.png', '/apps/raved-screen-3.png'],
+    androidScreens: ['/apps/raved-android-1.png', '/apps/raved-android-2.png', '/apps/raved-android-3.png'],
     appStoreUrl: 'https://apps.apple.com/app/id6784197175',
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.beatlabs.raved',
     stats: [

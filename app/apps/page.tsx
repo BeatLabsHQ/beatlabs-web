@@ -26,7 +26,7 @@ export default function AppsPage() {
           <div className="actions"><Btn href={`mailto:${company.email}`} external>Contact</Btn></div>
         </div>
       </section>
-      <Head title="Published" label="Live or launching" />
+      <Head title="Published" label="Live now" />
       <section className={`cells cells--${ordered.length === 4 ? 4 : 3}`} aria-label="Published apps">
         {ordered.map(p => (
           <AppCell key={p.slug} app={p} big />

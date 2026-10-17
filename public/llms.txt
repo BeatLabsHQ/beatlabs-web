@@ -6,9 +6,9 @@ beatLabs is the holding entity behind a portfolio of independent digital brands.
 
 ## Apps
 
-- [Nibango](https://nibango.com) — Peer-to-peer second-hand marketplace for the Gulf. Six categories, four pricing models, zero commissions. Launching. Landing page in 17 languages: https://beatlabs.ae/nibango
-- [Curb](https://getcurbapp.com) — Subscription tracker for iOS and Android. No bank access, one-time Pro purchase. Live.
-- [Raved](https://raved.app) — An inbox for recommendations: save every song, movie, place, and tip your friends send you. Launching.
+- [Nibango](https://nibango.com) — Local marketplace to buy, sell, bid and give away near you. Six categories, four ways to deal, zero commission. Android and web (nibango.com) in 17 languages; iPhone coming soon. Live. Landing page in 17 languages: https://beatlabs.ae/nibango
+- [Curb](https://getcurbapp.com) — Subscription tracker for iOS and Android, in 13 languages. No bank access, 33 currencies, one-time Pro purchase. Live.
+- [Raved](https://raved.app) — An inbox for recommendations: save every film, show, book, album, podcast and place your friends rave about. iOS and Android, in 6 languages. Live.
 - Epiloq — Track shows, movies, comics, and books in one place. In development.
 - TimeUp — Focus blocks and deep work sessions for iOS. In development.
 - Blab — Social app of daily micro-challenges: one challenge a day, five modes, twenty worlds. iOS, Android and web (blab.day), in 7 languages. Live.

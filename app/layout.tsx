@@ -33,7 +33,7 @@ a closing dark band; lime stays the status colour; each ficha tinted by the
 product's own accent.
 STORY: the visitor lands on a centred statement over the real apps, scans the
 portfolio cards, reads who is behind them, and writes.
-FIRST VIEWPORT: bar; centred "We build companies. Not projects."; one line;
+FIRST VIEWPORT: bar; centred "Ideas, designed and built."; one line;
 two pill buttons; a shelf of three real product screens on a grey surface.
 FORM: the standing exit (canon), pinned by the owner on 2026-09-03 after a live
 comparison against the type wall; no roll. Refined in the browser by the owner
@@ -43,10 +43,10 @@ the built world; every shipping raster carries its provenance. */
 const CONTRACT = '<!-- impeccable contract · owner-pinned canon (MacPaw register), 2026-09-03. Full text in app/layout.tsx -->'
 
 export const metadata: Metadata = {
-  title: 'beatLabs — Independent app group. Dubai, UAE.',
-  description: 'beatLabs (BeatLabs FZE LLC) is a UAE-registered group building independent app brands. Home of Nibango, Curb, Raved, Blab, TrueLoveCreative and Estrela.photo.',
+  title: 'beatLabs — Design lab. Ideas, designed and built.',
+  description: 'beatLabs (BeatLabs FZE LLC) is a design lab in Dubai: ideas turned into apps, websites and brands. Home of Nibango, Curb, Raved, Blab, TrueLoveCreative and Estrela.photo.',
   keywords: [
-    'beatLabs', 'digital studio UAE', 'UAE startup studio', 'tech studio Dubai', 'digital studio Dubai',
+    'beatLabs', 'design lab Dubai', 'design studio Dubai', 'digital studio UAE', 'UAE startup studio', 'tech studio Dubai', 'digital studio Dubai',
     'Nibango', 'Curb', 'Curb Subscription Tracker', 'Raved', 'Raved app', 'TrueLoveCreative', 'Estrela photo',
     'app development UAE', 'startup Ajman', 'digital brands UAE',
     'web design Dubai', 'marketplace app UAE', 'creative studio UAE',
@@ -61,26 +61,26 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true },
   },
   openGraph: {
-    title: 'beatLabs — Independent app group. Dubai, UAE.',
-    description: 'UAE-registered group building independent app brands. Home of Nibango, Curb, Raved, Blab, TrueLoveCreative and Estrela.photo.',
+    title: 'beatLabs — Design lab. Ideas, designed and built.',
+    description: 'A design lab in Dubai: ideas turned into apps, websites and brands. Home of Nibango, Curb, Raved, Blab, TrueLoveCreative and Estrela.photo.',
     url: 'https://beatlabs.ae',
     siteName: 'beatLabs',
     type: 'website',
     locale: 'en_US',
     images: [
       {
-        url: 'https://beatlabs.ae/og.png',
+        url: 'https://beatlabs.ae/og-v2.png',
         width: 1200,
         height: 630,
-        alt: 'beatLabs — Independent app group, Dubai, UAE',
+        alt: 'beatLabs — Ideas, designed and built. Design lab, Dubai, UAE',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'beatLabs — Independent app group. Dubai, UAE.',
-    description: 'UAE-registered group building independent app brands.',
-    images: ['https://beatlabs.ae/og.png'],
+    title: 'beatLabs — Design lab. Ideas, designed and built.',
+    description: 'A design lab in Dubai: ideas turned into apps, websites and brands.',
+    images: ['https://beatlabs.ae/og-v2.png'],
   },
   alternates: {
     canonical: 'https://beatlabs.ae',
@@ -108,7 +108,7 @@ export default function RootLayout({
               legalName: company.legalName,
               url: 'https://beatlabs.ae',
               logo: 'https://beatlabs.ae/logo.png',
-              description: 'UAE-registered group building independent app brands.',
+              description: 'A design lab in Dubai: ideas turned into apps, websites and brands.',
               email: company.email,
               telephone: company.phone,
               foundingDate: company.founded,

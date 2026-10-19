@@ -328,9 +328,9 @@ export const company = {
     line: 'design, code, launch, repeat',
   },
   mission: [
-    'beatLabs is the holding entity behind everything I build.',
-    'Each project has its own identity, its own audience, its own path.',
-    'Built properly. Always.',
+    'beatLabs is a lab for ideas: apps, websites and brands, designed and built under one roof.',
+    'Each one gets its own name, its own identity, its own audience.',
+    'Designed properly. Built properly. Always.',
   ],
 } as const
 

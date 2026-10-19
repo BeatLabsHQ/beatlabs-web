@@ -113,8 +113,8 @@ export default function Home() {
       {/* MISSION BAND */}
       <div className="band" style={{ marginTop: 'var(--section)' }}>
         <div className="mission">
-          <h2 className="h2">We build companies. Not projects.</h2>
-          <p className="body">{company.mission[0]} {company.mission[1]} {company.mission[2]} Each app has its own name, colour, domain and legal pages; one entity stands behind all of them.</p>
+          <h2 className="h2">Ideas, designed and built.</h2>
+          <p className="body">{company.mission[0]} {company.mission[1]} {company.mission[2]}</p>
         </div>
       </div>
 

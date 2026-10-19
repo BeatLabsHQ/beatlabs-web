@@ -1,8 +1,8 @@
 # beatLabs
 
-> Dubai-based independent app group (BeatLabs FZE LLC) building independent app brands — each with its own name, domain, and identity.
+> Dubai-based design lab (BeatLabs FZE LLC): ideas turned into apps, websites and brands — each with its own name, domain, and identity.
 
-beatLabs is the holding entity behind a portfolio of independent digital brands. Each brand operates autonomously with its own identity, audience, and business model.
+beatLabs designs and builds its own apps and runs two studios for client work (brand, web and photography). Everything starts as an idea in the lab; each product then gets its own identity, audience, and business model.
 
 ## Apps
 

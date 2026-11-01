@@ -4,15 +4,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-The corporate site for **beatLabs** (BeatLabs FZE LLC), live at **beatlabs.ae**. Next.js 14 (App Router) + TypeScript + Tailwind base, deployed by **Vercel automatically on every push to `master`** — merging to master IS publishing. Working branches hold work in review; `backup/pre-redesign-*` branches are snapshots, don't touch them.
+The corporate site for **beatLabs** (BeatLabs FZE LLC), live at **beatlabs.ae**. Next.js 16 (App Router, React 19) + TypeScript + Tailwind base, deployed by **Vercel automatically on every push to `master`** — merging to master IS publishing. Working branches hold work in review; `backup/pre-redesign-*` branches are snapshots, don't touch them.
 
 ## Commands
 
-Package manager is **pnpm** (see `packageManager` in package.json; `pnpm-workspace.yaml` exists only for the `allowBuilds` entry).
+Package manager is **pnpm** (see `packageManager` in package.json; `pnpm-workspace.yaml` holds only the `allowBuilds` entry and the `@types/react` overrides).
 
 ```sh
 pnpm dev      # dev server → http://localhost:3000
-pnpm lint     # next lint (ESLint, next/core-web-vitals)
+pnpm lint     # eslint . (flat config in eslint.config.mjs: next/core-web-vitals + next/typescript; public/ and prototypes/ are ignored)
 pnpm build    # production build — also the type-check
 pnpm test     # vitest (lib/)
 ```

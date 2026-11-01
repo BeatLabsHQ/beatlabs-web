@@ -24,7 +24,7 @@ Products, studios and the company identity render from `data/portfolio.ts` (sing
 
 ## Capabilities and Constraints
 
-- Next.js 14 App Router, TypeScript, pnpm; all pages are static server components. Three small client components: the mobile index sheet, the scroll-aware chrome (bar fade + progress ring) and the showcase autoplay. No animation library.
+- Next.js 16 App Router, TypeScript, pnpm; all pages are static server components. Three small client components: the mobile index sheet, the scroll-aware chrome (bar fade + progress ring) and the showcase autoplay. No animation library.
 - English copy throughout. Brand renders as "beatLabs"; legal entity "BeatLabs FZE LLC"; contact info@beatlabs.ae.
 - Product legal documents live on product domains, never on beatlabs.ae.
 - Current portfolio (all live, on iOS and Android): Nibango (flagship, also web, #007AFF), Curb (#EC6F2D), Raved (#FF4A00), Blab (also web, #E3241C) + studios TrueLoveCreative and Estrela.photo.

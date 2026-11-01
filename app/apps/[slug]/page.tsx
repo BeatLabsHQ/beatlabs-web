@@ -11,13 +11,15 @@ export function generateStaticParams() {
   return publishedProducts.map(p => ({ slug: p.slug }))
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+export async function generateMetadata(props: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const params = await props.params
   const app = getProduct(params.slug)
   if (!app) return {}
   return pageMeta({ path: `/apps/${app.slug}`, title: `${app.displayName} — ${app.type} by beatLabs`, description: app.oneLiner })
 }
 
-export default function AppDetailPage({ params }: { params: { slug: string } }) {
+export default async function AppDetailPage(props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params
   const app = getProduct(params.slug)
   if (!app) notFound()
 

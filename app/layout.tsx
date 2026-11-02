@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
-import { company } from '@/data/portfolio'
+import { brandUrls, company } from '@/data/portfolio'
+import { jsonLdScript } from '@/lib/seo'
 import './globals.css'
 
 // Fixel — MacPaw's own open face (OFL), self-hosted: Display at 500/400 for headings, Text for the rest.
@@ -47,7 +48,7 @@ export const metadata: Metadata = {
   description: 'beatLabs (BeatLabs FZE LLC) is a design lab in Dubai: ideas turned into apps, websites and brands. Home of Nibango, Curb, Raved, Blab, TrueLoveCreative and Estrela.photo.',
   keywords: [
     'beatLabs', 'design lab Dubai', 'design studio Dubai', 'digital studio UAE', 'UAE startup studio', 'tech studio Dubai', 'digital studio Dubai',
-    'Nibango', 'Curb', 'Curb Subscription Tracker', 'Raved', 'Raved app', 'TrueLoveCreative', 'Estrela photo',
+    'Nibango', 'Curb', 'Curb Subscription Tracker', 'Raved', 'Raved app', 'Blab', 'TrueLoveCreative', 'Estrela photo',
     'app development UAE', 'startup Ajman', 'digital brands UAE',
     'web design Dubai', 'marketplace app UAE', 'creative studio UAE',
     'BeatLabs FZE', 'Ajman Media City Free Zone',
@@ -101,13 +102,13 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
+            __html: jsonLdScript({
               '@context': 'https://schema.org',
               '@type': 'Organization',
               name: company.brand,
               legalName: company.legalName,
               url: 'https://beatlabs.ae',
-              logo: 'https://beatlabs.ae/logo.png',
+              logo: 'https://beatlabs.ae/icon-512-v2.png',
               description: 'A design lab in Dubai: ideas turned into apps, websites and brands.',
               email: company.email,
               telephone: company.phone,
@@ -119,13 +120,7 @@ export default function RootLayout({
                 addressRegion: company.zone,
                 addressCountry: 'AE',
               },
-              sameAs: [
-                'https://getcurbapp.com',
-                'https://raved.app',
-                'https://nibango.com',
-                'https://truelovecreative.es',
-                'https://estrela.photo',
-              ],
+              sameAs: brandUrls(),
             }),
           }}
         />

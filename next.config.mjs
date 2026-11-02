@@ -9,7 +9,8 @@ const nextConfig = {
           { key: 'Strict-Transport-Security', value: 'max-age=31536000' },
           { key: 'X-Content-Type-Options', value: 'nosniff' },
           { key: 'X-Frame-Options', value: 'DENY' },
-          { key: 'Content-Security-Policy', value: "frame-ancestors 'none'" },
+          { key: 'Content-Security-Policy', value: "frame-ancestors 'none'; object-src 'none'; base-uri 'self'" },
+          { key: 'Cross-Origin-Opener-Policy', value: 'same-origin' },
           { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
           { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
         ],
@@ -26,6 +27,8 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // One address only: www always lands on the bare domain.
+      { source: '/:path*', has: [{ type: 'host', value: 'www.beatlabs.ae' }], destination: 'https://beatlabs.ae/:path*', permanent: true },
       // English is the root landing page
       { source: '/nibango/en', destination: '/nibango', permanent: true },
       // Curb legal + product pages moved to its own domain (subtrackr = legacy name)

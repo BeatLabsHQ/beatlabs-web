@@ -16,7 +16,7 @@ beatlabs.ae presents the holding entity behind a portfolio of independent app br
 
 ## Positioning
 
-"We build companies. Not projects." Each app is its own brand with its own name, domain, identity, and legal pages; beatLabs is the group behind them. The site proves that by treating each product's real brand color as first-class.
+"Ideas, designed and built." beatLabs is a design lab in Dubai; each app is its own brand with its own name, domain and identity, under one company (BeatLabs FZE LLC). The site proves that by treating each product's real brand color as first-class.
 
 ## Operating Context
 
@@ -27,7 +27,7 @@ Products, studios and the company identity render from `data/portfolio.ts` (sing
 - Next.js 14 App Router, TypeScript, pnpm; all pages are static server components. Three small client components: the mobile index sheet, the scroll-aware chrome (bar fade + progress ring) and the showcase autoplay. No animation library.
 - English copy throughout. Brand renders as "beatLabs"; legal entity "BeatLabs FZE LLC"; contact info@beatlabs.ae.
 - Product legal documents live on product domains, never on beatlabs.ae.
-- Current portfolio: Nibango (launching, flagship, #007AFF), Curb (live, #EC6F2D), Raved (launching, #FF4A00), Blab (launching, iOS, Spanish first, #E3241C), Epiloq (dev), TimeUp (dev) + studios TrueLoveCreative and Estrela.photo.
+- Current portfolio (all live, on iOS and Android): Nibango (flagship, also web, #007AFF), Curb (#EC6F2D), Raved (#FF4A00), Blab (also web, #E3241C) + studios TrueLoveCreative and Estrela.photo.
 - /apps decision (2026-09, delegated): apps lead the page; studios stay as a compact secondary closing section.
 
 ## Brand Commitments

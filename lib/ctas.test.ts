@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { appCtas, domainOf, primaryCta } from './ctas'
+import { appCtas, docsDomain, domainOf, primaryCta, storeLinks, withStoreCampaign } from './ctas'
 
 const base = { status: 'live' as const, siteUrl: 'https://example.app', appStoreUrl: undefined, appStoreSoon: undefined, playStoreUrl: undefined }
 const labels = (app: Parameters<typeof appCtas>[0]) => appCtas(app).map(c => `${c.kind}:${c.label}`)
@@ -43,5 +43,45 @@ describe('appCtas', () => {
   it('no site and not live: only the way back', () => {
     expect(labels({ ...base, status: 'launching', siteUrl: null })).toEqual(['link:All apps'])
     expect(primaryCta({ ...base, status: 'launching', siteUrl: null })).toBeNull()
+  })
+})
+
+describe('withStoreCampaign', () => {
+  it('leaves the link alone without a campaign', () => {
+    expect(withStoreCampaign('https://apps.apple.com/app/id123')).toBe('https://apps.apple.com/app/id123')
+  })
+  it('builds the App Store campaign link', () => {
+    expect(withStoreCampaign('https://apps.apple.com/app/curb-subscription-tracker/id123', 'beatlabs-home'))
+      .toBe('https://apps.apple.com/app/apple-store/id123?pt=128859114&ct=beatlabs-home&mt=8')
+  })
+  it('adds an encoded referrer to a Google Play link that already has a query', () => {
+    expect(withStoreCampaign('https://play.google.com/store/apps/details?id=com.x', 'home'))
+      .toBe('https://play.google.com/store/apps/details?id=com.x&referrer=utm_source%3Dbeatlabs%26utm_medium%3Dweb%26utm_campaign%3Dhome')
+  })
+  it('never touches any other link', () => {
+    expect(withStoreCampaign('https://example.app', 'home')).toBe('https://example.app')
+  })
+})
+
+describe('storeLinks', () => {
+  const live = { ...base, appStoreUrl: 'https://apps.apple.com/app/id1', playStoreUrl: 'https://play.google.com/x' }
+  it('offers both stores, App Store first', () => {
+    expect(storeLinks(live).map(l => l.label)).toEqual(['App Store', 'Google Play'])
+  })
+  it('offers only the store the app is on', () => {
+    expect(storeLinks({ ...base, playStoreUrl: 'https://play.google.com/x' }).map(l => l.label)).toEqual(['Google Play'])
+    expect(storeLinks(base)).toEqual([])
+  })
+  it('offers none until the app is live', () => {
+    expect(storeLinks({ ...live, status: 'launching' })).toEqual([])
+  })
+})
+
+describe('docsDomain', () => {
+  it('names where the legal documents really are, not the website', () => {
+    expect(docsDomain({ siteUrl: 'https://blab.day', docs: [{ label: 'Website', href: 'https://blab.day' }, { label: 'Privacy Policy', href: 'https://getblab.app/privacy' }] })).toBe('getblab.app')
+  })
+  it('falls back to the website when there are no documents', () => {
+    expect(docsDomain({ siteUrl: 'https://x.app', docs: [] })).toBe('x.app')
   })
 })

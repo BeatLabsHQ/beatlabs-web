@@ -93,6 +93,10 @@ html[data-scrolled="1"] .index-sheet { top: 68px; }
 .index-sheet a:hover { background: var(--gray); }
 .index-sheet a span { color: var(--mute); font-size: 12px; min-width: 1.6em; }
 
+/* The home's one-line statement of who this is, above the showcase. */
+.lead { margin-top: 24px; text-align: center; font-family: var(--font-display), var(--font-text), sans-serif; font-weight: 500; font-size: clamp(17px, 1.6vw, 21px); line-height: 1.3; color: var(--ink); text-wrap: balance; }
+.lead span { color: var(--mute); }
+
 /* ---------- Showcase (the hero panel: one product at a time) ---------- */
 .showcase { position: relative; margin-top: 24px; background: var(--gray); border-radius: var(--radius-lg); overflow: hidden; }
 .showcase input { position: absolute; opacity: 0; pointer-events: none; }
@@ -101,7 +105,7 @@ html[data-scrolled="1"] .index-sheet { top: 68px; }
 .slide .h1 { margin-bottom: 20px; }
 .slide .sub { margin-bottom: 14px; }
 .slide .body { max-width: 58ch; margin-bottom: 40px; }
-.slide .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.slide .actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-start; }
 .slide .arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 2; }
 .slide .arrow:hover { background: var(--ink); color: #fff; }
 .slide .arrow svg { width: 14px; height: 14px; }

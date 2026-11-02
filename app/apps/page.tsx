@@ -2,25 +2,20 @@ import type { Metadata } from 'next'
 import { Btn, Head, Shell } from '@/components/chrome'
 import { AppCell, StudioCell } from '@/components/cells'
 import { company, devProducts, publishedProducts, studios } from '@/data/portfolio'
+import { listNames, pageMeta } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
+  path: '/apps',
   title: 'Apps — beatLabs',
-  description:
-    'The applications built by beatLabs: Nibango, Curb - Subscription Tracker, Raved — and what’s in development. Each app is its own brand, on its own domain.',
-  alternates: { canonical: 'https://beatlabs.ae/apps' },
-  openGraph: {
-    title: 'Apps — beatLabs',
-    description: 'The applications built by beatLabs: Nibango, Curb, Raved, and what’s next.',
-    url: 'https://beatlabs.ae/apps',
-  },
-}
+  description: `The apps built by beatLabs: ${listNames(publishedProducts.map(p => p.displayName))}. Each one is its own brand, on its own domain.`,
+})
 
 export default function AppsPage() {
   const ordered = [...publishedProducts].sort((a, b) => Number(b.flagship) - Number(a.flagship))
   return (
     <Shell current="apps">
       <section className="hero">
-        <h1 className="wall">Every app, <span className="out">its own</span> company.</h1>
+        <h1 className="wall">Every app, <span className="out">its own</span> brand.</h1>
         <div className="hero-lower">
           <p className="body">{publishedProducts.length} published{devProducts.length > 0 ? `, ${devProducts.length} in development` : ''}. Each with its own name, colour and domain. Open one to read its page.</p>
           <div className="actions"><Btn href={`mailto:${company.email}`} external>Contact</Btn></div>

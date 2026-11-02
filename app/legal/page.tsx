@@ -1,18 +1,13 @@
 import type { Metadata } from 'next'
 import { ArrowIcon, Btn, Head, Shell } from '@/components/chrome'
 import { company, publishedProducts } from '@/data/portfolio'
+import { listNames, pageMeta } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
+  path: '/legal',
   title: 'Legal — beatLabs',
-  description:
-    'Legal information for BeatLabs FZE LLC and its products. Privacy policies and terms of service for Curb, Raved, and Nibango.',
-  alternates: { canonical: 'https://beatlabs.ae/legal' },
-  openGraph: {
-    title: 'Legal — beatLabs',
-    description: 'Legal information for BeatLabs FZE LLC and its products.',
-    url: 'https://beatlabs.ae/legal',
-  },
-}
+  description: `Legal information for ${company.legalName} and its products. Privacy policies and terms of service for ${listNames(publishedProducts.map(p => p.displayName))}.`,
+})
 
 export default function LegalPage() {
   return (
@@ -57,12 +52,11 @@ export default function LegalPage() {
           </div>
         ))}
       </section>
-      <p className="body block block--tight">Apps in development get their documents on their own domains at launch.</p>
 
       <Head title="This website" />
       <section className="block block--rule">
         <p className="body">
-          beatlabs.ae is an informational website. It does not require an account, does not use tracking cookies, and does not collect personal data. If you contact us by email, your message is used solely to respond to you. For product-specific data practices, refer to each product&apos;s own privacy policy above. Questions: <a href={`mailto:${company.email}`} className="mark">{company.email}</a>.
+          beatlabs.ae is an informational website. It does not require an account and does not use tracking cookies. On our Nibango page (/nibango), when a visit comes from an ad link, that visit and any tap on its store buttons are added to daily totals on Nibango&apos;s servers. The page sends the ad&apos;s source and campaign name, the action and the page language; only the daily totals per source and campaign are kept, never who visited, and the ad&apos;s name stays in your browser tab only until you close it. Like any website, our hosting and servers process technical data such as your IP address to deliver pages and prevent abuse. If you contact us by email, your message is used solely to respond to you. For product-specific data practices, refer to each product&apos;s own privacy policy above. Questions: <a href={`mailto:${company.email}`} className="mark">{company.email}</a>.
         </p>
       </section>
     </Shell>

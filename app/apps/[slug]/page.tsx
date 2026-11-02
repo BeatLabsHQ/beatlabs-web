@@ -4,7 +4,8 @@ import { ArrowIcon, Btn, Head, Shell } from '@/components/chrome'
 import { AppCell, STATUS } from '@/components/cells'
 import { SoonDialog } from '@/components/soon-dialog'
 import { getProduct, publishedProducts, type AppProduct } from '@/data/portfolio'
-import { appCtas, domainOf, primaryCta as pickPrimary, type Cta } from '@/lib/ctas'
+import { appCtas, docsDomain, domainOf, storeLinks, type Cta } from '@/lib/ctas'
+import { jsonLdScript, pageMeta } from '@/lib/seo'
 
 export function generateStaticParams() {
   return publishedProducts.map(p => ({ slug: p.slug }))
@@ -13,14 +14,7 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const app = getProduct(params.slug)
   if (!app) return {}
-  const title = `${app.displayName} — ${app.type} by beatLabs`
-  const description = app.oneLiner
-  return {
-    title,
-    description,
-    alternates: { canonical: `https://beatlabs.ae/apps/${app.slug}` },
-    openGraph: { title, description, url: `https://beatlabs.ae/apps/${app.slug}` },
-  }
+  return pageMeta({ path: `/apps/${app.slug}`, title: `${app.displayName} — ${app.type} by beatLabs`, description: app.oneLiner })
 }
 
 export default function AppDetailPage({ params }: { params: { slug: string } }) {
@@ -31,7 +25,9 @@ export default function AppDetailPage({ params }: { params: { slug: string } }) 
   const siblings = ordered.filter(p => p.slug !== app.slug)
   const isLive = app.status === 'live'
   const domain = domainOf(app.siteUrl)
-  const primary = pickPrimary(app)
+  const docs = docsDomain(app)
+  const campaign = `beatlabs-${app.slug}`
+  const stores = storeLinks(app, campaign)
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -46,7 +42,7 @@ export default function AppDetailPage({ params }: { params: { slug: string } }) 
   }
 
   // Rendered twice (showcase and closing band), so each copy gets its own dialog id.
-  const ctas = (where: string) => <>{appCtas(app).map(c => <CtaButton key={c.label} cta={c} app={app} id={`soon-${where}`} />)}</>
+  const ctas = (where: string) => <>{appCtas(app, campaign).map(c => <CtaButton key={c.label} cta={c} app={app} id={`soon-${where}`} />)}</>
 
   const tagline = app.highlight && app.tagline.includes(app.highlight)
     ? <>{app.tagline.slice(0, app.tagline.indexOf(app.highlight))}<span className="out">{app.highlight}</span>{app.tagline.slice(app.tagline.indexOf(app.highlight) + app.highlight.length)}</>
@@ -54,7 +50,7 @@ export default function AppDetailPage({ params }: { params: { slug: string } }) 
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdScript(jsonLd) }} />
       <Shell current="apps">
         <section className="showcase showcase--static" aria-label={app.displayName}>
           <article className="slide">
@@ -143,7 +139,7 @@ export default function AppDetailPage({ params }: { params: { slug: string } }) 
                   <span className="num">{plan.price}</span>
                   <span className="label">{plan.name}{plan.highlight ? ' · Recommended' : ''} · <span className="mute">{plan.note}</span></span>
                   <p className="line">{plan.items.join(' · ')}</p>
-                  <div style={{ marginTop: 'auto', paddingTop: 12 }}>{primary?.kind === 'link' && <Btn href={primary.href} external lime={plan.highlight}>Get {app.displayName}</Btn>}</div>
+                  <div style={{ marginTop: 'auto', paddingTop: 12, display: 'flex', flexWrap: 'wrap', gap: 8 }}>{stores.map(l => <Btn key={l.label} href={l.href} external lime={plan.highlight}>{l.label}</Btn>)}</div>
                 </div>
               ))}
             </section>
@@ -151,7 +147,7 @@ export default function AppDetailPage({ params }: { params: { slug: string } }) 
         )}
 
         {/* FAQ + DOCS */}
-        <Head title="Questions" label={domain ? `Docs on ${domain}` : undefined} />
+        <Head title="Questions" label={docs ? `Docs on ${docs}` : undefined} />
         <section className="faq">
           {app.faq.map(item => (
             <details key={item.q}>

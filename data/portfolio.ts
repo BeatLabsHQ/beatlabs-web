@@ -8,6 +8,8 @@ export interface StudioModule {
   name: string
   tagline: string
   url: string
+  /** The studio's own inbox, as published on its site. */
+  email: string
   /** Square mark under /public (real asset from the studio's own site). */
   icon?: string
   /** Wide mark (signature/wordmark) under /public, used instead of a square icon. */
@@ -60,15 +62,17 @@ export const studios: StudioModule[] = [
   {
     id: '006',
     name: 'TrueLoveCreative',
-    tagline: 'Web & creative studio. Brand, design and web for clients who care.',
+    tagline: 'Web and graphic design studio in Dubai.',
     url: 'https://truelovecreative.es',
+    email: 'info@truelovecreative.es',
     icon: '/apps/truelove-icon.png',
   },
   {
     id: '007',
     name: 'Estrela.photo',
-    tagline: 'Photography studio. Portraits, events and visual stories.',
+    tagline: 'Photographer for artists, DJs and performers in Dubai.',
     url: 'https://estrela.photo',
+    email: 'info@estrela.photo',
     mark: '/apps/estrela-mark.png',
   },
 ]
@@ -92,6 +96,7 @@ export const products: AppProduct[] = [
     lede: 'Buy. Sell. Bid. Give. Six categories with their own fields, four ways to deal, and a real-time chat to agree where to meet — with zero commission. Pick a place and a radius from 1 to 200 km: that’s your market.',
     siteUrl: 'https://nibango.com',
     icon: '/apps/nibango-icon.png',
+    screens: ['/apps/nibango-screen-1.png', '/apps/nibango-screen-2.png', '/apps/nibango-screen-3.png'],
     androidScreens: ['/apps/nibango-android-1.png', '/apps/nibango-android-2.png', '/apps/nibango-android-3.png'],
     appStoreUrl: 'https://apps.apple.com/app/id6767148995',
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.nibango.app',
@@ -156,11 +161,11 @@ export const products: AppProduct[] = [
       { value: '33', label: 'Currencies, live rates' },
     ],
     features: [
-      { id: '01', title: 'Calendar view.', desc: 'Every renewal on one calendar, with the month’s total and number of charges.' },
+      { id: '01', title: 'Calendar and widgets.', desc: 'Every renewal on one calendar, with the month’s total and number of charges — and your spending and next renewals on the home screen.' },
       { id: '02', title: 'Renewal reminders.', desc: 'Get warned before every charge and before free trials end. The bell keeps every reminder, even the ones you dismissed.' },
       { id: '03', title: 'Insights and price history.', desc: 'Monthly and yearly totals, spending by category, the price changes you record, and your Year in Review.' },
       { id: '04', title: 'Multi-currency.', desc: 'Track subscriptions in 33 currencies, converted to your display currency automatically.' },
-      { id: '05', title: 'Home screen widgets.', desc: 'Your monthly spending and next renewals, visible without opening the app.' },
+      { id: '05', title: 'Installments and shared costs.', desc: 'Track what you pay off in parts, and split a subscription to see your share.' },
       { id: '06', title: 'Private by design.', desc: 'No bank access, no ads. Optional Face ID or fingerprint lock, and free export to JSON or CSV on any plan.' },
     ],
     howItWorks: [
@@ -227,11 +232,11 @@ export const products: AppProduct[] = [
       { step: '03', title: 'Share', desc: 'Send raves as links or poster cards, or trade them in a group with the people whose taste you trust.' },
     ],
     pricing: [
-      { name: 'Free', price: '€0', note: 'Up to 30 raves', items: ['Every core feature', 'Groups and join codes', 'Share as link or card', 'The original Paper skin'] },
+      { name: 'Free', price: '€0', note: 'Up to 10 raves', items: ['Every core feature', 'Groups and join codes', 'Share as link or card', 'The original Paper skin'] },
       { name: 'Pro', price: '€1.99', note: 'A month, €9.99 a year, or Lifetime', items: ['Unlimited raves', 'All 16 skins', 'Your own categories'], highlight: true },
     ],
     faq: [
-      { q: 'Is Raved free?', a: 'Yes — free up to 30 raves, with every core feature including groups and sharing. Pro (€1.99 a month, €9.99 a year, or a one-time Lifetime purchase) unlocks unlimited raves, all 16 skins and your own categories.' },
+      { q: 'Is Raved free?', a: 'Yes — free up to 10 raves, with every core feature including groups and sharing. Pro (€1.99 a month, €9.99 a year, or a one-time Lifetime purchase) unlocks unlimited raves, all 16 skins and your own categories.' },
       { q: 'Which platforms does it run on?', a: 'iPhone and iPad on iOS, and Android phones and tablets. Pro is bought separately on the App Store and Google Play.' },
       { q: 'What can I save?', a: 'Films, shows, books, music, podcasts, places, video games, comics, recipes and anything else — plus your own categories with Pro.' },
       { q: 'How do groups work?', a: 'Create a group, share its code, and friends join to add recommendations. Everyone marks their own “done”. No chat — just recs.' },
@@ -256,11 +261,11 @@ export const products: AppProduct[] = [
     statusText: 'LIVE',
     flagship: false,
     platforms: 'iOS · Android · Web',
-    languages: '7 languages',
-    oneLiner: 'A social app of daily micro-challenges. Answer today’s challenge in your mode — confession, roast, unpopular opinion — inside worlds that get your context.',
-    tagline: 'Answer challenges. Pick your mode. Stand out.',
-    highlight: 'Stand out.',
-    lede: 'One challenge a day, the same for everyone. Five modes to answer it. Twenty worlds that get your context. Five reactions that say something. No engagement algorithm deciding what you see.',
+    languages: '13 languages',
+    oneLiner: 'A small social network for saying what you think, in worlds of people who share your interests. Need a spark? There’s one daily challenge for everyone.',
+    tagline: 'Say what you think. Talk with people who share your interests.',
+    highlight: 'Say what you think.',
+    lede: 'Twenty-eight worlds, each with its own people. Post with a photo, a GIF, a link or a poll, and pick a tone if you like. Five reactions that say something, and no algorithm deciding what you see. Stuck for words? There’s one daily challenge for everyone.',
     siteUrl: 'https://blab.day',
     icon: '/apps/blab-icon.png',
     screens: ['/apps/blab-screen-1.png', '/apps/blab-screen-2.png', '/apps/blab-screen-3.png'],
@@ -269,20 +274,20 @@ export const products: AppProduct[] = [
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.beatlabs.blab',
     stats: [
       { value: '5', label: 'Modes' },
-      { value: '20', label: 'Worlds' },
-      { value: '7', label: 'Languages' },
+      { value: '28', label: 'Worlds' },
+      { value: '13', label: 'Languages' },
     ],
     features: [
       { id: '01', title: 'A challenge a day.', desc: 'Every day the app proposes one question for all of BLAB. Never stare at an empty box again — and you can always post freely too.' },
-      { id: '02', title: '5 modes.', desc: 'Confession, roast, unpopular opinion, idea, advice. Every challenge sets its tone, so everyone knows how to read you.' },
-      { id: '03', title: '20 worlds.', desc: 'Developers, photography, music & DJs, fitness, startups, food, travel, pets, money, work, daily life and more. No joining: a world is just where you post.' },
+      { id: '02', title: '5 modes.', desc: 'Confession, roast, unpopular opinion, idea, advice. Pick one if you like, so everyone knows how to read you.' },
+      { id: '03', title: '28 worlds.', desc: 'Developers, photography, music & DJs, fitness, startups, food, travel, pets, money, work, daily life and more. No joining: a world is just where you post.' },
       { id: '04', title: 'Reactions that mean something.', desc: '❤️ Like, 🙌 That’s me, 💥 Brutal, 🛠️ Useful, 🔖 Saved. Reactions you give yourself never count.' },
-      { id: '05', title: 'Photo, video, GIF, link, poll, Check-in.', desc: 'A photo or a short video, a KLIPY GIF, a link card that never hides its real domain, a 24-hour poll, or a Check-in of a film, book, game, dish, album, podcast or place with your stars.' },
+      { id: '05', title: 'Photo, video, GIF, link, poll, Check-in.', desc: 'A photo or a short video, a GIF, a link card that never hides its real domain, a 24-hour poll, or a Check-in of a film, book, game, dish, album, podcast or place with your stars.' },
       { id: '06', title: 'Ranking, streak and your week.', desc: 'Global, following, your country or any world — today, 7 days, 30 days. A daily reminder at your hour, and every Sunday a recap of your week.' },
     ],
     howItWorks: [
       { step: '01', title: 'Read first', desc: 'Open BLAB and read today’s challenge and its answers. No account needed to browse.' },
-      { step: '02', title: 'Answer in a mode', desc: 'Sign in with Apple or Google in one tap, pick a world, and post — text, photo, GIF, poll or Check-in.' },
+      { step: '02', title: 'Post your way', desc: 'Sign in with Apple or Google in one tap, pick a world, and post — text, photo, GIF, poll or Check-in.' },
       { step: '03', title: 'Stand out', desc: 'Earn reactions, climb the ranking, keep your streak going.' },
     ],
     pricing: [
@@ -290,11 +295,11 @@ export const products: AppProduct[] = [
       { name: 'Pro', price: '€2.99', note: 'Monthly, or €24.99 a year', items: ['Video up to 15 s', 'Create polls', 'PRO badge'], highlight: true },
     ],
     faq: [
-      { q: 'What is BLAB?', a: 'A social app where every post starts from a challenge. The app proposes one daily; you answer in a mode, inside a world of people who get your context.' },
-      { q: 'What are modes and worlds?', a: 'A mode is the tone of your answer: confession, roast, unpopular opinion, idea or advice. A world is the community it belongs to — developers, photography, music, fitness, startups, marketing and fourteen more.' },
-      { q: 'Can I create my own world?', a: 'Not yet. Worlds are a curated catalogue of twenty so communities don’t fragment. New ones are added by us.' },
+      { q: 'What is BLAB?', a: 'A small social network for saying what you think, in worlds of people who share your interests. Need a spark? There’s one daily challenge for everyone.' },
+      { q: 'What are modes and worlds?', a: 'A mode is the tone of your answer: confession, roast, unpopular opinion, idea or advice. A world is the community it belongs to — developers, photography, music, fitness, startups, marketing and twenty-two more.' },
+      { q: 'Can I create my own world?', a: 'Not yet. Worlds are a curated catalogue of twenty-eight so communities don’t fragment. New ones are added by us.' },
       { q: 'Is BLAB free?', a: 'Yes. Pro (€2.99 a month or €24.99 a year) adds video posts up to 15 seconds, creating polls and the PRO badge.' },
-      { q: 'Where is it available?', a: 'On iOS and iPad, Android and the web at blab.day, in English, Spanish, Italian, French, Portuguese, German and Arabic.' },
+      { q: 'Where is it available?', a: 'On iPhone and iPad, Android and the web at blab.day, in 13 languages.' },
     ],
     docs: [
       { label: 'Website', href: 'https://blab.day' },
@@ -309,6 +314,11 @@ export const devProducts = products.filter(p => p.status === 'dev')
 
 export function getProduct(slug: string): AppProduct | undefined {
   return products.find(p => p.slug === slug && p.status !== 'dev')
+}
+
+/** Every brand's own site, for the Organization `sameAs`. */
+export function brandUrls(): string[] {
+  return [...publishedProducts.flatMap(p => (p.siteUrl ? [p.siteUrl] : [])), ...studios.map(s => s.url)]
 }
 
 // ── Company identity — the entity behind every module ──

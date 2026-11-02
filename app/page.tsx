@@ -4,6 +4,7 @@ import { ArrowIcon, Btn, ChevronIcon, Head, MailIcon, Shell } from '@/components
 import { AppCell, STATUS } from '@/components/cells'
 import { Autoplay } from '@/components/autoplay'
 import { company, devProducts, publishedProducts, studios } from '@/data/portfolio'
+import { domainOf, storeLinks } from '@/lib/ctas'
 
 export const metadata: Metadata = {
   alternates: { canonical: 'https://beatlabs.ae' },
@@ -39,6 +40,8 @@ export default function Home() {
   ]
   return (
     <Shell current="home">
+      <h1 className="lead">beatLabs is a design lab in Dubai. <span>Ideas, designed and built.</span></h1>
+
       {/* SHOWCASE: one product at a time, the icons below switch it (radio-driven, no JS) */}
       <section className="showcase" aria-label="Featured apps">
         {ordered.map((p, i) => (
@@ -48,8 +51,7 @@ export default function Home() {
           {ordered.map((p, i) => {
             const prev = (i - 1 + ordered.length) % ordered.length
             const next = (i + 1) % ordered.length
-            const isLive = p.status === 'live'
-            const primary = isLive && p.appStoreUrl ? { href: p.appStoreUrl, label: 'Get it on the App Store', ext: true } : p.siteUrl ? { href: p.siteUrl, label: `Open ${p.siteUrl.replace('https://', '').split('/')[0]}`, ext: true } : null
+            const stores = storeLinks(p, 'beatlabs-home')
             return (
               <article key={p.slug} className="slide" aria-label={p.displayName}>
                 <label className="arrow arrow--prev" htmlFor={`s${prev}`} aria-label={`Previous: ${ordered[prev].displayName}`}><ChevronIcon left /></label>
@@ -59,11 +61,12 @@ export default function Home() {
                   <img className="icon" src={p.icon} alt={`${p.displayName} icon`} width={240} height={240} />
                 )}
                 <div>
-                  <h1 className="h1">{p.displayName}</h1>
+                  <h2 className="h1">{p.displayName}</h2>
                   <p className="sub">{p.tagline}</p>
                   <p className="body">{p.oneLiner} <span className="mark">{STATUS[p.status]}</span></p>
                   <div className="actions">
-                    {primary ? <Btn href={primary.href} external black>{primary.label}</Btn> : <Btn href={`/apps/${p.slug}`} black arrow={false}>Launching soon</Btn>}
+                    {stores.map(l => <Btn key={l.label} href={l.href} external black>{l.label}</Btn>)}
+                    {stores.length === 0 && p.siteUrl && <Btn href={p.siteUrl} external black>Open {domainOf(p.siteUrl)}</Btn>}
                     <Btn href={`/apps/${p.slug}`} arrow={false}>Learn more</Btn>
                   </div>
                 </div>

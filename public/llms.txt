@@ -7,7 +7,7 @@ beatLabs designs and builds its own apps and runs two studios for client work (b
 ## Apps
 
 - [Nibango](https://nibango.com) — Local marketplace to buy, sell, bid and give away near you. Six categories, four ways to deal, zero commission. iPhone, Android and web (nibango.com) in 17 languages. Live. Landing page in 17 languages: https://beatlabs.ae/nibango
-- [Curb](https://getcurbapp.com) — Subscription tracker for iOS and Android, in 13 languages. No bank access, 33 currencies, one-time Pro purchase. Live.
+- [Curb](https://getcurbapp.com) — Tracks subscriptions, installment plans and prepaid passes on iOS and Android, in 13 languages. No bank access, 33 currencies, one-time Pro purchase. Live.
 - [Raved](https://raved.app) — An inbox for recommendations: save every film, show, book, album, podcast and place your friends rave about. iOS and Android, in 6 languages. Live.
 - [Blab](https://blab.day) — A small social network for saying what you think, in 28 worlds of people who share your interests, with one optional daily challenge. iOS, Android and web (blab.day), in 13 languages. Live.
 

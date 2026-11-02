@@ -165,7 +165,7 @@ export const products: AppProduct[] = [
       { id: '02', title: 'Renewal reminders.', desc: 'Get warned before every charge and before free trials end. The bell keeps every reminder, even the ones you dismissed.' },
       { id: '03', title: 'Insights and price history.', desc: 'Monthly and yearly totals, spending by category, the price changes you record, and your Year in Review.' },
       { id: '04', title: 'Multi-currency.', desc: 'Track subscriptions in 33 currencies, converted to your display currency automatically.' },
-      { id: '05', title: 'Installments and shared costs.', desc: 'Track what you pay off in parts, and split a subscription to see your share.' },
+      { id: '05', title: 'Installments, passes and shared costs.', desc: 'Track what you pay off in parts and prepaid sessions you have left, and split a subscription to see your share.' },
       { id: '06', title: 'Private by design.', desc: 'No bank access, no ads. Optional Face ID or fingerprint lock, and free export to JSON or CSV on any plan.' },
     ],
     howItWorks: [

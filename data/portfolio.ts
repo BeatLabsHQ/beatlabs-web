@@ -241,7 +241,7 @@ export const products: AppProduct[] = [
       { q: 'What can I save?', a: 'Films, shows, books, music, podcasts, places, video games, comics, recipes and anything else — plus your own categories with Pro.' },
       { q: 'How do groups work?', a: 'Create a group, share its code, and friends join to add recommendations. Everyone marks their own “done”. No chat — just recs.' },
       { q: 'Do I need an account?', a: 'Yes. Sign in with Apple or Google so your raves sync across devices and your groups stay in sync. You can delete your account and everything in it from Settings.' },
-      { q: 'Is my data private?', a: 'No ads, no tracking, no analytics. Your account and raves are stored only to sync them, through Firebase. Your raves are yours: export them any time.' },
+      { q: 'Is my data private?', a: 'No ads, no tracking, no third-party analytics. Your account and raves are stored to sync them, through Firebase, and the app records your region setting, platform and version for our own account counts. Your raves are yours: export them any time.' },
       { q: 'Which languages are available?', a: 'English, Spanish, French, German, Italian and Portuguese.' },
     ],
     docs: [

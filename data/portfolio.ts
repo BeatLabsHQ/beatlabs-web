@@ -221,7 +221,7 @@ export const products: AppProduct[] = [
     features: [
       { id: '01', title: 'Quick capture.', desc: 'Type a title and Raved finds the film, show, book, album, podcast, game or place — cover art included. Tag who raved about it, done.' },
       { id: '02', title: 'Who raved.', desc: 'Every rave keeps its source: “FILM · RAVED BY MARÍA · 2 DAYS AGO”. When you finally watch it, you know who to thank.' },
-      { id: '03', title: 'Surprise me.', desc: 'Can’t decide tonight? One tap picks a random pending rave — from your list and your groups.' },
+      { id: '03', title: 'Surprise me.', desc: 'Can’t decide tonight? One tap picks a random pending rave — from your list and your groups. A Home Screen widget keeps one in sight, and a gentle reminder, which you can turn off, nudges you when raves have been waiting a few days.' },
       { id: '04', title: 'Groups.', desc: 'Create a group with friends or family, share its code, and everyone adds to the same list. Report or block anyone in one tap.' },
       { id: '05', title: 'Share the hype.', desc: 'Send any rave as a link or a poster card. Friends with Raved open it straight in the app.' },
       { id: '06', title: 'Make it yours.', desc: 'Sixteen skins reskin the whole app, from the original paper to Noir, Terminal and Blueprint. Works offline, with export and import any time.' },

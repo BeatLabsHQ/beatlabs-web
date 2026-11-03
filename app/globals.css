@@ -87,7 +87,7 @@ html[data-scrolled="1"] .index-sheet { top: 68px; }
 .rec-book { display: inline-flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 500; }
 .rec-book svg { width: 18px; height: 18px; }
 .rec-index { display: none; }
-.index-sheet { position: fixed; z-index: 200; top: 80px; left: 12px; right: 12px; background: #fff; border-radius: var(--radius); border: 1px solid var(--gray-2); padding: 8px; }
+.index-sheet { position: fixed; z-index: 200; top: 80px; left: 12px; right: 12px; background: #fff; color: var(--ink); border-radius: var(--radius); border: 1px solid var(--gray-2); padding: 8px; }
 .index-sheet ol { list-style: none; }
 .index-sheet a { display: flex; align-items: center; gap: 14px; padding: 12px 14px; border-radius: 14px; font-weight: 500; font-size: 16px; }
 .index-sheet a:hover { background: var(--gray); }

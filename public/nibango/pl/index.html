@@ -609,7 +609,17 @@ footer .by b{color:var(--ink);font-weight:600}
     }
     a.addEventListener('click', function () { track(kind); });
   });
-  if (camp && !leaving && C.firstVisit(tab, camp)) track('visit');
+  if (camp && !leaving && C.firstVisit(tab, camp)) {
+    track('visit');
+    /* Phones from a paid ad skip the page: one step fewer before the store.
+       Only on the first visit in this tab, and replace() so Back returns to the ad. */
+    var direct = C.directStore(camp, navigator.userAgent, navigator.platform, navigator.maxTouchPoints);
+    var storeLink = direct && document.querySelector('a[data-store="' + direct + '"]');
+    if (storeLink) {
+      track(direct);
+      window.location.replace(storeLink.href);
+    }
+  }
 
   /* --- scroll reveal --- */
   var io = new IntersectionObserver(function (entries) {

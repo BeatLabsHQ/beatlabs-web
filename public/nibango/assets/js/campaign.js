@@ -9,6 +9,8 @@
   var STORE_KEY = 'nb_campaign';
   /* Parameters carried across the landing's own redirects (language pages). */
   var CARRY = /^(utm_[a-z]+|fbclid)$/;
+  /* Ad sources whose phone visitors go straight to their store. */
+  var DIRECT_SOURCES = ['meta'];
 
   function clean(value) {
     return typeof value === 'string' && TOKEN.test(value) ? value : null;
@@ -91,6 +93,22 @@
     return c ? withQuery(base, utmQuery(c)) : base;
   }
 
+  /* Which store a device belongs to, or null (computers stay on the page).
+     iPadOS reports itself as a Mac, but a Mac has no multi-touch screen. */
+  function storeForDevice(userAgent, platform, maxTouchPoints) {
+    var ua = String(userAgent || '');
+    if (/Android/i.test(ua)) return 'google_play';
+    if (/iPhone|iPad|iPod/.test(ua)) return 'app_store';
+    if (platform === 'MacIntel' && maxTouchPoints > 1) return 'app_store';
+    return null;
+  }
+
+  /* The store to send an ad visitor to straight away, or null to show the page. */
+  function directStore(c, userAgent, platform, maxTouchPoints) {
+    if (!c || DIRECT_SOURCES.indexOf(c.source) < 0) return null;
+    return storeForDevice(userAgent, platform, maxTouchPoints);
+  }
+
   function payload(event, c, lang) {
     return JSON.stringify({ event: event, source: c.source, campaign: c.campaign, lang: clean(lang) || '' });
   }
@@ -127,6 +145,7 @@
   root.NibangoCampaign = {
     clean: clean, params: params, fromSearch: fromSearch, utmQuery: utmQuery, withQuery: withQuery,
     carryQuery: carryQuery, appStoreUrl: appStoreUrl, playUrl: playUrl, webUrl: webUrl, payload: payload,
+    storeForDevice: storeForDevice, directStore: directStore,
     remember: remember, recall: recall, firstVisit: firstVisit
   };
 }(typeof window !== 'undefined' ? window : module.exports));

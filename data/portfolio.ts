@@ -175,12 +175,12 @@ export const products: AppProduct[] = [
     ],
     pricing: [
       { name: 'Free', price: '€0', note: 'Forever', items: ['Up to 5 subscriptions', 'Calendar, reminders and insights', 'Cloud sync and multi-currency', 'Export to JSON or CSV'] },
-      { name: 'Pro', price: '€9.99', note: 'One-time. Not a subscription.', items: ['Everything in Free', 'Unlimited subscriptions', 'Unlimited profiles', 'JSON and CSV import'], highlight: true },
+      { name: 'Paid plan', price: 'Pro', note: 'Pay once, no subscription. Your store shows the price.', items: ['Everything in Free', 'Unlimited subscriptions', 'Unlimited profiles', 'JSON and CSV import'], highlight: true },
     ],
     faq: [
       { q: 'Does Curb connect to my bank?', a: 'No. Curb never asks for bank or email access. You add subscriptions yourself — it takes seconds.' },
       { q: 'Which platforms does it run on?', a: 'iPhone and iPad on iOS, and Android phones. Pro is bought separately on the App Store and Google Play.' },
-      { q: 'Is Pro a monthly subscription?', a: 'No — ironically for a subscription tracker, Pro is a one-time €9.99 purchase. Pay once, keep it forever.' },
+      { q: 'Is Pro a monthly subscription?', a: 'No — ironically for a subscription tracker, Pro is a one-time purchase. Pay once, keep it forever. Your store shows the price before you pay.' },
       { q: 'Is my data safe?', a: 'An account is required, so your data is stored on your device and synced through Firebase, encrypted in transit and at rest. No ads, and we never sell your data.' },
       { q: 'Does it support multiple currencies?', a: 'Yes. Track subscriptions in 33 currencies and see totals converted automatically.' },
       { q: 'Which languages are available?', a: 'The app is available in 13 languages, which you can switch in Settings.' },
@@ -233,10 +233,10 @@ export const products: AppProduct[] = [
     ],
     pricing: [
       { name: 'Free', price: '€0', note: 'Up to 10 raves', items: ['Every core feature', 'Groups and join codes', 'Share as link or card', 'The original Paper skin'] },
-      { name: 'Pro', price: '€1.99', note: 'A month, €9.99 a year, or Lifetime', items: ['Unlimited raves', 'All 16 skins', 'Your own categories'], highlight: true },
+      { name: 'Paid plan', price: 'Pro', note: 'Monthly, yearly or one-time. Your store shows the price.', items: ['Unlimited raves', 'All 16 skins', 'Your own categories'], highlight: true },
     ],
     faq: [
-      { q: 'Is Raved free?', a: 'Yes — free up to 10 raves, with every core feature including groups and sharing. Pro (€1.99 a month, €9.99 a year, or a one-time Lifetime purchase) unlocks unlimited raves, all 16 skins and your own categories.' },
+      { q: 'Is Raved free?', a: 'Yes — free up to 10 raves, with every core feature including groups and sharing. Pro, monthly, yearly or a one-time Lifetime purchase, unlocks unlimited raves, all 16 skins and your own categories. Your store shows the price before you pay.' },
       { q: 'Which platforms does it run on?', a: 'iPhone and iPad on iOS, and Android phones and tablets. Pro is bought separately on the App Store and Google Play.' },
       { q: 'What can I save?', a: 'Films, shows, books, music, podcasts, places, video games, comics, recipes and anything else — plus your own categories with Pro.' },
       { q: 'How do groups work?', a: 'Create a group, share its code, and friends join to add recommendations. Everyone marks their own “done”. No chat — just recs.' },

@@ -29,6 +29,10 @@ describe.each(publishedProducts.map(p => [p.displayName, p] as const))('%s', (_n
     if (stat) expect(stat.value).toBe(count)
     for (const [, n] of Array.from(copyOf(p).matchAll(/\b(\d+) languages\b/gi))) expect(n).toBe(count)
   })
+  it('names no paid price, because each store and country charges its own', () => {
+    expect(copyOf(p)).not.toMatch(/€\s?\d|\d\s?€/)
+    for (const plan of p.pricing ?? []) expect(['€0', 'Pro']).toContain(plan.price)
+  })
   it('is described in llms.txt with its site and language count', () => {
     const line = llms.split('\n').find(l => l.includes(`[${p.displayName}]`))
     expect(line).toBeDefined()
@@ -52,11 +56,6 @@ describe('Blab', () => {
     const worlds = blab.stats?.find(s => s.label === 'Worlds')?.value
     expect(worlds).toBeDefined()
     expect(blab.features.some(f => f.title === `${worlds} worlds.`)).toBe(true)
-  })
-  it('names no Pro price, because Google Play and the App Store charge different amounts', () => {
-    const blab = products.find(p => p.slug === 'blab')!
-    expect(copyOf(blab)).not.toMatch(/€/)
-    expect(blab.pricing?.map(plan => plan.price)).toEqual(['€0', 'Pro'])
   })
 })
 

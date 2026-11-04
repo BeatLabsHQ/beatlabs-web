@@ -53,6 +53,11 @@ describe('Blab', () => {
     expect(worlds).toBeDefined()
     expect(blab.features.some(f => f.title === `${worlds} worlds.`)).toBe(true)
   })
+  it('names no Pro price, because Google Play and the App Store charge different amounts', () => {
+    const blab = products.find(p => p.slug === 'blab')!
+    expect(copyOf(blab)).not.toMatch(/€/)
+    expect(blab.pricing?.map(plan => plan.price)).toEqual(['€0', 'Pro'])
+  })
 })
 
 describe('the company', () => {

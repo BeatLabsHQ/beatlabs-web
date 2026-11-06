@@ -134,7 +134,7 @@ export default async function AppDetailPage(props: { params: Promise<{ slug: str
         {/* PRICING */}
         {app.pricing && (
           <>
-            <Head title="Pricing" label="Public pricing" />
+            <Head title="Plans" label="Free to start" />
             <section className={`cells cells--${app.pricing.length}`}>
               {app.pricing.map(plan => (
                 <div key={plan.name} className={`cell${plan.highlight ? ' cell--black' : ''}`}>

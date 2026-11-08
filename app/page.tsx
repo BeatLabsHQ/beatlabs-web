@@ -148,7 +148,7 @@ export default function Home() {
       {/* THE COMPANY: black fact cards */}
       <Head title="The company" />
       <section className="cells cells--3" aria-label="Company facts">
-        <div className="cell cell--black"><span className="h4" style={{ color: '#fff' }}>{company.legalName}</span><span className="label">The entity behind every brand · Founded {company.founded}</span></div>
+        <div className="cell cell--black"><span className="h4" style={{ color: '#fff' }}>{company.legalName}</span><span className="label">beatLabs since {company.brandSince} ({company.brandOrigin}) · UAE entity registered {company.founded}</span></div>
         <div className="cell cell--black"><span className="h4" style={{ color: '#fff' }}>Licence {company.license}</span><span className="label">{company.zone}, UAE · {company.form}</span></div>
         <div className="cell cell--black"><span className="h4" style={{ color: '#fff' }}>{company.founder.name}</span><span className="label">{company.founder.role} · {company.city}</span></div>
       </section>

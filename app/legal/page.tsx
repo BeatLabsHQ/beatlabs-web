@@ -26,7 +26,8 @@ export default function LegalPage() {
         <div className="row"><span className="label">Licence</span><span className="val">No. {company.license} · {company.zone}, UAE</span></div>
         <div className="row"><span className="label">Form</span><span className="val">{company.form}</span></div>
         <div className="row"><span className="label">Address</span><span className="val">{company.address}</span></div>
-        <div className="row"><span className="label">Founded</span><span className="val">{company.founded}</span></div>
+        <div className="row"><span className="label">Registered</span><span className="val">{company.founded}</span></div>
+        <div className="row"><span className="label">Brand</span><span className="val">beatLabs since {company.brandSince} ({company.brandOrigin}), in the UAE since 2026</span></div>
         <div className="row"><span className="label">Founder</span><span className="val">{company.founder.name} · {company.founder.role}</span></div>
         <div className="row"><span className="label">Contact</span><span className="val"><a href={`mailto:${company.email}`} className="mark">{company.email}</a></span></div>
       </section>

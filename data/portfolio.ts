@@ -329,7 +329,11 @@ export const company = {
   zone: 'Ajman Media City Free Zone',
   form: 'Free Zone Establishment, Amiri Decree No.8 of 2021',
   address: 'AMC-BLA-B.C-6010468, AMC Boulevard-A, Ajman, UAE',
+  /** Date the UAE entity (BeatLabs FZE LLC) was registered. */
   founded: '2026-03-25',
+  /** The beatLabs brand started in Spain in 2017 and moved to the UAE in 2026. */
+  brandSince: '2017',
+  brandOrigin: 'Spain',
   email: 'info@beatlabs.ae',
   phone: '+971585324519',
   city: 'Dubai, UAE',

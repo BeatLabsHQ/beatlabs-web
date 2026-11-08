@@ -112,7 +112,7 @@ export default function RootLayout({
               description: 'A design lab in Dubai: ideas turned into apps, websites and brands.',
               email: company.email,
               telephone: company.phone,
-              foundingDate: company.founded,
+              foundingDate: company.brandSince,
               address: {
                 '@type': 'PostalAddress',
                 streetAddress: 'AMC-BLA-B.C-6010468, AMC Boulevard-A',

@@ -291,14 +291,14 @@ export const products: AppProduct[] = [
       { step: '03', title: 'Stand out', desc: 'Earn reactions, climb the ranking, keep your streak going.' },
     ],
     pricing: [
-      { name: 'Free', price: '€0', note: 'Everything you need', items: ['Daily challenges', 'All modes and worlds', 'Photo, GIF, link and Check-in', 'Vote in polls'] },
+      { name: 'Free', price: '€0', note: 'Everything you need', items: ['Daily challenges', 'All modes and worlds', 'Photo, GIF, link and Check-in', 'Vote in polls', 'Invite 3 friends, get a month of Pro'] },
       { name: 'Paid plan', price: 'Pro', note: 'Monthly or yearly. Your store shows the price.', items: ['Video up to 15 s', 'Create polls', 'PRO badge'], highlight: true },
     ],
     faq: [
       { q: 'What is BLAB?', a: 'A small social network for saying what you think, in worlds of people who share your interests. Need a spark? There’s one daily challenge for everyone.' },
       { q: 'What are modes and worlds?', a: 'A mode is the tone of your answer: confession, roast, unpopular opinion, idea or advice. A world is the community it belongs to — developers, photography, music, fitness, startups, marketing and twenty-two more.' },
       { q: 'Can I create my own world?', a: 'Not yet. Worlds are a curated catalogue of twenty-eight so communities don’t fragment. New ones are added by us.' },
-      { q: 'Is BLAB free?', a: 'Yes. Pro is an optional monthly or yearly plan that adds video posts up to 15 seconds, creating polls and the PRO badge. Your store shows the price before you pay.' },
+      { q: 'Is BLAB free?', a: 'Yes. Pro is an optional monthly or yearly plan that adds video posts up to 15 seconds, creating polls and the PRO badge. Your store shows the price before you pay. You can also earn it: every 3 friends who join with your link and post give you a month of Pro.' },
       { q: 'Where is it available?', a: 'On iPhone and iPad, Android and the web at blab.day, in 13 languages.' },
     ],
     docs: [

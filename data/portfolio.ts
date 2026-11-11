@@ -162,7 +162,7 @@ export const products: AppProduct[] = [
     ],
     features: [
       { id: '01', title: 'Calendar and widgets.', desc: 'Every renewal on one calendar, with the month’s total and number of charges — and your spending and next renewals on the home screen.' },
-      { id: '02', title: 'Renewal reminders.', desc: 'Get warned before every charge and before free trials end. The bell keeps every reminder, even the ones you dismissed.' },
+      { id: '02', title: 'Renewal reminders.', desc: 'Get warned before every charge — with up to 3 extra reminders per subscription — and before free trials end. The bell keeps every reminder, even the ones you dismissed.' },
       { id: '03', title: 'Insights and price history.', desc: 'Monthly and yearly totals, spending by category, the price changes you record, and your Year in Review.' },
       { id: '04', title: 'Multi-currency.', desc: 'Track subscriptions in 33 currencies, converted to your display currency automatically.' },
       { id: '05', title: 'Installments, passes and shared costs.', desc: 'Track what you pay off in parts and prepaid sessions you have left, and split a subscription to see your share.' },
@@ -170,7 +170,7 @@ export const products: AppProduct[] = [
     ],
     howItWorks: [
       { step: '01', title: 'Sign in', desc: 'Sign in with Apple or Google. Your subscriptions sync across your devices.' },
-      { step: '02', title: 'Add your subscriptions', desc: 'Name, price and cycle. Curb recognises known services and sets their logo.' },
+      { step: '02', title: 'Add your subscriptions', desc: 'Name, price and cycle — or just tell Siri on iPhone. Curb recognises known services and sets their logo.' },
       { step: '03', title: 'Cancel the dead weight', desc: 'Get reminded before each charge, spot what you no longer use and stop paying for it.' },
     ],
     pricing: [

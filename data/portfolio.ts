@@ -107,10 +107,10 @@ export const products: AppProduct[] = [
     ],
     features: [
       { id: '01', title: 'Four ways to deal.', desc: 'Fixed price, negotiable, auction or donation. The colour on every card tells you before you tap, so nobody wastes a message asking if the price is firm.' },
-      { id: '02', title: '6 categories. Real fields.', desc: 'Properties, Motor, Services, Jobs, Pets (adoption only) and Classifieds. Each has its own form and filters — a flat is searched by bedrooms, a car by mileage.' },
+      { id: '02', title: '6 categories. Real fields.', desc: 'Properties, Motor, Services, Jobs, Pets (adoption only) and Classifieds. Each has its own form and filters that show the number of results — a flat is searched by bedrooms, a car by mileage, a job by pay.' },
       { id: '03', title: 'Near you, really.', desc: 'Pick a city or drop a pin, then a radius from 1 to 200 km. Browse as a list or on the map, and save the searches you care about.' },
       { id: '04', title: 'Offers and bids, one tap.', desc: 'On negotiable listings you send an offer with a button; the seller accepts, counters or declines. Auctions take bids until the deadline. No numbers buried in messages.' },
-      { id: '05', title: 'A chat for the handover.', desc: 'Real-time messages with read receipts. Send photos, your location or a meeting point, schedule the pickup, and share your phone or WhatsApp only if you choose.' },
+      { id: '05', title: 'A chat for the handover.', desc: 'Real-time messages with read receipts. Send photos, your location or a nearby place to meet, schedule the pickup, and share your phone or WhatsApp only if you choose.' },
       { id: '06', title: 'Trust built in.', desc: 'Public profiles with ratings from completed sales, follow the sellers you like, and report or block any user or listing at any time.' },
     ],
     howItWorks: [

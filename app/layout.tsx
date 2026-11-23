@@ -115,7 +115,7 @@ export default function RootLayout({
               foundingDate: company.brandSince,
               address: {
                 '@type': 'PostalAddress',
-                streetAddress: 'AMC-BLA-B.C-6010468, AMC Boulevard-A',
+                streetAddress: 'AMC-BLA-SM0855, AMC Boulevard-A',
                 addressLocality: 'Ajman',
                 addressRegion: company.zone,
                 addressCountry: 'AE',

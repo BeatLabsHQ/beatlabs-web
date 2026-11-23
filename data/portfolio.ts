@@ -162,8 +162,8 @@ export const products: AppProduct[] = [
       { value: '33', label: 'Currencies, live rates' },
     ],
     features: [
-      { id: '01', title: 'Calendar and widgets.', desc: 'Every renewal on one calendar, with the month’s total and number of charges — and your spending and next renewals on the home screen.' },
-      { id: '02', title: 'Renewal reminders.', desc: 'Get warned before every charge — with up to 3 extra reminders per subscription — and before free trials end. The bell keeps every reminder, even the ones you dismissed.' },
+      { id: '01', title: 'Calendar and widgets.', desc: 'Every renewal on one calendar, with the month’s total and number of charges, search across all your subscriptions — and your spending and next renewals on the home screen.' },
+      { id: '02', title: 'Renewal reminders.', desc: 'Get warned before every charge — with up to 3 extra reminders per subscription — and before free trials end. The bell shows the reminders you’ve received and the ones coming up, and you can pause a subscription straight from its page.' },
       { id: '03', title: 'Insights and price history.', desc: 'Monthly and yearly totals, spending by category, the price changes you record, and your Year in Review.' },
       { id: '04', title: 'Multi-currency.', desc: 'Track subscriptions in 33 currencies, converted to your display currency automatically.' },
       { id: '05', title: 'Installments, passes and shared costs.', desc: 'Track what you pay off in parts and prepaid sessions you have left, and split a subscription to see your share.' },
@@ -283,8 +283,8 @@ export const products: AppProduct[] = [
       { id: '02', title: '5 modes.', desc: 'Confession, roast, unpopular opinion, idea, advice. Pick one if you like, so everyone knows how to read you.' },
       { id: '03', title: '28 worlds.', desc: 'Developers, photography, music & DJs, fitness, startups, food, travel, pets, money, work, daily life and more. No joining: a world is just where you post.' },
       { id: '04', title: 'Reactions that mean something.', desc: '❤️ Like, 🙌 That’s me, 💥 Brutal, 🛠️ Useful, 🔖 Saved. Reactions you give yourself never count.' },
-      { id: '05', title: 'Photo, video, GIF, link, poll, Check-in.', desc: 'A photo or a short video, a GIF, a link card that never hides its real domain, a 24-hour poll, or a Check-in of a film, book, game, dish, album, podcast or place with your stars.' },
-      { id: '06', title: 'Ranking, streak and your week.', desc: 'Global, following, your country or any world — today, 7 days, 30 days. A daily reminder at your hour, and every Sunday a recap of your week.' },
+      { id: '05', title: 'Photos, video, stickers, GIF, link, poll, Check-in.', desc: 'Up to 4 photos or videos you swipe through, up to 3 stickers alongside them, a GIF, a link card that never hides its real domain, a 24-hour poll, or a Check-in of a film, book, game, dish, album, podcast or place with your stars.' },
+      { id: '06', title: 'Ranking, streak and your week.', desc: 'Global, following, your country or any world — today, 7 days, 30 days. Post a workout from Apple Health or Health Connect and climb its weekly ranking. A daily reminder at your hour, and every Sunday a recap of your week.' },
     ],
     howItWorks: [
       { step: '01', title: 'Read first', desc: 'Open BLAB and read today’s challenge and its answers. No account needed to browse.' },
@@ -292,7 +292,7 @@ export const products: AppProduct[] = [
       { step: '03', title: 'Stand out', desc: 'Earn reactions, climb the ranking, keep your streak going.' },
     ],
     pricing: [
-      { name: 'Free', price: '€0', note: 'Everything you need', items: ['Daily challenges', 'All modes and worlds', 'Photo, GIF, link and Check-in', 'Vote in polls', 'Invite 3 friends, get a month of Pro'] },
+      { name: 'Free', price: '€0', note: 'Everything you need', items: ['Daily challenges', 'All modes and worlds', 'Up to 4 photos, stickers, GIF, link and Check-in', 'Vote in polls', 'Invite 3 friends, get a month of Pro'] },
       { name: 'Paid plan', price: 'Pro', note: 'Monthly or yearly. Your store shows the price.', items: ['Video up to 15 s', 'Create polls', 'PRO badge'], highlight: true },
     ],
     faq: [

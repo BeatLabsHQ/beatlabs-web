@@ -1,6 +1,6 @@
 ---
 name: beatLabs
-description: A faithful MacPaw-register corporate site — white ground, #ebebeb panels with app-icon corners (22px cards, 40px panels) and no shadows, Fixel at 500/600, black rectangular buttons with an icon on the right, centred section heads, black fact cards, a bar that fades to black on scroll. Lime survives only as the status pill.
+description: A faithful MacPaw-register corporate site — white ground, #ebebeb panels with the traced card corner and no shadows, Fixel at 500/600, black buttons with an icon on the right, centred section heads, black fact cards, a bar that fades to black on scroll. Lime survives only as the status pill.
 colors:
   bg: "#ffffff"
   gray: "#ebebeb"
@@ -70,9 +70,9 @@ typography:
     fontWeight: 400
     lineHeight: "18px"
 spacing:
-  radius: "22px"      # cards — the app-icon curve
-  radius-btn: "14px"
-  radius-lg: "40px"    # showcase, banner, screens, closing band
+  sq-card: "43.25px"   # reach of the traced corner on cards
+  sq-panel: "60.55px"  # the same trace ×1.4 on showcase, banner, screens, closing band, dialog
+  sq-btn: "24px"       # buttons and small tiles (scaled to fit half their height)
   radius-pill: "50px"
   gap-card: "16px"
   pad-card: "20px"
@@ -94,8 +94,8 @@ spacing:
 **Key characteristics**
 - Two greys and black on white. `gray` is every panel and card; `gray-2` is every rule and outline; `text` is prose, `ink` is headings and buttons, `mute` is descriptors and labels.
 - One family, two cuts. Fixel Display (500 for h2, 600 for h1) and Fixel Text (400/500/600/700) for everything else. No mono, no uppercase.
-- Corners follow the app icons: 22px on cards (about the 22% curve of an iOS tile), 40px on the big panels, 14px on buttons, 50px pills. No shadows on surfaces; the only shadows sit under app icons (`0 12px 28px rgba(0,0,0,.12)` on tiles, `0 24px 48px rgba(0,0,0,.16)` on the showcase icon) and under the progress ring.
-- Buttons are black rectangles (`.btn`, 16px/20px, padding 16/22, radius 14) with the icon on the right and `justify-content: space-between`; the white variant sits on grey panels, and on white it gains a 1px inset `gray-2` outline. Lime is reserved for the recommended plan.
+- Corners are the traced card corner (approved 2026-11-23, spec in `~/.claude/design/squircle-corners.md`): the straight edge starts to bend 43.25px before the corner with a long soft tail. It is drawn as a CSS mask (four corner SVGs + two bands, `--corner-tl…br`), at 43.25px reach on cards, 60.55px on the big panels and 24px on buttons and small tiles; pills stay 50px. No shadows on surfaces; the only shadows sit under app icons (`0 12px 28px rgba(0,0,0,.12)` on tiles, `0 24px 48px rgba(0,0,0,.16)` on the showcase icon) and under the progress ring.
+- Buttons are black (`.btn`, 16px/20px, padding 16/22, traced corner at 24px) with the icon on the right and `justify-content: space-between`; the white variant sits on grey panels, and on white it gains a 1px `gray-2` line drawn as a masked ring (the element is `gray-2`, a white `::before` sits 1px inside), turning ink on hover. On the black closing band every button is white. Lime is reserved for the recommended plan.
 - Links inside cards are underlined "Read more ↗" in `mute`, turning `ink` on hover.
 - Section heads are centred: h2 then a `mute` label, `section` of air above, 48px below.
 
@@ -126,11 +126,11 @@ spacing:
 
 **Bar** (`.rec`) — sticky, 72px, logotype left (`/logo-black.png` at 30px), links (`Apps · Studios · Company`) and a mail-icon Contact right. As the page scrolls the bar interpolates from white to black over the first 360px (`--bar`, smoothstepped, written by `ScrollChrome`): background and text via `color-mix`, height 72→60, a soft shadow fades in, and the logotype cross-fades to its white cut (`/logo.png`). ≤640px the links collapse into an `Index` button that opens a white sheet (`.index-sheet`).
 
-**Showcase** (`.showcase`) — the hero: a 40px grey panel with one product per slide (`.slide`: 240px icon left in a 360px column, name/tagline/one-liner/status pill/two buttons right), round white prev/next arrows, a row of 28px icon labels (`.dots`, active one on a white 12px tile at 1.15×), and a centred dot/dash indicator (`.pips`, 6px dots, the active one a 28px black dash). Radio-driven (`#s0…#s3`), so it works without JS; `Autoplay` advances it every 5s and pauses on hover, focus or a hidden tab. The ficha uses `.showcase--static` for the same panel without controls.
+**Showcase** (`.showcase`) — the hero: a big grey panel with one product per slide (`.slide`: 240px icon left in a 360px column, name/tagline/one-liner/status pill/two buttons right), round white prev/next arrows, a row of 28px icon labels (`.dots`, active one on a white 12px tile at 1.15×), and a centred dot/dash indicator (`.pips`, 6px dots, the active one a 28px black dash). Radio-driven (`#s0…#s3`), so it works without JS; `Autoplay` advances it every 5s and pauses on hover, focus or a hidden tab. The ficha uses `.showcase--static` for the same panel without controls.
 
 **Product tile** (`.cell.card-app`) — `gray`, min 320px: name + descriptor top-left, status pill top-right, the 112px icon centred with a soft shadow, a two-line clamped one-liner, "Read more ↗". Dev apps: white with a `gray-2` outline, a grey placeholder square, no link. Studios use the same tile with their real mark.
 
-**Banner** (`.banner`) — 40px panel, two columns, ≥520px: the founder photo cover-fit left, the graphite field right with h2, a check-list of the studios and a white button.
+**Banner** (`.banner`) — big panel, two columns, ≥520px: the founder photo cover-fit left, the graphite field right with h2, a check-list of the studios and a white button.
 
 **Bands** (`.band`) — full-bleed `gray` sections holding centred copy (`.mission`) or the link cards (`.links`: white cards with the real icon and an underlined domain).
 
@@ -138,9 +138,9 @@ spacing:
 
 **Support cards** (`.support .cell`) — icon + title + line, a full-width black button at the bottom.
 
-**Screens** (`.screens`) — 40px grey panel showing every real screenshot in full (28px corners, soft shadow); never cropped.
+**Screens** (`.screens--framed`) — big grey panel showing every real screenshot in full inside its device frame (iPhone: the owner's frame; Android: the official Pixel 9 Pro art), with a drop shadow that follows the frame; never cropped.
 
-**Closing band** (`.contact`) — ink panel, 40px, with h2 or the e-mail in Display and white buttons.
+**Closing band** (`.contact`) — ink big panel, with h2 or the e-mail in Display and white buttons.
 
 **Footer** — five link columns at 12px (Apps incl. "· soon" dev items, Studios, Company, Legal per product, Contact), a `gray-2` rule, the logotype at 22px and the copyright line.
 
@@ -158,6 +158,6 @@ Container `min(1280px, 100% − 2·pad)` with `pad = clamp(20px, 5.5vw, 80px)`. 
 
 ## Do not
 
-- Add shadows to panels, tint a surface, introduce a second accent, or hardcode a corner radius outside the tokens.
+- Add shadows to panels, tint a surface, introduce a second accent, or put a plain `border-radius` on a card, panel or button (they take the traced corner).
 - Use display type above 48px, uppercase labels, mono, or outlined words.
 - Crop screenshots, fabricate product UI, or show a dev app as a link.

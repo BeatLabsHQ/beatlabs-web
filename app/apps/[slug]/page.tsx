@@ -88,10 +88,10 @@ export default async function AppDetailPage(props: { params: Promise<{ slug: str
         {app.screens && app.screens.length > 0 && (
           <>
             <Head title="On the phone" label={app.androidScreens ? 'iOS' : app.platforms} />
-            <div className="screens">
+            <div className="screens screens--framed">
               {app.screens.map((src, i) => (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img key={src} src={src} alt={`${app.displayName} screen ${i + 1}`} loading="lazy" width={1320} height={2868} />
+                <img key={src} src={src} alt={`${app.displayName} screen ${i + 1}`} loading="lazy" width={720} height={1422} />
               ))}
             </div>
           </>
@@ -99,10 +99,10 @@ export default async function AppDetailPage(props: { params: Promise<{ slug: str
         {app.androidScreens && app.androidScreens.length > 0 && (
           <>
             <Head title="On Android" label="Google Play" />
-            <div className="screens">
+            <div className="screens screens--framed">
               {app.androidScreens.map((src, i) => (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img key={src} src={src} alt={`${app.displayName} Android screen ${i + 1}`} loading="lazy" width={1080} height={2400} />
+                <img key={src} src={src} alt={`${app.displayName} Android screen ${i + 1}`} loading="lazy" width={720} height={1521} />
               ))}
             </div>
           </>

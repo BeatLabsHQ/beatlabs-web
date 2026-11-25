@@ -7,7 +7,7 @@ import { pageMeta } from '@/lib/seo'
 export const metadata: Metadata = pageMeta({
   path: '/studios',
   title: 'Studios — beatLabs',
-  description: `The beatLabs studios: ${studios[0].name} (web and graphic design) and ${studios[1].name} (photography for artists, DJs and performers). Open for client work in Dubai.`,
+  description: `The beatLabs studios: ${studios[0].name} (websites, brand identities, graphic design and apps) and ${studios[1].name} (photography for artists, DJs and performers). Open for client work in Dubai.`,
 })
 
 export default function StudiosPage() {

@@ -45,10 +45,10 @@ const CONTRACT = '<!-- impeccable contract · owner-pinned canon (MacPaw registe
 
 export const metadata: Metadata = {
   title: 'beatLabs — Design lab. Ideas, designed and built.',
-  description: 'beatLabs (BeatLabs FZE LLC) is a design lab in Dubai: ideas turned into apps, websites and brands. Home of Nibango, Curb, Raved, Blab, TrueLoveCreative and Estrela.photo.',
+  description: 'beatLabs (BeatLabs FZE LLC) is a design lab in Dubai: ideas turned into apps, websites and brands. Home of Nibango, Curb, Raved, Blab, True Love Creative and Estrela.photo.',
   keywords: [
     'beatLabs', 'design lab Dubai', 'design studio Dubai', 'digital studio UAE', 'UAE startup studio', 'tech studio Dubai', 'digital studio Dubai',
-    'Nibango', 'Curb', 'Curb Subscription Tracker', 'Raved', 'Raved app', 'Blab', 'TrueLoveCreative', 'Estrela photo',
+    'Nibango', 'Curb', 'Curb Subscription Tracker', 'Raved', 'Raved app', 'Blab', 'True Love Creative', 'TrueLoveCreative', 'Estrela photo',
     'app development UAE', 'startup Ajman', 'digital brands UAE',
     'web design Dubai', 'marketplace app UAE', 'creative studio UAE',
     'BeatLabs FZE', 'Ajman Media City Free Zone',
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'beatLabs — Design lab. Ideas, designed and built.',
-    description: 'A design lab in Dubai: ideas turned into apps, websites and brands. Home of Nibango, Curb, Raved, Blab, TrueLoveCreative and Estrela.photo.',
+    description: 'A design lab in Dubai: ideas turned into apps, websites and brands. Home of Nibango, Curb, Raved, Blab, True Love Creative and Estrela.photo.',
     url: 'https://beatlabs.ae',
     siteName: 'beatLabs',
     type: 'website',

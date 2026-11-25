@@ -61,8 +61,8 @@ export interface AppProduct {
 export const studios: StudioModule[] = [
   {
     id: '006',
-    name: 'TrueLoveCreative',
-    tagline: 'Web and graphic design studio in Dubai.',
+    name: 'True Love Creative',
+    tagline: 'Creative studio in Dubai: web, brand, graphic design and apps.',
     url: 'https://truelovecreative.es',
     email: 'info@truelovecreative.es',
     icon: '/apps/truelove-icon.png',

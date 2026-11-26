@@ -81,7 +81,6 @@ a:hover .more, .more:hover { color: var(--ink); }
 .rec .logo-light { position: absolute; left: 0; top: 0; opacity: var(--bar); }
 .rec .logo-dark { opacity: calc(1 - var(--bar)); }
 .rec-nav a, .rec-book { color: inherit; }
-html[data-scrolled="1"] .rec-index { background: transparent; color: inherit; border-color: rgba(255, 255, 255, 0.3); }
 html[data-scrolled="1"] .index-sheet { top: 68px; }
 .rec .stamp { display: inline-flex; align-items: center; margin-right: auto; }
 .rec .stamp img { height: 30px; width: auto; }
@@ -333,8 +332,9 @@ button.btn { border: 0; font-family: inherit; cursor: pointer; text-align: left;
   .rec { height: 64px; }
   .rec-nav { display: none; }
   .rec-book span { display: none; }
-  .rec-index::before { content: ""; position: absolute; inset: 1px; z-index: -1; background: var(--bg); }
-  .rec-index { display: inline-flex; align-items: center; margin-left: 16px; padding: 9px 13px; border: 0; position: relative; isolation: isolate; background: var(--gray-2); color: var(--ink); font-size: 14px; font-weight: 500; font-family: inherit; cursor: pointer; }
+  /* fades with the bar: fill follows the bar, the ring darkens to a soft grey on black */
+  .rec-index::before { content: ""; position: absolute; inset: 1px; z-index: -1; background: color-mix(in srgb, var(--ink) calc(var(--bar) * 100%), var(--bg)); }
+  .rec-index { display: inline-flex; align-items: center; margin-left: 16px; padding: 9px 13px; border: 0; position: relative; isolation: isolate; background: color-mix(in srgb, color-mix(in srgb, var(--mute) 60%, var(--ink)) calc(var(--bar) * 100%), var(--gray-2)); color: inherit; font-size: 14px; font-weight: 500; font-family: inherit; cursor: pointer; }
   .slide { padding: 40px 20px 16px; min-height: 0; }
   .slide .icon { width: 160px; height: 160px; border-radius: 36px; }
   .slide .arrow { display: none; }

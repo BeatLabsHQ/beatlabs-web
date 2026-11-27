@@ -269,7 +269,7 @@ a.cell:focus-visible { outline-offset: -5px; }
 
 /* ---------- Blocks & the closing band ---------- */
 .block { padding: 8px 0; }
-.block--rule { padding: 24px; background: var(--gray); }
+.block--rule { padding: clamp(24px, 4vw, 40px); background: var(--gray); width: min(calc(62ch + 2 * clamp(24px, 4vw, 40px)), 100% - 2 * var(--pad)); }
 .contact { margin-top: var(--section); padding: clamp(40px, 6vw, 72px); background: var(--ink); color: #fff; display: flex; flex-direction: column; gap: 12px; }
 .contact .h2 { color: #fff; max-width: 20ch; font-size: clamp(28px, 2.6vw, 36px); }
 .contact .body, .contact .line { color: rgba(255, 255, 255, 0.78); }
